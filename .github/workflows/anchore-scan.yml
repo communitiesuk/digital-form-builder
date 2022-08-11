@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - master
+      - fix-anchor-scan
 
 env:
   IMAGE_NAME_STUB: "digital-form-builder-dluhc-"
