@@ -101,7 +101,6 @@ export class StatusService {
     const state = await this.cacheService.getState(request);
     let formData = this.webhookArgsFromState(state);
 
-    // const { outputs } = state;
     const { outputs, callback } = state;
 
     const savePerPageWebhook = outputs?.find(
@@ -110,13 +109,13 @@ export class StatusService {
 
     let response;
 
-    if (savePerPageWebhook?.outputData.url == "True") {
+    if (savePerPageWebhook?.outputData.url) {
       this.logger.info(
         ["StatusService", "savePerPageRequest"],
         `savePerPageWebhook request detected for ${request.yar.id}`
       );
       try {
-        if (callback) {
+        if (callback && savePerPageWebhook?.outputData.url == "True") {
           this.logger.info(
             ["StatusService", "outputRequests"],
             `Callback detected for ${request.yar.id} - PUT to ${callback.callbackUrl}`
