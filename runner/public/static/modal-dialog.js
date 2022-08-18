@@ -8,8 +8,8 @@
   GOVUKFrontend.modalDialog = {
     containerSelector: '#content',
     redirectWarningMessage: 'You are about to be redirected',
-    keepYouSecureMessage: 'We do this to keep your information secure.',
-    warningMessage: 'We will reset your application if you do not respond in',
+    keepYouSecureMessage: ', you will lose your unsaved answers.',
+    warningMessage: 'Your application has been inactive. If you do not respond in',
     el: document.getElementById('js-modal-dialog'),
     $el: $('#js-modal-dialog'),
     $lastFocusedEl: null,
