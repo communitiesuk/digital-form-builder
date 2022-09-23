@@ -300,7 +300,6 @@ export const plugin = {
           output: "stream",
           parse: true,
           multipart: { output: "stream" },
-          maxBytes: uploadService.fileSizeLimit,
           failAction: async (request: any, h: HapiResponseToolkit) => {
             request.server?.plugins?.crumb?.generate?.(request, h);
             return h.continue;
