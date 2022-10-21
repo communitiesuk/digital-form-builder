@@ -114,7 +114,18 @@ export class StatusService {
         ["StatusService", "savePerPageRequest"],
         `savePerPageWebhook request detected for ${request.yar.id}`
       );
+      this.logger.info("before entering try block");
       try {
+        this.logger.info("callback is: " + callback);
+        this.logger.info(
+          "savePerPageWebhook?.outputData.url is: " +
+            savePerPageWebhook?.outputData.url
+        );
+        this.logger.info(
+          "Condition evaluates to:" + callback &&
+            savePerPageWebhook?.outputData.url == "True"
+        );
+
         if (callback && savePerPageWebhook?.outputData.url == "True") {
           this.logger.info(
             ["StatusService", "outputRequests"],
