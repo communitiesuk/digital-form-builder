@@ -6863,7 +6863,7 @@ __metadata:
     typescript: ^4.1.3
     vision: 5.4.3
     webpack: ^4.44.2
-    webpack-bundle-analyzer: ^4.3.0
+    webpack-bundle-analyzer: ^4.7.0
     webpack-cli: ^3.3.12
     webpack-dev-server: ^3.11.0
     webpack-node-externals: ^2.5.2
@@ -9979,7 +9979,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commander@npm:7.2.0, commander@npm:^7.0.0":
+"commander@npm:7.2.0, commander@npm:^7.0.0, commander@npm:^7.2.0":
   version: 7.2.0
   resolution: "commander@npm:7.2.0"
   checksum: bdc0eca5e25cd24af8440163d3c9a996785bbac4b49a590365699cdc1ed08cefbac8f268153208ab2bc5dc3cb1d3fb573fd1590c681e36e371342186bd331a4c
@@ -27171,14 +27171,14 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"webpack-bundle-analyzer@npm:^4.3.0":
-  version: 4.3.0
-  resolution: "webpack-bundle-analyzer@npm:4.3.0"
+"webpack-bundle-analyzer@npm:^4.7.0":
+  version: 4.7.0
+  resolution: "webpack-bundle-analyzer@npm:4.7.0"
   dependencies:
     acorn: ^8.0.4
     acorn-walk: ^8.0.0
     chalk: ^4.1.0
-    commander: ^6.2.0
+    commander: ^7.2.0
     gzip-size: ^6.0.0
     lodash: ^4.17.20
     opener: ^1.5.2
@@ -27186,7 +27186,7 @@ resolve@^2.0.0-next.3:
     ws: ^7.3.1
   bin:
     webpack-bundle-analyzer: lib/bin/analyzer.js
-  checksum: b0f737db7102cfb59108d816caa6d6c5076c47eef275ec2055065df19d133a5e367e19242f8d62161fd6f622bff42c3b3cc544d8edf8099f2a5b170f8d2eb598
+  checksum: 8dbee48e0b8f46683d917b4beac94a499c153d1aecdefb99985f81353aa9a7bd047f320f5ac1236d50966cc406804bbdb8a362de5025a848adb1a2636880c255
   languageName: node
   linkType: hard
 
