@@ -5352,7 +5352,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/fs-extra@npm:^9.0.1, @types/fs-extra@npm:^9.0.4":
+"@types/fs-extra@npm:^9.0.4":
   version: 9.0.6
   resolution: "@types/fs-extra@npm:9.0.6"
   dependencies:
@@ -5691,6 +5691,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/node@npm:^18.0.0":
+  version: 18.11.11
+  resolution: "@types/node@npm:18.11.11"
+  checksum: f350995568740e3d53599d68c83f216653f060088bcf97dda29c679c56b92306471c87d8987adfa87f896fc8e10133cf93b36c738d6183be9873460084567f37
+  languageName: node
+  linkType: hard
+
 "@types/nodemailer@npm:^6.4.4":
   version: 6.4.4
   resolution: "@types/nodemailer@npm:6.4.4"
@@ -5704,6 +5711,13 @@ __metadata:
   version: 2.4.0
   resolution: "@types/normalize-package-data@npm:2.4.0"
   checksum: 6d077e73be7ac6227b678829c7bd765607136cdef537fd4ee7f368d9302a651aea924254d69826663322048436d90d6e7c679c9aa99c4824a687c568aab8ce4f
+  languageName: node
+  linkType: hard
+
+"@types/normalize-package-data@npm:^2.4.1":
+  version: 2.4.1
+  resolution: "@types/normalize-package-data@npm:2.4.1"
+  checksum: d7bb5756003a5dbf3ea1ee24ee336c036f3670a7f1ca2c8c840b5ba8fdf4b7063f8d8df16ec0427f622cc97e1c44710f089720d7caa521a5f4ec6f4073c69261
   languageName: node
   linkType: hard
 
@@ -6300,6 +6314,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@wdio/config@npm:8.0.6":
+  version: 8.0.6
+  resolution: "@wdio/config@npm:8.0.6"
+  dependencies:
+    "@wdio/logger": 8.0.0
+    "@wdio/types": 8.0.6
+    "@wdio/utils": 8.0.6
+    decamelize: ^6.0.0
+    deepmerge-ts: ^4.2.2
+    glob: ^8.0.3
+    import-meta-resolve: ^2.1.0
+    read-pkg-up: ^9.1.0
+  checksum: c72c367dcdda025ee8997976565311381a617f956daa91283ee6116f96296f4cd68e8ec4e708b64b4194d83709b2c4d4e322a384f0667ed6701da3967351049f
+  languageName: node
+  linkType: hard
+
 "@wdio/cucumber-framework@npm:^7.7.3":
   version: 7.7.3
   resolution: "@wdio/cucumber-framework@npm:7.7.3"
@@ -6374,6 +6404,18 @@ __metadata:
     loglevel-plugin-prefix: ^0.8.4
     strip-ansi: ^6.0.0
   checksum: 7c429bceee28251309c750a25ce979e803b5b92080fddb09c93002c3471f5158109fe9fa176df070082abe3552f2dc1f2129f6688c07a989417a339b0e04765d
+  languageName: node
+  linkType: hard
+
+"@wdio/logger@npm:8.0.0":
+  version: 8.0.0
+  resolution: "@wdio/logger@npm:8.0.0"
+  dependencies:
+    chalk: ^5.1.2
+    loglevel: ^1.6.0
+    loglevel-plugin-prefix: ^0.8.4
+    strip-ansi: ^6.0.0
+  checksum: cd7ea1594dd744a2445ff76940f395457e149555405127e1c008a630f9c9fe5b7b4759446b62a8cb6d083f1a027d9353bfb3c8a06160811dd0eb66bae8890103
   languageName: node
   linkType: hard
 
@@ -6461,21 +6503,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wdio/selenium-standalone-service@npm:^7.19.0":
-  version: 7.19.0
-  resolution: "@wdio/selenium-standalone-service@npm:7.19.0"
+"@wdio/selenium-standalone-service@npm:^8.0.6":
+  version: 8.0.6
+  resolution: "@wdio/selenium-standalone-service@npm:8.0.6"
   dependencies:
-    "@types/fs-extra": ^9.0.1
-    "@types/node": ^17.0.4
     "@types/selenium-standalone": ^7.0.0
-    "@wdio/config": 7.19.0
-    "@wdio/logger": 7.19.0
-    "@wdio/types": 7.19.0
-    fs-extra: ^10.0.0
-    selenium-standalone: ^8.0.3
-  peerDependencies:
-    "@wdio/cli": ^7.0.0
-  checksum: 04d1d6b4a8fb77bd3aa0748f45c9b889822ae607d46b14960e029029ea6075434146b6cb37d474fe3548ed08ac2477b99b3f5d1cc1cf326bffe5d0d81ae7fd31
+    "@wdio/config": 8.0.6
+    "@wdio/logger": 8.0.0
+    "@wdio/types": 8.0.6
+    selenium-standalone: ^8.2.1
+  checksum: 812e8c7700361550d6a968f6189f139c220ae2bec978aa55e1a189d04ff2158e38427175b17fce55a964edff78abf6f6a676c15bc843e0bbf233f1aaa31c9f71
   languageName: node
   linkType: hard
 
@@ -6539,6 +6576,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@wdio/types@npm:8.0.6":
+  version: 8.0.6
+  resolution: "@wdio/types@npm:8.0.6"
+  dependencies:
+    "@types/node": ^18.0.0
+  checksum: bb9f7037b45313f9ef2a8f78647ae4fd97f9792be91c8f86ca5c2e8484ba941bbfafb9813990338d014064526102b682ac33c02895dcadf885a5727ce6fcf963
+  languageName: node
+  linkType: hard
+
 "@wdio/utils@npm:7.16.14":
   version: 7.16.14
   resolution: "@wdio/utils@npm:7.16.14"
@@ -6568,6 +6614,17 @@ __metadata:
     "@wdio/logger": 7.7.0
     "@wdio/types": 7.7.3
   checksum: 7383024b31262e80d45e9aa8642272c64a8ad94b97a30f55a6a72f9f7a9ae84407abeffaac2cc245371cd84978003bd3a0578d51caaf55d28914ec4d691d5535
+  languageName: node
+  linkType: hard
+
+"@wdio/utils@npm:8.0.6":
+  version: 8.0.6
+  resolution: "@wdio/utils@npm:8.0.6"
+  dependencies:
+    "@wdio/logger": 8.0.0
+    "@wdio/types": 8.0.6
+    p-iteration: ^1.1.8
+  checksum: 643c4b0c8f1cc66ea2e75a37c1d94e8ab0f08985ece2b04bda8f9dcfe382f169e57c64575d3c05c7daf2d72865b59775a750a52c83ddc0bcc0106c945bd8b54d
   languageName: node
   linkType: hard
 
@@ -7043,7 +7100,7 @@ __metadata:
     "@wdio/cli": ^7.19.0
     "@wdio/cucumber-framework": ^7.7.3
     "@wdio/local-runner": ^7.19.0
-    "@wdio/selenium-standalone-service": ^7.19.0
+    "@wdio/selenium-standalone-service": ^8.0.6
     "@wdio/spec-reporter": ^7.19.0
     "@wdio/sync": ^7.19.0
     arkit: ^1.6.4
@@ -9279,6 +9336,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"chalk@npm:^5.1.2":
+  version: 5.1.2
+  resolution: "chalk@npm:5.1.2"
+  checksum: 0a2a4dc837962a60f5d84967ac7ae1cd97b287b6e2c38306b4e5b76be4d2a62f49087e6cdea008aa1f2c4ce4f357174f48e9bda289400424cda1ea494ce6842e
+  languageName: node
+  linkType: hard
+
 "char-regex@npm:^1.0.2":
   version: 1.0.2
   resolution: "char-regex@npm:1.0.2"
@@ -10851,6 +10915,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"decamelize@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "decamelize@npm:6.0.0"
+  checksum: 8fb42ce622e91f91dd66cded5b82f9d765f06ae37db2a5842eb2a1b4a059ca8e1836cce60ef366fa4dbb50fb9b3e7e517db0b81f042ae2ce353cd9a82e81fb0d
+  languageName: node
+  linkType: hard
+
 "decimal.js@npm:^10.2.0":
   version: 10.2.1
   resolution: "decimal.js@npm:10.2.1"
@@ -10938,6 +11009,13 @@ __metadata:
   version: 0.1.3
   resolution: "deep-is@npm:0.1.3"
   checksum: 3de58f86af4dec86c8be531a5abaf2e6d8ea98fa2f1d81a3a778d0d8df920ee282043a6ef05bfb4eb699c8551df9ac1b808d4dc71d54cc40ab1efa5ce8792943
+  languageName: node
+  linkType: hard
+
+"deepmerge-ts@npm:^4.2.2":
+  version: 4.2.2
+  resolution: "deepmerge-ts@npm:4.2.2"
+  checksum: 66c5f976a46e2f84a1052031e3d5eddd680007a78472b395cf953b9ed0df13e0d79f1e56f54c08527dac374b78504876e2bef9aa40034ef4867bf76d51ea8067
   languageName: node
   linkType: hard
 
@@ -13776,6 +13854,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"find-up@npm:^6.3.0":
+  version: 6.3.0
+  resolution: "find-up@npm:6.3.0"
+  dependencies:
+    locate-path: ^7.1.0
+    path-exists: ^5.0.0
+  checksum: 6f7dcfa2f01fadfbabfad9226350317e83f5eff64f29dbeb52a50d28ba43a8f018f7bcdb92ba1513552ff730e3043b54c3f320a7bdc1dcf04e53e2d921291d68
+  languageName: node
+  linkType: hard
+
 "find-versions@npm:^4.0.0":
   version: 4.0.0
   resolution: "find-versions@npm:4.0.0"
@@ -14528,6 +14616,19 @@ fsevents@^1.2.7:
     once: ^1.3.0
     path-is-absolute: ^1.0.0
   checksum: 789977b52432865bd63846da5c75a6efc2c56abdc0cb5ffcdb8e91eeb67a58fa5594c1195d18b2b4aff99675b0739ed6bd61024b26562e0cca18c8f993efdc82
+  languageName: node
+  linkType: hard
+
+"glob@npm:^8.0.3":
+  version: 8.0.3
+  resolution: "glob@npm:8.0.3"
+  dependencies:
+    fs.realpath: ^1.0.0
+    inflight: ^1.0.4
+    inherits: 2
+    minimatch: ^5.0.1
+    once: ^1.3.0
+  checksum: d2ba6b518e9613a8e49df2c28a442fa3e0361e8eaaad25187c62c9f94765c1ed31ce59ddefe6f56f74211f8d211707e6afd6363f93c5a6cfe2863bb1d4a1feef
   languageName: node
   linkType: hard
 
@@ -15299,6 +15400,15 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"hosted-git-info@npm:^4.0.1":
+  version: 4.1.0
+  resolution: "hosted-git-info@npm:4.1.0"
+  dependencies:
+    lru-cache: ^6.0.0
+  checksum: e72632623d2fd9e7b4da0d3eeedd20ab07d11d11c7ed4d1b23b784a30af2068d711f743236ca6040bee9873c66a58dbec7112924f0ca519d803c0c29a76b65b0
+  languageName: node
+  linkType: hard
+
 "hpack.js@npm:^2.1.6":
   version: 2.1.6
   resolution: "hpack.js@npm:2.1.6"
@@ -15825,6 +15935,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"import-meta-resolve@npm:^2.1.0":
+  version: 2.2.0
+  resolution: "import-meta-resolve@npm:2.2.0"
+  checksum: de57f51270836682bb28aefa7ca69293ab5c010a0c4e7eebab0880b6a0ee49b9ff10e2a7beab188c0622c73a615592ed5362bddbecfe5000404d3c30669d309f
+  languageName: node
+  linkType: hard
+
 "imurmurhash@npm:^0.1.4":
   version: 0.1.4
   resolution: "imurmurhash@npm:0.1.4"
@@ -16308,6 +16425,15 @@ fsevents@^1.2.7:
   dependencies:
     has: ^1.0.3
   checksum: caa2b30873ed14dff76e5351e3c55a677b890cf19cc4263e9894702eb4bd64f81ce78552daad878ba72adcdc9e62cad45ca57928fc8b4bdc84a7ff8acf934389
+  languageName: node
+  linkType: hard
+
+"is-core-module@npm:^2.5.0":
+  version: 2.11.0
+  resolution: "is-core-module@npm:2.11.0"
+  dependencies:
+    has: ^1.0.3
+  checksum: a17868d944c75682438e638a6dd79fc1485f9ca34ba63d83c070d46504e079749fed241267952ac69f18097fd50cac5d9406704d4667d94fb9debbff4aa3d263
   languageName: node
   linkType: hard
 
@@ -18711,6 +18837,15 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"locate-path@npm:^7.1.0":
+  version: 7.1.1
+  resolution: "locate-path@npm:7.1.1"
+  dependencies:
+    p-locate: ^6.0.0
+  checksum: 1471123c13a6b0053a72eafb9b28cacbc6f6843152510bbc2606472c5b3b5165eeefc972cc660bcd63a49251977cd98cfe7bed2c7e0d36d9bf9681ee0ed3b2ab
+  languageName: node
+  linkType: hard
+
 "lodash-es@npm:^4.17.21":
   version: 4.17.21
   resolution: "lodash-es@npm:4.17.21"
@@ -19516,6 +19651,15 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"minimatch@npm:^5.0.1":
+  version: 5.1.1
+  resolution: "minimatch@npm:5.1.1"
+  dependencies:
+    brace-expansion: ^2.0.1
+  checksum: 111d2130184059a3431a006568babb4b64f2dc1d5c44137ce41981dfd5fbf518219b4c50be0970e4c48d7fe9a56da232771cf2a07ee27448540d0271f038fc55
+  languageName: node
+  linkType: hard
+
 "minimist@npm:^1.1.1, minimist@npm:^1.1.3, minimist@npm:^1.2.0, minimist@npm:^1.2.5":
   version: 1.2.5
   resolution: "minimist@npm:1.2.5"
@@ -20153,6 +20297,18 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"normalize-package-data@npm:^3.0.2":
+  version: 3.0.3
+  resolution: "normalize-package-data@npm:3.0.3"
+  dependencies:
+    hosted-git-info: ^4.0.1
+    is-core-module: ^2.5.0
+    semver: ^7.3.4
+    validate-npm-package-license: ^3.0.1
+  checksum: dbe6efe1eee60f09e4c74ccac874779291d7c54c5682f2b81c866b7d42cfca04049b922ac9d8ced63338323bef939d3f968d9b33671fb6178c24d1d4e48ca7dd
+  languageName: node
+  linkType: hard
+
 "normalize-path@npm:^2.0.1, normalize-path@npm:^2.1.1":
   version: 2.1.1
   resolution: "normalize-path@npm:2.1.1"
@@ -20786,6 +20942,15 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"p-limit@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "p-limit@npm:4.0.0"
+  dependencies:
+    yocto-queue: ^1.0.0
+  checksum: a89990886f6cdaef4ebe84d4e8112baa0c31863760913fe9b615550b9384bfcd8401c3f95a016f27560f62f57e57396f585c1c67fcd23f3a8a38a8bb83163694
+  languageName: node
+  linkType: hard
+
 "p-locate@npm:^2.0.0":
   version: 2.0.0
   resolution: "p-locate@npm:2.0.0"
@@ -20819,6 +20984,15 @@ fsevents@^1.2.7:
   dependencies:
     p-limit: ^3.0.2
   checksum: a233d775c870e00c734adabd29f66f93824df076683c0d5a2dc16e5285b02d80c1bf3bab43b9881e4a5b16b37bb86f1922aebb094674703d30a4973041d5c0f6
+  languageName: node
+  linkType: hard
+
+"p-locate@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "p-locate@npm:6.0.0"
+  dependencies:
+    p-limit: ^4.0.0
+  checksum: 2ec6645167e9837ade8649f76dea5c67782e744a50d4ec39a687f1558623e3170278d5958747446f2015c1ffe22175b4a6a34a16c9a6107962aed2aad5654657
   languageName: node
   linkType: hard
 
@@ -21003,6 +21177,18 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"parse-json@npm:^5.2.0":
+  version: 5.2.0
+  resolution: "parse-json@npm:5.2.0"
+  dependencies:
+    "@babel/code-frame": ^7.0.0
+    error-ex: ^1.3.1
+    json-parse-even-better-errors: ^2.3.0
+    lines-and-columns: ^1.1.6
+  checksum: 65b1e494a51862340248f542666712830c7b6f4d632ca099520eeacb163275f35cbbcf72643cab1d8a71c3cdf87dcd0a7e03c685c7ac1068d24b49c915a7e884
+  languageName: node
+  linkType: hard
+
 "parse-ms@npm:^2.1.0":
   version: 2.1.0
   resolution: "parse-ms@npm:2.1.0"
@@ -21108,6 +21294,13 @@ fsevents@^1.2.7:
   version: 4.0.0
   resolution: "path-exists@npm:4.0.0"
   checksum: 6ab15000c5bea4f3e6e6b651983276e27ee42907ea29f5bd68f0d5c425c22f1664ab53c355099723f59b0bfd31aa52d29ea499e1843bf62543e045698f4c77b2
+  languageName: node
+  linkType: hard
+
+"path-exists@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "path-exists@npm:5.0.0"
+  checksum: d0f808f229363df8564a293287faa599eae2edae9b95ea582374df0deee5945fc5497dbdf06a6f382ab15d956069262cdab89fa06447ca404af210aac2e95758
   languageName: node
   linkType: hard
 
@@ -22550,6 +22743,17 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"read-pkg-up@npm:^9.1.0":
+  version: 9.1.0
+  resolution: "read-pkg-up@npm:9.1.0"
+  dependencies:
+    find-up: ^6.3.0
+    read-pkg: ^7.1.0
+    type-fest: ^2.5.0
+  checksum: f38d2fd48f50c0ca405f28c70db4c2aa350224176c92a83877767ae803b659b9027e5d9638c0d695d22a80d2b8a922d183d06b4ca336391a5991168a424846b7
+  languageName: node
+  linkType: hard
+
 "read-pkg@npm:^1.0.0":
   version: 1.1.0
   resolution: "read-pkg@npm:1.1.0"
@@ -22603,6 +22807,18 @@ fsevents@^1.2.7:
     parse-json: ^5.0.0
     type-fest: ^0.6.0
   checksum: 641102f0955f64304f97ed388bfe3b7ce55d74b1ffe1be06be1ae75479ce4910aa7177460d1982af6963f80b293a25f25d593a52a4328d941fd9b7d89fde2dbf
+  languageName: node
+  linkType: hard
+
+"read-pkg@npm:^7.1.0":
+  version: 7.1.0
+  resolution: "read-pkg@npm:7.1.0"
+  dependencies:
+    "@types/normalize-package-data": ^2.4.1
+    normalize-package-data: ^3.0.2
+    parse-json: ^5.2.0
+    type-fest: ^2.0.0
+  checksum: 93196dfacbd02a5c3242aae929591dbba8688b85b7d063498d1bd086e4e6ea446202521ff3c6117d01c7cfba4841cae1e3d6ac2c270b91d7fa6c086206c54745
   languageName: node
   linkType: hard
 
@@ -23773,9 +23989,9 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"selenium-standalone@npm:^8.0.3":
-  version: 8.0.10
-  resolution: "selenium-standalone@npm:8.0.10"
+"selenium-standalone@npm:^8.2.1":
+  version: 8.2.4
+  resolution: "selenium-standalone@npm:8.2.4"
   dependencies:
     commander: ^9.0.0
     cross-spawn: ^7.0.3
@@ -23793,7 +24009,7 @@ resolve@^2.0.0-next.3:
     yauzl: ^2.10.0
   bin:
     selenium-standalone: bin/selenium-standalone
-  checksum: 982e397ea0f86b55b8fc2a58a5277bbaa7bd2f2331cebde4470875f4037d8bb2a2dbff4db1aa98eda6bcab294683ccb4b4cfe8ceac832745f21ce2fc2a0c7b7e
+  checksum: d0243cfac98c688881562c441e9efc34ef872f5a62c3d9f5fd602d9fceb8da102513877ccd13c843dcc766c53f9cdf02d0d7c64fa24d0cbd9b3d51b1acd068ac
   languageName: node
   linkType: hard
 
@@ -25938,6 +26154,13 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
+"type-fest@npm:^2.0.0, type-fest@npm:^2.5.0":
+  version: 2.19.0
+  resolution: "type-fest@npm:2.19.0"
+  checksum: a3a5788e9c3703dcb71d907e4d2c6a0801bf6b553bb7fdbed4103487b35c3d935b04a3d509a8592f71ce926d07cc1ffdc009c7440605514119449d4d5e77f11b
+  languageName: node
+  linkType: hard
+
 "type-is@npm:~1.6.17, type-is@npm:~1.6.18":
   version: 1.6.18
   resolution: "type-is@npm:1.6.18"
@@ -27932,6 +28155,13 @@ resolve@^2.0.0-next.3:
   version: 0.1.0
   resolution: "yocto-queue@npm:0.1.0"
   checksum: 096c3b40beb2804659539be1605a35c58eb0c85285f94b77b3e924f42ee265c1a40bf9f4153770039517146b469a964d51742395f35ca8135fc9f7e4982b785d
+  languageName: node
+  linkType: hard
+
+"yocto-queue@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "yocto-queue@npm:1.0.0"
+  checksum: eaff1ad82d6c3045d11dae2516983ab09409714f89ae483a616c25039863290628811b99042927a187e133815f9d5313f095bc80e455275527d760112d8b2f94
   languageName: node
   linkType: hard
 
