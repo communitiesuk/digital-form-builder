@@ -88,18 +88,22 @@ export class FormComponent extends ComponentBase {
     const optionalPostfix =
       isOptional && options.optionalText !== false ? optionalText : "";
     this.lang = formData.lang;
-    const label = options.hideTitle
+    const labelTitle = options.hideTitle
       ? ""
       : `${this.localisedString(this.title)}${optionalPostfix}`;
 
     const name = this.name;
+    const labelClasses = options.isHeading ? "govuk-label--s" : "";
+
+    let label = {
+      text: labelTitle,
+      classes: labelClasses,
+      isPageHeading: options.isHeading ?? true,
+    };
 
     const viewModel: ViewModel = {
       ...super.getViewModel(formData, errors),
-      label: {
-        text: label,
-        classes: "govuk-label--s",
-      },
+      label: label,
       id: name,
       name: name,
       value: formData[name],

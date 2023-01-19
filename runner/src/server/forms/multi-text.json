@@ -1,0 +1,71 @@
+{
+  "metadata": {},
+  "startPage": "/first-page",
+  "pages": [
+    {
+      "title": "First page",
+      "path": "/first-page",
+      "components": [
+        {
+          "name": "HoOkHN",
+          "options": {
+            "required": true,
+            "maxWords": "500"
+          },
+          "type": "MultilineTextField",
+          "title": "test",
+          "hint": "test ",
+          "isHeading": true
+        },
+        {
+          "name": "zcvaTw",
+          "options": {
+            "required": false,
+            "maxWords": "500"
+          },
+          "type": "MultilineTextField",
+          "title": "optional field 1",
+          "isHeading": false
+        },
+        {
+          "name": "HUHTgz",
+          "options": {
+            "required": false,
+            "maxWords": "500"
+          },
+          "type": "MultilineTextField",
+          "title": "optional 2",
+          "isHeading": false
+        }
+      ],
+      "next": [
+        {
+          "path": "/second-page"
+        }
+      ]
+    },
+    {
+      "path": "/second-page",
+      "title": "Second page",
+      "components": [],
+      "next": [
+        {
+          "path": "/summary"
+        }
+      ]
+    },
+    {
+      "title": "Summary",
+      "path": "/summary",
+      "controller": "./pages/summary.js",
+      "components": []
+    }
+  ],
+  "lists": [],
+  "sections": [],
+  "conditions": [],
+  "fees": [],
+  "outputs": [],
+  "version": 2,
+  "skipSummary": false
+}

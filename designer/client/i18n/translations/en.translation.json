@@ -84,6 +84,10 @@
     "titleField": {
       "helpText": "Enter the name to show for this field",
       "title": "Title"
+    },
+    "isHeadingOption": {
+      "helpText": "Tick this box if the title for the field is not a heading",
+      "title": "Title heading"
     }
   },
   "component": {

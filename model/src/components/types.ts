@@ -82,6 +82,7 @@ interface TextFieldBase {
     classes?: string;
     allow?: string;
     autocomplete?: string;
+    isHeading?: boolean;
   };
   schema: {
     max?: number;
