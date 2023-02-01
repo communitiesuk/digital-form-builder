@@ -31,7 +31,7 @@
           <p class="govuk-body">Total cost: £{{fees.total / 100 }}</p>
         {% endif %}
 
-        {% if not result.error  %}
+       
             <form method="post" enctype="multipart/form-data" autocomplete="off" novalidate>
               <input type="hidden" name="crumb" value="{{crumb}}"/>
 
@@ -63,7 +63,7 @@
                     {% endif %}
                 </button>
             </form>
-        {% endif %}
+   
       </div>
     </div>
   </div>

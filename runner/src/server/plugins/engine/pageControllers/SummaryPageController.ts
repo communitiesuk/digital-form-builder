@@ -127,37 +127,6 @@ export class SummaryPageController extends PageController {
       );
       this.setFeedbackDetails(summaryViewModel, request);
 
-      // redirect user to start page if there are incomplete form errors
-      if (summaryViewModel.result.error) {
-        request.logger.error(
-          `SummaryPage Error`,
-          summaryViewModel.result.error
-        );
-        /** defaults to the first page */
-        // @ts-ignore - tsc reports an error here, ignoring so docs can be generated (does not cause eslint errors otherwise). Remove when properly typed
-        let startPageRedirect = redirectTo(
-          request,
-          h,
-          `/${model.basePath}${model.def.pages[0].path}`
-        );
-        const startPage = model.def.startPage;
-
-        // @ts-ignore - tsc reports an error here, ignoring so docs can be generated (does not cause eslint errors otherwise). Remove when properly typed
-        if (startPage.startsWith("http")) {
-          // @ts-ignore - tsc reports an error here, ignoring so docs can be generated (does not cause eslint errors otherwise). Remove when properly typed
-          startPageRedirect = redirectTo(request, h, startPage);
-        } else if (model.def.pages.find((page) => page.path === startPage)) {
-          // @ts-ignore - tsc reports an error here, ignoring so docs can be generated (does not cause eslint errors otherwise). Remove when properly typed
-          startPageRedirect = redirectTo(
-            request,
-            h,
-            `/${model.basePath}${startPage}`
-          );
-        }
-
-        return startPageRedirect;
-      }
-
       /**
        * If a form is configured with a declaration, a checkbox will be rendered with the configured declaration text.
        * If the user does not agree to the declaration, the page will be rerendered with a warning.

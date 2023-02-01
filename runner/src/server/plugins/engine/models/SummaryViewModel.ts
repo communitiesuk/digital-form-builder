@@ -43,22 +43,16 @@ export class SummaryViewModel extends ViewModel {
       stripUnknown: true,
     });
 
-    if (result.error) {
-      this.processErrors(result, details);
-    } else {
-      this.fees = FeesModel(model, state);
-      this._webhookData = WebhookModel(
-        relevantPages,
-        details,
-        model,
-        this.fees
-      );
-      this._webhookData = this.addFeedbackSourceDataToWebhook(
-        this._webhookData,
-        model,
-        request
-      );
-    }
+    this.processErrors(result, details);
+
+    this.fees = FeesModel(model, state);
+    this._webhookData = WebhookModel(relevantPages, details, model, this.fees);
+    this._webhookData = this.addFeedbackSourceDataToWebhook(
+      this._webhookData,
+      model,
+      request
+    );
+
     this.result = result;
     this.value = result.value;
     this.name = model.name;
