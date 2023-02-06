@@ -41,9 +41,7 @@ export const initialiseSession: Plugin<InitialiseSession> = {
           .join("/", payload.group, redirectPath)
           .normalize();
 
-        const p = "/" + payload.group + redirectPath;
-
-        return h.redirect(p);
+        return h.redirect(redirect);
       },
       options: {
         description: `Activates a session initialised from POST /session/{formId}. Redirects a user to the {formId} stored within the token.`,
