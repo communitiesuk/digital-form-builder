@@ -100,6 +100,10 @@ export class CacheService {
 
     const initialisedSession = await this.cache.get(this.JWTKey(jwt));
 
+    if (initialisedSession.callback.concurrentSessionId) {
+      userSessionKey.id = `${userSessionKey.id}:${initialisedSession.callback.concurrentSessionId}`;
+    }
+
     if (config.overwriteInitialisedSession) {
       request.logger.info("Replacing user session with initialisedSession");
       this.cache.set(userSessionKey, initialisedSession, sessionTimeout);
@@ -113,9 +117,14 @@ export class CacheService {
       this.cache.set(userSessionKey, mergedSession, sessionTimeout);
     }
 
+    let redirectPath = initialisedSession?.callback?.redirectPath ?? "";
+    if (initialisedSession.callback.concurrentSessionId) {
+      redirectPath = `${redirectPath}?u=${initialisedSession.callback.concurrentSessionId}`;
+    }
+
     await this.cache.drop(this.JWTKey(jwt));
     return {
-      redirectPath: initialisedSession?.callback?.redirectPath ?? "",
+      redirectPath: redirectPath,
     };
   }
 
@@ -133,12 +142,15 @@ export class CacheService {
    * @param additionalIdentifier - appended to the id
    */
   Key(request: HapiRequest, additionalIdentifier?: ADDITIONAL_IDENTIFIER) {
-    if (!request?.yar?.id) {
-      throw Error("No session ID found");
+    let id = `${request.yar.id}:${request.params.id}`;
+
+    if (request.query.u) {
+      id = `${id}:${request.query.u}`;
     }
+
     return {
       segment: partition,
-      id: `${request.yar.id}:${request.params.id}${additionalIdentifier ?? ""}`,
+      id: `${id}${additionalIdentifier ?? ""}`,
     };
   }
 

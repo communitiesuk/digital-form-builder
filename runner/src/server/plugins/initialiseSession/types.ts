@@ -7,6 +7,7 @@ export type InitialiseSessionOptions = {
   redirectPath?: string;
   message?: string;
   returnUrl?: string;
+  concurrentSessionId?: string;
 };
 
 export type DecodedSessionToken = {

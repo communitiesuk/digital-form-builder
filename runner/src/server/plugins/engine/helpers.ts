@@ -15,7 +15,7 @@ export function proceed(
   if (typeof returnUrl === "string" && returnUrl.startsWith("/")) {
     return h.redirect(returnUrl);
   } else {
-    return redirectTo(request, h, nextUrl);
+    return redirectTo(request, h, nextUrl, request.query);
   }
 }
 

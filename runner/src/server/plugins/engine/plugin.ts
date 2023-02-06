@@ -46,7 +46,12 @@ function getStartPageRedirect(
   if (startPage.startsWith("http")) {
     startPageRedirect = redirectTo(request, h, startPage);
   } else {
-    startPageRedirect = redirectTo(request, h, `/${id}/${startPage}`);
+    startPageRedirect = redirectTo(
+      request,
+      h,
+      `/${id}/${startPage}`,
+      request.query
+    );
   }
 
   return startPageRedirect;
