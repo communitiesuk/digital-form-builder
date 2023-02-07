@@ -15,7 +15,7 @@ export function proceed(
   if (typeof returnUrl === "string" && returnUrl.startsWith("/")) {
     return h.redirect(returnUrl);
   } else {
-    return redirectTo(request, h, nextUrl, request.query);
+    return redirectTo(request, h, nextUrl);
   }
 }
 
@@ -71,7 +71,9 @@ export function redirectTo(
   if (targetUrl.startsWith("http")) {
     return h.redirect(targetUrl);
   }
-
+  if (request.query.aid) {
+    params.aid = request.query.aid;
+  }
   const url = redirectUrl(request, targetUrl, params);
   return h.redirect(url);
 }

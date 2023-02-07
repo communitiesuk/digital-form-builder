@@ -100,8 +100,10 @@ export class CacheService {
 
     const initialisedSession = await this.cache.get(this.JWTKey(jwt));
 
-    if (initialisedSession.metaData?.application_id) {
-      userSessionKey.id = `${userSessionKey.id}:${initialisedSession.metaData.application_id}`;
+    const application_id = initialisedSession.metadata?.application_id;
+
+    if (typeof application_id !== "undefined" && application_id) {
+      userSessionKey.id = `${userSessionKey.id}:${application_id}`;
     }
 
     if (config.overwriteInitialisedSession) {
@@ -118,8 +120,8 @@ export class CacheService {
     }
 
     let redirectPath = initialisedSession?.callback?.redirectPath ?? "";
-    if (initialisedSession.metaData.application_id) {
-      redirectPath = `${redirectPath}?u=${initialisedSession.metaData.application_id}`;
+    if (typeof application_id !== "undefined" && application_id) {
+      redirectPath = `${redirectPath}?aid=${application_id}`;
     }
 
     await this.cache.drop(this.JWTKey(jwt));
@@ -145,7 +147,7 @@ export class CacheService {
     let id = `${request.yar.id}:${request.params.id}`;
 
     if (request.query.u) {
-      id = `${id}:${request.query.u}`;
+      id = `${id}:${request.query.aid}`;
     }
 
     return {
