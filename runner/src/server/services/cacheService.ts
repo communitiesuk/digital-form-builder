@@ -100,8 +100,8 @@ export class CacheService {
 
     const initialisedSession = await this.cache.get(this.JWTKey(jwt));
 
-    if (initialisedSession.callback.concurrentSessionId) {
-      userSessionKey.id = `${userSessionKey.id}:${initialisedSession.callback.concurrentSessionId}`;
+    if (initialisedSession.metaData.application_id) {
+      userSessionKey.id = `${userSessionKey.id}:${initialisedSession.metaData.application_id}`;
     }
 
     if (config.overwriteInitialisedSession) {
@@ -118,8 +118,8 @@ export class CacheService {
     }
 
     let redirectPath = initialisedSession?.callback?.redirectPath ?? "";
-    if (initialisedSession.callback.concurrentSessionId) {
-      redirectPath = `${redirectPath}?u=${initialisedSession.callback.concurrentSessionId}`;
+    if (initialisedSession.metaData.application_id) {
+      redirectPath = `${redirectPath}?u=${initialisedSession.metaData.application_id}`;
     }
 
     await this.cache.drop(this.JWTKey(jwt));
