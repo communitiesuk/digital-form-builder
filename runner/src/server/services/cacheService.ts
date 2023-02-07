@@ -100,7 +100,7 @@ export class CacheService {
 
     const initialisedSession = await this.cache.get(this.JWTKey(jwt));
 
-    if (initialisedSession.metaData.application_id) {
+    if (initialisedSession.metaData?.application_id) {
       userSessionKey.id = `${userSessionKey.id}:${initialisedSession.metaData.application_id}`;
     }
 
