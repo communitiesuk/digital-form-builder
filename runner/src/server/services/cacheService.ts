@@ -146,7 +146,7 @@ export class CacheService {
   Key(request: HapiRequest, additionalIdentifier?: ADDITIONAL_IDENTIFIER) {
     let id = `${request.yar.id}:${request.params.id}`;
 
-    if (request.query.u) {
+    if (request.query.aid) {
       id = `${id}:${request.query.aid}`;
     }
 
