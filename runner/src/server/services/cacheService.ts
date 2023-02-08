@@ -105,7 +105,7 @@ export class CacheService {
 
     if (typeof application_id !== "undefined" && application_id) {
       userSessionKey.id = `${userSessionKey.id}:${application_id}`;
-      redirectPath = `${redirectPath}?application_id=${application_id}`;
+      redirectPath = `${redirectPath}?form_session_identifier=${application_id}`;
     }
 
     if (config.overwriteInitialisedSession) {
@@ -143,8 +143,8 @@ export class CacheService {
   Key(request: HapiRequest, additionalIdentifier?: ADDITIONAL_IDENTIFIER) {
     let id = `${request.yar.id}:${request.params.id}`;
 
-    if (request.query.application_id) {
-      id = `${id}:${request.query.application_id}`;
+    if (request.query.form_session_identifier) {
+      id = `${id}:${request.query.form_session_identifier}`;
     }
 
     return {

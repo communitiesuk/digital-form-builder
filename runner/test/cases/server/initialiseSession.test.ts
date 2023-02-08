@@ -203,7 +203,7 @@ suite("InitialiseSession", () => {
       });
       expect(getResponse.statusCode).to.equal(302);
       expect(getResponse.headers.location).to.equal(
-        "/test/summary?application_id=abc=123"
+        "/test/summary?form_session_identifier=abc=123"
       );
     });
   });
