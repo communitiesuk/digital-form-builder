@@ -101,9 +101,11 @@ export class CacheService {
     const initialisedSession = await this.cache.get(this.JWTKey(jwt));
 
     const application_id = initialisedSession.metadata?.application_id;
+    let redirectPath = initialisedSession?.callback?.redirectPath ?? "";
 
     if (typeof application_id !== "undefined" && application_id) {
       userSessionKey.id = `${userSessionKey.id}:${application_id}`;
+      redirectPath = `${redirectPath}?application_id=${application_id}`;
     }
 
     if (config.overwriteInitialisedSession) {
@@ -117,11 +119,6 @@ export class CacheService {
       };
       request.logger.info("Merging user session with initialisedSession");
       this.cache.set(userSessionKey, mergedSession, sessionTimeout);
-    }
-
-    let redirectPath = initialisedSession?.callback?.redirectPath ?? "";
-    if (typeof application_id !== "undefined" && application_id) {
-      redirectPath = `${redirectPath}?application_id=${application_id}`;
     }
 
     await this.cache.drop(this.JWTKey(jwt));
