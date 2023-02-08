@@ -121,7 +121,7 @@ export class CacheService {
 
     let redirectPath = initialisedSession?.callback?.redirectPath ?? "";
     if (typeof application_id !== "undefined" && application_id) {
-      redirectPath = `${redirectPath}?aid=${application_id}`;
+      redirectPath = `${redirectPath}?application_id=${application_id}`;
     }
 
     await this.cache.drop(this.JWTKey(jwt));
@@ -146,8 +146,8 @@ export class CacheService {
   Key(request: HapiRequest, additionalIdentifier?: ADDITIONAL_IDENTIFIER) {
     let id = `${request.yar.id}:${request.params.id}`;
 
-    if (request.query.aid) {
-      id = `${id}:${request.query.aid}`;
+    if (request.query.application_id) {
+      id = `${id}:${request.query.application_id}`;
     }
 
     return {

@@ -71,8 +71,8 @@ export function redirectTo(
   if (targetUrl.startsWith("http")) {
     return h.redirect(targetUrl);
   }
-  if (request.query.aid) {
-    params.aid = request.query.aid;
+  if (request.query.application_id) {
+    params.application_id = request.query.application_id;
   }
   const url = redirectUrl(request, targetUrl, params);
   return h.redirect(url);
