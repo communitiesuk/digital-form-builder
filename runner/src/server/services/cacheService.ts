@@ -104,10 +104,7 @@ export class CacheService {
       initialisedSession.metadata?.form_session_identifier;
     let redirectPath = initialisedSession?.callback?.redirectPath ?? "";
 
-    if (
-      typeof form_session_identifier !== "undefined" &&
-      form_session_identifier
-    ) {
+    if (form_session_identifier) {
       userSessionKey.id = `${userSessionKey.id}:${form_session_identifier}`;
       redirectPath = `${redirectPath}?form_session_identifier=${form_session_identifier}`;
     }
