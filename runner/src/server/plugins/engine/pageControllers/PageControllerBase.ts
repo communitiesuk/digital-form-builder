@@ -685,7 +685,10 @@ export class PageControllerBase {
         savedState
       );
 
-      if (config.savePerPage) {
+      const startPage = this.model.def.startPage;
+      const isStartPage = this.path === `${startPage}`;
+
+      if (config.savePerPage && !isStartPage) {
         // Set flag for continous saves on each question?
         const saveViewModel = new SaveViewModel(
           this.title,
