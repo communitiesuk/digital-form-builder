@@ -100,12 +100,16 @@ export class CacheService {
 
     const initialisedSession = await this.cache.get(this.JWTKey(jwt));
 
-    const application_id = initialisedSession.metadata?.application_id;
+    const form_session_identifier =
+      initialisedSession.metadata?.form_session_identifier;
     let redirectPath = initialisedSession?.callback?.redirectPath ?? "";
 
-    if (typeof application_id !== "undefined" && application_id) {
-      userSessionKey.id = `${userSessionKey.id}:${application_id}`;
-      redirectPath = `${redirectPath}?form_session_identifier=${application_id}`;
+    if (
+      typeof form_session_identifier !== "undefined" &&
+      form_session_identifier
+    ) {
+      userSessionKey.id = `${userSessionKey.id}:${form_session_identifier}`;
+      redirectPath = `${redirectPath}?form_session_identifier=${form_session_identifier}`;
     }
 
     if (config.overwriteInitialisedSession) {
