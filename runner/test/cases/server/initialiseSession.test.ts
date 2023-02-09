@@ -194,7 +194,7 @@ suite("InitialiseSession", () => {
       expect(getResponse.headers.location).to.equal("/test");
 
       serverRequestOptions.payload.options.redirectPath = "summary";
-      serverRequestOptions.payload.metadata.application_id = "abc=123";
+      serverRequestOptions.payload.metadata.form_session_identifier = "abc=123";
       postResponse = await server.inject(serverRequestOptions);
       token = JSON.parse(postResponse.payload).token;
 
