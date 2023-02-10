@@ -206,7 +206,7 @@ export class RepeatingFieldPageController extends PageController {
       const { cacheService, statusService } = request.services([]);
       let form_session_identifier = "";
 
-      //TODO quick fix to get sessions working with add another. We should look at a beeter way of passing through the query
+      //TODO quick fix to get sessions working with add another. We should look at a better way of passing through the query
       if (query.form_session_identifier) {
         form_session_identifier = `form_session_identifier=${query.form_session_identifier}`;
       }
