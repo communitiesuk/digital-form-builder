@@ -1,4 +1,4 @@
-import { HapiRequest, HapiResponseToolkit, HapiServer } from "server/types";
+import { HapiRequest, HapiResponseToolkit } from "server/types";
 import { PageController } from "./PageController";
 import { FormModel } from "server/plugins/engine/models";
 import { RepeatingSummaryPageController } from "./RepeatingSummaryPageController";
@@ -49,7 +49,6 @@ export class RepeatingFieldPageController extends PageController {
   saveText: string;
 
   options: RepeatingFieldPage["options"];
-  logger: HapiServer["logger"];
 
   constructor(model: FormModel, pageDef: RepeatingFieldPage) {
     super(model, pageDef);
@@ -204,10 +203,6 @@ export class RepeatingFieldPageController extends PageController {
   makePostRouteHandler() {
     return async (request: HapiRequest, h: HapiResponseToolkit) => {
       const { query } = request;
-      this.logger.info(
-        ["RepeatPagcontroller", "add another"],
-        `add another post hit ${query}`
-      );
       const { cacheService, statusService } = request.services([]);
       let form_session_identifier = "";
 
