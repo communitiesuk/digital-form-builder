@@ -1,6 +1,14 @@
 {% from "file-upload/macro.njk" import govukFileUpload %}
 {% macro FileUploadField(component) %}
+
 <h1>GIDEON IN HERE</h1>
+<div class="my-dropzone"></div>
+
+<script>
+  // Dropzone has been added as a global variable.
+  const dropzone = new Dropzone("div.my-dropzone", { url: "/file/post" });
+</script>
+
   {{ govukFileUpload(component.model) }}
   {% if component.model.value %}
       <p class="govuk-body">{{component.model.existingFileText}}</p>
@@ -10,4 +18,5 @@
             {{component.model.content | safe}}
         </p>
     </div>
+    
 {% endmacro %}
