@@ -68,6 +68,12 @@ export type MultilineTextFieldViewModel = {
   maxwords?: number;
 } & ViewModel;
 
+export type FreeTextFieldViewModel = {
+  maxlength?: number;
+  isCharacterOrWordCount: boolean;
+  maxwords?: number;
+} & ViewModel;
+
 export type ComponentCollectionViewModel = {
   type: string;
   isFormComponent: boolean;

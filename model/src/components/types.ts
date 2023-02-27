@@ -1,6 +1,7 @@
 export enum ComponentTypeEnum {
   TextField = "TextField",
   MultilineTextField = "MultilineTextField",
+  FreeTextField = "FreeTextField",
   YesNoField = "YesNoField",
   DateField = "DateField",
   TimeField = "TimeField",
@@ -29,6 +30,7 @@ export enum ComponentTypeEnum {
 export type ComponentType =
   | "TextField"
   | "MultilineTextField"
+  | "FreeTextField"
   | "YesNoField"
   | "DateField"
   | "TimeField"
@@ -175,10 +177,6 @@ export interface WebsiteFieldComponent extends TextFieldBase {
   };
 }
 
-export interface MultilineTextFieldComponent {
-  type: "MultilineTextField";
-}
-
 export interface TelephoneNumberFieldComponent extends TextFieldBase {
   type: "TelephoneNumberField";
   options: TextFieldBase["options"] & {
@@ -192,6 +190,19 @@ export interface YesNoFieldComponent extends TextFieldBase {
 
 export interface MultilineTextFieldComponent extends TextFieldBase {
   type: "MultilineTextField";
+  options: TextFieldBase["options"] & {
+    customValidationMessage?: string;
+    rows?: number;
+    maxWords?: number;
+  };
+  schema: {
+    max?: number;
+    min?: number;
+  };
+}
+
+export interface FreeTextFieldComponent extends TextFieldBase {
+  type: "FreeTextField";
   options: TextFieldBase["options"] & {
     customValidationMessage?: string;
     rows?: number;

@@ -15,6 +15,14 @@
           "schema": {}
         },
         {
+          "type": "FreeTextField",
+          "name": "freeTextField",
+          "title": "Free text field",
+          "hint": "Help text",
+          "options": {},
+          "schema": {}
+        },
+        {
           "type": "MultilineTextField",
           "name": "multilineTextField",
           "title": "Multiline text field",
