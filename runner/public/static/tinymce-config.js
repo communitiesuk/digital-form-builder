@@ -1,6 +1,8 @@
 tinymce.init({
     selector: `textarea.free-text`,  // change this value according to your HTML
-    skin: 'oxide-dark',
+    skin: 'tinymce-5',
+    branding: false,
+    elementpath: false,
     content_css: 'default',
     height: 150,
     menubar: false,
