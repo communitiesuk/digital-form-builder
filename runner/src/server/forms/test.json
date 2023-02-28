@@ -92,6 +92,16 @@
           "name": "freeTextField",
           "title": "Free text field",
           "hint": "Help text",
+          "options": {
+            "maxWords": "15"
+          },
+          "schema": {}
+        },
+        {
+          "type": "TextField",
+          "name": "textField",
+          "title": "Text field",
+          "hint": "Help text",
           "options": {},
           "schema": {}
         }

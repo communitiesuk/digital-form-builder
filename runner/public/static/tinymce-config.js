@@ -1,5 +1,5 @@
 tinymce.init({
-    selector: `textarea.free-text`,  // change this value according to your HTML
+    selector: `input.free-text`,  // change this value according to your HTML
     skin: 'tinymce-5',
     branding: false,
     elementpath: false,
