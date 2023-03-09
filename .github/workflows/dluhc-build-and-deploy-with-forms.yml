@@ -63,7 +63,7 @@ jobs:
           cf_username: ${{secrets.CF_USERNAME}}
           cf_password: ${{secrets.CF_PASSWORD}}
           # env vars required in the manifest must be declared here
-          command: push funding-service-design-form-runner-dev --docker-image ${{env.IMAGE_REPO_PATH}}/${{env.IMAGE_NAME}}:sha-${{ github.sha }} -f ./manifest.yml --var RSA256_PUBLIC_KEY_BASE64="${{secrets.RSA256_PUBLIC_KEY_BASE64}}"
+          command: push funding-service-design-form-runner-dev --docker-image ${{env.IMAGE_REPO_PATH}}/${{env.IMAGE_NAME}}:sha-${{ github.sha }} -f ./fsd_config/manifest.yml --var RSA256_PUBLIC_KEY_BASE64="${{secrets.RSA256_PUBLIC_KEY_BASE64}}"
 
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -122,7 +122,7 @@ jobs:
           cf_username: ${{secrets.CF_USERNAME}}
           cf_password: ${{secrets.CF_PASSWORD}}
           # env vars required in the manifest must be declared here
-          command: push funding-service-design-form-runner-test --docker-image ${{env.IMAGE_REPO_PATH}}/${{env.IMAGE_NAME}}:sha-${{ github.sha }} --docker-image -f ./manifest.yml --var RSA256_PUBLIC_KEY_BASE64="${{secrets.RSA256_PUBLIC_KEY_BASE64}}"
+          command: push funding-service-design-form-runner-test --docker-image ${{env.IMAGE_REPO_PATH}}/${{env.IMAGE_NAME}}:sha-${{ github.sha }} -f ./fsd_config/manifest.yml --var RSA256_PUBLIC_KEY_BASE64="${{secrets.RSA256_PUBLIC_KEY_BASE64}}"
 
       - name: Set up Python
         uses: actions/setup-python@v2
