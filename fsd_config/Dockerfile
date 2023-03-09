@@ -3,8 +3,8 @@ FROM ghcr.io/communitiesuk/digital-form-builder-dluhc-runner:$BASE_IMAGE_TAG as 
 ARG FORMS_DIR="forms-v3"
 WORKDIR /usr/src/app
 RUN rm -r runner/dist/server/forms && rm -r runner/src && rm -r runner/test
-COPY ./form_jsons/cof_r2/en/* runner/dist/server/forms/
-COPY ./form_jsons/cof_r2/cy/* runner/dist/server/forms/
+COPY ./fsd_config/form_jsons/cof_r2/en/* runner/dist/server/forms/
+COPY ./fsd_config/form_jsons/cof_r2/cy/* runner/dist/server/forms/
 COPY ./config/* runner/config/
 CMD [ "yarn", "runner", "build"]
 
