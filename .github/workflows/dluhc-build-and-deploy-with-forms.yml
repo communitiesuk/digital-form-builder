@@ -5,6 +5,7 @@ permissions:
 
 on:
   workflow_dispatch:
+  push:
 
 env:
   DOCKER_REGISTRY: ghcr.io
