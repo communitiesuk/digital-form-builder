@@ -65,16 +65,16 @@ jobs:
           # env vars required in the manifest must be declared here
           command: push funding-service-design-form-runner-dev --docker-image ${{env.IMAGE_REPO_PATH}}/${{env.IMAGE_NAME}}:sha-${{ github.sha }} -f ./fsd_config/manifest.yml --var RSA256_PUBLIC_KEY_BASE64="${{secrets.RSA256_PUBLIC_KEY_BASE64}}"
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.10.x
-      - name: install dependencies
-        run: python -m pip install --upgrade pip && python -m pip install -r requirements-dev.txt
-      - name: build static assets
-        run: python build.py
-      - name: Install Chromium
-        uses: browser-actions/setup-chrome@latest
+      # - name: Set up Python
+      #   uses: actions/setup-python@v2
+      #   with:
+      #     python-version: 3.10.x
+      # - name: install dependencies
+      #   run: python -m pip install --upgrade pip && python -m pip install -r requirements-dev.txt
+      # - name: build static assets
+      #   run: python build.py
+      # - name: Install Chromium
+      #   uses: browser-actions/setup-chrome@latest
       # Restore once domains are put back (no basic auth)
       # - name: Zap Baseline Scan
       #   uses: zaproxy/action-baseline@v0.6.1
@@ -123,17 +123,6 @@ jobs:
           cf_password: ${{secrets.CF_PASSWORD}}
           # env vars required in the manifest must be declared here
           command: push funding-service-design-form-runner-test --docker-image ${{env.IMAGE_REPO_PATH}}/${{env.IMAGE_NAME}}:sha-${{ github.sha }} -f ./fsd_config/manifest.yml --var RSA256_PUBLIC_KEY_BASE64="${{secrets.RSA256_PUBLIC_KEY_BASE64}}"
-
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.10.x
-      - name: install dependencies
-        run: python -m pip install --upgrade pip && python -m pip install -r requirements-dev.txt
-      - name: build static assets
-        run: python build.py
-      - name: Install Chromium
-        uses: browser-actions/setup-chrome@latest
 
   run-shared-tests_test:
     needs: deploy-to-test
