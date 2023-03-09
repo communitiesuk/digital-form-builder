@@ -10,7 +10,7 @@ on:
 env:
   DOCKER_REGISTRY: ghcr.io
   IMAGE_NAME: "runner"
-  IMAGE_REPO_PATH: "ghcr.io/${{github.repository}}"
+  IMAGE_REPO_PATH: "ghcr.io/${{github.repository_owner}}"
 
 jobs:
   docker-build:
