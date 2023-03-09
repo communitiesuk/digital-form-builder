@@ -8,7 +8,7 @@ on:
       [
         "**/README.md",
         "fsd_config/**",
-        ".github/workflows/dluhc-build-deploy-with-forms.yml",
+        ".github/workflows/dluhc-build-and-deploy-with-forms.yml",
       ]
 
 env:
