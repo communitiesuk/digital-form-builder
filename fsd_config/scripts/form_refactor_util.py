@@ -3,6 +3,8 @@ import json
 import os
 from typing import Sequence
 
+#  TODO make changes to the designer so that we do not need to run this script on every form
+
 FORMS_DIR = (  # assumes being ran from root/scripts directory
     "../form_jsons/public"
 )

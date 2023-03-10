@@ -1,6 +1,7 @@
 import pytest
 from scripts import form_refactor_util
 
+#  TODO make changes to the designer so that we do not need to run this script on every form
 
 @pytest.mark.parametrize(
     "mutation_key", list(form_refactor_util._MUTATIONS.keys())

@@ -89,7 +89,8 @@ form_languages = [
 
 @pytest.mark.parametrize("language", form_languages)
 def test_check_form_json_for_duplicate_field_ids(language):
-    form_json_files = Path(f"form_jsons/public/{language}").glob("*")
+    test_path = f"{Path(__file__).parent.parent.absolute()}/form_jsons/cof_r2/{language}"
+    form_json_files = Path(test_path).glob("*")
     all_form_jsons_with_contained_field_ids = get_form_jsons_with_field_ids(
         form_json_files
     )
@@ -100,9 +101,8 @@ def test_check_form_json_for_duplicate_field_ids(language):
     )
     # Could add check here for duplicates within the same form_json file,
     # the form builder does not currently allow this field_id duplication
-    # witin the same file, so a check is not required.
+    # within the same file, so a check is not required.
     number_of_duplicated_field_ids = len(field_id_duplicates_across_forms)
-
     assert number_of_duplicated_field_ids == 0, "\n".join(
         field_id_duplicates_across_forms
     )
