@@ -25,6 +25,8 @@ export function filter<T>(
 ): Partial<T> {
   const result = {};
 
+  // TODO: lets see if we can cast this (remove ts-ignore to see the issue)
+  // @ts-ignore
   for (const [key, value] of Object.entries(obj)) {
     if (value && predicate(value)) {
       result[key] = value;
