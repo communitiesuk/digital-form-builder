@@ -60,14 +60,14 @@ export class RepeatingFieldPageController extends PageController {
     }
 
     this.options = pageDef?.options ?? DEFAULT_OPTIONS;
-    this.options.summaryDisplayMode ??= DEFAULT_OPTIONS.summaryDisplayMode;
-    this.options.hideRowTitles ??= DEFAULT_OPTIONS.hideRowTitles;
-    this.options.customText ??= DEFAULT_OPTIONS.customText;
-    this.options.customText.columnOneTitle ??=
+    this.options.summaryDisplayMode ?? DEFAULT_OPTIONS.summaryDisplayMode;
+    this.options.hideRowTitles ?? DEFAULT_OPTIONS.hideRowTitles;
+    this.options.customText = DEFAULT_OPTIONS.customText;
+    this.options.customText.columnOneTitle ??
       DEFAULT_OPTIONS.customText.columnOneTitle;
-    this.options.customText.columnTwoTitle ??=
+    this.options.customText.columnTwoTitle ??
       DEFAULT_OPTIONS.customText.columnTwoTitle;
-    this.options.customText.columnThreeTitle ??=
+    this.options.customText.columnThreeTitle ??
       DEFAULT_OPTIONS.customText.columnThreeTitle;
 
     this.isSamePageDisplayMode = this.options.summaryDisplayMode.samePage!;
@@ -137,19 +137,19 @@ export class RepeatingFieldPageController extends PageController {
         const state = await cacheService.getState(request);
         const partialState = this.getPartialState(state, view);
 
-        response.source.context.components &&= response.source.context.components.map(
-          (component) => {
+        response.source.context.components &&
+          response.source.context.components.map((component) => {
             const { model } = component;
             model.value = partialState;
-            model.items &&= model.items.filter(
-              (item) => !state[model.name]?.includes(item.value)
-            );
+            model.items &&
+              model.items.filter(
+                (item) => !state[model.name]?.includes(item.value)
+              );
             return {
               ...component,
               model,
             };
-          }
-        );
+          });
 
         this.addRowsToViewContext(response, state);
         return response;

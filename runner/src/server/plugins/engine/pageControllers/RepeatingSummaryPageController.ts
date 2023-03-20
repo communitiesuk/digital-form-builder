@@ -23,12 +23,12 @@ export class RepeatingSummaryPageController extends PageController {
   }
 
   get getRouteHandler() {
-    this.getRoute ??= this.makeGetRouteHandler();
+    this.getRoute ?? this.makeGetRouteHandler();
     return this.getRoute;
   }
 
   get postRouteHandler() {
-    this.postRoute ??= this.makePostRouteHandler();
+    this.postRoute ?? this.makePostRouteHandler();
     return this.postRoute;
   }
 
