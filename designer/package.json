@@ -4,7 +4,7 @@
   "description": "Cross government digital form builder (designer)",
   "main": "server/index.js",
   "engines": {
-    "node": ">=12"
+    "node": ">=16"
   },
   "scripts": {
     "watch": "NODE_ENV=development webpack",
@@ -21,7 +21,7 @@
     "test-lab": "lab -T test/.transform.js test/.setup.js ./**/*.test.* -S -v -r console -o stdout -r html -o unit-test.html -I version -l",
     "test-lab-cov": "lab -T test/.transform.js test/.setup.js ./**/*.test.* -S -v -t 88 -r console -o stdout -r lcov -o test-coverage/lab/lcov.info -r html -o test-coverage/lab/unit-test.html -r junit -o test-results/lab/unit-test.xml -I version -l",
     "jest": "yarn jest:client && yarn jest:server",
-    "jest:client": "jest --coverage --config=jest.client.config.js",
+    "jest:client": "jest --coverage --config=jest.client.config.js -w",
     "jest:server": "jest --coverage --config=jest.server.config.js --runInBand",
     "jest:watch": "jest --watch",
     "audit": "npm audit --audit-level=high",
@@ -35,11 +35,11 @@
   },
   "license": "SEE LICENSE IN LICENSE",
   "dependencies": {
-    "@hapi/hapi": "^20.0.3",
+    "@hapi/hapi": "^20.2.2",
     "@hapi/inert": "^6.0.1",
     "@hapi/scooter": "6.0.0",
     "@hapi/wreck": "17.0.0",
-    "@xgovformbuilder/govuk-react-jsx": "^4.0.10",
+    "@xgovformbuilder/govuk-react-jsx": "7.1.2",
     "@xgovformbuilder/model": "3.0.0",
     "aws-sdk": "^2.1083.0",
     "blankie": "5.0.0",
@@ -56,7 +56,7 @@
     "joi": "17.2.1",
     "jszip": "^3.7.1",
     "lodash": "^4.17.21",
-    "nanoid": "^3.3.1",
+    "nanoid": "^3.3.4",
     "react-router-dom": "^5.2.0",
     "schmervice": "^1.6.0",
     "vision": "5.4.3",
@@ -81,6 +81,7 @@
     "@babel/register": "7.17.0",
     "@babel/runtime": "7.17.2",
     "@hapi/code": "^8.0.7",
+    "@hapi/eslint-plugin": "^6.0.0",
     "@hapi/lab": "^24.5.1",
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.3",
@@ -120,18 +121,18 @@
     "flat": "5.0.2",
     "govuk-frontend": "^4.0.1",
     "hoek": "^6.1.3",
-    "html-webpack-plugin": "^4.5.0",
+    "html-webpack-plugin": "^4.5.2",
     "i18next-parser": "^3.3.0",
     "jest": "^26.6.3",
     "jsdom": "^19.0.0",
     "lcov-result-merger": "^3.1.0",
     "mini-css-extract-plugin": "^0.11.2",
-    "msw": "^0.38.1",
-    "nodemon": "^2.0.15",
+    "msw": "^0.47.4",
+    "nodemon": "^2.0.20",
     "nunjucks": "3.2.1",
     "postcss": "^8.2.4",
     "postcss-loader": "^4.1.0",
-    "prismjs": "1.23.0",
+    "prismjs": "1.27.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-helmet": "^6.1.0",
@@ -151,8 +152,5 @@
     "webpack-dev-server": "^3.11.0",
     "webpack-node-externals": "^2.5.2",
     "whatwg-fetch": "^3.5.0"
-  },
-  "resolutions": {
-    "dot-prop": "^5.1.1"
   }
 }
