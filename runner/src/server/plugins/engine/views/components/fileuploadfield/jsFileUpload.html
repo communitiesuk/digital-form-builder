@@ -62,7 +62,8 @@
 </div>
 
 <script>
-    const componentKey = '{{component.model.id}}'
+    const componentKey = '{{component.model.id}}';
+    const label = '{{component.model.label.text}}';
 
     const createErrorMessage = (errorMessage) => { // I hate this... but don't want to use innerHTML.
         const container = document.querySelector('form').parentElement;
@@ -183,7 +184,7 @@
             document.querySelector('form > #submit').disabled = true;
             done()
         } else {
-            handleError('Supporting evidence file upload failed');
+            handleError(`${label} file upload failed 1`);
         }
     }
 
@@ -209,7 +210,11 @@
         fileProgress.parentElement.classList.remove('jsfu-progress-bar');
         fileProgress.classList.remove('jsfu-progress-bar__value');
         setHiddenInput(file.name);
-        document.querySelector('form > #submit').disabled = false;
+        setTimeout(() => {
+            // this is wrapped in a setTimeout so it's executed on a new task
+            // by the event loop, the submit button doesn't exist if not.
+            document.querySelector('form > #submit').disabled = false;
+        });
 
         if (!responseError) {
             deleteElement.removeAttribute('disabled');
@@ -228,7 +233,7 @@
             anchorTag.href = `/s3-download-file?filename=${anchorTag.textContent}`;
             anchorTag.classList.remove('govuk-link--muted', 'govuk-link--no-underline');
         } else {
-            handleError('Supporting evidence file upload failed');
+            handleError(`${label} file upload failed 2`);
         }
     }
 
@@ -245,7 +250,9 @@
         autoQueue: false,
         autoProcessQueue: false,
         uploadMultiple: false,
-        maxFiles: 1,
+        // We only allow a single file, but we set this to two.
+        // As we need to allow the user to re-upload, the first is deleted when re-uploaded.
+        maxFiles: 2,
         parallelUploads: 1,
         accept: acceptFile,
         init: () => {
@@ -264,7 +271,12 @@
     }
 
     myDropzone.on("success", successHandler);
-    myDropzone.on("fail", console.log)
+    myDropzone.on("error", (file, error) => {
+        if (myDropzone.files.includes(file)) {
+            myDropzone.removeFile(file);
+        }
+        handleError(`${label} file upload failed `);
+    });
 
 </script>
 

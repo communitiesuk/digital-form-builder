@@ -58,6 +58,7 @@ export default {
           const { uploadService, cacheService } = request.services([]);
           const state = await cacheService.getState(request);
           const applicationId = state.metadata?.application_id ?? "";
+          const { filename } = request.query;
 
           const url = await uploadService.getFileDownloadUrlS3(
             `${applicationId}/${filename}`
