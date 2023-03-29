@@ -18,6 +18,7 @@ import { configureInitialiseSessionPlugin } from "server/plugins/initialiseSessi
 import pluginLocale from "./plugins/locale";
 import pluginSession from "./plugins/session";
 import pluginAuth from "./plugins/auth";
+import clientSideUpload from "./plugins/clientSideUpload";
 import pluginViews from "./plugins/views";
 import pluginApplicationStatus from "./plugins/applicationStatus";
 import pluginRouter from "./plugins/router";
@@ -103,6 +104,7 @@ async function createServer(routeConfig: RouteConfig) {
   await server.register(configureCrumbPlugin(config, routeConfig));
   await server.register(Schmervice);
   await server.register(pluginAuth);
+  await server.register(clientSideUpload);
 
   server.registerService([
     CacheService,
@@ -126,6 +128,18 @@ async function createServer(routeConfig: RouteConfig) {
 
       if ("header" in response && response.header) {
         response.header("X-Robots-Tag", "noindex, nofollow");
+
+        // dynamically modify connect-src to allow aws upload
+        // potentially make the region (eu-west-2) a parameters
+        const existingHeaders = response.headers;
+        const existingCsp = existingHeaders["content-security-policy"] || "";
+        if (typeof existingCsp === "string") {
+          const newCsp = existingCsp?.replace(
+            /connect-src[^;]*/,
+            "connect-src 'self' https://*.s3.eu-west-2.amazonaws.com/"
+          );
+          response.header("Content-Security-Policy", newCsp);
+        }
 
         const WEBFONT_EXTENSIONS = /\.(?:eot|ttf|woff|svg|woff2)$/i;
         if (!WEBFONT_EXTENSIONS.test(request.url.toString())) {

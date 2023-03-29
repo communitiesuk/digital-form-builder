@@ -63,6 +63,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.11.2",
+    "dropzone": "^6.0.0-beta.2",
     "govuk-frontend": "^3.13.0"
   },
   "resolutions": {

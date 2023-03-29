@@ -133,6 +133,59 @@ export class UploadService {
     };
   }
 
+  async getFileDownloadUrlS3(key: string) {
+    const params = {
+      Bucket: bucketName,
+      Key: key,
+    };
+    const url = s3.getSignedUrl("getObject", params);
+    return url;
+  }
+
+  async getPreSignedUrlS3(key: string, metadata: object) {
+    const params = {
+      Bucket: bucketName,
+      Key: key,
+      ContentType: "application/octet-stream",
+      Expires: 60 * 60,
+      Metadata: metadata,
+    };
+
+    return await s3.getSignedUrlPromise("putObject", params);
+  }
+
+  async deleteFileS3(key: string) {
+    const params = {
+      Bucket: bucketName,
+      Key: key,
+    };
+
+    try {
+      await s3.deleteObject(params).promise();
+      return true;
+    } catch (err) {
+      console.error(`Issue when deleting file with key: ${key}`);
+      console.error(err);
+      return false;
+    }
+  }
+
+  async headFileS3(key: string) {
+    const params = {
+      Bucket: bucketName,
+      Key: key,
+    };
+
+    try {
+      const response = await s3.headObject(params).promise();
+      return response;
+    } catch (err) {
+      console.error(`Issue when fetching metadata for file with key: ${key}`);
+      console.error(err);
+      return null;
+    }
+  }
+
   async failAction(_request: HapiRequest, h: HapiResponseToolkit) {
     h.request.pre.filesizeError = true;
     return h.continue;

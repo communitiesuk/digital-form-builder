@@ -67,6 +67,35 @@
   <!-- End Matomo Code -->
 
   <script src="{{ assetPath }}/accessible-autocomplete.min.js"></script>
+  <script src="{{ assetPath }}/dropzone.min.js"></script>
+  <link
+    rel="stylesheet"
+    href="{{ assetPath }}/dropzone.min.css"
+    type="text/css"
+  />
+  <link
+    rel="stylesheet"
+    href="{{ assetPath }}/dluhc-fsd.css"
+    type="text/css"
+  />
+
+  <style>
+    .no-js-fallback {
+        display: none;
+    }
+  </style>
+  <noscript>
+      <style>
+          .requires-js {
+              display: none;
+          }
+
+          .no-js-fallback {
+              display: block;
+          }
+      </style>
+  </noscript>
+
 {% endblock %}
 
 {% block pageTitle %}
@@ -92,7 +121,7 @@
 
 {% endblock %}
 
-{% block bodyStart %}  
+{% block bodyStart %}
 
   {% if gtmId1 %}
     <noscript>

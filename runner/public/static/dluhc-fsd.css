@@ -1,0 +1,39 @@
+.jsfu.govuk-table__row {
+    display: table-row;
+}
+
+.jsfu.govuk-table__row > .govuk-table__header,
+.jsfu.govuk-table__row > .govuk-table__cell {
+    display: table-cell;
+    white-space: nowrap;
+}
+
+.jsfu.govuk-table__cell:first-child {
+    max-width: 25ch;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+.jsfu.govuk-table__cell:not(:first-child) {
+    flex-grow: 1;
+}
+
+.jsfu-progress-bar {
+    display: flex;
+    align-items: center;
+    height: 10px;
+    margin-top: 5px;
+    background-color: #B1B4B6;
+}
+
+.jsfu-progress-bar__value {
+    display: block;
+    height: 100%;
+    background-color: #003078;
+    transition: width 0.2s ease-out;
+    width: 0;
+}
+
+#jsfu-delete {
+    margin-bottom: 0;
+}

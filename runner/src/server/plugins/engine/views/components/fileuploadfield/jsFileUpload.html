@@ -1,0 +1,271 @@
+{% from "label/macro.njk" import govukLabel %}
+{% from "hint/macro.njk" import govukHint %}
+
+{% macro jsFileUpload(component) %}
+
+<div class="govuk-form-group {% if component.model.errorMessage %}govuk-form-group--error{% endif %}"
+     id="js-file-form-group">
+    {{ govukLabel(component.model.label) }}
+
+    {% if component.model.hint %}
+    {% set hintId = component.model.id + '-hint' %}
+    {% set describedBy = describedBy + ' ' + hintId if describedBy else hintId %}
+    {{ govukHint({
+    'id': hintId,
+    'classes': (component.model.hint.classes if component.model.hint and component.model.hint.classes),
+    'attributes': component.model.hint.attributes,
+    'html': component.model.hint.html,
+    'text': component.model.hint.text
+    }) | trim }}
+    {% endif %}
+
+    <p class="govuk-error-message">
+      <span class="{% if not component.model.errorMessage %}govuk-visually-hidden{% endif %}">
+          {{ component.model.errorMessage.text | safe }}
+      </span>
+    </p>
+
+    <div class="govuk-drop-zone" id="dropzoneWrapper">
+        <div class="govuk-table__wrapper">
+            <div class="govuk-table" id="dropzonePreviews">
+                <div type="button" id="dropzoneAddFile" class="govuk-button govuk-button--secondary">
+                    Choose file
+                </div>
+                <div class="govuk-table__row jsfu">
+                    <div class="govuk-table__header">File name</div>
+                    <div class="govuk-table__header">File size</div>
+                    <div class="govuk-table__header">Progress</div>
+                    <div class="govuk-table__header">Action</div>
+                </div>
+                <div id="dropzoneTemplate" class="govuk-table__row jsfu">
+                    <div class="govuk-table__cell jsfu">
+                        <a class="govuk-link govuk-link--muted govuk-link--no-underline" data-dz-name></a>
+                    </div>
+                    <div class="govuk-table__cell jsfu" id="filesize">
+                        <span></span> <strong><span></span></strong>
+                    </div>
+                    <div class="govuk-table__cell jsfu">
+                        <div class="jsfu-progress-bar">
+                        <span class="jsfu-progress-bar__value" data-progress="0" data-dz-uploadprogress
+                              id="jsfu-file-progress"></span>
+                        </div>
+                    </div>
+                    <div class="govuk-table__cell jsfu">
+                        <div disabled type="button" class="govuk-button govuk-button--warning" id="jsfu-delete">
+                            Delete
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const componentKey = '{{component.model.id}}'
+
+    const createErrorMessage = (errorMessage) => { // I hate this... but don't want to use innerHTML.
+        const container = document.querySelector('form').parentElement;
+        if (container.querySelector('.govuk-error-summary')) {
+            const errorAnchor = container.querySelector('.govuk-error-summary__body > ul > li > a');
+            errorAnchor.href = `#${componentKey}`;
+            errorAnchor.textContent = errorMessage;
+        } else {
+            const errorSummary = document.createElement('div');
+            errorSummary.classList.add('govuk-error-summary');
+            errorSummary.setAttribute('aria-labelledby', 'error-summary-title');
+            errorSummary.setAttribute('role', 'alert');
+            errorSummary.setAttribute('tabindex', '-1');
+            errorSummary.setAttribute('data-module', 'govuk-error-summary');
+
+            const errorSummaryTitle = document.createElement('h2');
+            errorSummaryTitle.classList.add('govuk-error-summary__title');
+            errorSummaryTitle.setAttribute('id', 'error-summary-title');
+            errorSummaryTitle.innerHTML = 'Fix the following errors';
+
+            const errorSummaryBody = document.createElement('div');
+            errorSummaryBody.classList.add('govuk-error-summary__body');
+
+            const errorSummaryList = document.createElement('ul');
+            errorSummaryList.classList.add('govuk-list');
+            errorSummaryList.classList.add('govuk-error-summary__list');
+
+            const errorSummaryItem = document.createElement('li');
+
+            const errorSummaryLink = document.createElement('a');
+            errorSummaryLink.setAttribute('href', `#${componentKey}`);
+            errorSummaryLink.innerHTML = errorMessage;
+
+            errorSummaryItem.appendChild(errorSummaryLink);
+
+            errorSummaryList.appendChild(errorSummaryItem);
+
+            errorSummaryBody.appendChild(errorSummaryList);
+
+            errorSummary.appendChild(errorSummaryTitle);
+            errorSummary.appendChild(errorSummaryBody);
+
+            document.body.appendChild(errorSummary);
+            container.insertBefore(errorSummary, container.firstChild);
+        }
+    }
+
+    const formatBytes = (bytes, decimals = 2) => {
+        if (bytes === 0) return [0, 'B'];
+        const k = 1000; // optionally 1024 if decimal system..?
+        const dm = decimals < 0 ? 0 : decimals;
+        const sizes = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+        const i = Math.floor(Math.log(bytes) / Math.log(k));
+        return [parseFloat((bytes / Math.pow(k, i)).toFixed(dm)), sizes[i]];
+    }
+
+    const getFileInformation = async (filename) => {
+        const response = await fetch(`/s3-file-info?filename=${filename}`);
+        const data = await response.json();
+        return data;
+    }
+
+    const handleError = (errorMessage) => {
+        document.querySelector("#js-file-form-group").classList.add('govuk-form-group--error')
+        const errorSpan = document.querySelector("#js-file-form-group > p > span");
+        errorSpan.classList.remove('govuk-visually-hidden');
+        errorSpan.textContent = errorMessage;
+        const fileProgress = document.querySelector('#jsfu-file-progress');
+        fileProgress.textContent = 'Failed';
+        createErrorMessage(errorMessage)
+    }
+
+    const setHiddenInput = (filename) => {
+        const input = document.querySelector('.jsfu-input');
+        if (input) {
+            input.setAttribute('value', filename);
+        } else {
+            const parentElement = document.querySelector("#dropzoneWrapper");
+            const newInput = document.createElement('input');
+            newInput.setAttribute('class', 'jsfu-input');
+            newInput.setAttribute('type', 'hidden');
+            newInput.setAttribute('name', `${componentKey}__filename`);
+            newInput.setAttribute('value', filename);
+            parentElement.appendChild(newInput);
+        }
+    }
+
+    const acceptFile = async (file, done) => {
+        if (file.type === "previously-uploaded") return;
+        const files = myDropzone.files;
+        if (files.length > 1) {
+            // remove any existing files, since the user can only upload one.
+            files.filter(f => f !== file).forEach(removeFile);
+        }
+
+        const [formKey, pageKey] =  window.location.pathname.split('/').filter(x => x)
+        const urlResponse = await fetch('/s3-create-pre-signed-url', {
+            method: 'POST',
+            body: JSON.stringify({
+                filename: file.name,
+                formKey: formKey,
+                pageKey: pageKey,
+                componentKey: componentKey,
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+
+        if (urlResponse.ok) {
+            document.querySelector("#js-file-form-group")
+                .classList.remove('govuk-form-group--error')
+            document.querySelector("#js-file-form-group > p > span")
+                .classList.add('govuk-visually-hidden')
+            const {url} = await urlResponse.json()
+            myDropzone.options.url = url
+            myDropzone.processFile(file)
+            document.querySelector('form > #submit').disabled = true;
+            done()
+        } else {
+            handleError('Supporting evidence file upload failed');
+        }
+    }
+
+    const removeFile = async (file) => {
+        const wasDeleted = await fetch("/s3-delete-file-by-key", {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({filename: file.name})
+        })
+
+        if (wasDeleted.ok) {
+            myDropzone.removeFile(file);
+        } else {
+            handleError('Supporting evidence file deletion failed');
+        }
+    }
+
+    const successHandler = async (file, responseError) => {
+        const deleteElement = file.previewElement.querySelector("#jsfu-delete");
+        const fileProgress = document.querySelector('#jsfu-file-progress');
+        fileProgress.parentElement.classList.remove('jsfu-progress-bar');
+        fileProgress.classList.remove('jsfu-progress-bar__value');
+        setHiddenInput(file.name);
+        document.querySelector('form > #submit').disabled = false;
+
+        if (!responseError) {
+            deleteElement.removeAttribute('disabled');
+            deleteElement.onclick = () => removeFile(file);
+
+            fileProgress.textContent = 'Complete';
+
+            const filesizeElement = document.querySelector('#filesize');
+            const [sizeSpan, typeSpan] = Array.from(filesizeElement.querySelectorAll('span'));
+            const {contentLength} = await getFileInformation(file.name)
+            const [size, type] = formatBytes(contentLength);
+            sizeSpan.textContent = size;
+            typeSpan.textContent = type;
+
+            const anchorTag = document.querySelector('.govuk-link[data-dz-name]');
+            anchorTag.href = `/s3-download-file?filename=${anchorTag.textContent}`;
+            anchorTag.classList.remove('govuk-link--muted', 'govuk-link--no-underline');
+        } else {
+            handleError('Supporting evidence file upload failed');
+        }
+    }
+
+    const previewNode = document.querySelector("#dropzoneTemplate");
+    previewNode.removeAttribute('id');
+    const previewTemplate = previewNode.outerHTML;
+    let myDropzone = new Dropzone("#dropzoneWrapper", {
+        url: '/', // will be overridden with a pre-signed s3 url.
+        previewTemplate: previewTemplate,
+        previewsContainer: "#dropzonePreviews",
+        clickable: "#dropzoneAddFile",
+        paramName: "file",
+        method: "put",
+        autoQueue: false,
+        autoProcessQueue: false,
+        uploadMultiple: false,
+        maxFiles: 1,
+        parallelUploads: 1,
+        accept: acceptFile,
+        init: () => {
+            document.querySelector('.dz-hidden-input').removeAttribute('multiple');
+        }
+    });
+    previewNode.parentNode.removeChild(previewNode);
+
+    const existingFilename = "{{component.model.value}}";
+    if (existingFilename) {
+        let filenameParts = existingFilename.split("/");
+        const rawFilename = filenameParts[filenameParts.length - 1];
+        let existingFile = new File([], rawFilename, { type: "previously-uploaded" });
+        myDropzone.addFile(existingFile);
+        successHandler(existingFile, null);
+    }
+
+    myDropzone.on("success", successHandler);
+    myDropzone.on("fail", console.log)
+
+</script>
+
+{% endmacro %}

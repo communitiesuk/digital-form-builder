@@ -1,0 +1,16 @@
+{% from "file-upload/macro.njk" import govukFileUpload %}
+
+{% macro noJsFileUpload(component) %}
+<div class="no-js-fallback">
+    {{ govukFileUpload(component.model) }}
+    {% if component.model.value %}
+    <p class="govuk-body">{{component.model.existingFileText}}</p>
+    {% endif %}
+    <div class="govuk-error-summary govuk-border-green upload-dialog govuk-!-padding-bottom-0"
+         aria-labelledby="success-summary-title" role="alert" data-module="govuk-error-summary">
+        <p class="govuk-body govuk-!-font-weight-regular" id="success-summary-title">
+            {{component.model.content | safe}}
+        </p>
+    </div>
+</div>
+{% endmacro %}
