@@ -68,49 +68,6 @@ export default {
           }
         },
       });
-
-      server.route({
-        method: "POST",
-        path: "/s3/{id}/{pageKey}/{componentKey}/nojs-upload",
-        options: {
-          payload: {
-            output: "stream",
-            parse: true,
-            multipart: true,
-            maxBytes: 1024 * 1024 * 50, // 50MB max file size
-          },
-        },
-        handler: async (request, h) => {
-          const { uploadService, cacheService } = request.services([]);
-          const state = await cacheService.getState(request);
-          const applicationId = state.metadata?.application_id ?? "";
-          const { id, pageKey, componentKey } = request.params;
-          const pagePath = uploadService.normalisePath(pageKey);
-          const form = request.server.app.forms[id];
-          const page = form?.pages.find(
-            (p) => uploadService.normalisePath(p.path) === pagePath
-          );
-          const metaData = {
-            page: encodeURI(page.title),
-            section: encodeURI(page.section?.title ?? ""),
-            componentName: componentKey,
-          };
-          try {
-            const data = request.payload;
-            const files = Array.isArray(data.file) ? data.file : [data.file];
-            for (const file of files) {
-              const key = `${applicationId}/${id}/${pagePath}/${componentKey}/${file.hapi.filename}`;
-              s3UploadParams.Key = key;
-              s3UploadParams.Body = file;
-              await uploadService.uploadS3(s3UploadParams);
-            }
-            return h.redirect(request.headers.referer);
-          } catch (err) {
-            console.error(err);
-            return h.response("Internal server error").code(500);
-          }
-        },
-      });
     },
   },
 };
