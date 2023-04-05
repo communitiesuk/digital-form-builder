@@ -165,7 +165,7 @@ export class UploadService {
     const clientSideUploadComponent = page.components.items.find(
       (c) => c.type === "ClientSideFileUploadField"
     );
-    if (clientSideUploadComponent && applicationId) {
+    if (clientSideUploadComponent && applicationId && request.payload) {
       const { id, path } = request.params;
       const delPath = `${applicationId}/${id}/${path}/${clientSideUploadComponent.name}`;
       const filesToDelete =

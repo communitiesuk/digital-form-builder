@@ -226,7 +226,7 @@
             const existingFiles = getAllFiles();
             if (existingFiles.length > this.options.maxFiles) {
                 myDropzone.removeFile(file);
-                alert("You can't upload more than " + this.options.maxFiles + " files.");
+                handleError(`You can only upload ${myDropzone.options.maxFiles} files`)
                 return;
             }
             {% endif %}

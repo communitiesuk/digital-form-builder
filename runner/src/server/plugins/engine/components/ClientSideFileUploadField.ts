@@ -38,6 +38,22 @@ export class ClientSideFileUploadField extends FormComponent {
         await new Promise((resolve) => setTimeout(resolve, 1000));
 
         const files = await uploadService.listFilesInBucketFolder(key);
+
+        const maxFiles = this.options.dropzoneConfig.maxFiles;
+        if (files.length > maxFiles) {
+          return [
+            {
+              path: componentKey,
+              name: componentKey,
+              href: `#${componentKey}`,
+              text:
+                maxFiles > 1
+                  ? `You can only upload ${maxFiles} files`
+                  : `You can only upload a single file`,
+            },
+          ];
+        }
+
         const hasRequiredFiles =
           files.length >= this.options.minimumRequiredFiles;
         if (hasRequiredFiles) {
