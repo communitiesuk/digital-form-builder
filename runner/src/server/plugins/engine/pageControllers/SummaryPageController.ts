@@ -21,7 +21,7 @@ export class SummaryPageController extends PageController {
     return async (request: HapiRequest, h: HapiResponseToolkit) => {
       this.langFromRequest(request);
 
-      const { cacheService } = request.services([]);
+      const { cacheService, uploadService } = request.services([]);
       const model = this.model;
 
       // @ts-ignore - ignoring so docs can be generated. Remove when properly typed
@@ -30,6 +30,25 @@ export class SummaryPageController extends PageController {
       }
       const state = await cacheService.getState(request);
       const viewModel = new SummaryViewModel(this.title, model, state, request);
+
+      const applicationId = state.metadata?.application_id ?? "";
+      if (applicationId) {
+        for (const detail of viewModel.details) {
+          const comp = detail.items.find(
+            (c) => c.type === "ClientSideFileUploadField"
+          );
+          if (comp) {
+            const folderPath = `${comp.pageId}/${comp.name}`;
+            const files = await uploadService.listFilesInBucketFolder(
+              `${applicationId}${folderPath}`
+            );
+            comp.value = {
+              folderPath,
+              files,
+            };
+          }
+        }
+      }
 
       if (viewModel.endPage) {
         return redirectTo(
@@ -118,7 +137,7 @@ export class SummaryPageController extends PageController {
    */
   makePostRouteHandler() {
     return async (request: HapiRequest, h: HapiResponseToolkit) => {
-      const { payService, cacheService } = request.services([]);
+      const { payService, cacheService, uploadService } = request.services([]);
       const model = this.model;
       const state = await cacheService.getState(request);
       state.metadata.isSummaryPageSubmit = true;
@@ -129,6 +148,26 @@ export class SummaryPageController extends PageController {
         state,
         request
       );
+
+      const applicationId = state.metadata?.application_id ?? "";
+      if (applicationId) {
+        for (const detail of summaryViewModel.details) {
+          const comp = detail.items.find(
+            (c) => c.type === "ClientSideFileUploadField"
+          );
+          if (comp) {
+            const folderPath = `${comp.pageId}/${comp.name}`;
+            const files = await uploadService.listFilesInBucketFolder(
+              `${applicationId}${folderPath}`
+            );
+            comp.value = {
+              folderPath,
+              files,
+            };
+          }
+        }
+      }
+
       this.setFeedbackDetails(summaryViewModel, request);
 
       // redirect user to start page if there are incomplete form errors
