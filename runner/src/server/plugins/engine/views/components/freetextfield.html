@@ -1,16 +1,14 @@
 {% macro FreeTextField(component) %}
 
 <head>
-  <script src="/assets/tinymce.min.js"></script>
   <script type="text/javascript">
-
     tinymce.init({
       setup: function (editor) {
         editor.on('init input setcontent change', function () {          
           setWordCount(editor);
         });       
       },
-      selector: '.myeditablediv',
+      selector: '#{{ component.model.id }}',
       skin: 'tinymce-5',
       branding: false,
       elementpath: false,
@@ -18,7 +16,7 @@
       height: 150,
       menubar: false,
       browser_spellcheck: true,
-      max_words: Number('{{ component.model.maxwords }}'),
+      max_words: Number('{{ component.model.maxWords }}'),
       iframe_aria_text: '{{ component.model.name }}',
       paste_data_images: false,
       dragover_callback: function (e) {
@@ -85,10 +83,10 @@
   </span>
   {% endif %}
   <textarea id="{{ component.model.id }}" name="{{ component.model.name }}" rows="5"
-    class="govuk-textarea myeditablediv">{{ component.model.value }}</textarea>
+    class="govuk-textarea">{{ component.model.value }}</textarea>
   {% if component.model.isCharacterOrWordCount == true %}
   <div id="word-count-label-{{ component.model.id }}" class="govuk-hint govuk-js-character-count">You can enter up to {{
-    component.model.maxwords }} words</div>
+    component.model.maxWords }} words</div>
   {% endif %}
 </div>
 

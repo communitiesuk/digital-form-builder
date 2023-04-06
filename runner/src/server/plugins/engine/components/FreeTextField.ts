@@ -54,7 +54,7 @@ export class FreeTextField extends FormComponent {
     if (maxWords ?? false) {
       this.formSchema = this.formSchema.custom((value, helpers) => {
         if (inputIsOverWordCount(value, maxWords)) {
-          return helpers.error("string.maxWords");
+          return helpers.error("string.maxWords", { limit: maxWords });
         }
         return value;
       }, "max words validation");
@@ -98,7 +98,7 @@ export class FreeTextField extends FormComponent {
     }
 
     if (options.maxWords ?? false) {
-      viewModel.maxwords = options.maxWords;
+      viewModel.maxWords = options.maxWords;
     }
     if (options.hideTitle) {
       viewModel.label = { text: "", html: viewModel.hint?.html!, classes: "" };
