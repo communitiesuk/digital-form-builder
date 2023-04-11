@@ -36,17 +36,12 @@
       contextmenu: 'paste'
     });
 
+    // this must match the back-end, or we'll have discrepancies
+    // runner\src\server\plugins\engine\components\FreeTextField.ts
     function countWords(editor) {
-      var content = editor.getContent({ format: 'text' });
-      // removing line breaks ast they were sometimes counting as words
-      var noLineBreaksContent = content.replace(/(\r\n|\n|\r)/gm, " ");
-      var wordCount = 0;
-
-      if (content) {
-        // Regex for checking white space border and not counting special characters
-        var matches = noLineBreaksContent.match(/\b\w+\b/g);
-        wordCount = matches ? matches.length : 0;
-      }
+      let content = editor.getContent()
+      content = content.replace(/<[^>]*>/g, "").replace(/&[^;]+;/g, "");
+      const wordCount = (content.match(/\S+/g) || []).length;
       return wordCount;
     }
 

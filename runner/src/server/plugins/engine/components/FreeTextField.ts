@@ -6,6 +6,8 @@ import { FormModel } from "server/plugins/engine/models";
 import { FreeTextFieldViewModel } from "server/plugins/engine/components/types";
 import { DataType } from "./types";
 
+// this must match the front-end, or we'll have discrepancies
+// runner\src\server\plugins\engine\views\components\freetextfield.html
 function inputIsOverWordCount(input, maxWords) {
   /**
    * This validation is copied from the govuk-frontend library to match their client side behaviour
