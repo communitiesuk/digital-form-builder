@@ -10,7 +10,8 @@ export default {
         handler: async (request: HapiRequest) => {
           const { uploadService, cacheService } = request.services([]);
           const state = await cacheService.getState(request);
-          const applicationId = state.metadata?.application_id ?? "";
+          const form_session_identifier =
+            state.metadata?.form_session_identifier ?? "";
           const { id, pageKey, componentKey } = request.params as any;
           const { filename } = request.payload;
 
@@ -27,7 +28,7 @@ export default {
             componentName: componentKey,
           };
 
-          const key = `${applicationId}/${id}/${pageKey}/${componentKey}/${filename}`;
+          const key = `${form_session_identifier}/${id}/${pageKey}/${componentKey}/${filename}`;
           const url = await uploadService.getPreSignedUrlS3(key, metaData);
           return { url };
         },
@@ -39,11 +40,12 @@ export default {
         handler: async (request: HapiRequest, h: HapiResponseToolkit) => {
           const { uploadService, cacheService } = request.services([]);
           const state = await cacheService.getState(request);
-          const applicationId = state.metadata?.application_id ?? "";
+          const form_session_identifier =
+            state.metadata?.form_session_identifier ?? "";
           const { id, pageKey, componentKey } = request.params as any;
           const { filename } = request.query;
 
-          const key = `${applicationId}/${id}/${pageKey}/${componentKey}/${filename}`;
+          const key = `${form_session_identifier}/${id}/${pageKey}/${componentKey}/${filename}`;
           const url = await uploadService.getFileDownloadUrlS3(key);
           return h.redirect(url);
         },
@@ -55,11 +57,12 @@ export default {
         handler: async (request, h) => {
           const { uploadService, cacheService } = request.services([]);
           const state = await cacheService.getState(request);
-          const applicationId = state.metadata?.application_id ?? "";
+          const form_session_identifier =
+            state.metadata?.form_session_identifier ?? "";
           const { id, pageKey, componentKey } = request.params as any;
           const { filename } = request.payload;
 
-          const key = `${applicationId}/${id}/${pageKey}/${componentKey}/${filename}`;
+          const key = `${form_session_identifier}/${id}/${pageKey}/${componentKey}/${filename}`;
           const wasDeleted = uploadService.deleteFileS3(key);
           if (wasDeleted) {
             return h.response("File deleted from S3").code(200);

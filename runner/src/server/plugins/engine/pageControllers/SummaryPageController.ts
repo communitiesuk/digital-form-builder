@@ -31,8 +31,9 @@ export class SummaryPageController extends PageController {
       const state = await cacheService.getState(request);
       const viewModel = new SummaryViewModel(this.title, model, state, request);
 
-      const applicationId = state.metadata?.application_id ?? "";
-      if (applicationId) {
+      const form_session_identifier =
+        state.metadata?.form_session_identifier ?? "";
+      if (form_session_identifier) {
         for (const detail of viewModel.details) {
           const comp = detail.items.find(
             (c) => c.type === "ClientSideFileUploadField"
@@ -40,7 +41,7 @@ export class SummaryPageController extends PageController {
           if (comp) {
             const folderPath = `${comp.pageId}/${comp.name}`;
             const files = await uploadService.listFilesInBucketFolder(
-              `${applicationId}${folderPath}`
+              `${form_session_identifier}${folderPath}`
             );
             comp.value = {
               folderPath,
@@ -149,8 +150,9 @@ export class SummaryPageController extends PageController {
         request
       );
 
-      const applicationId = state.metadata?.application_id ?? "";
-      if (applicationId) {
+      const form_session_identifier =
+        state.metadata?.form_session_identifier ?? "";
+      if (form_session_identifier) {
         for (const detail of summaryViewModel.details) {
           const comp = detail.items.find(
             (c) => c.type === "ClientSideFileUploadField"
@@ -158,7 +160,7 @@ export class SummaryPageController extends PageController {
           if (comp) {
             const folderPath = `${comp.pageId}/${comp.name}`;
             const files = await uploadService.listFilesInBucketFolder(
-              `${applicationId}${folderPath}`
+              `${form_session_identifier}${folderPath}`
             );
             comp.value = {
               folderPath,

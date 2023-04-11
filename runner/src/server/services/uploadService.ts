@@ -150,7 +150,8 @@ export class UploadService {
     const state = await cacheService.getState(request);
     const originalFilenames = state?.originalFilenames ?? {};
 
-    const applicationId = state.metadata?.application_id ?? "";
+    const form_session_identifier =
+      state.metadata?.form_session_identifier ?? "";
     const { path } = request.params;
     const page = form?.pages.find(
       (page) => this.normalisePath(page.path) === this.normalisePath(path)
@@ -165,9 +166,13 @@ export class UploadService {
     const clientSideUploadComponent = page.components.items.find(
       (c) => c.type === "ClientSideFileUploadField"
     );
-    if (clientSideUploadComponent && applicationId && request.payload) {
+    if (
+      clientSideUploadComponent &&
+      form_session_identifier &&
+      request.payload
+    ) {
       const { id, path } = request.params;
-      const delPath = `${applicationId}/${id}/${path}/${clientSideUploadComponent.name}`;
+      const delPath = `${form_session_identifier}/${id}/${path}/${clientSideUploadComponent.name}`;
       const filesToDelete =
         request.payload[`${clientSideUploadComponent.name}__delete[]`] || [];
 

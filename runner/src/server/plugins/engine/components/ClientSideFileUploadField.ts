@@ -27,12 +27,13 @@ export class ClientSideFileUploadField extends FormComponent {
       async (request, viewModel) => {
         const { uploadService, cacheService } = request.services([]);
         const state = await cacheService.getState(request);
-        const applicationId = state.metadata?.application_id ?? "";
+        const form_session_identifier =
+          state.metadata?.form_session_identifier ?? "";
         const { id, path } = request.params as any;
         const componentKey = viewModel.components.find(
           (c) => c.type === "ClientSideFileUploadField"
         ).model.id;
-        const key = `${applicationId}/${id}/${path}/${componentKey}`;
+        const key = `${form_session_identifier}/${id}/${path}/${componentKey}`;
 
         // we wait an arbitrary amount of 1 second here, because of race conditions.
         await new Promise((resolve) => setTimeout(resolve, 1000));

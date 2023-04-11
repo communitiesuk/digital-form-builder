@@ -203,7 +203,6 @@
         </div>
     </div>`;
 
-    const formSessionIdentifier = new URLSearchParams(window.location.href).get('form_session_identifier');
     const [formKey, pageKey] = window.location.pathname.split('/').filter(x => x)
     const componentKey = "{{ component.model.id }}"
     const uniquePath = `${formKey}/${pageKey}/${componentKey}`;
@@ -315,10 +314,7 @@
     });
 
     const deleteFileBackend = (file) => {
-        let fetchUrl = `/s3/${uniquePath}/delete-file-by-key`;
-        if (formSessionIdentifier) {
-            fetchUrl = fetchUrl + `?form_session_identifier=${formSessionIdentifier}`
-        }
+        let fetchUrl = `/s3/${uniquePath}/delete-file-by-key${window.location.search}`;
         fetch(fetchUrl, {
             method: "DELETE",
             headers: {"Content-Type": "application/json"},
@@ -372,11 +368,7 @@
     });
 
     const getPreSignedUrl = async (file) => {
-        let fetchUrl = `/s3/${uniquePath}/create-pre-signed-url`;
-        if (formSessionIdentifier) {
-            fetchUrl = fetchUrl + `?form_session_identifier=${formSessionIdentifier}`
-        }
-
+        let fetchUrl = `/s3/${uniquePath}/create-pre-signed-url${window.location.search}`;
         const response = await fetch(fetchUrl, {
             method: 'POST',
             body: JSON.stringify({filename: file.name}),

@@ -453,8 +453,9 @@ export class PageControllerBase {
 
       const viewModel = this.getViewModel(formData, num);
 
-      const applicationId = state.metadata?.application_id ?? "";
-      if (applicationId) {
+      const form_session_identifier =
+        state.metadata?.form_session_identifier ?? "";
+      if (form_session_identifier) {
         const comp = viewModel.components.find(
           (c) => c.type === "ClientSideFileUploadField"
         );
@@ -462,7 +463,7 @@ export class PageControllerBase {
           const pageAndForm = currentPath.includes("?")
             ? currentPath.split("?")[0]
             : currentPath;
-          const folderPath = `${applicationId}${pageAndForm}/${comp.model.id}`;
+          const folderPath = `${form_session_identifier}${pageAndForm}/${comp.model.id}`;
           const files = await uploadService.listFilesInBucketFolder(folderPath);
           comp.model.existingFiles.push(...files);
         }
@@ -911,8 +912,9 @@ export class PageControllerBase {
     const state = await cacheService.getState(request);
     const currentPath = `/${this.model.basePath}${this.path}${request.url.search}`;
 
-    const applicationId = state.metadata?.application_id ?? "";
-    if (applicationId) {
+    const form_session_identifier =
+      state.metadata?.form_session_identifier ?? "";
+    if (form_session_identifier) {
       const comp = viewModel.components.find(
         (c) => c.type === "ClientSideFileUploadField"
       );
@@ -920,7 +922,7 @@ export class PageControllerBase {
         const pageAndForm = currentPath.includes("?")
           ? currentPath.split("?")[0]
           : currentPath;
-        const folderPath = `${applicationId}${pageAndForm}/${comp.model.id}`;
+        const folderPath = `${form_session_identifier}${pageAndForm}/${comp.model.id}`;
         const files = await uploadService.listFilesInBucketFolder(folderPath);
         comp.model.existingFiles.push(...files);
       }
