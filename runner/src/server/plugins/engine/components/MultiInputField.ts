@@ -16,20 +16,21 @@ export class MultiInputField extends FormComponent {
 
   constructor(def: InputFieldsComponentsDef, model: FormModel) {
     super(def, model);
+    const options: any = this.options;
 
     this.children = new ComponentCollection(
       [
         {
           type: "TextField",
           name: "type-of-revenue-cost",
-          title: this.options.textFieldTitle,
+          title: options.textFieldTitle,
           schema: {},
           options: {},
         },
         {
           type: "NumberField",
           name: "value",
-          title: this.options.numberFieldTitle,
+          title: options.numberFieldTitle,
           schema: {},
           options: {
             prefix: "£",
@@ -62,20 +63,8 @@ export class MultiInputField extends FormComponent {
 
   getDisplayStringFromState(state: FormSubmissionState) {
     const values = state[this.name];
-    const stringValue = new Array();
-    if (values) {
-      for (var value of values) {
-        if (typeof value === "string") {
-          stringValue.push(value);
-        } else {
-          stringValue.push(
-            `${value["type-of-revenue-cost"]} : ${this.options.prefix}${value["value"]}`
-          );
-        }
-      }
-    }
 
-    return stringValue;
+    return values;
   }
 
   // @ts-ignore - eslint does not report this as an error, only tsc
