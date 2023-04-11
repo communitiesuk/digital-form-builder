@@ -26,7 +26,7 @@
           "options": {
             "maxWords": "500"
           },
-          "type": "MultilineTextField",
+          "type": "FreeTextField",
           "title": "Tell us about these benefits in detail, and explain how you'll measure the benefits it'll bring for the community"
         },
         {

@@ -271,7 +271,7 @@
             "hideTitle": true,
             "required": false
           },
-          "type": "MultilineTextField",
+          "type": "FreeTextField",
           "title": "Describe your previous projects - Project 2 ",
           "hint": "<label for=\"QJFQgi\" class=\"govuk-body\">Project 2 (optional)</label>",
           "schema": {}
