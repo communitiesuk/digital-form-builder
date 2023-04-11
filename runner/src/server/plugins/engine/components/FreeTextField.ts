@@ -13,8 +13,8 @@ function inputIsOverWordCount(input, maxWords) {
    */
   // This peice of regex will remove all the html elements and entitys to get a accurate word count
   input = input.replace(/<[^>]*>/g, "").replace(/&[^;]+;/g, "");
-  var maxWordCount = parseInt(maxWords);
-  const wordCount = input.match(/\S+/g).length || 0;
+  const maxWordCount = parseInt(maxWords);
+  const wordCount = (input.match(/\S+/g) || []).length;
   return wordCount > maxWordCount;
 }
 
