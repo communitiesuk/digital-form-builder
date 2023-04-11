@@ -152,6 +152,8 @@ export class UploadService {
 
     const form_session_identifier =
       state.metadata?.form_session_identifier ?? "";
+    const applicationId = state.metadata?.applicationId ?? "";
+
     const { path } = request.params;
     const page = form?.pages.find(
       (page) => this.normalisePath(page.path) === this.normalisePath(path)
@@ -268,7 +270,7 @@ export class UploadService {
         let prefix = applicationId;
         if (clientSideUploadComponent) {
           const { id, path } = request.params;
-          prefix = `${prefix}/${id}/${path}/${clientSideUploadComponent.name}`;
+          prefix = `${form_session_identifier}/${id}/${path}/${clientSideUploadComponent.name}`;
         }
 
         try {
