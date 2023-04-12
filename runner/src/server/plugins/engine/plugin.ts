@@ -307,6 +307,7 @@ export const plugin = {
             request.server?.plugins?.crumb?.generate?.(request, h);
             return h.continue;
           },
+          timeout: 60000, // 60 seconds
         },
         pre: [{ method: handleFiles }],
         handler: postHandler,

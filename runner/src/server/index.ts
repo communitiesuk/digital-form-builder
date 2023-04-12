@@ -53,6 +53,9 @@ const serverOptions = (): ServerOptions => {
           abortEarly: false,
         },
       },
+      timeout: {
+        server: 60000,
+      },
       security: {
         hsts: {
           maxAge: 31536000,
