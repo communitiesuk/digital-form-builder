@@ -53,6 +53,8 @@ export class FreeTextField extends FormComponent {
       this.formSchema = this.formSchema.min(def.schema.min);
     }
 
+    let a = "hello world";
+
     if (maxWords ?? false) {
       this.formSchema = this.formSchema.custom((value, helpers) => {
         if (inputIsOverWordCount(value, maxWords)) {
