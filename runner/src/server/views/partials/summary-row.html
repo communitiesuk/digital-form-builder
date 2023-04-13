@@ -7,7 +7,7 @@
         {% if item.value %}            
             {%if item.type == 'MultiInputField' %}
                 {% for itemValue in item.value%}
-                    {{itemValue.type-of-revenue-cost}} : {{itemValue.value}}<br>
+                    {{itemValue}}<br>
                 {% endfor %}
                 {% elif item.type == 'NumberField' %}
                 {{item.prefix}}{{item.value}}

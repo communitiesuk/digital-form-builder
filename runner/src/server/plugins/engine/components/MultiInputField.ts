@@ -65,8 +65,20 @@ export class MultiInputField extends FormComponent {
 
   getDisplayStringFromState(state: FormSubmissionState) {
     const values = state[this.name];
+    const stringValue = new Array();
+    if (values) {
+      for (var value of values) {
+        if (typeof value === "string") {
+          stringValue.push(value);
+        } else {
+          stringValue.push(
+            `${value["type-of-revenue-cost"]} : ${this.options.prefix}${value["value"]}`
+          );
+        }
+      }
+    }
 
-    return values;
+    return stringValue;
   }
 
   // @ts-ignore - eslint does not report this as an error, only tsc
