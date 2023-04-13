@@ -10,9 +10,11 @@ import {
 } from "../types";
 import { FormModel } from "../models";
 import { Schema } from "joi";
+import { DataType } from "./types";
 
 export class MultiInputField extends FormComponent {
   children: ComponentCollection;
+  dataType = "multiInput" as DataType;
 
   constructor(def: InputFieldsComponentsDef, model: FormModel) {
     super(def, model);

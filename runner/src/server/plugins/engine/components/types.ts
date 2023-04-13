@@ -87,4 +87,5 @@ export type DataType =
   | "monthYear"
   | "number"
   | "file"
-  | "freeText";
+  | "freeText"
+  | "multiInput";
