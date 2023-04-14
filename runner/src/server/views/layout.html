@@ -169,21 +169,16 @@
 
 
 {% block footer %}
-    {{ govukFooter({
-        meta: {
-            items: [{
-                href: 'https://www.gov.uk/government/publications/community-ownership-fund-privacy-notice/community-ownership-fund-privacy-notice',
-                text: 'Privacy'
-            }, {
-                href: cookiePolicyUrl,
-                text: 'Cookies'
-            }, {
-                href: accessibilityStatementUrl,
-                text: 'Accessibility Statement'
-            }, {
-                href: contactUsUrl,
-                text: 'Contact Us'
-            }]
-        }
-    }) }}
+  {% set footerItems = [] %}
+  {% for footerItem in page.def.footer %}
+    {% set _ = footerItems.push({
+      href: footerItem.href,
+      text: footerItem.text
+    }) %}
+  {% endfor %}
+  {{ govukFooter({
+    meta: {
+      items: footerItems
+    }
+  }) }}
 {% endblock %}

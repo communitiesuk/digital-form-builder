@@ -481,7 +481,7 @@
       "title": "Update form in application store",
       "type": "savePerPage",
       "outputConfiguration": {
-        "savePerPageUrl": "https://webhook.site/ba83e49b-cdd1-46e9-9c04-c89cfa651752"
+        "savePerPageUrl": "True"
       }
     }
   ],
@@ -512,6 +512,24 @@
       "name": "moreThanThreeApplicants",
       "displayName": "moreThanThreeApplicants",
       "value": "applicantDetails.numberOfApplicants > 3"
+    }
+  ],
+  "footer": [
+    {
+      "href": "https://www.gov.uk/government/publications/community-ownership-fund-privacy-notice/community-ownership-fund-privacy-notice",
+      "text": "Privacy"
+    },
+    {
+      "href": "https://www.google.com",
+      "text": "The is a test"
+    },
+    {
+      "href": "https://www.gov.uk/government/publications/community-ownership-fund-privacy-notice/community-ownership-fund-privacy-notice",
+      "text": "Accessibility Statement"
+    },
+    {
+      "href": "https://www.gov.uk/government/publications/community-ownership-fund-privacy-notice/community-ownership-fund-privacy-notice",
+      "text": "Contact Us"
     }
   ]
 }
