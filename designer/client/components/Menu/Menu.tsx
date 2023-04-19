@@ -17,6 +17,7 @@ import ListsEdit from "../../list/ListsEdit";
 import { useMenuItem } from "./useMenuItem";
 import { Tabs, useTabs } from "./useTabs";
 import { SubMenu } from "./SubMenu";
+import FootersEdit from "../../footer/footers-edit";
 
 type Props = {
   updateDownloadedAt?: (string) => void;
@@ -36,6 +37,7 @@ export default function Menu({ updateDownloadedAt, id }: Props) {
   const fees = useMenuItem();
   const summaryBehaviour = useMenuItem();
   const summary = useMenuItem();
+  const footer = useMenuItem();
 
   const { selectedTab, handleTabChange } = useTabs();
 
@@ -74,6 +76,9 @@ export default function Menu({ updateDownloadedAt, id }: Props) {
         </button>
         <button onClick={summary.show} data-testid="menu-summary">
           {i18n("menu.summary")}
+        </button>
+        <button data-testid="menu.footer" onClick={footer.show}>
+          {i18n("Footer")}
         </button>
       </div>
       {formDetails.isVisible && (
@@ -139,6 +144,11 @@ export default function Menu({ updateDownloadedAt, id }: Props) {
           width="xlarge"
         >
           <DeclarationEdit onCreate={() => summaryBehaviour.hide()} />
+        </Flyout>
+      )}
+      {footer.isVisible && (
+        <Flyout title="Edit Footers" onHide={footer.hide} width="xlarge">
+          <FootersEdit />
         </Flyout>
       )}
 
