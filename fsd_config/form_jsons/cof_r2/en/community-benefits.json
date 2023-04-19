@@ -137,5 +137,23 @@
   },
   "phaseBanner": {
     "phase": "beta"
-  }
+  },
+  "footer": [
+    {
+      "href": "https://www.gov.uk/government/publications/community-ownership-fund-privacy-notice/community-ownership-fund-privacy-notice",
+      "text": "Privacy test Community benefits form"
+    },
+    {
+      "href": "https://frontend.access-funding.levellingup.gov.uk/cookie_policy",
+      "text": "Cookies test Community benefits form"
+    },
+    {
+      "href": "https://frontend.access-funding.levellingup.gov.uk/accessibility_statement",
+      "text": "Accessibility Statement test Community benefits form"
+    },
+    {
+      "href": "https://frontend.access-funding.levellingup.gov.uk/contact_us",
+      "text": "Contact Us test Community benefits form"
+    }
+  ]
 }
