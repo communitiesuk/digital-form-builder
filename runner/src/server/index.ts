@@ -105,7 +105,6 @@ async function createServer(routeConfig: RouteConfig) {
   await server.register(configureCrumbPlugin(config, routeConfig));
   await server.register(Schmervice);
   await server.register(pluginAuth);
-  await server.register(clientSideUpload);
 
   server.registerService([
     CacheService,
@@ -171,6 +170,7 @@ async function createServer(routeConfig: RouteConfig) {
   await server.register(
     configureEnginePlugin(formFileName, formFilePath, options)
   );
+  await server.register(clientSideUpload);
   await server.register(pluginApplicationStatus);
   await server.register(pluginRouter);
   await server.register(pluginErrorPages);
