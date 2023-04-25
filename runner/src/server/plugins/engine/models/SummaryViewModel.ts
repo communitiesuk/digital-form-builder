@@ -7,6 +7,7 @@ import {
 } from "server/plugins/engine/models/submission";
 import { HapiRequest } from "src/server/types";
 import { ViewModel } from "server/plugins/engine/models/viewModel";
+import joi from "joi";
 
 /**
  * TODO - extract submission behaviour dependencies from the viewmodel
@@ -36,11 +37,12 @@ export class SummaryViewModel extends ViewModel {
     const details = this.summaryDetails(request, model, state, relevantPages);
 
     const schema = model.makeFilteredSchema(state, relevantPages);
+    console.log(schema.describe());
     const collatedRepeatPagesState = gatherRepeatPages(state);
 
-    const result = schema.validate(collatedRepeatPagesState, {
+    const result = schema.validate(state, {
       abortEarly: false,
-      stripUnknown: true,
+      stripUnknown: false,
     });
 
     this.processErrors(result, details);

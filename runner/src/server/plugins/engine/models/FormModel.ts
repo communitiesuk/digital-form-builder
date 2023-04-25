@@ -136,17 +136,18 @@ export class FormModel {
             | joi.ArraySchema = joi.object().required();
 
           sectionPages.forEach((sectionPage) => {
-            sectionSchema = sectionSchema.concat(sectionPage.stateSchema);
+            schema.append({
+              // @ts-ignore
+              [section.name]: sectionPage.stateSchema,
+            });
+            //sectionSchema = sectionSchema.concat(sectionPage.stateSchema);
           });
 
           if (isRepeatable) {
             sectionSchema = joi.array().items(sectionSchema);
           }
 
-          schema = schema.append({
-            // @ts-ignore
-            [section.name]: sectionSchema,
-          });
+          //
         } else {
           sectionPages.forEach((sectionPage) => {
             schema = schema.concat(sectionPage.stateSchema);

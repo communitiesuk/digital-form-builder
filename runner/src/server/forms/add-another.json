@@ -14,8 +14,8 @@
         "customText": {
           "separatePageTitle": "You have selected these languages",
           "samePageTitle": "Revenue Costs",
-          "columnOneTitle": "Title",
-          "columnTwoTitle": "Cost",
+          "columnOneTitle": "Type of Revenue Cost",
+          "columnTwoTitle": "Amount",
           "columnThreeTitle": "Link"
         }
       },
