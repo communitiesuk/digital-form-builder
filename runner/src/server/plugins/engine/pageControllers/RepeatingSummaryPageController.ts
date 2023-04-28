@@ -5,6 +5,9 @@ import {
   HapiLifecycleMethod,
 } from "server/types";
 import { RepeatingFieldPageController } from "./RepeatingFieldPageController";
+import { parseISO, format } from "date-fns";
+import config from "server/config";
+import { SaveViewModel } from "../models";
 export class RepeatingSummaryPageController extends PageController {
   private getRoute!: HapiLifecycleMethod;
   private postRoute!: HapiLifecycleMethod;
@@ -98,7 +101,7 @@ export class RepeatingSummaryPageController extends PageController {
       return {
         ...baseViewModel,
         customText: this.options.customText,
-        details: { rows },
+        details: { rows, headings: this.inputComponent.options.pageTitles },
       };
     }
 
@@ -164,22 +167,25 @@ export class RepeatingSummaryPageController extends PageController {
     return !isNaN(date.getTime());
   }
 
-  buildRowValues(answers) {}
+  getComponentType(name) {
+    const children = this.inputComponent.children.formItems;
+
+    for (const item of children) {
+      if (item.name === name) {
+        return item.type;
+      }
+    }
+
+    return undefined;
+  }
 
   buildTextFieldRows(answers, form_session_identifier, view = false) {
     const { title = "" } = this.inputComponent;
     return answers?.map((value, i) => {
       const valueValues: string[] = [];
       for (const key in value) {
-        if (this.isValidDate(value[key])) {
-          const dateOptions = {
-            day: "2-digit",
-            month: "2-digit",
-            year: "numeric",
-          };
-          valueValues.push(
-            new Date(value[key]).toLocaleDateString("en-GB", dateOptions)
-          );
+        if (this.getComponentType(key) == "DatePartsField") {
+          valueValues.push(format(parseISO(value[key]), "d MMMM yyyy"));
         } else {
           valueValues.push(value[key]);
         }
@@ -200,7 +206,7 @@ export class RepeatingSummaryPageController extends PageController {
         row.values.push({
           text: valueValues[i],
           class: i == 0 ? "govuk-table__header" : "govuk-table__cell",
-        });
+        } as never);
       }
       return row;
     });
@@ -212,7 +218,7 @@ export class RepeatingSummaryPageController extends PageController {
    */
   makePostRouteHandler() {
     return async (request: HapiRequest, h: HapiResponseToolkit) => {
-      const { cacheService } = request.services([]);
+      const { cacheService, statusService } = request.services([]);
       const state = await cacheService.getState(request);
 
       if (request.payload?.next === "increment") {
@@ -220,6 +226,30 @@ export class RepeatingSummaryPageController extends PageController {
         return h.redirect(
           `/${this.model.basePath}${this.path}?view=${nextIndex}`
         );
+      }
+
+      if (config.savePerPage) {
+        const savedState = await cacheService.getState(request);
+
+        let relevantState = this.getConditionEvaluationContext(
+          this.model,
+          savedState
+        );
+
+        const saveViewModel = new SaveViewModel(
+          this.title,
+          this.model,
+          relevantState,
+          request
+        );
+
+        await cacheService.mergeState(request, {
+          outputs: saveViewModel.outputs,
+          userCompletedSummary: true,
+          webhookData: saveViewModel.validatedWebhookData,
+        });
+
+        await statusService.savePerPageRequest(request);
       }
 
       if (typeof this.returnUrl !== "undefined") {

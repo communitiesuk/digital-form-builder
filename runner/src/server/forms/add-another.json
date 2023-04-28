@@ -24,7 +24,8 @@
           "name": "MultiInputField",
           "options": {
             "textFieldTitle": "Type of Revenue Cost",
-            "numberFieldTitle": "Amount"
+            "numberFieldTitle": "Amount",
+            "pageTitles": ["Title", "Cost", "Date", "Reason", "Link"]
           },
           "type": "MultiInputField",
           "title": "MultiInputField",
@@ -93,7 +94,8 @@
           "name": "MultiInputField-test",
           "options": {
             "textFieldTitle": "Type of Revenue Cost",
-            "numberFieldTitle": "Amount"
+            "numberFieldTitle": "Amount",
+            "pageTitles": ["Title", "Cost", "Link"]
           },
           "type": "MultiInputField",
           "title": "MultiInputField 2",

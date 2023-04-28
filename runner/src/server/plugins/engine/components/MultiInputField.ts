@@ -38,13 +38,6 @@ export class MultiInputField extends FormComponent {
   }
 
   getStateValueFromValidForm(payload: FormPayload) {
-    let a = this.children.getStateFromValidForm(payload);
-    let b = {};
-
-    this.children.formItems.forEach((item) => {
-      Object.assign(b, item.getStateFromValidForm(payload));
-    });
-
     return this.children.getStateFromValidForm(payload);
   }
 

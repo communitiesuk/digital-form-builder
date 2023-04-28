@@ -17,7 +17,7 @@
         {% elif item.type == "DatePartsField" %}
         {{ govukDateInput(item) }}
         {% elif item.type == "NumberField" %}
-        {{ TextField(item) }}
+        {{ govukInput(item) }}
         {% elif item.type == "RadiosField" %}
         {{ govukRadios(item) }}
         {%endif%}

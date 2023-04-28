@@ -13,13 +13,9 @@
             <caption class="govuk-table__caption govuk-table__caption--m">{{page.options.customText.samePageTitle}}</caption>
             <thead class="govuk-table__head">
               <tr class="govuk-table__row">
-                <th scope="col" class="govuk-table__header">{{page.options.customText.columnOneTitle}}</th>
-                <th scope="col" class="govuk-table__header">
-                  <strong>{{page.options.customText.columnTwoTitle}}</strong>
-                </th>
-                <th scope="col" class="govuk-table__header">
-                  <strong>{{page.options.customText.columnThreeTitle}}</strong>
-                </th>
+                {% for heading in details.headings %}
+                <th scope="col" class="govuk-table__header">{{heading}}</th>
+                {% endfor %}
               </tr>
             </thead>
             {{details.length}}
