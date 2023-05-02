@@ -187,7 +187,9 @@ export class RepeatingSummaryPageController extends PageController {
         if (this.getComponentType(key) == "DatePartsField") {
           valueValues.push(format(parseISO(value[key]), "d MMMM yyyy"));
         } else {
-          valueValues.push(value[key]);
+          valueValues.push(
+            `${this.inputComponent.getPrefix(key)}${value[key]}`
+          );
         }
       }
 
@@ -223,8 +225,10 @@ export class RepeatingSummaryPageController extends PageController {
 
       if (request.payload?.next === "increment") {
         const nextIndex = this.nextIndex(state);
+        let returnUrl =
+          this.returnUrl !== undefined ? `&returnUrl=${this.returnUrl}` : "";
         return h.redirect(
-          `/${this.model.basePath}${this.path}?view=${nextIndex}`
+          `/${this.model.basePath}${this.path}?view=${nextIndex}${returnUrl}`
         );
       }
 

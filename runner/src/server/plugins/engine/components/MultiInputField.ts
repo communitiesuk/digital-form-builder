@@ -41,6 +41,18 @@ export class MultiInputField extends FormComponent {
     return this.children.getStateFromValidForm(payload);
   }
 
+  getPrefix(key: string) {
+    const children = this.children.formItems;
+
+    for (const item of children) {
+      if (item.name === key) {
+        return item.options.prefix ?? "";
+      }
+    }
+
+    return "";
+  }
+
   getDisplayStringFromState(state: FormSubmissionState) {
     const values = state[this.name];
     const stringValue = new Array();
@@ -48,9 +60,9 @@ export class MultiInputField extends FormComponent {
       for (var value of values) {
         let outputString = "";
         for (const key in value) {
-          outputString += `${value[key]} : `;
+          outputString += `${this.getPrefix(key)}${value[key]} : `;
         }
-        outputString = outputString.slice(0, -1);
+        outputString = outputString.slice(0, -2);
         if (typeof value === "string") {
           stringValue.push(value);
         } else {

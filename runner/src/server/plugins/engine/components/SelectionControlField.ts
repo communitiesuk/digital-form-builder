@@ -11,9 +11,11 @@ export class SelectionControlField extends ListFormComponent {
     const options: any = this.options;
     const viewModel = super.getViewModel(formData, errors);
 
-    viewModel.fieldset = {
-      legend: viewModel.label,
-    };
+    if (!options.label) {
+      viewModel.fieldset = {
+        legend: viewModel.label,
+      };
+    }
 
     viewModel.items = items.map((item) => {
       const itemModel: ListItem = {
