@@ -81,7 +81,7 @@ export class MultiInputField extends FormComponent {
     const componentViewModels = this.children
       .getViewModel(formData, errors)
       .map((vm) => {
-        vm.model.type = vm.type;
+        vm.model.componentType = vm.type;
         return vm.model;
       });
 
