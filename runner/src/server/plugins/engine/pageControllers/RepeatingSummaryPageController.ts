@@ -167,24 +167,12 @@ export class RepeatingSummaryPageController extends PageController {
     return !isNaN(date.getTime());
   }
 
-  getComponentType(name) {
-    const children = this.inputComponent.children.formItems;
-
-    for (const item of children) {
-      if (item.name === name) {
-        return item.type;
-      }
-    }
-
-    return undefined;
-  }
-
   buildTextFieldRows(answers, form_session_identifier, view = false) {
     const { title = "" } = this.inputComponent;
     return answers?.map((value, i) => {
       const valueValues: string[] = [];
       for (const key in value) {
-        if (this.getComponentType(key) == "DatePartsField") {
+        if (this.inputComponent.getComponentType(key) == "DatePartsField") {
           valueValues.push(format(parseISO(value[key]), "d MMMM yyyy"));
         } else {
           valueValues.push(

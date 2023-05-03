@@ -50,7 +50,7 @@
             },
             {
               "name": "sUDJbo",
-              "options": { "label": true },
+              "options": { "isMultiInput": true },
               "type": "RadiosField",
               "title": "Financial Year",
               "list": "TestList"

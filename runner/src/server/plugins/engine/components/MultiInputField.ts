@@ -42,15 +42,14 @@ export class MultiInputField extends FormComponent {
   }
 
   getPrefix(key: string) {
+    const item = this.children.formItems.find((item) => item.name === key);
+    return item && item.options.prefix ? item.options.prefix : "";
+  }
+
+  getComponentType(name) {
     const children = this.children.formItems;
-
-    for (const item of children) {
-      if (item.name === key) {
-        return item.options.prefix ?? "";
-      }
-    }
-
-    return "";
+    const foundItem = children.find((item) => item.name === name);
+    return foundItem ? foundItem.type : undefined;
   }
 
   getDisplayStringFromState(state: FormSubmissionState) {
@@ -62,6 +61,7 @@ export class MultiInputField extends FormComponent {
         for (const key in value) {
           outputString += `${this.getPrefix(key)}${value[key]} : `;
         }
+        // This ill remove the : and a blank space at the end of the string. Helps with displaying on summary page.
         outputString = outputString.slice(0, -2);
         if (typeof value === "string") {
           stringValue.push(value);

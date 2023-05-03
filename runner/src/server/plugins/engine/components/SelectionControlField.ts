@@ -11,7 +11,8 @@ export class SelectionControlField extends ListFormComponent {
     const options: any = this.options;
     const viewModel = super.getViewModel(formData, errors);
 
-    if (!options.label) {
+    // Avoids double title issue when using the multi input component
+    if (!options.isMultiInput) {
       viewModel.fieldset = {
         legend: viewModel.label,
       };

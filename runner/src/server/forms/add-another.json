@@ -42,7 +42,7 @@
               "name": "Cost",
               "title": "Amount",
               "schema": {},
-              "options": { "classes": "govuk-!-width-one-half" }
+              "options": { "classes": "govuk-!-width-one-half", "prefix": "£" }
             }
           ]
         }
