@@ -61,7 +61,7 @@ export class MultiInputField extends FormComponent {
         for (const key in value) {
           outputString += `${this.getPrefix(key)}${value[key]} : `;
         }
-        // This ill remove the : and a blank space at the end of the string. Helps with displaying on summary page.
+        // This will remove the : and a blank space at the end of the string. Helps with displaying on summary page.
         outputString = outputString.slice(0, -2);
         if (typeof value === "string") {
           stringValue.push(value);
