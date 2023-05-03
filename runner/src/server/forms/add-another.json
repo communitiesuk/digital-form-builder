@@ -13,17 +13,15 @@
         },
         "customText": {
           "separatePageTitle": "You have selected these languages",
-          "samePageTitle": "Revenue Costs",
-          "columnOneTitle": "Title",
-          "columnTwoTitle": "Cost",
-          "columnThreeTitle": "Link"
+          "samePageTitle": "Revenue Costs"
         }
       },
       "components": [
         {
           "name": "MultiInputField",
           "options": {
-            "prefix": "£"
+            "prefix": "£",
+            "columnTitles": ["Title", "Cost", "Link"]
           },
           "type": "MultiInputField",
           "title": "MultiInputField",
