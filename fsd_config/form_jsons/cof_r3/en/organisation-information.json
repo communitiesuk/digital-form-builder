@@ -1,19 +1,12 @@
 {
   "metadata": {},
-  "startPage": "/about-your-organisation",
+  "startPage": "/organisation-information",
   "backLinkText": "Go back to application overview",
   "pages": [
     {
-      "title": "About your organisation",
-      "path": "/about-your-organisation",
+      "title": "Organisation information",
+      "path": "/organisation-information",
       "components": [
-        {
-          "name": "lzmhPS",
-          "options": {},
-          "type": "Html",
-          "content": "<h2 class=\"govuk-heading-m\">Organisation information</h2>",
-          "schema": {}
-        },
         {
           "name": "orUXQc",
           "options": {},
@@ -24,22 +17,15 @@
       ],
       "next": [
         {
-          "path": "/about-your-organisation-xcKoIi"
+          "path": "/organisation-names"
         }
       ],
       "controller": "./pages/start.js"
     },
     {
-      "path": "/about-your-organisation-xcKoIi",
-      "title": "About your organisation",
+      "path": "/organisation-names",
+      "title": "Organisation names",
       "components": [
-        {
-          "name": "uNgkim",
-          "options": {},
-          "type": "Html",
-          "content": "<h2 class=\"govuk-heading-m\">Organisation names</h2>",
-          "schema": {}
-        },
         {
           "name": "WWWWxy",
           "options": {
@@ -70,26 +56,20 @@
       ],
       "next": [
         {
-          "path": "/about-your-organisation-lqghSJ",
+          "path": "/alternative-names-of-your-organisation",
           "condition": "RzJfsD"
         },
         {
-          "path": "/about-your-organisation-HCsfMB",
+          "path": "/purpose-and-activities",
           "condition": "IshRJh"
         }
-      ]
+      ],
+      "section": "JBqDtK"
     },
     {
-      "path": "/about-your-organisation-lqghSJ",
-      "title": "About your organisation",
+      "path": "/alternative-names-of-your-organisation",
+      "title": "Alternative names of your organisation",
       "components": [
-        {
-          "name": "wnoFHW",
-          "options": {},
-          "type": "Html",
-          "content": "<h2 class=\"govuk-heading-m\">Organisation names</h2>",
-          "schema": {}
-        },
         {
           "name": "XFvKwZ",
           "options": {},
@@ -142,13 +122,14 @@
       ],
       "next": [
         {
-          "path": "/about-your-organisation-HCsfMB"
+          "path": "/purpose-and-activities"
         }
-      ]
+      ],
+      "section": "JBqDtK"
     },
     {
-      "path": "/about-your-organisation-HCsfMB",
-      "title": "About your organisation",
+      "path": "/purpose-and-activities",
+      "title": "Purpose and activities",
       "components": [
         {
           "name": "KYKyud",
@@ -162,15 +143,16 @@
           "options": {
             "maxWords": "500"
           },
-          "type": "MultilineTextField",
+          "type": "FreeTextField",
           "title": "What is your organisation's main purpose?",
-          "schema": {}
+          "schema": {},
+          "hint": "This is what the organisation was set up to achieve."
         },
         {
           "name": "tgnZof",
           "options": {},
           "type": "Html",
-          "content": "<fieldset class=\"govuk-fieldset\" id=\"tgnZof\"><legend class=\"govuk-label govuk-label--s\">Tell us about your organisation's main activities</legend>",
+          "content": "<fieldset class=\"govuk-fieldset\" id=\"tgnZof\"><legend class=\"govuk-label govuk-label--s\">Tell us about your organisation's main activities</legend>\n\n<p class=\"govuk-hint\">Include any activities you undertake in order to achieve the organisation's purpose.</p>\n\n<p class=\"govuk-hint\">You must list at least one, and can include up to three.</p>",
           "schema": {}
         },
         {
@@ -179,7 +161,7 @@
             "maxWords": "500",
             "hideTitle": true
           },
-          "type": "MultilineTextField",
+          "type": "FreeTextField",
           "title": "Tell us about your organisation's main activities",
           "hint": "<label for=\"btTtIb\" class=\"govuk-body\">Activity 1</label>",
           "schema": {}
@@ -192,7 +174,7 @@
             "optionalText": false,
             "maxWords": "500"
           },
-          "type": "MultilineTextField",
+          "type": "FreeTextField",
           "title": "Tell us about your organisation's main activities - Activity 2 ",
           "hint": "<label for=\"SkocDi\" class=\"govuk-body\">Activity 2 (optional)</label>",
           "schema": {}
@@ -204,7 +186,7 @@
             "maxWords": "500",
             "required": false
           },
-          "type": "MultilineTextField",
+          "type": "FreeTextField",
           "title": "Tell us about your organisation's main activities - Activity 3 ",
           "hint": "<label for=\"CNeeiC\" class=\"govuk-body\">Activity 3 (optional)</label>",
           "schema": {}
@@ -226,26 +208,20 @@
       ],
       "next": [
         {
-          "path": "/about-your-organisation-pJrQXM",
+          "path": "/previous-projects-similar-to-this-one",
           "condition": "iUHNKI"
         },
         {
-          "path": "/about-your-organisation-AQrpUn",
+          "path": "/how-your-organisation-is-classified",
           "condition": "RzrXoE"
         }
-      ]
+      ],
+      "section": "JBqDtK"
     },
     {
-      "path": "/about-your-organisation-pJrQXM",
-      "title": "About your organisation",
+      "path": "/previous-projects-similar-to-this-one",
+      "title": "Previous projects similar to this one",
       "components": [
-        {
-          "name": "QuTAqW",
-          "options": {},
-          "type": "Html",
-          "content": "<h2 class=\"govuk-heading-m\">Previous projects similar to this one </h2>",
-          "schema": {}
-        },
         {
           "name": "SXfYwl",
           "options": {},
@@ -259,7 +235,7 @@
             "maxWords": "500",
             "hideTitle": true
           },
-          "type": "MultilineTextField",
+          "type": "FreeTextField",
           "title": "Describe your previous projects",
           "hint": "<label for=\"wxCszQ\" class=\"govuk-body\">Project 1</label>",
           "schema": {}
@@ -271,7 +247,7 @@
             "hideTitle": true,
             "required": false
           },
-          "type": "MultilineTextField",
+          "type": "FreeTextField",
           "title": "Describe your previous projects - Project 2 ",
           "hint": "<label for=\"QJFQgi\" class=\"govuk-body\">Project 2 (optional)</label>",
           "schema": {}
@@ -283,7 +259,7 @@
             "hideTitle": true,
             "required": false
           },
-          "type": "MultilineTextField",
+          "type": "FreeTextField",
           "title": "Describe your previous projects - Project 3 ",
           "hint": "<label for=\"DGNWqE\" class=\"govuk-body\">Project 3 (optional)</label>",
           "schema": {}
@@ -298,21 +274,15 @@
       ],
       "next": [
         {
-          "path": "/about-your-organisation-AQrpUn"
+          "path": "/how-your-organisation-is-classified"
         }
-      ]
+      ],
+      "section": "JBqDtK"
     },
     {
-      "path": "/about-your-organisation-AQrpUn",
-      "title": "About your organisation",
+      "path": "/how-your-organisation-is-classified",
+      "title": "How your organisation is classified",
       "components": [
-        {
-          "name": "pTuytP",
-          "options": {},
-          "type": "Html",
-          "content": "<h2 class=\"govuk-heading-m\">How your organisation is classified</h2>",
-          "schema": {}
-        },
         {
           "name": "lajFtB",
           "options": {},
@@ -328,30 +298,28 @@
       ],
       "next": [
         {
-          "path": "/about-your-organisation-EfExhr",
+          "path": "/how-your-organisation-is-classified-other",
           "condition": "HkIMoI"
         },
         {
-          "path": "/about-your-organisation-WZJJZn",
+          "path": "/company-registration-details",
           "condition": "mNExjy"
         },
         {
-          "path": "/about-your-organisation-BEdlZN",
+          "path": "/charity-registration-details",
           "condition": "EfGsOh"
+        },
+        {
+          "path": "/trading-subsidiaries",
+          "condition": "zZSerd"
         }
-      ]
+      ],
+      "section": "JBqDtK"
     },
     {
-      "path": "/about-your-organisation-EfExhr",
-      "title": "About your organisation",
+      "path": "/how-your-organisation-is-classified-other",
+      "title": "How your organisation is classified (other)",
       "components": [
-        {
-          "name": "QzkrIE",
-          "options": {},
-          "type": "Html",
-          "content": "<h2 class=\"govuk-heading-m\">How your organisation is classified</h2>",
-          "schema": {}
-        },
         {
           "name": "plmwJv",
           "options": {
@@ -364,21 +332,15 @@
       ],
       "next": [
         {
-          "path": "/about-your-organisation-YbOyuw"
+          "path": "/registration-details"
         }
-      ]
+      ],
+      "section": "JBqDtK"
     },
     {
-      "path": "/about-your-organisation-YbOyuw",
-      "title": "About your organisation",
+      "path": "/registration-details",
+      "title": "Registration details",
       "components": [
-        {
-          "name": "toyZsH",
-          "options": {},
-          "type": "Html",
-          "content": "<h2 class=\"govuk-heading-m\">Registration details</h2>",
-          "schema": {}
-        },
         {
           "name": "GvPSna",
           "options": {},
@@ -398,48 +360,36 @@
           "condition": "BiTnsS"
         },
         {
-          "path": "/about-your-organisation-dsZNaL"
+          "path": "/trading-subsidiaries"
         }
-      ]
+      ],
+      "section": "JBqDtK"
     },
     {
-      "path": "/about-your-organisation-BEdlZN",
-      "title": "About your organisation",
+      "path": "/charity-registration-details",
+      "title": "Charity registration details",
       "components": [
-        {
-          "name": "rHMVcR",
-          "options": {},
-          "type": "Html",
-          "content": "<h2 class=\"govuk-heading-m\">Charity registration details</h2>",
-          "schema": {}
-        },
         {
           "name": "aHIGbK",
           "options": {
             "classes": "govuk-!-width-two-thirds"
           },
-          "type": "TextField",
+          "type": "NumberField",
           "title": "Charity number ",
           "schema": {}
         }
       ],
       "next": [
         {
-          "path": "/about-your-organisation-dsZNaL"
+          "path": "/trading-subsidiaries"
         }
-      ]
+      ],
+      "section": "JBqDtK"
     },
     {
-      "path": "/about-your-organisation-dsZNaL",
-      "title": "About your organisation",
+      "path": "/trading-subsidiaries",
+      "title": "Trading subsidiaries",
       "components": [
-        {
-          "name": "MgmuIz",
-          "options": {},
-          "type": "Html",
-          "content": "<h2 class=\"govuk-heading-m\">Trading subsidiaries</h2>",
-          "schema": {}
-        },
         {
           "name": "DwfHtk",
           "options": {},
@@ -450,26 +400,20 @@
       ],
       "next": [
         {
-          "path": "/about-your-organisation-JTzcmB",
+          "path": "/parent-organisation-details",
           "condition": "UlBxQv"
         },
         {
-          "path": "/about-your-organisation-DjLoiw",
+          "path": "/organisation-address",
           "condition": "kcWadF"
         }
-      ]
+      ],
+      "section": "JBqDtK"
     },
     {
-      "path": "/about-your-organisation-JTzcmB",
-      "title": "About your organisation",
+      "path": "/parent-organisation-details",
+      "title": "Parent organisation details",
       "components": [
-        {
-          "name": "UNQlIu",
-          "options": {},
-          "type": "Html",
-          "content": "<h2 class=\"govuk-heading-m\">Parent organisation details</h2>",
-          "schema": {}
-        },
         {
           "name": "MPNlZx",
           "options": {
@@ -490,21 +434,15 @@
       ],
       "next": [
         {
-          "path": "/about-your-organisation-DjLoiw"
+          "path": "/organisation-address"
         }
-      ]
+      ],
+      "section": "JBqDtK"
     },
     {
-      "path": "/about-your-organisation-DjLoiw",
-      "title": "About your organisation",
+      "path": "/organisation-address",
+      "title": "Organisation address",
       "components": [
-        {
-          "name": "vRPbaz",
-          "options": {},
-          "type": "Html",
-          "content": "<h2 class=\"govuk-heading-m\">Address and social media accounts</h2>",
-          "schema": {}
-        },
         {
           "name": "ZQolYb",
           "options": {},
@@ -571,26 +509,20 @@
       ],
       "next": [
         {
-          "path": "/about-your-organisation-QvPIox",
+          "path": "/correspondence-address",
           "condition": "fvQqsO"
         },
         {
-          "path": "/about-your-organisation-nqCpAH",
+          "path": "/joint-applications",
           "condition": "MnYndb"
         }
-      ]
+      ],
+      "section": "JBqDtK"
     },
     {
-      "path": "/about-your-organisation-QvPIox",
-      "title": "About your organisation",
+      "path": "/correspondence-address",
+      "title": "Correspondence address",
       "components": [
-        {
-          "name": "WYZWDE",
-          "options": {},
-          "type": "Html",
-          "content": "<h2 class=\"govuk-heading-m\">Correspondence address</h2>",
-          "schema": {}
-        },
         {
           "name": "VhkCbM",
           "options": {},
@@ -601,21 +533,15 @@
       ],
       "next": [
         {
-          "path": "/about-your-organisation-nqCpAH"
+          "path": "/joint-applications"
         }
-      ]
+      ],
+      "section": "JBqDtK"
     },
     {
-      "path": "/about-your-organisation-nqCpAH",
-      "title": "About your organisation",
+      "path": "/joint-applications",
+      "title": "Joint applications",
       "components": [
-        {
-          "name": "OKCdpZ",
-          "options": {},
-          "type": "Html",
-          "content": "<h2 class=\"govuk-heading-m\">Joint applications</h2>",
-          "schema": {}
-        },
         {
           "name": "hnLurH",
           "options": {},
@@ -629,26 +555,20 @@
       ],
       "next": [
         {
-          "path": "/about-your-organisation-PcEMeE",
+          "path": "/partner-organisation-details",
           "condition": "gCTswV"
         },
         {
           "path": "/summary",
           "condition": "erqBEX"
         }
-      ]
+      ],
+      "section": "JBqDtK"
     },
     {
-      "path": "/about-your-organisation-PcEMeE",
-      "title": "About your organisation",
+      "path": "/partner-organisation-details",
+      "title": "Partner organisation details",
       "components": [
-        {
-          "name": "YnSQGx",
-          "options": {},
-          "type": "Html",
-          "content": "<h2 class=\"govuk-heading-m\">Partner organisation details</h2>",
-          "schema": {}
-        },
         {
           "name": "APSjeB",
           "options": {
@@ -671,7 +591,7 @@
             "maxWords": "500",
             "hideTitle": true
           },
-          "type": "MultilineTextField",
+          "type": "FreeTextField",
           "title": "Tell us about your partnership and how you plan to work together",
           "schema": {},
           "hint": "<span class=\"govuk-label govuk-label--s\">Tell us about your partnership and how you plan to work together</span>If you are working in partnership with more than one organisation, include their details here"
@@ -681,7 +601,8 @@
         {
           "path": "/summary"
         }
-      ]
+      ],
+      "section": "JBqDtK"
     },
     {
       "path": "/summary",
@@ -691,16 +612,9 @@
       "controller": "./pages/summary.js"
     },
     {
-      "path": "/about-your-organisation-WZJJZn",
-      "title": "About your organisation",
+      "path": "/company-registration-details",
+      "title": "Company registration details",
       "components": [
-        {
-          "name": "TUqPvI",
-          "options": {},
-          "type": "Html",
-          "content": "<h2 class=\"govuk-heading-m\">Company registration details</h2>",
-          "schema": {}
-        },
         {
           "name": "GlPmCX",
           "options": {
@@ -713,9 +627,10 @@
       ],
       "next": [
         {
-          "path": "/about-your-organisation-YbOyuw"
+          "path": "/registration-details"
         }
-      ]
+      ],
+      "section": "JBqDtK"
     },
     {
       "path": "/about-your-organisation-eBkQGy",
@@ -740,7 +655,7 @@
       ],
       "next": [
         {
-          "path": "/about-your-organisation-dsZNaL"
+          "path": "/trading-subsidiaries"
         }
       ]
     }
@@ -772,6 +687,10 @@
           "value": "SCIO"
         },
         {
+          "text": "Parish or town council",
+          "value": "PTC"
+        },
+        {
           "text": "Other",
           "value": "Other"
         }
@@ -791,9 +710,29 @@
           "value": "Other"
         }
       ]
+    },
+    {
+      "title": "Section as Complete",
+      "name": "dwPYuR",
+      "type": "string",
+      "items": [
+        {
+          "text": "Yes, I’ve completed this section",
+          "value": "Yes"
+        },
+        {
+          "text": "No, I’ll come back to it later",
+          "value": "No"
+        }
+      ]
     }
   ],
-  "sections": [],
+  "sections": [
+    {
+      "name": "JBqDtK",
+      "title": "Organisation information"
+    }
+  ],
   "conditions": [
     {
       "displayName": "Does your organisation use any other names-yes",
@@ -1140,6 +1079,28 @@
               "type": "Value",
               "value": "Other",
               "display": "Other"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "displayName": "Type of organisation-parish",
+      "name": "zZSerd",
+      "value": {
+        "name": "Type of organisation-parish",
+        "conditions": [
+          {
+            "field": {
+              "name": "lajFtB",
+              "type": "RadiosField",
+              "display": "Type of organisation"
+            },
+            "operator": "is",
+            "value": {
+              "type": "Value",
+              "value": "PTC",
+              "display": "PTC"
             }
           }
         ]
