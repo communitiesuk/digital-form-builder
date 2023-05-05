@@ -57,7 +57,8 @@
             {
               "name": "zJAnwc",
               "options": {
-                "prefix": "£"
+                "prefix": "£",
+                "classes": "govuk-!-width-one-half"
               },
               "type": "NumberField",
               "title": "Amount in pounds",
@@ -126,7 +127,8 @@
             {
               "name": "zbqnvm",
               "options": {
-                "prefix": "£"
+                "prefix": "£",
+                "classes": "govuk-!-width-one-half"
               },
               "type": "NumberField",
               "title": "Amount in pounds",
@@ -192,7 +194,8 @@
             {
               "name": "kietnW",
               "options": {
-                "prefix": "£"
+                "prefix": "£",
+                "classes": "govuk-!-width-one-half"
               },
               "type": "NumberField",
               "title": "Amount in pounds",
@@ -382,7 +385,8 @@
             {
               "name": "FwPOFx",
               "options": {
-                "prefix": "£"
+                "prefix": "£",
+                "classes": "govuk-!-width-one-half"
               },
               "type": "NumberField",
               "title": "Amount in pounds",

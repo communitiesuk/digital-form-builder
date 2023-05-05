@@ -89,7 +89,8 @@
             {
               "name": "GpLJDu",
               "options": {
-                "prefix": "£"
+                "prefix": "£",
+                "classes": "govuk-!-width-one-half"
               },
               "type": "NumberField",
               "title": "Amount in pounds",
@@ -155,7 +156,8 @@
             {
               "name": "BZIEKw",
               "options": {
-                "prefix": "£"
+                "prefix": "£",
+                "classes": "govuk-!-width-one-half"
               },
               "type": "NumberField",
               "title": "Amount in pounds",
