@@ -127,7 +127,7 @@ export class RepeatingFieldPageController extends PageController {
         return this.removeAtIndex(request, h);
       }
 
-      if ((view === "summary" || returnUrl) && !this.isSamePageDisplayMode) {
+      if (view === "summary" && !this.isSamePageDisplayMode) {
         return this.summary.getRouteHandler(request, h);
       }
 
@@ -180,7 +180,10 @@ export class RepeatingFieldPageController extends PageController {
     let rows = {};
     if (this.options!.summaryDisplayMode!.samePage) {
       rows = this.summary.buildRows(this.getPartialState(state), response);
-      response.source.context.details = { rows };
+      response.source.context.details = {
+        headings: this.inputComponent.options.columnTitles,
+        rows,
+      };
     }
   }
 
@@ -215,6 +218,11 @@ export class RepeatingFieldPageController extends PageController {
       //TODO quick fix to get sessions working with add another. We should look at a better way of passing through the query
       if (query.form_session_identifier) {
         form_session_identifier = `form_session_identifier=${query.form_session_identifier}`;
+      }
+
+      let returnUrl = "";
+      if (query.returnUrl) {
+        returnUrl = `&returnUrl=${query.returnUrl}`;
       }
 
       if (query.view === "summary") {
@@ -285,7 +293,7 @@ export class RepeatingFieldPageController extends PageController {
         );
       }
       return h.redirect(
-        `/${this.model.basePath}${this.path}?view=summary&${form_session_identifier}`
+        `/${this.model.basePath}${this.path}?view=summary&${form_session_identifier}${returnUrl}`
       );
     };
   }
