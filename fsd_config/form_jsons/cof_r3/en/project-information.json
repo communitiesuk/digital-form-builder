@@ -1,6 +1,7 @@
 {
   "metadata": {},
   "startPage": "/project-information",
+  "backLinkText": "Go back to application overview",
   "pages": [
     {
       "title": "Project information",
@@ -43,11 +44,12 @@
       "section": "qsnIGd"
     },
     {
-      "title": "Summary",
-      "path": "/summary",
+      "title": "Check your answers",
+      "path": "/check-your-answers",
       "controller": "./pages/summary.js",
       "components": [],
-      "next": []
+      "next": [],
+      "section": "qsnIGd"
     },
     {
       "path": "/successful-community-ownership-fund-applications",
@@ -64,6 +66,10 @@
         {
           "path": "/project-name-and-summary",
           "condition": "ObwCag"
+        },
+        {
+          "path": "/projects-previously-funded-by-the-community-ownership-fund",
+          "condition": "TTGIAJ"
         }
       ],
       "section": "qsnIGd"
@@ -86,7 +92,7 @@
           "options": {
             "maxWords": "500"
           },
-          "type": "MultilineTextField",
+          "type": "FreeTextField",
           "title": "Tell us how the asset is currently being used, or how it has been used before, and why it's important to the community",
           "hint": "If it has already been lost to the community, tell us how it was used before closure.",
           "schema": {
@@ -98,7 +104,7 @@
           "options": {
             "maxWords": "500"
           },
-          "type": "MultilineTextField",
+          "type": "FreeTextField",
           "title": "Give a brief summary of your project, including what you hope to achieve"
         },
         {
@@ -106,11 +112,79 @@
           "options": {
             "maxWords": "500"
           },
-          "type": "MultilineTextField",
+          "type": "FreeTextField",
           "title": "Tell us about the planned activities and/or services that will take place in the asset"
         }
       ],
-      "next": [],
+      "next": [
+        {
+          "path": "/address-of-the-asset"
+        }
+      ],
+      "section": "qsnIGd"
+    },
+    {
+      "path": "/projects-previously-funded-by-the-community-ownership-fund",
+      "title": "Projects previously funded by the Community Ownership Fund",
+      "components": [
+        {
+          "name": "ACppgI",
+          "options": {
+            "maxWords": "500"
+          },
+          "type": "FreeTextField",
+          "title": "Describe the project for which you were given funding",
+          "hint": "Include:\n<p>\n<ul  class=\"govuk-hint\">\n<li>project name</li>\n<li>general project overview</li>\n<li>date you received funding</li>\n</ul>\n</p>"
+        },
+        {
+          "name": "yuvajR",
+          "options": {
+            "prefix": "£",
+            "classes": "govuk-input--width-10"
+          },
+          "type": "NumberField",
+          "title": "Amount of funding received"
+        }
+      ],
+      "next": [
+        {
+          "path": "/project-name-and-summary"
+        }
+      ],
+      "section": "qsnIGd"
+    },
+    {
+      "path": "/address-of-the-asset",
+      "title": "Address of the asset",
+      "components": [
+        {
+          "name": "EfdliG",
+          "options": {},
+          "type": "UkAddressField",
+          "title": "Address of the community asset"
+        },
+        {
+          "name": "fIEUcb",
+          "options": {
+            "classes": "govuk-!-width-full"
+          },
+          "type": "TextField",
+          "title": " In which constituency is your asset?"
+        },
+        {
+          "name": "SWfcTo",
+          "options": {
+            "classes": "govuk-!-width-full"
+          },
+          "type": "TextField",
+          "title": "In which local council area is your asset?"
+        }
+      ],
+      "next": [
+        {
+          "path": "/check-your-answers"
+        }
+      ],
       "section": "qsnIGd"
     }
   ],
@@ -187,10 +261,49 @@
           }
         ]
       }
+    },
+    {
+      "displayName": "Was you application successful-yes",
+      "name": "TTGIAJ",
+      "value": {
+        "name": "Was you application successful-yes",
+        "conditions": [
+          {
+            "field": {
+              "name": "paawsj",
+              "type": "YesNoField",
+              "display": "Was your application successful?"
+            },
+            "operator": "is",
+            "value": {
+              "type": "Value",
+              "value": "true",
+              "display": "true"
+            }
+          }
+        ]
+      }
     }
   ],
   "fees": [],
-  "outputs": [],
+  "outputs": [
+    {
+      "name": "update-form",
+      "title": "Update form in application store",
+      "type": "savePerPage",
+      "outputConfiguration": {
+        "savePerPageUrl": "True"
+      }
+    }
+  ],
   "version": 2,
-  "skipSummary": false
+  "skipSummary": false,
+  "name": "Apply for funding to save an asset in your community",
+  "feedback": {
+    "feedbackForm": false,
+    "url": ""
+  },
+  "phaseBanner": {
+    "phase": "beta"
+  }
 }
