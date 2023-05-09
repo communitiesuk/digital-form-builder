@@ -6,7 +6,6 @@
     {
       "title": "Local support",
       "path": "/local-support",
-      "backLinkText": "Go back to application overview",
       "components": [
         {
           "name": "gqavTE",
