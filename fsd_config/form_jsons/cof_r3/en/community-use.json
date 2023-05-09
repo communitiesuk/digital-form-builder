@@ -11,7 +11,7 @@
           "name": "xFVQZF",
           "options": {},
           "type": "Para",
-          "content": "<label class=\"govuk-!-font-weight-bold\">In this section, we'll ask about:\n</label>\n\n<ul class=\"govuk-list govuk-list--bullet\">\n<li>who uses and benefits from the asset</li>\n<li>how losing the asset would affect the community</li>\n<li>why the asset will be lost without intervention</li>\n<li>asset ownership status</li>\n</ul>"
+          "content": "<label class=\"govuk-!-font-weight-bold\">In this section, we'll ask about:\n</label>\n\n<ul class=\"govuk-list govuk-list--bullet\">\n<li>who uses and benefits from the asset</li>\n<li>how losing the asset would affect the community</li>\n<li>why the asset will be lost without intervention</li>\n</ul>"
         }
       ],
       "next": [
@@ -44,7 +44,9 @@
         },
         {
           "name": "NGSXHE",
-          "options": {},
+          "options": {
+            "maxWords": "500"
+          },
           "type": "FreeTextField",
           "title": "Why will the asset be lost without community intervention?",
           "hint": "Include any evidence you have that it's use by the community will be threatened.\n\n<p>For example, by the owner's intention or an imminent sale</p>"
