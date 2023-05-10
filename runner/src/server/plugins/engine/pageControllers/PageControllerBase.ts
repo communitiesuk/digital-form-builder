@@ -553,7 +553,6 @@ export class PageControllerBase {
         state.callback?.returnUrl ?? progress[progress.length - 2];
       viewModel.backLinkText =
         this.model.def?.backLinkText ?? "Go back to application overview";
-      viewModel.isStartPage = isStartPage;
       return h.view(this.viewName, viewModel);
     };
   }
