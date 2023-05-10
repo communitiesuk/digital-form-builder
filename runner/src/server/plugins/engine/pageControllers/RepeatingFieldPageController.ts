@@ -267,7 +267,11 @@ export class RepeatingFieldPageController extends PageController {
 
       const modifyUpdate = (update) => {
         const key = this.inputComponent.name;
-        const value = update[key];
+        let a = this.section.name + "." + key;
+
+        const value = this.section.name
+          ? update[this.section.name][key]
+          : update[key];
         const wrappedValue = !Array.isArray(value) ? [value] : value;
         return {
           [key]: [...new Set(wrappedValue)],

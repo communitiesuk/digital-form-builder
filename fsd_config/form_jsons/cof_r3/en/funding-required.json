@@ -124,7 +124,8 @@
             {
               "name": "JtwkMy",
               "options": {
-                "prefix": "£"
+                "prefix": "£",
+                "classes": "govuk-!-width-one-half"
               },
               "type": "NumberField",
               "title": "Amount",
@@ -212,7 +213,8 @@
             {
               "name": "LVJcDC",
               "options": {
-                "prefix": "£"
+                "prefix": "£",
+                "classes": "govuk-!-width-one-half"
               },
               "type": "NumberField",
               "title": "Amount",
@@ -255,6 +257,17 @@
     {
       "path": "/unsecured-match-funding",
       "title": "Unsecured match funding",
+      "controller": "RepeatingFieldPageController",
+      "options": {
+        "summaryDisplayMode": {
+          "samePage": true,
+          "separatePage": false,
+          "hideRowTitles": false
+        },
+        "customText": {
+          "samePageTitle": "Your unsecured match funding"
+        }
+      },
       "components": [
         {
           "name": "xsaziw",
@@ -289,7 +302,8 @@
             {
               "name": "THOdae",
               "options": {
-                "prefix": "£"
+                "prefix": "£",
+                "classes": "govuk-!-width-one-half"
               },
               "type": "NumberField",
               "title": "Amount",
@@ -342,7 +356,7 @@
           "options": {
             "maxWords": "500"
           },
-          "type": "MultilineTextField",
+          "type": "FreeTextField",
           "title": "Tell us how the revenue funding you've requested will help run the asset",
           "hint": "Include the specific needs it will meet, and how you'll meet these needs once you've spent the funding."
         }
