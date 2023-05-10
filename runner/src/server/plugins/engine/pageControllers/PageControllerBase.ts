@@ -146,18 +146,18 @@ export class PageControllerBase {
     const singleFormComponentIsFirst =
       singleFormComponent && singleFormComponent === components[0];
 
-    // if (singleFormComponent && singleFormComponentIsFirst) {
-    //   const label: any = singleFormComponent.model.label;
+    if (singleFormComponent && singleFormComponentIsFirst) {
+      const label: any = singleFormComponent.model.label;
 
-    //   if (pageTitle) {
-    //     label.text = pageTitle;
-    //   }
+      if (pageTitle) {
+        label.text = pageTitle;
+      }
 
-    //   label.isPageHeading = true;
-    //   label.classes = "govuk-label--l";
-    //   pageTitle = pageTitle || label.text;
-    //   showTitle = false;
-    // }
+      label.isPageHeading = true;
+      label.classes = "govuk-label--l";
+      pageTitle = pageTitle || label.text;
+      showTitle = false;
+    }
 
     return {
       page: this,
