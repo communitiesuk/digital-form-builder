@@ -200,7 +200,7 @@
             "columnTitles": ["Source", "Amount", "Action"]
           },
           "type": "MultiInputField",
-          "title": "Capital costs",
+          "title": "Secured match funding",
           "hint": "The MultiInputField needed",
           "schema": {},
           "children": [
@@ -289,7 +289,7 @@
             "columnTitles": ["Source", "Amount", "Action"]
           },
           "type": "MultiInputField",
-          "title": "Capital costs",
+          "title": "Unsecured match funding",
           "hint": "The MultiInputField needed",
           "schema": {},
           "children": [
