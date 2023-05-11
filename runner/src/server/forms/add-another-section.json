@@ -41,6 +41,15 @@
               "title": "Amount",
               "schema": {},
               "options": { "classes": "govuk-!-width-one-half", "prefix": "£" }
+            },
+            {
+              "name": "approximate",
+              "options": {
+                "required": true
+              },
+              "type": "MonthYearField",
+              "title": "Approximate date of marriage",
+              "schema": {}
             }
           ]
         }
