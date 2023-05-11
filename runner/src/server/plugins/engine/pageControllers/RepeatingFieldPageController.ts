@@ -193,15 +193,27 @@ export class RepeatingFieldPageController extends PageController {
     const { cacheService } = request.services([]);
     let state = await cacheService.getState(request);
     const key = this.inputComponent.name;
-    const answers = state[key];
+    let answers = state[key];
+
+    const sectionName =
+      this.pageDef.section === undefined ? "" : this.pageDef.section;
+
     let form_session_identifier = "";
 
     if (query.form_session_identifier) {
       form_session_identifier = `&form_session_identifier=${query.form_session_identifier}`;
     }
 
-    answers?.splice(removeAtIndex, 1);
-    await cacheService.mergeState(request, { [key]: answers });
+    if (sectionName) {
+      answers = state[sectionName][key];
+      answers?.splice(removeAtIndex, 1);
+      answers = { [key]: answers };
+      await cacheService.mergeState(request, { [sectionName]: answers });
+    } else {
+      answers?.splice(removeAtIndex, 1);
+      await cacheService.mergeState(request, { [key]: answers });
+    }
+
     if (state[key]?.length < 1 || this.isSamePageDisplayMode) {
       return h.redirect(`?view=0${form_session_identifier}`);
     }
