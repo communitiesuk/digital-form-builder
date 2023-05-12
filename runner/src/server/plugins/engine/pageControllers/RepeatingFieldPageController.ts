@@ -205,6 +205,7 @@ export class RepeatingFieldPageController extends PageController {
     }
 
     if (sectionName) {
+      // Gets the answers from the correct section
       answers = state[sectionName][key];
       answers?.splice(removeAtIndex, 1);
       answers = { [key]: answers };
