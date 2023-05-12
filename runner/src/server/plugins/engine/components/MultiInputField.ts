@@ -66,8 +66,11 @@ export class MultiInputField extends FormComponent {
           if (componentTyoe == "DatePartsField") {
             outputString += `${format(parseISO(value[key]), "d/MM/yyyy")} : `;
           } else if (componentTyoe == "MonthYearField") {
+            const monthYearValue = value[key];
             outputString +=
-              value[`${key}__month`] + "/" + value[`${key}__month`];
+              monthYearValue[`${key}__month`] +
+              "/" +
+              monthYearValue[`${key}__year : `];
           } else {
             outputString += `${this.getPrefix(key)}${value[key]} : `;
           }

@@ -21,7 +21,7 @@
           "name": "MultiInputField",
           "options": {
             "prefix": "£",
-            "columnTitles": ["Title", "Cost", "Link"]
+            "columnTitles": ["Title", "Cost", "Date", "Link"]
           },
           "type": "MultiInputField",
           "title": "MultiInputField",
@@ -45,7 +45,8 @@
             {
               "name": "approximate",
               "options": {
-                "required": true
+                "required": true,
+                "hideTitle": true
               },
               "type": "MonthYearField",
               "title": "Approximate date of marriage",

@@ -177,7 +177,12 @@ export class RepeatingSummaryPageController extends PageController {
         if (componentType == "DatePartsField") {
           rowValues.push(format(parseISO(value[key]), "d/MM/yyyy"));
         } else if (componentType == "MonthYearField") {
-          rowValues.push(value[`${key}__month`] + "/" + value[`${key}__month`]);
+          const monthYearValue = value[key];
+          rowValues.push(
+            monthYearValue[`${key}__month`] +
+              "/" +
+              monthYearValue[`${key}__year`]
+          );
         } else {
           rowValues.push(`${this.inputComponent.getPrefix(key)}${value[key]}`);
         }
