@@ -2,7 +2,7 @@ class FormPage {
   constructor(selector) {
     this.parent = $(selector);
   }
-
+  //for test push
   get section() {
     return this.parent.$(".page__heading span");
   }
