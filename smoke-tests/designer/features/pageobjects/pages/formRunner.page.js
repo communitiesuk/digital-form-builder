@@ -53,6 +53,7 @@ class FormRunnerPage extends Page {
    * @param fieldValue
    */
   inputField(labelText, fieldValue) {
+    //TODO: see about adding WebdriverWait to avoid inconsistent failing smoke tests on the github actions
     let fieldIndex = browser
       .$$(".govuk-input")
       .findIndex((el) => el.parentElement().getText().includes(labelText));
