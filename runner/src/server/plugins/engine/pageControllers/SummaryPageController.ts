@@ -130,7 +130,8 @@ export class SummaryPageController extends PageController {
           }
         }
       });
-
+      this.setPhaseTag(viewModel);
+      this.setFeedbackDetails(viewModel, request);
       return h.view("summary", viewModel);
     };
   }

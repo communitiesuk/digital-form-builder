@@ -18,7 +18,8 @@
         {
           "path": "/your-support-for-the-project"
         }
-      ]
+      ],
+      "controller": "./pages/start.js"
     },
     {
       "path": "/your-support-for-the-project",

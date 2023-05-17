@@ -896,7 +896,7 @@ export class PageControllerBase {
     return Object.keys(object).length;
   }
 
-  private setPhaseTag(viewModel) {
+  public setPhaseTag(viewModel) {
     // Set phase tag if it exists in form definition (even if empty for 'None'),
     // otherwise the template context will simply return server config
     if (this.def.phaseBanner) {

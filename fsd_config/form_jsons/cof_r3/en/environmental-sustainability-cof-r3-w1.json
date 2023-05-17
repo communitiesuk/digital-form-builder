@@ -18,7 +18,8 @@
         {
           "path": "/how-youve-considered-the-environment"
         }
-      ]
+      ],
+      "controller": "./pages/start.js"
     },
     {
       "path": "/how-youve-considered-the-environment",
