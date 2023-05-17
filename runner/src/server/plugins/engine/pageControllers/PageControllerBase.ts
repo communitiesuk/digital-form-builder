@@ -138,26 +138,27 @@ export class PageControllerBase {
     }
     const components = this.components.getViewModel(formData, errors);
 
-    const formComponents = components.filter((c) => c.isFormComponent);
-    const hasSingleFormComponent = formComponents.length === 1;
-    const singleFormComponent = hasSingleFormComponent
-      ? formComponents[0]
-      : null;
-    const singleFormComponentIsFirst =
-      singleFormComponent && singleFormComponent === components[0];
+    //TODO im not eniterly sure why this is in here, i dont want to remove it completely as maybe we can add a option to skip it
+    // const formComponents = components.filter((c) => c.isFormComponent);
+    // const hasSingleFormComponent = formComponents.length === 1;
+    // const singleFormComponent = hasSingleFormComponent
+    //   ? formComponents[0]
+    //   : null;
+    // const singleFormComponentIsFirst =
+    //   singleFormComponent && singleFormComponent === components[0];
 
-    if (singleFormComponent && singleFormComponentIsFirst) {
-      const label: any = singleFormComponent.model.label;
+    // if (singleFormComponent && singleFormComponentIsFirst) {
+    //   const label: any = singleFormComponent.model.label;
 
-      if (pageTitle) {
-        label.text = pageTitle;
-      }
+    //   if (pageTitle) {
+    //     label.text = pageTitle;
+    //   }
 
-      label.isPageHeading = true;
-      label.classes = "govuk-label--l";
-      pageTitle = pageTitle || label.text;
-      showTitle = false;
-    }
+    //   label.isPageHeading = true;
+    //   label.classes = "govuk-label--l";
+    //   pageTitle = pageTitle || label.text;
+    //   showTitle = false;
+    // }
 
     return {
       page: this,
@@ -896,7 +897,7 @@ export class PageControllerBase {
     return Object.keys(object).length;
   }
 
-  public setPhaseTag(viewModel) {
+  private setPhaseTag(viewModel) {
     // Set phase tag if it exists in form definition (even if empty for 'None'),
     // otherwise the template context will simply return server config
     if (this.def.phaseBanner) {
