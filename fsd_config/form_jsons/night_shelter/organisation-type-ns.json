@@ -143,7 +143,7 @@
           "content": "<p class=\"govuk-hint\">You can add more names on the next step.</p>"
         },
         {
-          "name": "MultiInputField",
+          "name": "ILVEOG",
           "options": {
             "columnTitles": ["Full name", "Action"]
           },
@@ -153,7 +153,7 @@
           "schema": {},
           "children": [
             {
-              "name": "CaKTWN",
+              "name": "mrCotx",
               "options": {},
               "type": "TextField",
               "title": "Full name",

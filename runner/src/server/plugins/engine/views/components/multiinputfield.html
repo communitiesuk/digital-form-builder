@@ -13,7 +13,11 @@
         {% if item.componentType == "TextField"%}    
         {{ govukInput(item) }}
         {% elif item.componentType == "MultilineTextField"%}
-        {{ govukTextarea(item) }}
+            {% if item.isCharacterOrWordCount %}
+                {{ govukCharacterCount(item) }}
+            {% else %}
+                {{ govukTextarea(item) }}
+            {% endif %}        
         {% elif item.componentType == "DatePartsField" %}
         {{ govukDateInput(item) }}
         {% elif item.componentType == "NumberField" %}

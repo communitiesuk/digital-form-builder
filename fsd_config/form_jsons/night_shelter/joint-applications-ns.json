@@ -59,12 +59,44 @@
     {
       "path": "/partner-organisation-details",
       "title": "Partner organisation details",
-      "components": [],
+      "components": [
+        {
+          "name": "oxMLrb",
+          "options": {
+            "columnTitles": [
+              "Organisation",
+              "How you'll work together",
+              "Action"
+            ]
+          },
+          "type": "MultiInputField",
+          "title": "Your partner organisations",
+          "hint": "The MultiInputField needed",
+          "schema": {},
+          "children": [
+            {
+              "name": "EFlBMr",
+              "options": {},
+              "type": "TextField",
+              "title": "Partner organisation name",
+              "hint": ""
+            },
+            {
+              "name": "JFEJVf",
+              "options": { "maxWords": "500" },
+              "type": "MultilineTextField",
+              "title": "Tell us about your partnership and how you plan to work together",
+              "hint": ""
+            }
+          ]
+        }
+      ],
       "next": [
         {
           "path": "/summary"
         }
       ],
+      "controller": "RepeatingFieldPageController",
       "section": "uFLqwl"
     }
   ],

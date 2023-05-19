@@ -172,6 +172,11 @@ export class RepeatingSummaryPageController extends PageController {
 
   buildTextFieldRows(answers, form_session_identifier, view = false) {
     const { title = "" } = this.inputComponent;
+
+    form_session_identifier
+      ? `&form_session_identifier=${form_session_identifier}`
+      : "";
+
     return answers?.map((value, i) => {
       const rowValues: string[] = [];
       for (const key in value) {
@@ -195,7 +200,7 @@ export class RepeatingSummaryPageController extends PageController {
         action: {
           href: `?removeAtIndex=${i}${
             view ? `&view=${view}` : ``
-          }&form_session_identifier=${form_session_identifier}`,
+          }${form_session_identifier}`,
           text: "Remove",
           visuallyHiddenText: title,
         },
@@ -221,13 +226,18 @@ export class RepeatingSummaryPageController extends PageController {
       const { cacheService, statusService } = request.services([]);
       const state = await cacheService.getState(request);
       const query = request.query;
+      let form_session_identifier = "";
+
+      if (query.form_session_identifier) {
+        form_session_identifier = `form_session_identifier=${query.form_session_identifier}`;
+      }
 
       if (request.payload?.next === "increment") {
         const nextIndex = this.nextIndex(state);
         let returnUrl =
           this.returnUrl !== undefined ? `&returnUrl=${this.returnUrl}` : "";
         return h.redirect(
-          `/${this.model.basePath}${this.path}?view=${nextIndex}${returnUrl}&form_session_identifier=${query.form_session_identifier}`
+          `/${this.model.basePath}${this.path}?view=${nextIndex}${returnUrl}&${form_session_identifier}`
         );
       }
 
@@ -260,8 +270,7 @@ export class RepeatingSummaryPageController extends PageController {
       }
 
       return h.redirect(
-        this.getNext(request.payload) +
-          `?form_session_identifier=${query.form_session_identifier}`
+        this.getNext(request.payload) + `?${form_session_identifier}`
       );
     };
   }
