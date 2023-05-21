@@ -211,7 +211,7 @@
             "hideTitle": true,
             "maxWords": "500"
           },
-          "type": "MultilineTextField",
+          "type": "FreeTextField",
           "title": "Which other day provision do you currently provide?",
           "schema": {}
         }
@@ -262,7 +262,7 @@
             "hideTitle": true,
             "maxWords": "500"
           },
-          "type": "MultilineTextField",
+          "type": "FreeTextField",
           "title": "What other services are you currently providing?",
           "schema": {}
         }
@@ -332,7 +332,7 @@
             "maxWords": "500",
             "hideTitle": true
           },
-          "type": "MultilineTextField",
+          "type": "FreeTextField",
           "title": "Which other groups of people do you provide targeted specialist support to?"
         }
       ],
