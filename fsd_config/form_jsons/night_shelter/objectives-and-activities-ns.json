@@ -71,7 +71,7 @@
           "content": "<p class=\"govuk-hint\">Tell us about your project's objectives and how you plan to achieve these objectives.<p>\n\n<p class=\"govuk-hint\">You must include one objective about how your project will address local rough sleeping.</p>\n\n<p class=\"govuk-hint\">You can add more objectives and activities on the next screen.</p>"
         },
         {
-          "name": "ILVEOG",
+          "name": "kRxOHF",
           "options": {
             "columnTitles": ["Objective", "Activities", "Action"]
           },
@@ -81,7 +81,7 @@
           "schema": {},
           "children": [
             {
-              "name": "mrCotx",
+              "name": "FbWEBY",
               "options": {},
               "type": "TextField",
               "title": "Objective",
@@ -89,7 +89,7 @@
             },
             {
               "type": "MultilineTextField",
-              "name": "type-of-revenue-cost-test",
+              "name": "RXrpzV",
               "title": "Activities that will help you achieve the objective",
               "hint": "For example, renovation of existing accommodation to provide single occupancy accommodation, including bathroom and kitchen facilities",
               "schema": {},
