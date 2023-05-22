@@ -22,8 +22,8 @@
         {{ govukDateInput(item) }}
         {% elif item.componentType == "NumberField" %}
         {{ govukInput(item) }}
-        {% elif item.componentType == "RadiosField" %}
-        {{ govukRadios(item) }}
+        {% elif item.componentType == "RadiosField" or item.componentType == "YesNoField"%}
+        {{ govukRadios(item) }}        
         {% elif item.componentType == "MonthYearField" %}
         {{ govukDateInput(item) }}
         {%endif%}

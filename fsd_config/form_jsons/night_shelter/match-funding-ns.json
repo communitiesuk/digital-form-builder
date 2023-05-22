@@ -63,7 +63,7 @@
           "hideRowTitles": false
         },
         "customText": {
-          "separatePageTitle": "Your proposal risks"
+          "separatePageTitle": "Your match funding"
         }
       },
       "components": [
@@ -77,14 +77,16 @@
           "name": "uuyBff",
           "options": {
             "columnTitles": [
-              "Risk",
-              "Likelihood",
-              "Proposed mitigation",
+              "Source",
+              "Amount",
+              "Financial year",
+              "Capital or revenue",
+              "Secured",
               "Action"
             ]
           },
           "type": "MultiInputField",
-          "title": "Risk",
+          "title": "Match funding",
           "hint": "The MultiInputField needed",
           "schema": {},
           "children": [
@@ -109,21 +111,21 @@
             },
             {
               "name": "ndySbC",
-              "options": {},
+              "options": { "isMultiInput": true },
               "type": "RadiosField",
               "title": "Financial year",
               "list": "yLdfgD"
             },
             {
               "name": "pATWyM",
-              "options": {},
+              "options": { "isMultiInput": true },
               "type": "RadiosField",
               "title": "Which type of funding is it?",
               "list": "bJAxlV"
             },
             {
               "name": "sIFBGc",
-              "options": {},
+              "options": { "isMultiInput": true },
               "type": "YesNoField",
               "title": "Is the funding secured?"
             }
