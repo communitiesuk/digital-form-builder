@@ -128,7 +128,7 @@ export class StatusService {
             formData,
             "PUT"
           );
-        } else if (savePerPageWebhook?.outputData.url != "True") {
+        } else {
           response = await this.webhookService.postRequest(
             savePerPageWebhook.outputData.url,
             formData,
