@@ -131,7 +131,7 @@
             "classes": "govuk-input--width-10"
           },
           "type": "NumberField",
-          "hint": "<label class=\"govuk-body\" for=\"YauUjZ\">1 April 2021 to 31 March 2022</label>",
+          "hint": "<label class=\"govuk-body\" for=\"zuCRBk\">1 April 2021 to 31 March 2022</label>",
           "title": "Annual turnover for 1 April 2021 to 31 March 2022"
         }
       ],

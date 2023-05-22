@@ -39,7 +39,7 @@
           },
           "type": "NumberField",
           "title": "How many people will the proposal support with the funding in 2023 to 2024?",
-          "hint": "1 April 2023 to 31 March 2024"
+          "hint": "<label class=\"govuk-body\" for=\"cYEiGS\">1 April 2023 to 31 March 2024</label>"
         },
         {
           "name": "ZZisap",
@@ -48,7 +48,7 @@
             "hideTitle": true
           },
           "type": "NumberField",
-          "hint": "1 April 2024 to 31 March 2025",
+          "hint": "<label class=\"govuk-body\" for=\"ZZisap\">1 April 2024 to 31 March 2025</label>",
           "title": "How many people will the proposal support with the funding in 2024 to 2025?"
         },
         {
@@ -64,7 +64,7 @@
             "classes": "govuk-input--width-10"
           },
           "type": "NumberField",
-          "hint": "1 April 2023 to 31 March 2024",
+          "hint": "<label class=\"govuk-body\" for=\"ZJCVjE\">1 April 2023 to 31 March 2024</label>",
           "title": "How many people with restricted eligibility will the proposal support in 2023 to 2024?"
         },
         {
@@ -75,7 +75,7 @@
           },
           "type": "NumberField",
           "title": "How many people with restricted eligibility will the proposal support in 2024 to 2025?",
-          "hint": "1 April 2024 to 31 March 2025\n"
+          "hint": "<label class=\"govuk-body\" for=\"dboegN\">1 April 2024 to 31 March 2025</label>"
         }
       ],
       "next": [

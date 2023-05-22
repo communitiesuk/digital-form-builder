@@ -269,9 +269,7 @@ export class RepeatingSummaryPageController extends PageController {
         return h.redirect(this.returnUrl);
       }
 
-      return h.redirect(
-        this.getNext(request.payload) + `?${form_session_identifier}`
-      );
+      return h.redirect(this.getNext(state) + `?${form_session_identifier}`);
     };
   }
 }
