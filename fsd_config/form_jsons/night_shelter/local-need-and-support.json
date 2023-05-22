@@ -31,7 +31,7 @@
             "maxWords": "500",
             "hideTitle": true
           },
-          "type": "MultilineTextField",
+          "type": "FreeTextField",
           "title": "Tell us why your proposal is needed in your area"
         }
       ],
