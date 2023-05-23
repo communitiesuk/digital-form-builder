@@ -128,5 +128,8 @@
   ],
   "version": 2,
   "skipSummary": false,
-  "name": "Apply for funding to transform your night shelter services in England"
+  "name": "Apply for funding to transform your night shelter services in England",
+  "phaseBanner": {
+    "phase": "beta"
+  }
 }
