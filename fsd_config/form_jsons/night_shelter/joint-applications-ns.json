@@ -86,7 +86,8 @@
               "options": { "maxWords": "500" },
               "type": "MultilineTextField",
               "title": "Tell us about your partnership and how you plan to work together",
-              "hint": ""
+              "hint": "",
+              "schema": {}
             }
           ]
         }

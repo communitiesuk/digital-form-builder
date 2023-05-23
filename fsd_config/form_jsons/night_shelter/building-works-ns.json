@@ -203,7 +203,8 @@
             "maxWords": "500"
           },
           "type": "MultilineTextField",
-          "title": "Give a brief summary of the advice you received"
+          "title": "Give a brief summary of the advice you received",
+          "schema": {}
         }
       ],
       "next": [
