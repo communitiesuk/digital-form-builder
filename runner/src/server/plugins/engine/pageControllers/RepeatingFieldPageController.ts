@@ -38,7 +38,6 @@ const DEFAULT_OPTIONS = {
  * TODO:- this will be refactored as per https://github.com/XGovFormBuilder/digital-form-builder/discussions/855
  */
 export class RepeatingFieldPageController extends PageController {
-  logger: HapiServer["logger"];
   summary: RepeatingSummaryPageController;
   inputComponent: FormComponent;
   isRepeatingFieldPageController = true;
@@ -50,6 +49,7 @@ export class RepeatingFieldPageController extends PageController {
   saveText: string;
 
   options: RepeatingFieldPage["options"];
+  logger: HapiServer["logger"];
 
   constructor(model: FormModel, pageDef: RepeatingFieldPage) {
     super(model, pageDef);
@@ -112,11 +112,11 @@ export class RepeatingFieldPageController extends PageController {
     return parentSchema;
   }
 
-  RepeatingFieldPageController() {
+  makeGetRouteHandler() {
     return async (request: HapiRequest, h: HapiResponseToolkit) => {
       this.logger.info(
-        ["RepeatingFieldPageController", "RepeatingFieldPageController"],
-        `I HAVE HIT THE REPEATING FIELD WEBHOOK`
+        ["makeGetRouteHandler", "RepeatingController"],
+        "THE GET HAS BEEN HIT"
       );
       const { query } = request;
       const { removeAtIndex, view, returnUrl } = query;
