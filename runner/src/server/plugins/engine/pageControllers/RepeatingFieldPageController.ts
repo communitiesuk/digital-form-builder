@@ -114,13 +114,13 @@ export class RepeatingFieldPageController extends PageController {
 
   makeGetRouteHandler() {
     return async (request: HapiRequest, h: HapiResponseToolkit) => {
-      this.logger.info(
-        ["makeGetRouteHandler", "RepeatingController"],
-        "THE GET HAS BEEN HIT"
-      );
       const { query } = request;
       const { removeAtIndex, view, returnUrl } = query;
       const { cacheService } = request.services([]);
+      cacheService.logger.info(
+        ["makeGetRouteHandler", "RepeatingController"],
+        "THE GET HAS BEEN HIT"
+      );
       let state = await cacheService.getState(request);
       const partialState = this.getPartialState(state, view);
       state[this.inputComponent.name] = this.convertMultiInputStringAnswers(
