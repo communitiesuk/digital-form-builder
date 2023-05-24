@@ -1,4 +1,4 @@
-import { HapiRequest, HapiResponseToolkit } from "server/types";
+import { HapiRequest, HapiResponseToolkit, HapiServer } from "server/types";
 import { PageController } from "./PageController";
 import { FormModel } from "server/plugins/engine/models";
 import { RepeatingSummaryPageController } from "./RepeatingSummaryPageController";
@@ -38,6 +38,7 @@ const DEFAULT_OPTIONS = {
  * TODO:- this will be refactored as per https://github.com/XGovFormBuilder/digital-form-builder/discussions/855
  */
 export class RepeatingFieldPageController extends PageController {
+  logger: HapiServer["logger"];
   summary: RepeatingSummaryPageController;
   inputComponent: FormComponent;
   isRepeatingFieldPageController = true;
@@ -111,8 +112,12 @@ export class RepeatingFieldPageController extends PageController {
     return parentSchema;
   }
 
-  makeGetRouteHandler() {
+  RepeatingFieldPageController() {
     return async (request: HapiRequest, h: HapiResponseToolkit) => {
+      this.logger.info(
+        ["RepeatingFieldPageController", "RepeatingFieldPageController"],
+        `I HAVE HIT THE REPEATING FIELD WEBHOOK`
+      );
       const { query } = request;
       const { removeAtIndex, view, returnUrl } = query;
       const { cacheService } = request.services([]);
