@@ -611,7 +611,9 @@ export class PageControllerBase {
           `${form_session_identifier}/${folderPath}`,
           form_session_identifier
         );
-        payload[name] = files[0].Key;
+        if (files) {
+          payload[name] = files[0].Key;
+        }
       }
     }
 
