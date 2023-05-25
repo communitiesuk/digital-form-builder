@@ -4,9 +4,11 @@ import { ClientSideFileUploadFieldComponent } from "@xgovformbuilder/model";
 import { FormModel } from "server/plugins/engine/models";
 import { ClientSideFileUploadFieldViewModel } from "server/plugins/engine/components/types";
 import joi from "joi";
+import { DataType } from "./types";
 export class ClientSideFileUploadField extends FormComponent {
   options: ClientSideFileUploadFieldComponent["options"];
   schema: ClientSideFileUploadFieldComponent["schema"];
+  dataType = "file" as DataType;
 
   constructor(def: ClientSideFileUploadFieldComponent, model: FormModel) {
     super(def, model);

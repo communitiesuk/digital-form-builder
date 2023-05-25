@@ -574,7 +574,7 @@ export class PageControllerBase {
       modifyUpdate?: <T>(value: T) => any;
     } = {}
   ) {
-    const { cacheService } = request.services([]);
+    const { cacheService, uploadService } = request.services([]);
     const hasFilesizeError = request.payload === null;
     const preHandlerErrors = request.pre.errors;
     const state = await cacheService.getState(request);
@@ -587,11 +587,31 @@ export class PageControllerBase {
       .map((component) => component.model);
     const progress = state.progress || [];
     const { num } = request.query;
+    const { form_session_identifier } = request.query;
 
     for (let file of fileFields) {
       let fileName = file.name + "__filename";
       if (!payload.hasOwnProperty(fileName)) {
         payload[fileName] = state[fileName];
+      }
+    }
+
+    if (form_session_identifier) {
+      const clientFileFields = viewModel.components
+        .filter((component) => component.type === "ClientSideFileUploadField")
+        .map((component) => component.model);
+
+      const pageId = `${this.model.basePath}${this.pageDef.path}`;
+
+      if (clientFileFields.length > 0) {
+        //TODO temp fix, hardcoded to one a we only every allow 1 file upload on one page
+        let name = clientFileFields[0].name ?? "";
+        const folderPath = `${pageId}/${name}`;
+        const files = await uploadService.listFilesInBucketFolder(
+          `${form_session_identifier}/${folderPath}`,
+          form_session_identifier
+        );
+        payload[name] = files[0].Key;
       }
     }
 
