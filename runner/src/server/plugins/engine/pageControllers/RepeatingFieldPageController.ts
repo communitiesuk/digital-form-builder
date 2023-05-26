@@ -1,4 +1,4 @@
-import { HapiRequest, HapiResponseToolkit, HapiServer } from "server/types";
+import { HapiRequest, HapiResponseToolkit } from "server/types";
 import { PageController } from "./PageController";
 import { FormModel } from "server/plugins/engine/models";
 import { RepeatingSummaryPageController } from "./RepeatingSummaryPageController";
@@ -49,7 +49,6 @@ export class RepeatingFieldPageController extends PageController {
   saveText: string;
 
   options: RepeatingFieldPage["options"];
-  logger: HapiServer["logger"];
 
   constructor(model: FormModel, pageDef: RepeatingFieldPage) {
     super(model, pageDef);
@@ -123,19 +122,10 @@ export class RepeatingFieldPageController extends PageController {
       if (query.form_session_identifier) {
         form_session_identifier = `form_session_identifier=${query.form_session_identifier}`;
       }
-      cacheService.logger.info(
-        ["makeGetRouteHandler", "RepeatingController"],
-        "THE GET HAS BEEN HIT"
-      );
+
       let state = await cacheService.getState(request);
       const partialState = this.getPartialState(state, view);
-      if (typeof partialState !== "undefined") {
-        request.query["view"] = "summary";
-      }
-      cacheService.logger.info(
-        ["makeGetRouteHandler", "RepeatingController"],
-        "THE convertMultiInputStringAnswers is about to be HIT"
-      );
+
       state[this.inputComponent.name] = this.convertMultiInputStringAnswers(
         state[this.inputComponent.name]
       );
@@ -187,7 +177,6 @@ export class RepeatingFieldPageController extends PageController {
       }
 
       if (typeof partialState !== "undefined") {
-        request.query["view"] = "summary";
         return h.redirect(
           `?view=${view ?? "summary&"}${form_session_identifier}`
         );
@@ -247,7 +236,6 @@ export class RepeatingFieldPageController extends PageController {
     return async (request: HapiRequest, h: HapiResponseToolkit) => {
       const { query } = request;
       const { cacheService, statusService } = request.services([]);
-
       let form_session_identifier = "";
 
       //TODO quick fix to get sessions working with add another. We should look at a better way of passing through the query
