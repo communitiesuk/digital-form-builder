@@ -93,5 +93,23 @@
   },
   "phaseBanner": {
     "phase": "beta"
-  }
+  },
+  "footer": [
+    {
+      "href": "https://www.gov.uk/government/publications/community-ownership-fund-privacy-notice/community-ownership-fund-privacy-notice",
+      "text": "Privacy test Value to the community form"
+    },
+    {
+      "href": "https://policies.google.com/technologies/cookies?hl=en-US",
+      "text": "Cookies test Value to the community form"
+    },
+    {
+      "href": "https://www.gov.uk/government/publications/sample-accessibility-statement",
+      "text": "Accessibility Statement test Value to the community form"
+    },
+    {
+      "href": "https://www.zendesk.co.uk/blog/contact-us-page/",
+      "text": "Contact Us test Value to the community form"
+    }
+  ]
 }

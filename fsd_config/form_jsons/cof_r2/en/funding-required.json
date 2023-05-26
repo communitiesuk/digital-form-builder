@@ -540,5 +540,23 @@
   "skipSummary": false,
   "name": "Apply for funding to save an asset in your community",
   "feedback": { "feedbackForm": false, "url": "" },
-  "phaseBanner": { "phase": "beta" }
+  "phaseBanner": { "phase": "beta" },
+  "footer": [
+    {
+      "href": "https://www.gov.uk/government/publications/community-ownership-fund-privacy-notice/community-ownership-fund-privacy-notice",
+      "text": "Privacy test Funding required  form"
+    },
+    {
+      "href": "https://frontend.access-funding.levellingup.gov.uk/cookie_policy",
+      "text": "Cookies test Funding required  form"
+    },
+    {
+      "href": "https://frontend.access-funding.levellingup.gov.uk/accessibility_statement",
+      "text": "Accessibility Statement test Funding required form"
+    },
+    {
+      "href": "https://frontend.access-funding.levellingup.gov.uk/contact_us",
+      "text": "Contact Us test Funding required  form"
+    }
+  ]
 }
