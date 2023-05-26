@@ -273,6 +273,11 @@ export const plugin = {
     ) => {
       const { path, id } = request.params;
       const model = forms[id];
+      const { cacheService, statusService } = request.services([]);
+      cacheService.logger.info(
+        ["postHandler", "Plugin"],
+        "THE POST HAS BEEN HIT"
+      );
 
       if (model) {
         const page = model.pages.find(
