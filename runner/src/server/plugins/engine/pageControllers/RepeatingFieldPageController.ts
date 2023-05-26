@@ -117,12 +117,25 @@ export class RepeatingFieldPageController extends PageController {
       const { query } = request;
       const { removeAtIndex, view, returnUrl } = query;
       const { cacheService } = request.services([]);
+      let form_session_identifier = "";
+
+      //TODO quick fix to get sessions working with add another. We should look at a better way of passing through the query
+      if (query.form_session_identifier) {
+        form_session_identifier = `form_session_identifier=${query.form_session_identifier}`;
+      }
       cacheService.logger.info(
         ["makeGetRouteHandler", "RepeatingController"],
         "THE GET HAS BEEN HIT"
       );
       let state = await cacheService.getState(request);
       const partialState = this.getPartialState(state, view);
+      if (typeof partialState !== "undefined") {
+        request.query["view"] = "summary";
+      }
+      cacheService.logger.info(
+        ["makeGetRouteHandler", "RepeatingController"],
+        "THE convertMultiInputStringAnswers is about to be HIT"
+      );
       state[this.inputComponent.name] = this.convertMultiInputStringAnswers(
         state[this.inputComponent.name]
       );
@@ -174,7 +187,10 @@ export class RepeatingFieldPageController extends PageController {
       }
 
       if (typeof partialState !== "undefined") {
-        return this.summary.getRouteHandler(request, h);
+        request.query["view"] = "summary";
+        return h.redirect(
+          `?view=${view ?? "summary&"}${form_session_identifier}`
+        );
       }
 
       return super.makeGetRouteHandler()(request, h);

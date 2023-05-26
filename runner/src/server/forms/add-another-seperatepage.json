@@ -153,6 +153,17 @@
   "sections": [],
   "conditions": [],
   "fees": [],
-  "outputs": [],
-  "version": 2
+  "outputs": [
+    {
+      "name": "update-form",
+      "title": "Update form in application store",
+      "type": "savePerPage",
+      "outputConfiguration": {
+        "savePerPageUrl": "https://webhook.site/55b6a543-2497-4134-87fd-ce7488baa16e"
+      }
+    }
+  ],
+  "version": 2,
+  "skipSummary": false,
+  "name": "Apply for funding to save an asset in your community"
 }

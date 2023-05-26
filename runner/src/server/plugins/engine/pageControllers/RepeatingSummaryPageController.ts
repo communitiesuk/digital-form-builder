@@ -174,9 +174,9 @@ export class RepeatingSummaryPageController extends PageController {
   buildTextFieldRows(answers, form_session_identifier, view = false) {
     const { title = "" } = this.inputComponent;
 
-    form_session_identifier
-      ? `&form_session_identifier=${form_session_identifier}`
-      : "";
+    if (form_session_identifier) {
+      form_session_identifier = `&form_session_identifier=${form_session_identifier}`;
+    }
 
     return answers?.map((value, i) => {
       const rowValues: string[] = [];
