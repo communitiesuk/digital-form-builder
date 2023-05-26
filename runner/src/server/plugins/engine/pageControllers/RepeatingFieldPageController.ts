@@ -231,6 +231,10 @@ export class RepeatingFieldPageController extends PageController {
     return async (request: HapiRequest, h: HapiResponseToolkit) => {
       const { query } = request;
       const { cacheService, statusService } = request.services([]);
+      cacheService.logger.info(
+        ["makePostRouteHandler", "RepeatingController"],
+        "THE POST HAS BEEN HIT"
+      );
       let form_session_identifier = "";
 
       //TODO quick fix to get sessions working with add another. We should look at a better way of passing through the query
@@ -238,12 +242,21 @@ export class RepeatingFieldPageController extends PageController {
         form_session_identifier = `form_session_identifier=${query.form_session_identifier}`;
       }
 
+      cacheService.logger.info(
+        ["makePostRouteHandler", "RepeatingController"],
+        "FORM SESSION ID SET TO" + form_session_identifier
+      );
+
       let returnUrl = "";
       if (query.returnUrl) {
         returnUrl = `&returnUrl=${query.returnUrl}`;
       }
 
       if (query.view === "summary") {
+        cacheService.logger.info(
+          ["makePostRouteHandler", "RepeatingController"],
+          "VIEW IS SUMMARY SO POST HANDLER IS HIT"
+        );
         return this.summary.postRouteHandler(request, h);
       }
 

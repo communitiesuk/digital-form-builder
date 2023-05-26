@@ -224,6 +224,10 @@ export class RepeatingSummaryPageController extends PageController {
   makePostRouteHandler() {
     return async (request: HapiRequest, h: HapiResponseToolkit) => {
       const { cacheService, statusService } = request.services([]);
+      cacheService.logger.info(
+        ["makePostRouteHandler", "RepeatingSUMMARYController"],
+        "I HAVE HIT THE REPATING SUMMARY PAGE CONTIROLLER POST"
+      );
       const state = await cacheService.getState(request);
       const query = request.query;
       let form_session_identifier = "";
@@ -233,6 +237,10 @@ export class RepeatingSummaryPageController extends PageController {
       }
 
       if (request.payload?.next === "increment") {
+        cacheService.logger.info(
+          ["makePostRouteHandler", "RepeatingSUMMARYController"],
+          "NEXT === increment"
+        );
         const nextIndex = this.nextIndex(state);
         let returnUrl =
           this.returnUrl !== undefined ? `&returnUrl=${this.returnUrl}` : "";
