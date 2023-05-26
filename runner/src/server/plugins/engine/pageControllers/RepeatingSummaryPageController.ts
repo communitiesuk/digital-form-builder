@@ -61,6 +61,7 @@ export class RepeatingSummaryPageController extends PageController {
       await cacheService.mergeState(request, { progress });
 
       const viewModel = this.getViewModel(state);
+      viewModel.crumb = request.plugins.crumb;
 
       return h.view("repeating-summary", viewModel);
     };
