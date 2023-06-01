@@ -48,6 +48,10 @@ export class CheckboxesField extends SelectionControlField {
           href: `#${componentKey}`,
         };
 
+        if (!this.options.behaviour) {
+          return [];
+        }
+
         if (
           values.some((value) => value === this.options.behaviourItemValue) &&
           values.length > 1
