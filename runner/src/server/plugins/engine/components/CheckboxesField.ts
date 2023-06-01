@@ -56,7 +56,7 @@ export class CheckboxesField extends SelectionControlField {
             {
               ...error,
               ...{
-                text: `Select an option or None of these`,
+                text: `You cannot select ‘none of theseZ’ and another option`,
               },
             },
           ];
