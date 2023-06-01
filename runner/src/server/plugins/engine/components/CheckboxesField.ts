@@ -62,14 +62,7 @@ export class CheckboxesField extends SelectionControlField {
           ];
         }
 
-        return [
-          {
-            ...error,
-            ...{
-              text: ``,
-            },
-          },
-        ];
+        return [];
       },
     ];
   }
