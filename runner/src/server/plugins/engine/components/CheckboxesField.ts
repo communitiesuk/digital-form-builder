@@ -31,6 +31,49 @@ export class CheckboxesField extends SelectionControlField {
       .join(", ");
   }
 
+  getAdditionalValidationFunctions(): Function[] {
+    return [
+      async (request, viewModel) => {
+        const checkboxesComponent = viewModel.components.find(
+          (c) => c.model.name === this.name
+        );
+        const payload = (request.payload || {}) as FormData;
+        let values = payload[this.name];
+
+        const componentKey = checkboxesComponent.model.id;
+
+        const error = {
+          path: componentKey,
+          name: componentKey,
+          href: `#${componentKey}`,
+        };
+
+        if (
+          values.some((value) => value === this.options.behaviourItemValue) &&
+          values.length > 1
+        ) {
+          return [
+            {
+              ...error,
+              ...{
+                text: `Select an option or None of these`,
+              },
+            },
+          ];
+        }
+
+        return [
+          {
+            ...error,
+            ...{
+              text: ``,
+            },
+          },
+        ];
+      },
+    ];
+  }
+
   getViewModel(formData: FormData, errors: FormSubmissionErrors) {
     const viewModel = super.getViewModel(formData, errors);
     let formDataItems = formData[this.name];
@@ -48,6 +91,12 @@ export class CheckboxesField extends SelectionControlField {
     if (this.options.divider) {
       let divider = { divider: this.options.divider };
       viewModel.items.splice(viewModel.items.length - 1, 0, divider);
+    }
+
+    if (this.options.behaviour) {
+      viewModel.items[
+        viewModel.items.length - 1
+      ].behaviour = this.options.behaviour;
     }
 
     return viewModel;
