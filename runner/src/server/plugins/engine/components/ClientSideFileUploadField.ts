@@ -100,7 +100,7 @@ export class ClientSideFileUploadField extends FormComponent {
   ): ClientSideFileUploadFieldViewModel {
     const isRequired = this.options.minimumRequiredFiles > 0;
     this.options.required = isRequired;
-    this.options.optionalText = this.options.optionalText || !isRequired;
+    this.options.optionalText = !isRequired;
     const viewModel = {
       ...super.getViewModel(formData, errors),
       dropzoneConfig: this.options.dropzoneConfig,
