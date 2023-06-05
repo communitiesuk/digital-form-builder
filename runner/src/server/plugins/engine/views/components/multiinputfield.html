@@ -8,7 +8,7 @@
 
 {% macro MultiInputField(component) %}
     {% for item in component.model.items %}
-    <label class="govuk-label" for={{item.id}}>
+    <label class="govuk-label govuk-label--s" for={{item.id}}>
         {{item.label}}
         {% if item.componentType == "TextField"%}    
         {{ govukInput(item) }}

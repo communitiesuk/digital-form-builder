@@ -155,7 +155,7 @@ export class RepeatingSummaryPageController extends PageController {
               href: `?removeAtIndex=${i}${
                 view ? `&view=${view}` : ``
               }${form_session_identifier}`,
-              text: "Remove",
+              text: this.pageDef.options.customText.removeText ?? "Remove",
               visuallyHiddenText: titleWithIteration,
             },
           ],
@@ -207,7 +207,7 @@ export class RepeatingSummaryPageController extends PageController {
           href: `?removeAtIndex=${i}${
             view ? `&view=${view}` : ``
           }${form_session_identifier}`,
-          text: "Remove",
+          text: this.pageDef.options.customText.removeText ?? "Remove",
           visuallyHiddenText: title,
         },
         values: [],
@@ -272,7 +272,7 @@ export class RepeatingSummaryPageController extends PageController {
       }
 
       if (typeof this.returnUrl !== "undefined") {
-        return h.redirect(this.returnUrl);
+        return h.redirect(this.returnUrl + `?${form_session_identifier}`);
       }
 
       return h.redirect(this.getNext(state) + `?${form_session_identifier}`);
