@@ -1,5 +1,6 @@
 import { InputFieldsComponentsDef } from "@xgovformbuilder/model";
-import { optionalText } from "./constants";
+import { optionalTextEnglish } from "./constants";
+import { optionalTextCymraeg } from "./constants";
 import { FormComponent } from "./FormComponent";
 import { ComponentCollection } from "./ComponentCollection";
 import {
@@ -62,18 +63,25 @@ export class MultiInputField extends FormComponent {
         for (const key in value) {
           // TODO: Currently there are only a certain amount of fields for add another that will work. (see MultiInputField.html)
           // lets come up with a better way of covereting each date type to a viewable string
-          const componentTyoe = this.getComponentType(key);
+          const componentType = this.getComponentType(key);
           if (value[key] == null) {
             outputString += "Not supplied : ";
-          } else if (componentTyoe == "DatePartsField") {
+          } else if (componentType == "DatePartsField") {
             outputString += `${format(parseISO(value[key]), "d/MM/yyyy")} : `;
-          } else if (componentTyoe == "MonthYearField") {
+          } else if (componentType == "MonthYearField") {
             const monthYearValue = value[key];
             outputString +=
               monthYearValue[`${key}__month`] +
               "/" +
               monthYearValue[`${key}__year`] +
               " : ";
+          } else if (componentType == "YesNoField") {
+            const yesNoValue = value[key];
+            if (yesNoValue == true) {
+              outputString += "Yes : ";
+            } else {
+              outputString += "No : ";
+            }
           } else {
             outputString += `${this.getPrefix(key)}${value[key]} : `;
           }
@@ -93,6 +101,9 @@ export class MultiInputField extends FormComponent {
   // @ts-ignore - eslint does not report this as an error, only tsc
   getViewModel(formData: FormData, errors: FormSubmissionErrors) {
     const viewModel = super.getViewModel(formData, errors);
+    const optionalText = this.model?.def?.metadata?.isWelsh
+      ? optionalTextCymraeg
+      : optionalTextEnglish;
 
     // Use the component collection to generate the subitems
     const componentViewModels = this.children

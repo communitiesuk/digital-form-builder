@@ -1,5 +1,7 @@
 {
-  "metadata": {},
+  "metadata": {
+    "isWelsh": true
+  },
   "startPage": "/gwybodaeth-am-y-sefydliad",
   "backLinkText": "Yn ôl i'r trosolwg o'r cais",
   "pages": [
@@ -291,7 +293,7 @@
       ],
       "next": [
         {
-          "path": "/sut-mae-eich-sefydliad-yn-cael-ei-ddosbarthu",
+          "path": "/sut-mae-eich-sefydliad-yn-cael-ei-ddosbarthu-arall",
           "condition": "HkIMoI"
         },
         {
@@ -319,7 +321,7 @@
             "classes": "govuk-input--width-20"
           },
           "type": "TextField",
-          "title": "Type of organisation (other)",
+          "title": "Math o sefydliad (Arall)",
           "schema": {}
         }
       ],
@@ -477,7 +479,7 @@
           },
           "type": "WebsiteField",
           "title": "Gwefan a chyfryngau cymdeithasol - Dolen 2",
-          "hint": "<label for=\"FcdKlB\" class=\"govuk-body\">Dolen 2 (optional)</label>",
+          "hint": "<label for=\"FcdKlB\" class=\"govuk-body\">Dolen 2 (dewisol)</label>",
           "schema": {}
         },
         {
@@ -489,7 +491,7 @@
           },
           "type": "WebsiteField",
           "title": "Gwefan a chyfryngau cymdeithasol - Dolen 3",
-          "hint": "<label for=\"BzxgDA\" class=\"govuk-body\">Dolen 3 (optional)</label>",
+          "hint": "<label for=\"BzxgDA\" class=\"govuk-body\">Dolen 3 (dewisol)</label>",
           "schema": {}
         },
         {

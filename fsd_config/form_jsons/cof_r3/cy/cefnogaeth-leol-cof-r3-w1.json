@@ -1,5 +1,7 @@
 {
-  "metadata": {},
+  "metadata": {
+    "isWelsh": true
+  },
   "startPage": "/cefnogaeth-leol",
   "backLinkText": "Yn ôl i'r trosolwg o'r cais",
   "pages": [
@@ -38,6 +40,7 @@
           "name": "bDWjTN",
           "options": {
             "dropzoneConfig": {
+              "optionalText": true,
               "maxFiles": 1,
               "parallelUploads": 1,
               "maxFilesize": 10,
@@ -47,7 +50,7 @@
             "minimumRequiredFiles": 0
           },
           "type": "ClientSideFileUploadField",
-          "title": "Upload supporting evidence",
+          "title": "Lanlwythwch dystiolaeth ategol",
           "hint": "Uwchlwythwch dystiolaeth i ddangos y gefnogaeth sydd gennych gan y gymuned.\n\n<p>Dylai fod yn ffeil unigol nad yw'n fwy na 10MB ar unrhyw un o'r fformatau canlynol (jpg, jpeg, png, pdf, txt, doc, docx, odt, csv, xls, xlsx, ods).</p>"
         }
       ],
