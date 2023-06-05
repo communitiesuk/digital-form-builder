@@ -271,8 +271,6 @@ export class RepeatingSummaryPageController extends PageController {
         await statusService.savePerPageRequest(request);
       }
 
-      const savedStateTest = await cacheService.getState(request);
-
       if (typeof this.returnUrl !== "undefined") {
         return h.redirect(this.returnUrl + `?${form_session_identifier}`);
       }
