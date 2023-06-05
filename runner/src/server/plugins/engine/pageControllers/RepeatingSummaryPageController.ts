@@ -284,7 +284,7 @@ export class RepeatingSummaryPageController extends PageController {
       }
 
       if (typeof this.returnUrl !== "undefined") {
-        return h.redirect(this.returnUrl);
+        return h.redirect(this.returnUrl + `?${form_session_identifier}`);
       }
 
       return h.redirect(this.getNext(state) + `?${form_session_identifier}`);
