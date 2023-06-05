@@ -481,7 +481,7 @@
       "title": "Update form in application store",
       "type": "savePerPage",
       "outputConfiguration": {
-        "savePerPageUrl": "https://webhook.site/9de5454f-32f8-4a88-b60b-ee74246d0e19"
+        "savePerPageUrl": "True"
       }
     }
   ],
