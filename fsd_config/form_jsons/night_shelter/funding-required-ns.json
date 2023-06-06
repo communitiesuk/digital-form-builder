@@ -214,7 +214,8 @@
               "Financial year",
               "How it's been calculated",
               "Action"
-            ]
+            ],
+            "required": true
           },
           "type": "MultiInputField",
           "title": "Revenue costs",
@@ -302,7 +303,8 @@
               "Financial year",
               "How it's been calculated",
               "Action"
-            ]
+            ],
+            "required": true
           },
           "type": "MultiInputField",
           "title": "Capital costs",
