@@ -185,21 +185,30 @@ export class SummaryPageController extends PageController {
       );
 
       const { relevantPages } = SummaryViewModel.getRelevantPages(model, state);
-      const validationFunctions = relevantPages.flatMap(
-        (page) => page.components.additionalValidationFunctions
-      );
-      const errorsPromises = validationFunctions.flatMap((func) => {
-        return func(request, summaryViewModel);
+      const clientSideUploadComponents = relevantPages
+        .filter(
+          (page) => page.components.additionalValidationFunctions.length > 0
+        )
+        .flatMap((page) =>
+          page.components.items
+            .filter((item) => item.type == "ClientSideFileUploadField")
+            .flatMap((x) => x)
+        );
+
+      const errorPromises = clientSideUploadComponents.map((component) => {
+        const funcs = component.getAdditionalValidationFunctions();
+        return Promise.all(
+          funcs.map((func) => func(request, { components: [component] }))
+        );
       });
-
-      const errors = await Promise.all(errorsPromises);
-
-      if (errors) {
-        const restructuredErrors = errors.map(({ name, path, text }) => {
+      const nestedErrors = await Promise.all(errorPromises);
+      const errors = nestedErrors.flat(Infinity);
+      if (errors.length > 0) {
+        const restructuredErrors = errors.map(({ name, path }) => {
           return {
             path: path,
             name: name,
-            message: text,
+            message: "test",
           };
         });
         summaryViewModel.errors = [
