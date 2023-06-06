@@ -83,7 +83,8 @@
               "Capital or revenue",
               "Secured",
               "Action"
-            ]
+            ],
+            "required": true
           },
           "type": "MultiInputField",
           "title": "Match funding",
