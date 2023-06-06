@@ -51,11 +51,11 @@ export class SummaryPageController extends PageController {
       const nestedErrors = await Promise.all(errorPromises);
       const errors = nestedErrors.flat(Infinity);
       if (errors.length > 0) {
-        const restructuredErrors = errors.map(({ name, path }) => {
+        const restructuredErrors = errors.map(({ name, path, text }) => {
           return {
             path: path,
             name: name,
-            message: "test",
+            message: text,
           };
         });
         viewModel.errors = [...(viewModel.errors || []), ...restructuredErrors];
@@ -204,11 +204,11 @@ export class SummaryPageController extends PageController {
       const nestedErrors = await Promise.all(errorPromises);
       const errors = nestedErrors.flat(Infinity);
       if (errors.length > 0) {
-        const restructuredErrors = errors.map(({ name, path }) => {
+        const restructuredErrors = errors.map(({ name, path, text }) => {
           return {
             path: path,
             name: name,
-            message: "test",
+            message: text,
           };
         });
         summaryViewModel.errors = [
