@@ -8,6 +8,5 @@
     "funding-service-design-application-store.apps.internal"
   ],
   "jwtAuthCookieName": "fsd_user_token",
-  "sessionTimeout": 86400000,
-  "feedbackLink": "https://forms.office.com/Pages/ResponsePage.aspx?id=EGg0v32c3kOociSi7zmVqFJBHpeOL2tNnpiwpdL2iElURUY1WkhaS0NFMlZVQUhYQ1NaN0E4RjlQMC4u"
+  "sessionTimeout": 86400000
 }
