@@ -31,7 +31,8 @@
           "hideRowTitles": false
         },
         "customText": {
-          "separatePageTitle": "Proposal milestones"
+          "separatePageTitle": "Proposal milestones",
+          "removeText": "Delete"
         }
       },
       "components": [
@@ -44,7 +45,8 @@
         {
           "name": "sXlkAm",
           "options": {
-            "columnTitles": ["Milestone", "Date", "Action"]
+            "columnTitles": ["Milestone", "Date", "Action"],
+            "required": true
           },
           "type": "MultiInputField",
           "title": "Milestones",

@@ -60,7 +60,8 @@
           "hideRowTitles": false
         },
         "customText": {
-          "separatePageTitle": "Your objectives and activities"
+          "separatePageTitle": "Your objectives and activities",
+          "removeText": "Delete"
         }
       },
       "components": [
@@ -73,7 +74,8 @@
         {
           "name": "kRxOHF",
           "options": {
-            "columnTitles": ["Objective", "Activities", "Action"]
+            "columnTitles": ["Objective", "Activities", "Action"],
+            "required": true
           },
           "type": "MultiInputField",
           "title": "Proposal milestones",
