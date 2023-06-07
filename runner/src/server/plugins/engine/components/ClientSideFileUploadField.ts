@@ -91,7 +91,7 @@ export class ClientSideFileUploadField extends FormComponent {
 
         if (this.options.minimumRequiredFiles === 1) {
           const labelText = clientSideUploadComponent.model?.label?.text || "";
-          const fullErrorText = `${labelText} is required ssssssssss`;
+          const fullErrorText = `${labelText} is required`;
           return [
             {
               ...error,
@@ -130,7 +130,12 @@ export class ClientSideFileUploadField extends FormComponent {
       existingFiles: [], // this is populated afterwards.
       showNoScriptWarning: this.options.showNoScriptWarning || false,
       totalOverallFilesize: this.options.totalOverallFilesize,
+      hideTitle: this.options.hideTitle || false,
     } as ClientSideFileUploadFieldViewModel;
+    viewModel.label = {
+      text: this.title,
+      classes: "govuk-label--s",
+    };
     return viewModel;
   }
 }
