@@ -91,7 +91,7 @@ export class ClientSideFileUploadField extends FormComponent {
 
         if (this.options.minimumRequiredFiles === 1) {
           const labelText = clientSideUploadComponent.model?.label?.text || "";
-          const fullErrorText = `${labelText} is required`;
+          const fullErrorText = `${labelText} is required ssssssssss`;
           return [
             {
               ...error,

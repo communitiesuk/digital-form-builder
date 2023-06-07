@@ -3,7 +3,7 @@ import { ValidationOptions } from "joi";
  * see @link https://joi.dev/api/?v=17.4.2#template-syntax for template syntax
  */
 const messageTemplate = {
-  required: "{{#label}} is required",
+  required: "{{#label}} is required ffffffffffff",
   max: "{{#label}} must be {{#limit}} characters or fewer",
   min: "{{#label}} must be at least {{#limit}} characters",
   regex: "enter a valid {{#label}}",
