@@ -7,9 +7,7 @@
 
 
 {% macro MultiInputField(component) %}
-    {% for item in component.model.items %}
-    <label class="govuk-label" for={{item.id}}>
-        {{item.label}}
+    {% for item in component.model.items %}   
         {% if item.componentType == "TextField"%}    
         {{ govukInput(item) }}
         {% elif item.componentType == "MultilineTextField"%}
@@ -27,6 +25,5 @@
         {% elif item.componentType == "MonthYearField" %}
         {{ govukDateInput(item) }}
         {%endif%}
-    </label>
     {% endfor %}
 {% endmacro %}

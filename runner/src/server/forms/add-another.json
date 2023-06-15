@@ -32,15 +32,21 @@
               "type": "TextField",
               "name": "type-of-revenue-cost",
               "title": "Type of Revenue Cost",
+              "hint": "This is a hint",
               "schema": {},
-              "options": {}
+              "options": { "hideTitle": true }
             },
             {
               "type": "NumberField",
               "name": "Cost",
               "title": "Amount",
+              "hint": "<label class=\"govuk-label\" for=\"Cost\">Amount</label><div class=\"govuk-hint\">This is a hint</div>",
               "schema": {},
-              "options": { "classes": "govuk-!-width-one-half", "prefix": "£" }
+              "options": {
+                "classes": "govuk-!-width-one-half",
+                "prefix": "£",
+                "hideTitle": true
+              }
             }
           ]
         }
