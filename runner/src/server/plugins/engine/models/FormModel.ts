@@ -51,13 +51,10 @@ export class FormModel {
   startPage: any;
 
   constructor(def, options) {
-    let result = Schema.validate(def, { abortEarly: false });
+    const result = Schema.validate(def, { abortEarly: false });
 
     if (result.error) {
-      result = Schema.validate(def.values, { abortEarly: false });
-      if (result.error) {
-        throw result.error;
-      }
+      throw result.error;
     }
 
     // Make a clone of the shallow copy returned
