@@ -129,7 +129,7 @@ export const plugin = {
 
         const parsedConfiguration =
           typeof configuration === "string"
-            ? JSON.parse(configuration).values
+            ? JSON.parse(configuration)
             : configuration;
         forms[id] = new FormModel(parsedConfiguration, {
           ...modelOptions,
