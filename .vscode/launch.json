@@ -44,6 +44,16 @@
       "port": 9229
     },
     {
+      "name": "Debug React App",
+      "type": "pwa-chrome",
+      "request": "launch",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}/designer",
+      "sourceMapPathOverrides": {
+        "webpack:///*": "${webRoot}/*"
+      }
+    },
+    {
       "command": "yarn designer dev",
       "name": "Debug designer/server",
       "request": "launch",

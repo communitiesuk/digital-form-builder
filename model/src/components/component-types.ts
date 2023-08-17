@@ -226,4 +226,13 @@ export const ComponentTypes: ComponentDef[] = [
     options: {},
     schema: {},
   },
+  {
+    name: "FreeTextField",
+    type: "FreeTextField",
+    title: "Free Text field",
+    subType: "field",
+    hint: "",
+    options: {},
+    schema: {},
+  },
 ];

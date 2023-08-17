@@ -11,6 +11,7 @@ import { NumberFieldEdit } from "./components/FieldEditors/number-field-edit";
 import { DateFieldEdit } from "./components/FieldEditors/date-field-edit";
 import { ParaEdit } from "./components/FieldEditors/para-edit";
 import DetailsEdit from "./components/FieldEditors/details-edit";
+import { FreeTextFieldEdit } from "./free-text-field-edit";
 
 const componentTypeEditors = {
   TextField: TextFieldEdit,
@@ -34,6 +35,7 @@ const componentTypeEditors = {
   DateTimeField: DateFieldEdit,
   DateTimePartsField: DateFieldEdit,
   DateField: DateFieldEdit,
+  FreeTextField: FreeTextFieldEdit,
 };
 
 function ComponentTypeEdit(props) {
