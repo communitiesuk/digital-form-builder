@@ -31,8 +31,7 @@ suite(`Feedback`, () => {
     expect(response.headers["content-type"]).to.include("text/html");
 
     const $ = cheerio.load(response.payload);
-
-    expect($(".govuk-phase-banner__text").attr("text")).to.equal(
+    expect($(".govuk-phase-banner__text").text().trim()).to.equal(
       "This is a new service."
     );
   });
