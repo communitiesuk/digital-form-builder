@@ -3513,6 +3513,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@discoveryjs/json-ext@npm:0.5.7":
+  version: 0.5.7
+  resolution: "@discoveryjs/json-ext@npm:0.5.7"
+  checksum: ee01d84c0afc5a32090a3376f4d0aeab113ce6e6e75dac7843ae29689a3adfd173e8339415115348be2385521e15361ff65e5144e1e5d8e064d062a477acdbba
+  languageName: node
+  linkType: hard
+
 "@dsherret/to-absolute-glob@npm:^2.0.2":
   version: 2.0.2
   resolution: "@dsherret/to-absolute-glob@npm:2.0.2"
@@ -4911,10 +4918,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polka/url@npm:^1.0.0-next.9":
-  version: 1.0.0-next.11
-  resolution: "@polka/url@npm:1.0.0-next.11"
-  checksum: 268a83f4e1097baf0067e183b7682a00b647c6c30113a92b98c80cd719fc689a45d28c16257ffc817f5ffd4894fc52157957c39aaac329cdd12c82a10f6d61f7
+"@polka/url@npm:^1.0.0-next.20":
+  version: 1.0.0-next.21
+  resolution: "@polka/url@npm:1.0.0-next.21"
+  checksum: 4b0ca81ea537363f6e3acce95ff6769f7001030fdf0a73cd274c869a1dae6e51625421cca3b801f8715dfea7d1a1cafc4c07720f16a2c01e986d834475a06525
   languageName: node
   linkType: hard
 
@@ -6863,7 +6870,7 @@ __metadata:
     typescript: ^4.1.3
     vision: 5.4.3
     webpack: ^4.44.2
-    webpack-bundle-analyzer: ^4.3.0
+    webpack-bundle-analyzer: ^4.9.1
     webpack-cli: ^3.3.12
     webpack-dev-server: ^3.11.0
     webpack-node-externals: ^2.5.2
@@ -9981,7 +9988,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commander@npm:7.2.0, commander@npm:^7.0.0":
+"commander@npm:7.2.0, commander@npm:^7.0.0, commander@npm:^7.2.0":
   version: 7.2.0
   resolution: "commander@npm:7.2.0"
   checksum: bdc0eca5e25cd24af8440163d3c9a996785bbac4b49a590365699cdc1ed08cefbac8f268153208ab2bc5dc3cb1d3fb573fd1590c681e36e371342186bd331a4c
@@ -16696,6 +16703,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"is-plain-object@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "is-plain-object@npm:5.0.0"
+  checksum: 92bd87f095036fb6ef21fcba4e66734bba1457fc4abece5873bd1fba130c44fa8a4df64a2ef7841da638680af18e1ad2e5fac1095bed3578d0da0afc1f04bcf3
+  languageName: node
+  linkType: hard
+
 "is-port-reachable@npm:^3.0.0":
   version: 3.0.0
   resolution: "is-port-reachable@npm:3.0.0"
@@ -18805,6 +18819,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"lodash.invokemap@npm:^4.6.0":
+  version: 4.6.0
+  resolution: "lodash.invokemap@npm:4.6.0"
+  checksum: 1782264255bfe8e66e39cae85cb273cd410cf3a9ee47c34319987ad23101c51c76bc4b0ec171aee00bb200bc81e20c14339b9f92670342f5364b5e3ced5496a1
+  languageName: node
+  linkType: hard
+
 "lodash.isboolean@npm:^3.0.3":
   version: 3.0.3
   resolution: "lodash.isboolean@npm:3.0.3"
@@ -18889,6 +18910,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"lodash.pullall@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "lodash.pullall@npm:4.2.0"
+  checksum: 7ea15ee8025aa3137d0e03d5a4847fc548672c6b887974aba93e74dc054011c119b473444428f823430cf8ffd5de387c842f173bf6fcdd2ebe9bc1dbede42c27
+  languageName: node
+  linkType: hard
+
 "lodash.set@npm:^4.3.2":
   version: 4.3.2
   resolution: "lodash.set@npm:4.3.2"
@@ -18921,6 +18949,13 @@ fsevents@^1.2.7:
   version: 4.6.0
   resolution: "lodash.union@npm:4.6.0"
   checksum: 058abf102eed753f13cb85dec138cff5d4d4db17af1ec24da868d20acf7e65e9e27a4b9fed274f881fa7ae55ffa497565c7d6ea1975d86697ffd09f731813462
+  languageName: node
+  linkType: hard
+
+"lodash.uniqby@npm:^4.7.0":
+  version: 4.7.0
+  resolution: "lodash.uniqby@npm:4.7.0"
+  checksum: bea225431a3623f440d8a719d7f0528de7872afe62645442ff37447ace25ef5237d41ed433cd676a345e83e6826836d746b4d629839f7196cf94258dbda81503
   languageName: node
   linkType: hard
 
@@ -19421,7 +19456,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"mime@npm:^2.2.0, mime@npm:^2.3.1, mime@npm:^2.4.4":
+"mime@npm:^2.2.0, mime@npm:^2.4.4":
   version: 2.4.7
   resolution: "mime@npm:2.4.7"
   bin:
@@ -19687,6 +19722,13 @@ fsevents@^1.2.7:
   version: 1.1.4
   resolution: "mri@npm:1.1.4"
   checksum: 5ea30a4f587afeb69bf51c27fa8bcf9aee96ccb6091bc933a9be78e925d2f823e453f3c3752d89f616658c469882519d6d275babd366f89c209ab8bcd627fdbd
+  languageName: node
+  linkType: hard
+
+"mrmime@npm:^1.0.0":
+  version: 1.0.1
+  resolution: "mrmime@npm:1.0.1"
+  checksum: 76a3b7ea9e3428f2882369a56dd0ecdea5deffd2b8168e1e1ca0f10e4e09bff3a5b42b33f818d109fb386ce85d6d66164c0bff8b03f663e87ddf165387f260de
   languageName: node
   linkType: hard
 
@@ -24164,14 +24206,14 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"sirv@npm:^1.0.7":
-  version: 1.0.10
-  resolution: "sirv@npm:1.0.10"
+"sirv@npm:^2.0.3":
+  version: 2.0.3
+  resolution: "sirv@npm:2.0.3"
   dependencies:
-    "@polka/url": ^1.0.0-next.9
-    mime: ^2.3.1
-    totalist: ^1.0.0
-  checksum: 043b9aa38d6666f402f5cbc26bad94152bca07a3ce15ab1eb7d65a18075bf4e49239285805b3b5d7f33a772fc00fea42f916177378559ad61c4a69706f9b7e68
+    "@polka/url": ^1.0.0-next.20
+    mrmime: ^1.0.0
+    totalist: ^3.0.0
+  checksum: e8b7bfa460f855ba0f08a81f44066ded11430247a3be9c4088d425ab86a90f0e094d2b318297e637e9db550ad7da88c538b8285f4f2a51948cabce3016123e49
   languageName: node
   linkType: hard
 
@@ -25616,10 +25658,10 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"totalist@npm:^1.0.0":
-  version: 1.1.0
-  resolution: "totalist@npm:1.1.0"
-  checksum: 771f194e1113b7883410a42ddf04a8d969e64346d7bea953805ee796388e4a29c8b611e985c7f4a6548a8211acf1068e599089389aa3a8ab7fa3a4cf839b1bfc
+"totalist@npm:^3.0.0":
+  version: 3.0.1
+  resolution: "totalist@npm:3.0.1"
+  checksum: bb0cdbf9b420f4b10226eb3214851e230e02aed5d6baf4ad1002c3b0bc5e3cd105704f06438815cd7c80eb8b3c13ed3c880fbb08fd7c4b5693e2fd3a00337dda
   languageName: node
   linkType: hard
 
@@ -27195,22 +27237,30 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"webpack-bundle-analyzer@npm:^4.3.0":
-  version: 4.3.0
-  resolution: "webpack-bundle-analyzer@npm:4.3.0"
+"webpack-bundle-analyzer@npm:^4.9.1":
+  version: 4.9.1
+  resolution: "webpack-bundle-analyzer@npm:4.9.1"
   dependencies:
+    "@discoveryjs/json-ext": 0.5.7
     acorn: ^8.0.4
     acorn-walk: ^8.0.0
-    chalk: ^4.1.0
-    commander: ^6.2.0
+    commander: ^7.2.0
+    escape-string-regexp: ^4.0.0
     gzip-size: ^6.0.0
-    lodash: ^4.17.20
+    is-plain-object: ^5.0.0
+    lodash.debounce: ^4.0.8
+    lodash.escape: ^4.0.1
+    lodash.flatten: ^4.4.0
+    lodash.invokemap: ^4.6.0
+    lodash.pullall: ^4.2.0
+    lodash.uniqby: ^4.7.0
     opener: ^1.5.2
-    sirv: ^1.0.7
+    picocolors: ^1.0.0
+    sirv: ^2.0.3
     ws: ^7.3.1
   bin:
     webpack-bundle-analyzer: lib/bin/analyzer.js
-  checksum: b0f737db7102cfb59108d816caa6d6c5076c47eef275ec2055065df19d133a5e367e19242f8d62161fd6f622bff42c3b3cc544d8edf8099f2a5b170f8d2eb598
+  checksum: c5c72d2df7bcd7fc8dee84bdbe7690eb6ddc28087afbfbd1b1a2dbadf01aacdad8ce7cbe43c9ebd7fc507c1fd81a1d0cd5add7e79003e3ddbe03ffdce9a5d5d1
   languageName: node
   linkType: hard
 
