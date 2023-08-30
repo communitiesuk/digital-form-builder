@@ -370,7 +370,7 @@
             "classes": "govuk-!-width-two-thirds"
           },
           "type": "NumberField",
-          "title": "Charity number ",
+          "title": "Rhif elusen",
           "schema": {}
         }
       ],
