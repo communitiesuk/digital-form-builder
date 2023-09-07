@@ -339,6 +339,10 @@ export class SummaryPageController extends PageController {
         summaryViewModel.addDeclarationAsQuestion();
       }
 
+      if (summaryViewModel.markAsComplete) {
+        summaryViewModel.addMarkAsCompleteAsQuestion();
+      }
+
       await cacheService.mergeState(request, {
         outputs: summaryViewModel.outputs,
         userCompletedSummary: true,
