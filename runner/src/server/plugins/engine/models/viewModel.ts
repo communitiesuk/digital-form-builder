@@ -22,6 +22,7 @@ import { reach } from "hoek";
 export class ViewModel {
   pageTitle: string;
   declaration: any; // TODO
+  markAsComplete: any;
   skipSummary: boolean;
   endPage: any; // TODO
   result: any;
@@ -65,6 +66,7 @@ export class ViewModel {
     const { def } = model;
     // @ts-ignore
     this.declaration = def.declaration;
+    this.markAsComplete = def.markAsComplete;
     // @ts-ignore
     this.skipSummary = def.skipSummary;
     this._payApiKey = def.payApiKey;
@@ -290,6 +292,21 @@ export class ViewModel {
         {
           key: "declaration",
           title: "Declaration",
+          type: "boolean",
+          answer: true,
+        },
+      ],
+    });
+  }
+
+  addMarkAsCompleteAsQuestion() {
+    this._webhookData?.questions?.push({
+      category: null,
+      question: "MarkAsComplete",
+      fields: [
+        {
+          key: "markAsComplete",
+          title: "Do you want to mark this section as complete?",
           type: "boolean",
           answer: true,
         },
