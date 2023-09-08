@@ -36,6 +36,7 @@ export class ViewModel {
   privacyPolicyUrl: string | undefined;
   phaseTag: string | undefined;
   declarationError: any; // TODO
+  markAsCompleteError: any;
   errors:
     | {
         path: string;
