@@ -31,8 +31,56 @@
           "condition": "GZIoHg"
         },
         {
-          "path": "/organisation-address",
+          "path": "/how-is-your-organisation-classified",
           "condition": "dfsBce"
+        }
+      ],
+      "section": "uLwBuz"
+    },
+    {
+      "title": "How is your organisation classified?",
+      "path": "/how-is-your-organisation-classified",
+      "components": [
+        {
+          "name": "jcmcJE",
+          "options": {
+            "classes": "govuk-input",
+            "hideTitle": true
+          },
+          "type": "RadioField",
+          "title": "Organisation classification",
+          "hint": "Select one option",
+          "list": "jcXaBR"
+        }
+      ],
+      "next": [
+        {
+          "path": "/how-is-your-organisation-classified-other",
+          "condition": "aJJVVz"
+        },
+        {
+          "path": "/organisation-address"
+        }
+      ],
+      "section": "uLwBuz"
+    },
+    {
+      "title": "How is your organisation classified? (other)",
+      "path": "/how-is-your-organisation-classified-other",
+      "components": [
+        {
+          "name": "jemcJE",
+          "options": {
+            "classes": "govuk-input"
+          },
+          "type": "TextField",
+          "title": "How is your organisation classified?",
+          "schema": {}
+        }
+      ],
+      "next": [
+        {
+          "path": "/organisation-address"
         }
       ],
       "section": "uLwBuz"
@@ -73,7 +121,7 @@
       ],
       "next": [
         {
-          "path": "/organisation-address"
+          "path": "/how-is-your-organisation-classified"
         }
       ],
       "section": "uLwBuz"
@@ -149,6 +197,37 @@
               "type": "UkAddressField",
               "title": "Partner organisation address",
               "hint": ""
+            },
+            {
+              "name": "OggGGr",
+              "options": {
+                "classes": "govuk-!-width-full"
+              },
+              "type": "WebsiteField",
+              "title": "Website and social media",
+              "hint": "Link 1"
+            },
+            {
+              "name": "OghGGr",
+              "options": {
+                "classes": "govuk-!-width-full",
+                "hideTitle": true,
+                "required": false
+              },
+              "type": "WebsiteField",
+              "title": "Website and social media",
+              "hint": "Link 2 (optional)"
+            },
+            {
+              "name": "OgjGGr",
+              "options": {
+                "classes": "govuk-!-width-full",
+                "hideTitle": true,
+                "required": false
+              },
+              "type": "WebsiteField",
+              "title": "Website and social media",
+              "hint": "Link 3 (optional)"
             }
           ]
         }
@@ -165,32 +244,22 @@
       "title": "Website and social media",
       "components": [
         {
-          "name": "EShKlA",
-          "options": {
-            "hideTitle": false
-          },
-          "type": "WebsiteField",
-          "title": "Link 1",
-          "hint": "For example, your company's Facebook, Instagram or Twitter accounts (if applicable)",
-          "schema": {}
-        },
-        {
-          "name": "ObEsEk",
-          "options": {
-            "required": false
-          },
-          "type": "WebsiteField",
-          "title": "Link 2",
-          "schema": {}
-        },
-        {
-          "name": "NWEtLW",
-          "options": {
-            "required": false
-          },
-          "type": "WebsiteField",
-          "title": "Link 3",
-          "schema": {}
+          "name": "tYoOqx",
+          "options": {},
+          "type": "MultiInputField",
+          "title": "Website and social media",
+          "hint": "For example, your company's Facebook, Instagram or Twitter accounts (if applicable) \n You can add more links on the next step",
+          "schema": {},
+          "children": [
+            {
+              "name": "EShKlA",
+              "options": {
+                "classes": "govuk-!-width-full"
+              },
+              "type": "WebsiteField",
+              "title": "Link"
+            }
+          ]
         }
       ],
       "next": [
@@ -211,6 +280,7 @@
     {
       "path": "/intro-about-your-organisation",
       "title": "2.1 About your organisation",
+      "section": "uLwBuz",
       "components": [
         {
           "name": "sPbqXm",
@@ -250,6 +320,37 @@
     }
   ],
   "lists": [
+    {
+      "title": "Organisation classification",
+      "name": "jcXaBR",
+      "type": "string",
+      "items": [
+        {
+          "text": "Upper or lower tier local authority",
+          "value": "upper-or-lower-tier-local-authority"
+        },
+        {
+          "text": "Charity with a registered charity number",
+          "value": "charity-with-a-registered-charity-number"
+        },
+        {
+          "text": "Registered community interest company",
+          "value": "registered-community-interest-company"
+        },
+        {
+          "text": "Social enterprise",
+          "value": "social-enterprise"
+        },
+        {
+          "text": "Community group",
+          "value": "community-group"
+        },
+        {
+          "text": "Other",
+          "value": "other"
+        }
+      ]
+    },
     {
       "title": "Focus of the project",
       "name": "hfQISg",
@@ -335,60 +436,8 @@
   ],
   "sections": [
     {
-      "name": "pyQsHV",
-      "title": "2.2 Applicant information"
-    },
-    {
       "name": "uLwBuz",
       "title": "2.1 About your organisation"
-    },
-    {
-      "name": "hhbMar",
-      "title": "5.1 Risk and deliverability"
-    },
-    {
-      "name": "YICTMm",
-      "title": "3.1 Previous projects"
-    },
-    {
-      "name": "vhPnrc",
-      "title": "4.1 Outputs and outcomes"
-    },
-    {
-      "name": "tOUPpb",
-      "title": "4.2 Existing work"
-    },
-    {
-      "name": "zACCPu",
-      "title": "4.3 Project milestones"
-    },
-    {
-      "name": "zzpzem",
-      "title": "4.4 Objectives and activities"
-    },
-    {
-      "name": "wxOzRK",
-      "title": "4.5 Location of activities"
-    },
-    {
-      "name": "Nyppws",
-      "title": "4.6 Working with fund recipients"
-    },
-    {
-      "name": "xYdwyD",
-      "title": "6.1 Value for money"
-    },
-    {
-      "name": "OEGHno",
-      "title": "7.1 Declarations"
-    },
-    {
-      "name": "XDnkqz",
-      "title": "1.2 Name your application"
-    },
-    {
-      "name": "ybaWGy",
-      "title": "1.1 Check your eligibility"
     }
   ],
   "conditions": [
@@ -408,6 +457,28 @@
             "value": {
               "type": "Value",
               "value": "true",
+              "display": "true"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "displayName": "org other yes",
+      "name": "aJJVVz",
+      "value": {
+        "name": "org other yes",
+        "conditions": [
+          {
+            "field": {
+              "name": "jcXaBR",
+              "type": "RadioField",
+              "display": "How is your organisation classified?"
+            },
+            "operator": "is",
+            "value": {
+              "type": "Value",
+              "value": "other",
               "display": "true"
             }
           }

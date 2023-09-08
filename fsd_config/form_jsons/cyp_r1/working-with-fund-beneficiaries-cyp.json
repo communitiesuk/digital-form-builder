@@ -1,120 +1,55 @@
 {
   "metadata": {},
-  "startPage": "/organisation-details",
+  "startPage": "/working-with-fund-beneficiaries",
   "backLinkText": "Go back to application overview",
   "pages": [
     {
-      "path": "/is-your-organisation-based-in-england",
-      "title": "Is your organisation based in England?",
+      "path": "/work-with-fund-beneficiaries",
+      "title": "Tell us how you will identify and work with the intended fund beneficiaries",
       "components": [
         {
-          "name": "qGbSWS",
+          "name": "XPDbsh",
           "options": {
+            "maxWords": "500",
             "hideTitle": true
           },
-          "type": "YesNoField",
-          "title": "Is your organisation based in England?"
+          "type": "FreeTextField",
+          "title": "Tell us how you will identify and work with the intended fund beneficiaries"
         }
       ],
       "next": [
         {
-          "path": "/will-the-project-take-place-in-england"
-        },
-        {
-          "path": "/you-are-not-eligible-to-apply-for-this-fund",
-          "condition": "JZGvHK"
+          "path": "/check-your-answers-ySwQiT"
         }
       ],
-      "section": "ybaWGy"
+      "section": "Nyppws"
     },
     {
-      "path": "/will-the-project-take-place-in-england",
-      "title": "Will the project take place in England?",
-      "components": [
-        {
-          "name": "mknqUV",
-          "options": {
-            "hideTitle": true
-          },
-          "type": "YesNoField",
-          "title": "Will the project take place in England?"
-        }
-      ],
-      "next": [
-        {
-          "path": "/how-is-your-organisation-classified"
-        },
-        {
-          "path": "/you-are-not-eligible-to-apply-for-this-fund",
-          "condition": "LOPfHT"
-        }
-      ],
-      "section": "ybaWGy"
-    },
-    {
-      "path": "/how-is-your-organisation-classified",
-      "title": "How is your organisation classified?",
-      "components": [
-        {
-          "name": "caqDGs",
-          "options": {
-            "hideTitle": true
-          },
-          "type": "CheckboxesField",
-          "title": "How is your organisation classified?",
-          "list": "qwnTyS"
-        }
-      ],
-      "next": [
-        {
-          "path": "/check-your-answers-wQdjuk"
-        },
-        {
-          "path": "/you-are-not-eligible-to-apply-for-this-fund",
-          "condition": "lpPgJY"
-        }
-      ],
-      "section": "ybaWGy"
-    },
-    {
-      "path": "/you-are-not-eligible-to-apply-for-this-fund",
-      "title": "You are not eligible to apply for this Fund",
-      "components": [
-        {
-          "name": "DnsPHp",
-          "options": {},
-          "type": "Html",
-          "content": "  <div id=\"more-detail-hint\" class=\"govuk-hint\">\n    Based on your answers, you do not meet the eligibility criteria for this Fund.\n  </div>"
-        }
-      ],
-      "next": [],
-      "section": "ybaWGy"
-    },
-    {
-      "path": "/check-your-answers-wQdjuk",
+      "path": "/check-your-answers-ySwQiT",
       "title": "Check your answers",
       "components": [],
-      "next": [
-        {
-          "path": "/you-are-eligible-to-apply-for-this-fund"
-        }
-      ],
-      "section": "ybaWGy",
+      "next": [],
+      "section": "Nyppws",
       "controller": "./pages/summary.js"
     },
     {
-      "path": "/you-are-eligible-to-apply-for-this-fund",
-      "title": "You are eligible to apply for this Fund",
+      "path": "/intro-working-with-fund-beneficiaries",
+      "title": "4.6 Working with fund beneficiaries",
       "components": [
         {
-          "name": "Roifhc",
+          "name": "PHIskM",
           "options": {},
           "type": "Html",
-          "content": "  <div id=\"more-detail-hint\" class=\"govuk-hint\">\n    Based on your answers, you are eligible to apply for this Fund.\n  </div>"
+          "content": "<p class=\"govuk-body\"><strong>In this section, we'll ask about:  </strong></p><ul class=\"govuk-list govuk-list--bullet\">\n        <li>how you'll identify and work with the intended fund beneficiaries</li>\n    </ul>",
+          "schema": {}
         }
       ],
-      "next": [],
-      "section": "ybaWGy"
+      "next": [
+        {
+          "path": "/work-with-fund-beneficiaries"
+        }
+      ],
+      "controller": "./pages/start.js"
     }
   ],
   "lists": [
@@ -175,27 +110,27 @@
       "items": [
         {
           "text": "Upper or lower tier local authority",
-          "value": "upper-lower-local-authority"
+          "value": "1"
         },
         {
           "text": "Charity with a registered charity number",
-          "value": "charity-registered-number"
+          "value": "2"
         },
         {
           "text": "Registered community interest company",
-          "value": "community-interest-company"
+          "value": "3"
         },
         {
           "text": "Social enterprise",
-          "value": "social-enterprise"
+          "value": "4"
         },
         {
           "text": "Community group",
-          "value": "community-group"
+          "value": "5"
         },
         {
           "text": "None of these",
-          "value": "none-of-these",
+          "value": "6",
           "description": ""
         }
       ]
@@ -203,60 +138,8 @@
   ],
   "sections": [
     {
-      "name": "pyQsHV",
-      "title": "2.2 Applicant information"
-    },
-    {
-      "name": "uLwBuz",
-      "title": "2.1 Organisation information"
-    },
-    {
-      "name": "hhbMar",
-      "title": "5.1 Risk and deliverability"
-    },
-    {
-      "name": "YICTMm",
-      "title": "3.1 Previous projects"
-    },
-    {
-      "name": "vhPnrc",
-      "title": "4.1 Outputs and outcomes"
-    },
-    {
-      "name": "tOUPpb",
-      "title": "4.2 Existing work"
-    },
-    {
-      "name": "zACCPu",
-      "title": "4.3 Project milestones"
-    },
-    {
-      "name": "zzpzem",
-      "title": "4.4 Objectives and activities"
-    },
-    {
-      "name": "wxOzRK",
-      "title": "4.5 Location of activities"
-    },
-    {
       "name": "Nyppws",
-      "title": "4.6 Working with fund recipients"
-    },
-    {
-      "name": "xYdwyD",
-      "title": "6.1 Value for money"
-    },
-    {
-      "name": "OEGHno",
-      "title": "7.1 Declarations"
-    },
-    {
-      "name": "XDnkqz",
-      "title": "1.2 Name your application"
-    },
-    {
-      "name": "ybaWGy",
-      "title": "1.1 Check your eligibility"
+      "title": "4.6 Working with fund beneficiaries"
     }
   ],
   "conditions": [
@@ -563,28 +446,6 @@
               "type": "Value",
               "value": "false",
               "display": "false"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "displayName": "None of these",
-      "name": "lpPgJY",
-      "value": {
-        "name": "None of these",
-        "conditions": [
-          {
-            "field": {
-              "name": "caqDGs",
-              "type": "CheckboxesField",
-              "display": "How is your organisation classified?"
-            },
-            "operator": "contains",
-            "value": {
-              "type": "Value",
-              "value": "None of these",
-              "display": "None of these"
             }
           }
         ]

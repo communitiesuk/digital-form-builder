@@ -20,6 +20,28 @@
       ],
       "next": [
         {
+          "path": "/measure-outcome-of-your-project"
+        }
+      ],
+      "section": "vhPnrc"
+    },
+    {
+      "path": "/measure-outcome-of-your-project",
+      "title": "How will you measure the outcome of your project?",
+      "components": [
+        {
+          "name": "nbDkNZ",
+          "options": {
+            "maxWords": "500",
+            "hideTitle": true
+          },
+          "type": "FreeTextField",
+          "title": "How will you measure the outcome of your project?",
+          "schema": {}
+        }
+      ],
+      "next": [
+        {
           "path": "/main-focus-of-your-project"
         }
       ],
@@ -144,7 +166,7 @@
     },
     {
       "path": "/afghan-citizens-resettlement-scheme",
-      "title": "How many fund recipients from the Afghan citizens resettlement scheme do you expect your project to support with the funding?",
+      "title": "How many fund recipients from the Afghan Citizens Resettlement Scheme do you expect your project to support with the funding?",
       "components": [
         {
           "name": "rhmmaQ",
@@ -153,7 +175,7 @@
             "classes": "govuk-input govuk-!-width-one-quarter"
           },
           "type": "NumberField",
-          "title": "How many fund recipients from the Afghan citizens resettlement scheme do you expect your project to support with the funding?",
+          "title": "How many fund recipients from the Afghan Citizens Resettlement Scheme do you expect your project to support with the funding?",
           "hint": "Fund recipients are people aged 21 and under",
           "schema": {}
         }
@@ -184,6 +206,7 @@
     {
       "path": "/intro-outputs-and-outcomes",
       "title": "4.1 Outputs and outcomes",
+      "section": "vhPnrc",
       "components": [
         {
           "name": "MLLVPq",
@@ -247,7 +270,7 @@
           "value": "hong-kong-british-nationals"
         },
         {
-          "text": "Afghan citizens resettlement scheme",
+          "text": "Afghan Citizens Resettlement Scheme",
           "value": "afghan-citizens-resettlement-scheme"
         }
       ]
@@ -287,60 +310,8 @@
   ],
   "sections": [
     {
-      "name": "pyQsHV",
-      "title": "2.2 Applicant information"
-    },
-    {
-      "name": "uLwBuz",
-      "title": "2.1 Organisation information"
-    },
-    {
-      "name": "hhbMar",
-      "title": "5.1 Risk and deliverability"
-    },
-    {
-      "name": "YICTMm",
-      "title": "3.1 Previous projects"
-    },
-    {
       "name": "vhPnrc",
       "title": "4.1 Outputs and outcomes"
-    },
-    {
-      "name": "tOUPpb",
-      "title": "4.2 Existing work"
-    },
-    {
-      "name": "zACCPu",
-      "title": "4.3 Project milestones"
-    },
-    {
-      "name": "zzpzem",
-      "title": "4.4 Objectives and activities"
-    },
-    {
-      "name": "wxOzRK",
-      "title": "4.5 Location of activities"
-    },
-    {
-      "name": "Nyppws",
-      "title": "4.6 Working with fund recipients"
-    },
-    {
-      "name": "xYdwyD",
-      "title": "6.1 Value for money"
-    },
-    {
-      "name": "OEGHno",
-      "title": "7.1 Declarations"
-    },
-    {
-      "name": "XDnkqz",
-      "title": "1.2 Name your application"
-    },
-    {
-      "name": "ybaWGy",
-      "title": "1.1 Check your eligibility"
     }
   ],
   "conditions": [

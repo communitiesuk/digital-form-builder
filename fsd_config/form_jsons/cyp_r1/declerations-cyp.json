@@ -29,6 +29,16 @@
           "schema": {}
         },
         {
+          "name": "WGmcyu",
+          "options": {},
+          "type": "YesNoField",
+          "title": "Confirm that your organisation's safegaurding policies are up to date",
+          "values": {
+            "type": "listRef"
+          },
+          "schema": {}
+        },
+        {
           "name": "WGmDZu",
           "options": {},
           "type": "YesNoField",
@@ -61,7 +71,7 @@
           "name": "TkCSKm",
           "options": {},
           "type": "Html",
-          "content": "<p class=\"govuk-body\"><strong>In this section, we'll ask about:  </strong></p><ul class=\"govuk-list govuk-list--bullet\">\n        <li>confirmation your organisation adheres to the government code of conduct</li>\n        <li>confirmation your organisation has a data handling process in place</li>\n        <li>confirmation you have a bank account set up for your organisation</li>\n        <li>confirmation that the information you have provided is accurate</li>\n    </ul>",
+          "content": "<p class=\"govuk-body\"><strong>In this section, we'll ask about:  </strong></p><ul class=\"govuk-list govuk-list--bullet\">\n        <li>confirmation your organisation adheres to the government code of conduct</li>\n        <li>confirmation your organisation has a data handling process in place</li>\n        <li>confirmation you have a bank account set up for your organisation</li>\n    <li>confirmation your organisation's safegaurding policies are up to date</li>\n        <li>confirmation that the information you have provided is accurate</li>\n    </ul>",
           "schema": {}
         }
       ],
@@ -160,60 +170,8 @@
   ],
   "sections": [
     {
-      "name": "pyQsHV",
-      "title": "2.2 Applicant information"
-    },
-    {
-      "name": "uLwBuz",
-      "title": "2.1 Organisation information"
-    },
-    {
-      "name": "hhbMar",
-      "title": "5.1 Risk and deliverability"
-    },
-    {
-      "name": "YICTMm",
-      "title": "3.1 Previous projects"
-    },
-    {
-      "name": "vhPnrc",
-      "title": "4.1 Outputs and outcomes"
-    },
-    {
-      "name": "tOUPpb",
-      "title": "4.2 Existing work"
-    },
-    {
-      "name": "zACCPu",
-      "title": "4.3 Project milestones"
-    },
-    {
-      "name": "zzpzem",
-      "title": "4.4 Objectives and activities"
-    },
-    {
-      "name": "wxOzRK",
-      "title": "4.5 Location of activities"
-    },
-    {
-      "name": "Nyppws",
-      "title": "4.6 Working with fund recipients"
-    },
-    {
-      "name": "xYdwyD",
-      "title": "6.1 Value for money"
-    },
-    {
       "name": "OEGHno",
       "title": "7.1 Declarations"
-    },
-    {
-      "name": "XDnkqz",
-      "title": "1.2 Name your application"
-    },
-    {
-      "name": "ybaWGy",
-      "title": "1.1 Check your eligibility"
     }
   ],
   "conditions": [
