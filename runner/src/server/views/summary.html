@@ -64,10 +64,10 @@
                 {% endif %}
 
                 {%if markAsComplete %}                
-                  <div class="govuk-form-group {{ 'govuk-form-group--error' if declarationError }}">
-                    {% if declarationError %}
+                  <div class="govuk-form-group {{ 'govuk-form-group--error' if markAsCompleteError }}">
+                    {% if markAsCompleteError %}
                         <span id="nationality-error" class="govuk-error-message">
-                            <span class="govuk-visually-hidden">Error:</span> {{declarationError}}
+                            <span class="govuk-visually-hidden">Error:</span> {{markAsCompleteError}}
                         </span>
                     {% endif %}
                      <fieldset class="govuk-fieldset">
@@ -78,14 +78,14 @@
                       </legend>    
                       <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
                         <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="complete" name="complete" type="radio" value="yes">
+                          <input class="govuk-radios__input" id="markAsComplete" name="markAsComplete" type="radio" value="yes">
                           <label class="govuk-label govuk-radios__label" for="complete">
                             Yes
                           </label>
                         </div>
                         <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="complete-2" name="complete" type="radio" value="no">
-                          <label class="govuk-label govuk-radios__label" for="complete-2">
+                          <input class="govuk-radios__input" id="markAsComplete-2" name="markAsComplete" type="radio" value="no">
+                          <label class="govuk-label govuk-radios__label" for="markAsComplete-2">
                             No
                           </label>
                         </div>
