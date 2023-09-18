@@ -355,7 +355,7 @@ export class SummaryPageController extends PageController {
             `${request.headers.referer}#markAsComplete`
           );
         }
-        summaryViewModel.addMarkAsCompleteAsQuestion();
+        summaryViewModel.addMarkAsCompleteAsQuestion(markAsComplete);
       }
 
       await cacheService.mergeState(request, {
