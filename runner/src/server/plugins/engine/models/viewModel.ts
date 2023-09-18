@@ -300,7 +300,7 @@ export class ViewModel {
     });
   }
 
-  addMarkAsCompleteAsQuestion() {
+  addMarkAsCompleteAsQuestion(markAsComplete: boolean) {
     this._webhookData?.questions?.push({
       category: null,
       question: "MarkAsComplete",
@@ -309,7 +309,7 @@ export class ViewModel {
           key: "markAsComplete",
           title: "Do you want to mark this section as complete?",
           type: "boolean",
-          answer: true,
+          answer: markAsComplete,
         },
       ],
     });
