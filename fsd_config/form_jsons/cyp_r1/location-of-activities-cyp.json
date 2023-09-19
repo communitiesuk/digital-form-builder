@@ -19,7 +19,7 @@
           "path": "/local-authority-areas-wJVJuV"
         },
         {
-          "path": "/check-your-answers-TENbOr",
+          "path": "/summary",
           "condition": "aaBCCz"
         }
       ],
@@ -28,10 +28,24 @@
     {
       "path": "/local-authority-areas-wJVJuV",
       "title": "Which local authority areas will you work across?",
+      "options": {
+        "summaryDisplayMode": {
+          "samePage": false,
+          "separatePage": true,
+          "hideRowTitles": false
+        },
+        "customText": {
+          "separatePageTitle": "Local authority areas",
+          "removeText": "Delete"
+        }
+      },
       "components": [
         {
           "name": "tApPKx",
-          "options": {},
+          "options": {
+            "columnTitles": ["Local authority", "Action"],
+            "required": true
+          },
           "type": "MultiInputField",
           "title": "Which local authority areas will you work across?",
           "hint": "The MultiInputField needed",
@@ -49,14 +63,16 @@
       ],
       "next": [
         {
-          "path": "/check-your-answers-TENbOr"
+          "path": "/summary"
         }
       ],
-      "section": "wxOzRK"
+      "section": "wxOzRK",
+      "controller": "RepeatingFieldPageController"
     },
     {
-      "path": "/check-your-answers-TENbOr",
       "title": "Check your answers",
+      "path": "/summary",
+      "controller": "./pages/summary.js",
       "components": [],
       "next": [],
       "section": "wxOzRK"
