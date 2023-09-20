@@ -6,16 +6,30 @@
     {
       "path": "/objectives-and-activities",
       "title": "Objectives and activities",
+      "options": {
+        "summaryDisplayMode": {
+          "samePage": false,
+          "separatePage": true,
+          "hideRowTitles": false
+        },
+        "customText": {
+          "separatePageTitle": "Objectives and activities",
+          "removeText": "Delete"
+        }
+      },
       "components": [
         {
           "name": "LAIkqw",
           "options": {},
           "type": "Para",
-          "content": "<h2 class=\"govuk-heading-s\">Objectives and activities</h2>\n\n<p class=\"govuk-hint\">Tell us about your project's objectives and how you plan you achieve these objectives.</p>\n\n<p class=\"govuk-hint\">You can add more objectives on the next step.</p>\n\n"
+          "content": "<h2 class=\"govuk-heading-s\">Objectives and activities</h2>\n\n<p class=\"govuk-hint\">Tell us about your project's objectives and how you plan to achieve these objectives.</p>\n\n<p class=\"govuk-hint\">You can add more objectives on the next step.</p>\n\n"
         },
         {
           "name": "tAoPKx",
-          "options": {},
+          "options": {
+            "columnTitles": ["Objective", "Activity", "Action"],
+            "required": true
+          },
           "type": "MultiInputField",
           "title": "Project milestones",
           "hint": "The MultiInputField needed",
@@ -23,7 +37,9 @@
           "children": [
             {
               "name": "kaQUfV",
-              "options": {},
+              "options": {
+                "classes": "govuk-!-width-full"
+              },
               "type": "TextField",
               "title": "Objective"
             },
@@ -32,7 +48,7 @@
               "options": {
                 "maxWords": "200"
               },
-              "type": "TextField",
+              "type": "MultilineTextField",
               "title": "Activities that will help you achieve the objective"
             }
           ]
@@ -40,13 +56,14 @@
       ],
       "next": [
         {
-          "path": "/check-your-answers-vhqGaH"
+          "path": "/summary"
         }
       ],
-      "section": "zzpzem"
+      "section": "zzpzem",
+      "controller": "RepeatingFieldPageController"
     },
     {
-      "path": "/check-your-answers-vhqGaH",
+      "path": "/summary",
       "title": "Check your answers",
       "components": [],
       "next": [],

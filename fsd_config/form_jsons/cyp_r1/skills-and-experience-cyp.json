@@ -23,11 +23,11 @@
           "condition": "VMLTbi"
         },
         {
-          "path": "/check-your-answers-pCJOit",
+          "path": "/summary",
           "condition": "tjnNpA"
         }
       ],
-      "section": "YICTMm"
+      "section": "pyQhSV"
     },
     {
       "path": "/previous-projects",
@@ -37,6 +37,7 @@
           "name": "qPcbJQ",
           "options": {
             "maxWords": "1000",
+            "classes": "govuk-input",
             "hideTitle": true
           },
           "type": "FreeTextField",
@@ -46,18 +47,18 @@
       ],
       "next": [
         {
-          "path": "/check-your-answers-pCJOit"
+          "path": "/summary"
         }
       ],
-      "section": "YICTMm"
+      "section": "pyQhSV"
     },
     {
-      "path": "/check-your-answers-pCJOit",
+      "path": "/summary",
       "title": "Check your answers",
       "components": [],
       "next": [],
       "controller": "./pages/summary.js",
-      "section": "YICTMm"
+      "section": "pyQhSV"
     },
     {
       "path": "/intro-your-skills-and-experience",
