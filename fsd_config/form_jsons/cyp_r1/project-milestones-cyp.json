@@ -45,13 +45,13 @@
       ],
       "next": [
         {
-          "path": "/check-your-answers-NGLnuT"
+          "path": "/summary"
         }
       ],
       "section": "zACCPu"
     },
     {
-      "path": "/check-your-answers-NGLnuT",
+      "path": "/summary",
       "title": "Check your answers",
       "components": [],
       "next": [],

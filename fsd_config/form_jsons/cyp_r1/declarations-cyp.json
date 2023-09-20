@@ -51,13 +51,13 @@
       ],
       "next": [
         {
-          "path": "/check-your-answers-eNnYgq"
+          "path": "/summary"
         }
       ],
       "section": "OEGHno"
     },
     {
-      "path": "/check-your-answers-eNnYgq",
+      "path": "/summary",
       "title": "Check your answers",
       "components": [],
       "next": [],

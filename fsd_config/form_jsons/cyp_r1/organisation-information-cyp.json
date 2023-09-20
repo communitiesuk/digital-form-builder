@@ -447,14 +447,14 @@
       ],
       "next": [
         {
-          "path": "/check-your-answers-OLZQxx"
+          "path": "/summary"
         }
       ],
       "controller": "RepeatingFieldPageController",
       "section": "uLwBuz"
     },
     {
-      "path": "/check-your-answers-OLZQxx",
+      "path": "/summary",
       "title": "Check your answers",
       "components": [],
       "next": [],

@@ -42,13 +42,13 @@
       ],
       "next": [
         {
-          "path": "/check-your-answers-vhqGaH"
+          "path": "/summary"
         }
       ],
       "section": "zzpzem"
     },
     {
-      "path": "/check-your-answers-vhqGaH",
+      "path": "/summary",
       "title": "Check your answers",
       "components": [],
       "next": [],
