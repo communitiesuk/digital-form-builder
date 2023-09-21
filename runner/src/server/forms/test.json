@@ -481,12 +481,11 @@
       "title": "Update form in application store",
       "type": "savePerPage",
       "outputConfiguration": {
-        "savePerPageUrl": "https://webhook.site/b076c966-dcc1-4f0d-a5a7-845111040688"
+        "savePerPageUrl": "https://webhook.site/452f70e1-731a-473d-8af8-4f12dec0e9a2"
       }
     }
   ],
   "declaration": "<p class=\"govuk-body\">All the answers you have provided are true to the best of your knowledge.</p>",
-  "markAsComplete": true,
   "version": 2,
   "conditions": [
     {

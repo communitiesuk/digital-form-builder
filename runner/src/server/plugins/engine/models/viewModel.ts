@@ -22,7 +22,8 @@ import { reach } from "hoek";
 export class ViewModel {
   pageTitle: string;
   declaration: any; // TODO
-  markAsComplete: any;
+  markAsComplete: boolean | undefined;
+  markAsCompleteComponent: boolean | undefined;
   skipSummary: boolean;
   endPage: any; // TODO
   result: any;
@@ -67,7 +68,6 @@ export class ViewModel {
     const { def } = model;
     // @ts-ignore
     this.declaration = def.declaration;
-    this.markAsComplete = def.markAsComplete;
     // @ts-ignore
     this.skipSummary = def.skipSummary;
     this._payApiKey = def.payApiKey;

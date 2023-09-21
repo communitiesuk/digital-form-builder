@@ -344,7 +344,7 @@ export class SummaryPageController extends PageController {
         summaryViewModel.addDeclarationAsQuestion();
       }
 
-      if (summaryViewModel.markAsComplete) {
+      if (summaryViewModel.markAsCompleteComponent) {
         const { markAsComplete } = request.payload as { markAsComplete?: any };
 
         if (!markAsComplete) {
@@ -355,7 +355,9 @@ export class SummaryPageController extends PageController {
             `${request.headers.referer}#markAsComplete`
           );
         }
-        summaryViewModel.addMarkAsCompleteAsQuestion(markAsComplete);
+        summaryViewModel.addMarkAsCompleteAsQuestion(
+          markAsComplete.toLowerCase() === "true"
+        );
       }
 
       await cacheService.mergeState(request, {
