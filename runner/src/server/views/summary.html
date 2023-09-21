@@ -63,7 +63,7 @@
                   </div>
                 {% endif %}
 
-                {%if markAsCompleteComponent %}                
+                {%if markAsCompleteComponent %}
                   <div class="govuk-form-group {{ 'govuk-form-group--error' if markAsCompleteError }}">
                     {% if markAsCompleteError %}
                         <span id="nationality-error" class="govuk-error-message">
@@ -75,7 +75,7 @@
                         <h1 class="govuk-fieldset__heading">
                           Do you want to mark this section as complete?
                         </h1>
-                      </legend>    
+                      </legend>
                       <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
                         <div class="govuk-radios__item">
                           <input class="govuk-radios__input" id="markAsComplete-yes" name="markAsComplete" type="radio" value="true" {% if markAsComplete %}checked{%endif%}>
