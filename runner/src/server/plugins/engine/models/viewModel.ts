@@ -68,7 +68,6 @@ export class ViewModel {
     const { def } = model;
     // @ts-ignore
     this.declaration = def.declaration;
-    this.markAsComplete = def.markAsComplete;
     // @ts-ignore
     this.skipSummary = def.skipSummary;
     this._payApiKey = def.payApiKey;
