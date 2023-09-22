@@ -40,9 +40,10 @@
               "options": {
                 "maxWords": "200"
               },
-              "type": "TextField",
+              "type": "MultilineTextField",
               "title": "Milestone",
-              "hint": "For example, recruit member of staff, reach a percentage of the proposed recipients, deliver a particular activity"
+              "hint": "For example, recruit member of staff, reach a percentage of the proposed recipients, deliver a particular activity",
+              "schema": {}
             },
             {
               "type": "MonthYearField",
@@ -50,9 +51,7 @@
               "hint": "For example, 3 2024",
               "name": "LZbOBu",
               "nameHasError": false,
-              "options": {
-                "hideTitle": true
-              }
+              "options": {}
             }
           ]
         }
