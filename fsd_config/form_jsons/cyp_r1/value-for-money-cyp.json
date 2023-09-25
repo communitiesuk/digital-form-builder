@@ -115,9 +115,7 @@
             },
             {
               "name": "kjuHtl",
-              "options": {
-                "hideTitle": true
-              },
+              "options": {},
               "type": "RadiosField",
               "title": "Year",
               "list": "yOwfxo"
@@ -156,7 +154,7 @@
           "path": "/summary"
         }
       ],
-      "section": "xYwdyD"
+      "section": "xYdwyD"
     },
     {
       "path": "/additional-funding",
