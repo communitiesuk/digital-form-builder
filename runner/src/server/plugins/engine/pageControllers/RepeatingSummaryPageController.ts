@@ -267,15 +267,15 @@ export class RepeatingSummaryPageController extends PageController {
       let form_session_identifier = "";
 
       const section = this.pageDef.section;
-      let valueString = this.inputComponent.name;
+      let value: any;
 
       if (section) {
-        valueString = section + "." + this.inputComponent.name;
+        value = state[section][this.inputComponent.name];
+      } else {
+        value = state[this.inputComponent.name];
       }
 
-      const multiInputValues = state[valueString];
-
-      if (multiInputValues.length == 0) {
+      if (value.length == 0) {
         const nextIndex = this.nextIndex(state);
         let returnUrl =
           this.returnUrl !== undefined ? `&returnUrl=${this.returnUrl}` : "";
