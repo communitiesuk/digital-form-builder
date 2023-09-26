@@ -266,6 +266,24 @@ export class RepeatingSummaryPageController extends PageController {
       const query = request.query;
       let form_session_identifier = "";
 
+      const section = this.pageDef.section;
+      let valueString = this.inputComponent.name;
+
+      if (section) {
+        valueString = section + "." + this.inputComponent.name;
+      }
+
+      const multiInputValues = state[valueString];
+
+      if (multiInputValues.length == 0) {
+        const nextIndex = this.nextIndex(state);
+        let returnUrl =
+          this.returnUrl !== undefined ? `&returnUrl=${this.returnUrl}` : "";
+        return h.redirect(
+          `/${this.model.basePath}${this.path}?view=${nextIndex}${returnUrl}&${form_session_identifier}`
+        );
+      }
+
       if (query.form_session_identifier) {
         form_session_identifier = `form_session_identifier=${query.form_session_identifier}`;
       }

@@ -181,9 +181,7 @@ export class SummaryPageController extends PageController {
       viewModel.details.find((value, index) => {
         for (let item of value.items) {
           if (item.type === "UkAddressField") {
-            if (item.value != null) {
-              item.value = item.value.replace(/, null/g, "");
-            }
+            item.value = item.value.replace(/, null/g, "");
           }
           // New lines wont render on the summary page
           if (item.type === "FreeTextField" && item.value) {
