@@ -266,24 +266,6 @@ export class RepeatingSummaryPageController extends PageController {
       const query = request.query;
       let form_session_identifier = "";
 
-      const section = this.pageDef.section;
-      let valueString = this.inputComponent.name;
-
-      if (section) {
-        valueString = section + "." + this.inputComponent.name;
-      }
-
-      const multiInputValues = state[valueString];
-
-      if (multiInputValues.length == 0) {
-        const nextIndex = this.nextIndex(state);
-        let returnUrl =
-          this.returnUrl !== undefined ? `&returnUrl=${this.returnUrl}` : "";
-        return h.redirect(
-          `/${this.model.basePath}${this.path}?view=${nextIndex}${returnUrl}&${form_session_identifier}`
-        );
-      }
-
       if (query.form_session_identifier) {
         form_session_identifier = `form_session_identifier=${query.form_session_identifier}`;
       }
@@ -295,6 +277,29 @@ export class RepeatingSummaryPageController extends PageController {
         return h.redirect(
           `/${this.model.basePath}${this.path}?view=${nextIndex}${returnUrl}&${form_session_identifier}`
         );
+      }
+
+      const section = this.pageDef.section;
+      let value: any;
+
+      if (section) {
+        value = state[section][this.inputComponent.name];
+      } else {
+        value = state[this.inputComponent.name];
+      }
+
+      if (value.length == 0 && this.inputComponent.options.required) {
+        const { progress = [] } = state;
+        const viewModel = this.getViewModel(state);
+        viewModel.crumb = request.plugins.crumb;
+
+        viewModel.backLink =
+          state.callback?.returnUrl ?? progress[progress.length - 2];
+        viewModel.backLinkText =
+          this.model.def?.backLinkText ?? "Go back to application overview";
+        viewModel.tableIsEmpty = true;
+
+        return h.view("repeating-summary", viewModel);
       }
 
       if (config.savePerPage) {
