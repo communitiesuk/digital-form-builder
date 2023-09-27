@@ -26,7 +26,7 @@ export class RepeatingSummaryPageController extends PageController {
     this.inputComponent = inputComponent;
   }
 
-  
+
 
   get getRouteHandler() {
     this.getRoute ??= this.makeGetRouteHandler();
