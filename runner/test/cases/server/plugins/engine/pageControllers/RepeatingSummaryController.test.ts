@@ -53,16 +53,16 @@ suite("RepeatingSummaryPageController", () => {
 
         const answers = [
             {
-                "CaKTWN": "Fund",
-                "iLxCxn": 756,
-                "sUDJbo": "2023/24",
-                "CmOaAX": "Guess"
+                CaKTWN: "Fund",
+                iLxCxn: 756,
+                sUDJbo: "2023/24",
+                CmOaAX: "Guess"
             },
             {
-                "CaKTWN": "Donation",
-                "iLxCxn": 5000,
-                "sUDJbo": "2024/25",
-                "CmOaAX": "Previous year"
+                CaKTWN: "Donation",
+                iLxCxn: 5000,
+                sUDJbo: "2024/25",
+                CmOaAX: "Previous year"
             }];
 
         const orderedNames = [
@@ -73,53 +73,53 @@ suite("RepeatingSummaryPageController", () => {
 
         const expected = [
             {
-                "action":
+                action:
                 {
-                    "href": "?removeAtIndex=0",
-                    "text": "Remove",
-                    "visuallyHiddenText": "MultiInputField"
+                    href: "?removeAtIndex=0",
+                    text: "Remove",
+                    visuallyHiddenText: "MultiInputField"
                 },
-                "values": [
+                values: [
                     {
-                        "text": "Fund",
-                        "class": "govuk-table__cell"
+                        text: "Fund",
+                        class: "govuk-table__cell"
                     },
                     {
-                        "text": "£756",
-                        "class": "govuk-table__cell"
+                        text: "£756",
+                        class: "govuk-table__cell"
                     },
                     {
-                        "text": "2023/24",
-                        "class": "govuk-table__cell"
+                        text: "2023/24",
+                        class: "govuk-table__cell"
                     },
                     {
-                        "text": "Guess",
-                        "class": "govuk-table__cell"
+                        text: "Guess",
+                        class: "govuk-table__cell"
                     }]
             },
             {
-                "action":
+                action:
                 {
-                    "href": "?removeAtIndex=1",
-                    "text": "Remove",
-                    "visuallyHiddenText": "MultiInputField"
+                    href: "?removeAtIndex=1",
+                    text: "Remove",
+                    visuallyHiddenText: "MultiInputField"
                 },
-                "values": [
+                values: [
                     {
-                        "text": "Donation",
-                        "class": "govuk-table__cell"
+                        text: "Donation",
+                        class: "govuk-table__cell"
                     },
                     {
-                        "text": "£5000",
-                        "class": "govuk-table__cell"
+                        text: "£5000",
+                        class: "govuk-table__cell"
                     },
                     {
-                        "text": "2024/25",
-                        "class": "govuk-table__cell"
+                        text: "2024/25",
+                        class: "govuk-table__cell"
                     },
                     {
-                        "text": "Previous year",
-                        "class": "govuk-table__cell"
+                        text: "Previous year",
+                        class: "govuk-table__cell"
                     }]
             }];
 
