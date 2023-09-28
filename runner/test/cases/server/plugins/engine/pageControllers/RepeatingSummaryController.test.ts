@@ -48,7 +48,7 @@ suite("RepeatingSummaryPageController", () => {
                 {}
             ),
             def,
-            undefined
+            def.components[0]
         );
 
         const answers = [
@@ -123,7 +123,7 @@ suite("RepeatingSummaryPageController", () => {
                     }]
             }];
 
-        const result = controller.buildTextFieldRows(answers, undefined, orderedNames);
+        const result = controller.buildTextFieldRows(answers, def.components[0], orderedNames);
 
         expect(result).to.equal(expected);
     });
