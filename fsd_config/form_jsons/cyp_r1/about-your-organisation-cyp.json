@@ -362,7 +362,7 @@
               "options": {},
               "type": "UkAddressField",
               "title": "Partner organisation address",
-              "hint": ""
+              "hint": "Partner organisation address"
             },
             {
               "name": "MKbOlA",
@@ -504,7 +504,7 @@
     },
     {
       "path": "/agreement-exists",
-      "title": "Does an agreement currently exists between your organisations and the partnership organisations?",
+      "title": "Does an agreement currently exist between your organisations and the partnership organisations?",
       "components": [
         {
           "name": "RUdOhN",
@@ -512,7 +512,7 @@
             "hideTitle": true
           },
           "type": "YesNoField",
-          "title": "Does an agreement currently exists between your organisations and the partnership organisations?",
+          "title": "Does an agreement currently exist between your organisations and the partnership organisations?",
           "hint": "<p class=\"govuk-hint\">We may ask for a copy of the agreement if your application is successful</p>",
           "schema": {}
         }
