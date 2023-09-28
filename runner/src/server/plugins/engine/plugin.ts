@@ -48,7 +48,7 @@ function getStartPageRedirect(
   } else {
     startPageRedirect = redirectTo(request, h, `/${id}/${startPage}`);
   }
-  let a = "";
+
   return startPageRedirect;
 }
 
