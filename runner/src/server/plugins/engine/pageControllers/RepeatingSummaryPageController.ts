@@ -288,7 +288,8 @@ export class RepeatingSummaryPageController extends PageController {
         value = state[this.inputComponent.name];
       }
 
-      if (value.length == 0 && this.inputComponent.options.required) {
+      const isRequired = this.inputComponent.options.required;
+      if (value.length == 0 && (isRequired || typeof isRequired == "undefined")) {
         const { progress = [] } = state;
         const viewModel = this.getViewModel(state);
         viewModel.crumb = request.plugins.crumb;
