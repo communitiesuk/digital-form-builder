@@ -2,7 +2,7 @@ import { MigrationScript } from "./types";
 import { nanoid } from "../utils/helpers";
 
 /**
- * @private
+ * @internal
  * StaticItem is a deprecated Type.
  * It should only be used for aiding migration scripts.
  */
@@ -14,7 +14,7 @@ type StaticItem = {
 };
 
 /**
- * @private
+ * @internal
  * StaticComponentValues is a deprecated Type.
  * It should only be used for aiding migration scripts.
  */
