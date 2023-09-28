@@ -45,7 +45,7 @@
           "name": "jcjKhe",
           "options": {},
           "type": "Para",
-          "content": "<h2 class=\"govuk-heading-s\">Tell us about your organisation's main activities</h2>\n\n<div class=\"govuk-hint\">\n <p>Include any activities you undertake in order to achieve the organisation's purpose.</p> \n\n <p>You must list at least one, and can include up to three</p></div>"
+          "content": "<div class=\"govuk-hint\">\n <p>Include any activities you undertake in order to achieve the organisation's purpose.</p> \n\n <p>You must list at least one, and can include up to three</p></div>"
         },
         {
           "name": "kxgOne",
@@ -338,9 +338,9 @@
             "columnTitles": [
               "Organisation name",
               "Address",
-              "Link 1",
-              "Link 2",
-              "Link 3",
+              "Website and social media link 1",
+              "Website and social media link 2",
+              "Website and social media link 3",
               "Action"
             ]
           },
