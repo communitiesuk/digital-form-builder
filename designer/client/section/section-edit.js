@@ -50,7 +50,7 @@ class SectionEdit extends React.Component {
       if (nameChanged) {
         copySection.name = name;
         /**
-         * @code removing any references to the section
+         * @remarks removing any references to the section
          */
         copy.pages.forEach((p) => {
           if (p.section === previousName) {

@@ -14,7 +14,7 @@ export function useFlyoutEffect(props: {}) {
   const show = props.show ?? true;
 
   /**
-   * @code on component mount
+   * @remarks on component mount
    */
   useLayoutEffect(() => {
     flyoutContext.increment();
