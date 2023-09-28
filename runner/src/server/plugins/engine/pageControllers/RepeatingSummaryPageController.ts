@@ -26,8 +26,6 @@ export class RepeatingSummaryPageController extends PageController {
     this.inputComponent = inputComponent;
   }
 
-
-
   get getRouteHandler() {
     this.getRoute ??= this.makeGetRouteHandler();
     return this.getRoute;
@@ -48,6 +46,7 @@ export class RepeatingSummaryPageController extends PageController {
   makeGetRouteHandler() {
     return async (request: HapiRequest, h: HapiResponseToolkit) => {
       const { cacheService } = request.services([]);
+      let a = "";
 
       const { removeAtIndex } = request.query;
       if (removeAtIndex ?? false) {
@@ -279,29 +278,6 @@ export class RepeatingSummaryPageController extends PageController {
         return h.redirect(
           `/${this.model.basePath}${this.path}?view=${nextIndex}${returnUrl}&${form_session_identifier}`
         );
-      }
-
-      const section = this.pageDef.section;
-      let value: any;
-
-      if (section) {
-        value = state[section][this.inputComponent.name];
-      } else {
-        value = state[this.inputComponent.name];
-      }
-
-      if (value.length == 0 && this.inputComponent.options.required) {
-        const { progress = [] } = state;
-        const viewModel = this.getViewModel(state);
-        viewModel.crumb = request.plugins.crumb;
-
-        viewModel.backLink =
-          state.callback?.returnUrl ?? progress[progress.length - 2];
-        viewModel.backLinkText =
-          this.model.def?.backLinkText ?? "Go back to application overview";
-        viewModel.tableIsEmpty = true;
-
-        return h.view("repeating-summary", viewModel);
       }
 
       if (config.savePerPage) {
