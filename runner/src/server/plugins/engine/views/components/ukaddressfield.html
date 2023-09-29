@@ -1,7 +1,6 @@
 {% from "../partials/components.html" import componentList %}
 {% from "fieldset/macro.njk" import govukFieldset %}
 {% from "button/macro.njk" import govukButton %}
-{% from "button/macro.njk" import govukLabel %}
 
 {% macro UkAddressField(component) %}
   {% call govukFieldset({
@@ -33,7 +32,7 @@
           <a class="postcode-query-link" href="#">Find Address by Postcode</a>
         </div>
         {% endif %}
-        <h1>uk address</h1>
+
         {{ componentList(component.model.children) }}
 
       </div>
