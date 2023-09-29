@@ -23,6 +23,14 @@
             "required": true
           },
           "schema": {}
+        },
+        {
+          "name": "IXjMWp",
+          "options": {},
+          "type": "UkAddressField",
+          "title": "Partner organisation address",
+          "hint": "Partner organisation address",
+          "schema": {}
         }
       ],
       "section": "checkBeforeYouStart",
@@ -481,7 +489,7 @@
       "title": "Update form in application store",
       "type": "savePerPage",
       "outputConfiguration": {
-        "savePerPageUrl": "https://webhook.site/452f70e1-731a-473d-8af8-4f12dec0e9a2"
+        "savePerPageUrl": "https://webhook.site/69bf01f0-79b1-4fc1-b1cc-d5d16b07eed0"
       }
     }
   ],
