@@ -12,6 +12,7 @@ COPY ./fsd_config/form_jsons/cof_r3w2/cy/* runner/dist/server/forms/
 COPY ./fsd_config/form_jsons/night_shelter/* runner/dist/server/forms/
 COPY ./fsd_config/form_jsons/cyp_r1/* runner/dist/server/forms/
 COPY ./fsd_config/form_jsons/dpi_r1/* runner/dist/server/forms/
+COPY ./fsd_config/form_jsons/generic/* runner/dist/server/forms/
 COPY ./fsd_config/config/* runner/config/
 CMD [ "yarn", "runner", "build"]
 
