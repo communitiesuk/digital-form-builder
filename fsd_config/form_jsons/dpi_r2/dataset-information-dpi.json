@@ -159,7 +159,7 @@
               "hideTitle": true,
               "maxWords": "250"
             },
-            "type": "MultilineTextField",
+            "type": "FreeTextField",
             "title": "What are the current known issues and challenges you have with data quality and publication?",
             "schema": {}
           }
