@@ -147,7 +147,7 @@
       "section": "uLwBuz"
     },
     {
-      "title": "Company registration number",
+      "title": "Company registration number (optional)",
       "path": "/company-registration-number",
       "components": [
         {
@@ -159,7 +159,8 @@
         {
           "name": "jencJE",
           "options": {
-            "hideTitle": true
+            "hideTitle": true,
+            "required":false
           },
           "type": "TextField",
           "title": "Company registration number",
