@@ -51,7 +51,7 @@
             "condition": "fIzaVE"
           },
           {
-            "path": "/which-format-is-your-dataset-in-for-tree-preservation-areas",
+            "path": "/which-format-is-your-dataset-in-for-tree-preservation-orders",
             "condition": "nSTABU"
           }
         ],
@@ -121,13 +121,13 @@
         ],
         "next": [
           {
-            "path": "/which-format-is-your-dataset-in-for-tree-preservation-areas"
+            "path": "/which-format-is-your-dataset-in-for-tree-preservation-orders"
           }
         ],
         "section": "FjGMRE"
       },
       {
-        "path": "/which-format-is-your-dataset-in-for-tree-preservation-areas",
+        "path": "/which-format-is-your-dataset-in-for-tree-preservation-orders",
         "title": "Which format is your dataset in for tree preservation areas?",
         "components": [
           {
@@ -187,7 +187,7 @@
             "name": "MqKEwS",
             "options": {},
             "type": "Html",
-            "content": "<div class=\"govuk-hint\">The 4 datasets are:\n<ul class=\"govuk-list govuk-list--bullet govuk-hint\">\n  <li>Conservation areas</li>\n  <li>Article 4s</li>\n  <li>Listed buildings</li>\n  <li>Tree preservation areas</li>\n</ul>\n</div>"
+            "content": "<div class=\"govuk-hint\">The 4 datasets are:\n<ul class=\"govuk-list govuk-list--bullet govuk-hint\">\n  <li>Conservation areas</li>\n  <li>Article 4 direction</li>\n  <li>Listed buildings</li>\n  <li>Tree preservation orders</li>\n</ul>\n</div>"
           },
           {
             "name": "BQKLZz",
@@ -252,7 +252,7 @@
             "value": "conservation-areas"
           },
           {
-            "text": "Article 4s",
+            "text": "Article 4 direction",
             "value": "article-4s"
           },
           {
@@ -260,8 +260,8 @@
             "value": "listed-buildings"
           },
           {
-            "text": "Tree preservation areas",
-            "value": "tree-preservation-areas"
+            "text": "Tree preservation orders",
+            "value": "tree-preservation-orders"
           }
         ]
       },
@@ -411,8 +411,8 @@
               "operator": "contains",
               "value": {
                 "type": "Value",
-                "value": "tree-preservation-areas",
-                "display": "tree-preservation-areas"
+                "value": "tree-preservation-orders",
+                "display": "tree-preservation-orders"
               }
             }
           ]
