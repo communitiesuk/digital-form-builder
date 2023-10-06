@@ -128,7 +128,7 @@
       },
       {
         "path": "/which-format-is-your-dataset-in-for-tree-preservation-orders",
-        "title": "Which format is your dataset in for tree preservation areas?",
+        "title": "Which format is your dataset in for tree preservation orders?",
         "components": [
           {
             "name": "eptZkL",
@@ -137,7 +137,7 @@
             },
             "type": "CheckboxesField",
             "hint": "Select all that apply",
-            "title": "Which format is your dataset in for tree preservation areas?",
+            "title": "Which format is your dataset in for tree preservation orders?",
             "list": "mVaHZk",
             "schema": {}
           }
