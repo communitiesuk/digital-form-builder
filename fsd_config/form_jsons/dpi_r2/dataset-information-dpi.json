@@ -273,19 +273,19 @@
       "items": [
         {
           "text": "Conservation areas",
-          "value": "Conservation areas"
+          "value": "conservation-areas"
         },
         {
           "text": "Article 4 direction",
-          "value": "Article 4 direction"
+          "value": "article-4-direction"
         },
         {
           "text": "Listed buildings",
-          "value": "Listed buildings"
+          "value": "listed-buildings"
         },
         {
           "text": "Tree preservation orders",
-          "value": "Tree preservation orders"
+          "value": "tree-preservation-orders"
         }
       ]
     },
@@ -296,19 +296,19 @@
       "items": [
         {
           "text": "Paper",
-          "value": "Paper"
+          "value": "paper"
         },
         {
           "text": "Spreadsheet",
-          "value": "Spreadsheet"
+          "value": "spreadsheet"
         },
         {
           "text": "Database",
-          "value": "Database"
+          "value": "database"
         },
         {
           "text": "GIS (geographical information system)",
-          "value": "GIS (geographical information system)"
+          "value": "gis-(geographical-information-system)"
         }
       ]
     },
@@ -330,19 +330,19 @@
       "items": [
         {
           "text": "0 to 3 months",
-          "value": "0 to 3 months"
+          "value": "0-to-3-months"
         },
         {
           "text": "4 to 7 months",
-          "value": "4 to 7 months"
+          "value": "4-to-7-months"
         },
         {
           "text": "8 to 11 months",
-          "value": "8 to 11 months"
+          "value": "8-to-11-months"
         },
         {
           "text": "Longer than 11 months",
-          "value": "Longer than 11 months"
+          "value": "longer-than-11-months"
         }
       ]
     }
@@ -370,7 +370,7 @@
             "value": {
               "type": "Value",
               "value": "Conservation areas",
-              "display": "Conservation areas"
+              "display": "conservation-areas"
             }
           }
         ]
@@ -392,7 +392,7 @@
             "value": {
               "type": "Value",
               "value": "Article 4 direction",
-              "display": "Article 4 direction"
+              "display": "article-4-direction"
             }
           }
         ]
@@ -414,7 +414,7 @@
             "value": {
               "type": "Value",
               "value": "Listed buildings",
-              "display": "Listed buildings"
+              "display": "listed-buildings"
             }
           }
         ]
@@ -436,7 +436,7 @@
             "value": {
               "type": "Value",
               "value": "Tree preservation orders",
-              "display": "Tree preservation orders"
+              "display": "tree-preservation-orders"
             }
           }
         ]
