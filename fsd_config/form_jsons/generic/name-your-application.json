@@ -3,7 +3,7 @@
     "startPage": "/name-your-application",
     "pages": [
         {
-            "title": "Name your application",
+            "title": "1.1 Name your application",
             "path": "/name-your-application",
             "components": [
                 {
