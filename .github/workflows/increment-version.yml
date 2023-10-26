@@ -32,7 +32,11 @@ jobs:
         id: update_version
         run: |
           echo Updating version from ${{ steps.latest_tag.outputs.tag}} to ${{ steps.bump_version.outputs.next-version }}
+          echo Before updates
+          head -20 .github/workflows/dluhc-build-and-publish.yml
           sed -i 's/VERSION: "${{ steps.latest_tag.outputs.tag}}"/VERSION: "${{ steps.bump_version.outputs.next-version }}"/' .github/workflows/dluhc-build-and-publish.yml
+          echo After updates
+          head -20 .github/workflows/dluhc-build-and-publish.yml
           git config user.name 'FSD Github Actions'
           git add .github/workflows/dluhc-build-and-publish.yml
           git commit -m "Update version to ${{ steps.bump_version.outputs.next-version }}"
