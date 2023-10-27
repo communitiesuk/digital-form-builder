@@ -81,19 +81,19 @@ jobs:
         app: [designer, runner]
     name: build-and-push-${{matrix.app}}-image
     steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
       - name: "Set version in env"
         id: set-version
         run: |
           pwd
           ls -al
           echo hello
-          source ../version
+          source version
           echo "VERSION=$VERSION" >> $GITHUB_ENV
-      - uses: actions/checkout@v2
-      - name: Use Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: "12.x"
       - name: Docker compose pull
         run: docker-compose pull
       - name: Create .env for ${{ matrix.app }} workspace
