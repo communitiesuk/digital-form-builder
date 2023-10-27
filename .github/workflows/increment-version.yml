@@ -49,6 +49,7 @@ jobs:
           echo After updates
           head version
           git config user.name 'FSD Github Actions'
+          git config user.email "fsd@levellingup.gov.uk"
           git add version
           git commit -m "Update version to ${{ steps.bump_version.outputs.next-version }}"
           git push origin $GITHUB_HEAD_REF
