@@ -45,7 +45,7 @@ jobs:
           echo Updating version from $VERSION to ${{ steps.bump_version.outputs.next-version }}
           echo Before updates
           head version
-          sed -i 's/VERSION=$VERSION/VERSION=${{ steps.bump_version.outputs.next-version }}/' version
+          sed -i 's/VERSION=${{env.VERSION}}/VERSION=${{ steps.bump_version.outputs.next-version }}/' version
           echo After updates
           head version
           git config user.name 'FSD Github Actions'
