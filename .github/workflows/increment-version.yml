@@ -18,15 +18,19 @@ jobs:
           ref: ${{ github.event.pull_request.head.ref }}
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: "Set version in env"
-        id: set-version
-        run: |
-          source version
-          echo "VERSION=$VERSION" >> $GITHUB_ENV
+      #  If you have overriden the version in the version file, eg. to do a non-patch release and want to
+      # take this version as the base, not the latest tag, then uncomment this step and comment out the
+      # 'Get latest tag' step below. Then put them back!
+      # - name: "Set version in env"
+      #   id: set-version
+      #   run: |
+      #     source version
+      #     echo "VERSION=$VERSION" >> $GITHUB_ENV
 
-      - name: print version
-        id: print_version
-        run: echo version is $VERSION
+      - name: "Get latest tag"
+        id: latest_tag
+        run: |
+          echo "VERSION="$(git for-each-ref --sort=-creatordate --count 1 --format="%(refname:short)" "refs/tags/*") >> $GITHUB_ENV
 
       - name: Bump release version
         id: bump_version
