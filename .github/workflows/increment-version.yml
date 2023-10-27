@@ -17,16 +17,12 @@ jobs:
           fetch-depth: 0
           ref: ${{ github.event.pull_request.head.ref }}
           token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: "Set version in env"
         id: set-version
         run: |
           source version
           echo "VERSION=$VERSION" >> $GITHUB_ENV
-
-      # - name: "Get latest tag"
-      #   id: latest_tag
-      #   run: |
-      #     echo "tag="$(git for-each-ref --sort=-creatordate --count 1 --format="%(refname:short)" "refs/tags/*") >> $GITHUB_OUTPUT
 
       - name: print version
         id: print_version
