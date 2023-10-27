@@ -17,6 +17,11 @@ jobs:
           fetch-depth: 0
           ref: ${{ github.event.pull_request.head.ref }}
           token: ${{ secrets.GITHUB_TOKEN }}
+      - name: "Set version in env"
+        id: set-version
+        run: |
+          source version
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
 
       - name: "Get latest tag"
         id: latest_tag
@@ -30,17 +35,21 @@ jobs:
           current-version: ${{ steps.latest_tag.outputs.tag}}
           version-fragment: "bug"
 
-      - name: Update version in dluhc-build-and-publish.yml
+      - name: print version
+        id: print_version
+        run: echo version is $VERSION
+
+      - name: Update version in version file
         id: update_version
         run: |
           echo Updating version from ${{ steps.latest_tag.outputs.tag}} to ${{ steps.bump_version.outputs.next-version }}
           echo Before updates
-          head -20 .github/workflows/dluhc-build-and-publish.yml
-          sed -i 's/VERSION: "${{ steps.latest_tag.outputs.tag}}"/VERSION: "${{ steps.bump_version.outputs.next-version }}"/' .github/workflows/dluhc-build-and-publish.yml
+          head version
+          sed -i 's/VERSION: "${{ steps.latest_tag.outputs.tag}}"/VERSION: "${{ steps.bump_version.outputs.next-version }}"/' version
           echo After updates
-          head -20 .github/workflows/dluhc-build-and-publish.yml
+          head version
           git config user.name 'FSD Github Actions'
           git add .github/workflows/dluhc-build-and-publish.yml
           git commit -m "Update version to ${{ steps.bump_version.outputs.next-version }}"
           git push origin $GITHUB_HEAD_REF
-          echo "Updated dluhc-build-and-publish.yml with version ${{ steps.bump_version.outputs.next-version }}" >> $GITHUB_STEP_SUMMARY
+          echo "Updated version file with version ${{ steps.bump_version.outputs.next-version }}" >> $GITHUB_STEP_SUMMARY
