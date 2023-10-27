@@ -55,6 +55,13 @@ jobs:
     name: lint-and-test-${{matrix.app}}
     steps:
       - uses: actions/checkout@v2
+
+      - name: "Set version in env"
+        id: set-version
+        run: |
+          source version
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+
       - name: Use Node.js
         uses: actions/setup-node@v1
         with:
@@ -164,6 +171,13 @@ jobs:
         uses: actions/checkout@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: "Set version in env"
+        id: set-version
+        run: |
+          source version
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+
       - name: Tag repo with version
         run: |
           git tag ${{env.VERSION}}
