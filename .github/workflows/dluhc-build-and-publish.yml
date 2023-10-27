@@ -85,7 +85,8 @@ jobs:
         id: set-version
         run: |
           pwd
-          ls
+          ls -al
+          echo hello
           source ../version
           echo "VERSION=$VERSION" >> $GITHUB_ENV
       - uses: actions/checkout@v2
