@@ -84,7 +84,7 @@ jobs:
       - name: "Set version in env"
         id: set-version
         run: |
-          source version
+          source ../version
           echo "VERSION=$VERSION" >> $GITHUB_ENV
       - uses: actions/checkout@v2
       - name: Use Node.js
