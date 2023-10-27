@@ -56,12 +56,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: "Set version in env"
-        id: set-version
-        run: |
-          source version
-          echo "VERSION=$VERSION" >> $GITHUB_ENV
-
       - name: Use Node.js
         uses: actions/setup-node@v1
         with:
@@ -117,6 +111,13 @@ jobs:
     name: build-and-push-${{matrix.app}}-image
     steps:
       - uses: actions/checkout@v2
+
+      - name: "Set version in env"
+        id: set-version
+        run: |
+          source version
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+
       - name: Use Node.js
         uses: actions/setup-node@v1
         with:
