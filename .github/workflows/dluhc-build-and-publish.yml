@@ -40,7 +40,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Stop if tag exists
-        if: ${{ steps.checkTag.outputs.exists }}
+        if: ${{ steps.check_tag.outputs.exists == 'true' }}
         uses: actions/github-script@v6
         with:
           script: |
