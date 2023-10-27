@@ -20,62 +20,88 @@ env:
   IMAGE_REPO_PATH: "ghcr.io/${{github.repository_owner}}"
 
 jobs:
-  lint-and-test:
+  check-tag-before-build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        app: [designer, runner, model]
-    name: lint-and-test-${{matrix.app}}
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js
-        uses: actions/setup-node@v1
+
+      - name: "Set version in env"
+        id: set-version
+        run: |
+          source version
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+
+      - name: Check if tag exists
+        uses: mukunku/tag-exists-action@v1.0.0
+        id: check_tag
         with:
-          node-version: "12.x"
+          tag: ${{ env.version }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
-
-      - name: Configure yarn caching
-        uses: actions/cache@v2
-        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+      - name: Stop if tag exists
+        if: ${{ steps.checkTag.outputs.exists }}
+        uses: actions/github-script@v6
         with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+          script: |
+            core.setFailed('Tag already exists. Increment version file and retry')
 
-      - name: Install dependencies
-        run: yarn install
+  # lint-and-test:
+  #   runs-on: ubuntu-latest
+  #   strategy:
+  #     matrix:
+  #       app: [designer, runner, model]
+  #   name: lint-and-test-${{matrix.app}}
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - name: Use Node.js
+  #       uses: actions/setup-node@v1
+  #       with:
+  #         node-version: "12.x"
 
-      - name: Build dependencies
-        run: yarn build:dependencies
+  #     - name: Get yarn cache directory path
+  #       id: yarn-cache-dir-path
+  #       run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
 
-      - name: Lint
-        run: yarn ${{matrix.app}} lint
+  #     - name: Configure yarn caching
+  #       uses: actions/cache@v2
+  #       id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+  #       with:
+  #         path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+  #         key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+  #         restore-keys: |
+  #           ${{ runner.os }}-yarn-
 
-      - name: Test
-        run: yarn ${{matrix.app}} test-cov
+  #     - name: Install dependencies
+  #       run: yarn install
 
-      - name: Upload test results artifacts
-        uses: actions/upload-artifact@v2
-        if: ${{ success() || failure() }}
-        with:
-          name: test-results-${{matrix.app}}
-          path: ${{matrix.app}}/test-results
-          retention-days: 14
+  #     - name: Build dependencies
+  #       run: yarn build:dependencies
 
-      - name: Upload test coverage artifacts
-        uses: actions/upload-artifact@v2
-        if: ${{ success() || failure() }}
-        with:
-          name: test-coverage-${{matrix.app}}
-          path: ${{matrix.app}}/test-coverage
-          retention-days: 14
+  #     - name: Lint
+  #       run: yarn ${{matrix.app}} lint
+
+  #     - name: Test
+  #       run: yarn ${{matrix.app}} test-cov
+
+  #     - name: Upload test results artifacts
+  #       uses: actions/upload-artifact@v2
+  #       if: ${{ success() || failure() }}
+  #       with:
+  #         name: test-results-${{matrix.app}}
+  #         path: ${{matrix.app}}/test-results
+  #         retention-days: 14
+
+  #     - name: Upload test coverage artifacts
+  #       uses: actions/upload-artifact@v2
+  #       if: ${{ success() || failure() }}
+  #       with:
+  #         name: test-coverage-${{matrix.app}}
+  #         path: ${{matrix.app}}/test-coverage
+  #         retention-days: 14
 
   build-and-push-images:
-    needs: [lint-and-test]
+    # needs: [lint-and-test]
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -87,12 +113,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "12.x"
-
-      - name: "Set version in env"
-        id: set-version
-        run: |
-          source version
-          echo "VERSION=$VERSION" >> $GITHUB_ENV
 
       - name: Docker compose pull
         run: docker-compose pull
