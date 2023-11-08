@@ -2,6 +2,22 @@ import { DetailItem } from "../types";
 import { format } from "date-fns";
 import config from "server/config";
 
+function flattenMultiInput(rawValue) {
+  if (!rawValue) return rawValue;
+  rawValue.forEach((value) => {
+    Object.keys(value).map((key) => {
+      if (typeof value[key] == "object" && value[key] !== null) {
+        value[key] = Object.values(value[key])
+          .filter((p) => {
+            return !!p;
+          })
+          .join(", ");
+      }
+    });
+  });
+  return rawValue;
+}
+
 function answerFromDetailItem(item) {
   switch (item.dataType) {
     case "list":
@@ -18,7 +34,7 @@ function answerFromDetailItem(item) {
       const [month, year] = Object.values(item.rawValue);
       return format(new Date(`${year}-${month}-1`), "yyyy-MM");
     case "multiInput":
-      return item.rawValue;
+      return flattenMultiInput(item.rawValue);
     default:
       return item.value;
   }

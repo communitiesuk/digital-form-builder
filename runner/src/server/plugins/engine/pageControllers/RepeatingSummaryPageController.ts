@@ -196,6 +196,7 @@ export class RepeatingSummaryPageController extends PageController {
     } else if (componentType == "YesNoField") {
       return value ? "Yes" : "No";
     } else if (componentType == "UkAddressField") {
+      if (typeof (value === "string")) return value;
       return value
         ? [
             value.addressLine1,
