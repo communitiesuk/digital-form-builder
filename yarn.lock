@@ -7021,7 +7021,7 @@ __metadata:
     joi: 17.2.1
     jsdom: ^19.0.0
     jszip: ^3.7.1
-    lcov-result-merger: ^3.1.0
+    lcov-result-merger: ^4.1.0
     lodash: ^4.17.21
     mini-css-extract-plugin: ^0.11.2
     msw: ^0.38.1
@@ -13689,6 +13689,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fast-glob@npm:^3.2.11":
+  version: 3.3.2
+  resolution: "fast-glob@npm:3.3.2"
+  dependencies:
+    "@nodelib/fs.stat": ^2.0.2
+    "@nodelib/fs.walk": ^1.2.3
+    glob-parent: ^5.1.2
+    merge2: ^1.3.0
+    micromatch: ^4.0.4
+  checksum: 76c8f75492855df2d361eb10ab6090fb4632823f006ab344b6af043301478825c162cc1b7cb2bb5a0f4a4109e6ec2e5c79919147db4c3e688c5578e1ada280da
+  languageName: node
+  linkType: hard
+
 "fast-glob@npm:^3.2.9":
   version: 3.2.11
   resolution: "fast-glob@npm:3.2.11"
@@ -18636,16 +18649,16 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"lcov-result-merger@npm:^3.1.0":
-  version: 3.1.0
-  resolution: "lcov-result-merger@npm:3.1.0"
+"lcov-result-merger@npm:^4.1.0":
+  version: 4.1.0
+  resolution: "lcov-result-merger@npm:4.1.0"
   dependencies:
+    fast-glob: ^3.2.11
     through2: ^2.0.3
-    vinyl: ^2.1.0
-    vinyl-fs: ^3.0.2
+    yargs: ^16.2.0
   bin:
-    lcov-result-merger: ./bin/lcov-result-merger.js
-  checksum: 0303ecfe3b5e42351bd1c4a3b119b8763a74decaa5b1251aa9606be55fa7f4fbc0a3bf8140a6997d4023c782594abcf5e7b26023d871aedbef73d4ac3d643ee1
+    lcov-result-merger: bin/lcov-result-merger.js
+  checksum: 49b3adfbcf0e83a726820da09a5f89718225d19650f171cb65b2c76e914181519de49fd01bb90ad8b11ae931929ef575eb7d90dd7399bea6c0a32e7b1d5b7232
   languageName: node
   linkType: hard
 
@@ -27067,7 +27080,7 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"vinyl@npm:^2.0.0, vinyl@npm:^2.1.0":
+"vinyl@npm:^2.0.0":
   version: 2.2.1
   resolution: "vinyl@npm:2.2.1"
   dependencies:
