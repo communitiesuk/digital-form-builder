@@ -3179,7 +3179,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/register@npm:7.17.0, @babel/register@npm:^7.16.8":
+"@babel/register@npm:7.22.15, @babel/register@npm:^7.22.15":
+  version: 7.22.15
+  resolution: "@babel/register@npm:7.22.15"
+  dependencies:
+    clone-deep: ^4.0.1
+    find-cache-dir: ^2.0.0
+    make-dir: ^2.1.0
+    pirates: ^4.0.5
+    source-map-support: ^0.5.16
+  peerDependencies:
+    "@babel/core": ^7.0.0-0
+  checksum: 576faf71c82813d9c73a9ed644b4f408658cf94acb1e7d5aa39203466247df157a8bc7194c72780a3cbb9a89cecff6fb0b24a91cfaca4c41973110afbdcfc877
+  languageName: node
+  linkType: hard
+
+"@babel/register@npm:^7.16.8":
   version: 7.17.0
   resolution: "@babel/register@npm:7.17.0"
   dependencies:
@@ -3191,21 +3206,6 @@ __metadata:
   peerDependencies:
     "@babel/core": ^7.0.0-0
   checksum: bb47f1ad652a3b2f9c9d1f0360ce0a62793339b3df0c78394ac63c18ca111095831bfaeca06d0e20672141015a1d06735785e3a85adcf8d1c5b0ce314898247f
-  languageName: node
-  linkType: hard
-
-"@babel/register@npm:^7.17.7":
-  version: 7.17.7
-  resolution: "@babel/register@npm:7.17.7"
-  dependencies:
-    clone-deep: ^4.0.1
-    find-cache-dir: ^2.0.0
-    make-dir: ^2.1.0
-    pirates: ^4.0.5
-    source-map-support: ^0.5.16
-  peerDependencies:
-    "@babel/core": ^7.0.0-0
-  checksum: f44f235e3b8e0410591f90d09ff685336ee96ec8cc355f54979b2eed8714a748072f444c8bd13e488a85eebee98d7737ee6679e1bf0800bb30efb7f22ca91c47
   languageName: node
   linkType: hard
 
@@ -6956,7 +6956,7 @@ __metadata:
     "@babel/preset-env": 7.16.11
     "@babel/preset-react": 7.16.7
     "@babel/preset-typescript": ^7.16.7
-    "@babel/register": 7.17.0
+    "@babel/register": 7.22.15
     "@babel/runtime": 7.17.2
     "@hapi/code": ^8.0.7
     "@hapi/hapi": ^20.0.3
@@ -7137,7 +7137,7 @@ __metadata:
     "@babel/plugin-transform-runtime": ^7.17.0
     "@babel/preset-env": ^7.16.11
     "@babel/preset-typescript": ^7.16.7
-    "@babel/register": ^7.17.7
+    "@babel/register": ^7.22.15
     "@babel/runtime": ^7.17.2
     "@hapi/basic": 6.0.0
     "@hapi/bell": ^12.3.0
