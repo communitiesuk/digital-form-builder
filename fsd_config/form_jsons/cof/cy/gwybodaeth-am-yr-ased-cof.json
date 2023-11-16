@@ -477,6 +477,131 @@
         }
       ],
       "section": "wxYZcT"
+    },
+    {
+      "path": "/local-service-provision",
+      "title": "Local service provision",
+      "components": [
+        {
+          "name": "mZwrmI",
+          "options": {},
+          "type": "YesNoField",
+          "title": "Are there assets or services of a similar type available locally?"
+        }
+      ],
+      "next": [
+        {
+          "path": "/local-service-provision-mmUOLb",
+          "condition": "yeEMBf"
+        },
+        {
+          "path": "/local-service-provision-bgqNrc"
+        }
+      ],
+      "section": "wxYZcT"
+    },
+    {
+      "path": "/local-service-provision-mmUOLb",
+      "title": "Local service provision",
+      "components": [
+        {
+          "name": "BfgLCc",
+          "options": {},
+          "type": "YesNoField",
+          "title": "Is your asset different from what is available locally?"
+        }
+      ],
+      "next": [
+        {
+          "path": "/local-service-provision-cNfGYA",
+          "condition": "nlbrNc"
+        }
+      ],
+      "section": "wxYZcT"
+    },
+    {
+      "path": "/local-service-provision-bgqNrc",
+      "title": "Local service provision",
+      "components": [
+        {
+          "name": "GEJNWF",
+          "options": {
+            "maxWords": "500"
+          },
+          "type": "FreeTextField",
+          "title": "How accessible is the closest asset or service?",
+          "hint": "For example, if you are applying to fund a swimming pool, where is the next closest swimming facility?"
+        }
+      ],
+      "next": [
+        {
+          "path": "/local-service-provision-JcqzLI"
+        }
+      ],
+      "section": "wxYZcT"
+    },
+    {
+      "path": "/local-service-provision-cNfGYA",
+      "title": "Local service provision",
+      "components": [
+        {
+          "name": "WTZoVD",
+          "options": {
+            "maxWords": "500"
+          },
+          "type": "FreeTextField",
+          "title": "Tell us how and why your asset or the service is different"
+        }
+      ],
+      "next": [
+        {
+          "path": "/summary"
+        }
+      ],
+      "section": "wxYZcT"
+    },
+    {
+      "path": "/local-service-provision-JcqzLI",
+      "title": "Local service provision",
+      "components": [
+        {
+          "name": "CFFsxV",
+          "options": {},
+          "type": "YesNoField",
+          "title": "Does part of your project include a commercial aspect?",
+          "hint": "For example, a community centre which also has a community café attached that helps to subsidise the activities of the centre"
+        }
+      ],
+      "next": [
+        {
+          "path": "/local-service-provision-ShxyWq",
+          "condition": "hJonvv"
+        },
+        {
+          "path": "/summary"
+        }
+      ],
+      "section": "wxYZcT"
+    },
+    {
+      "path": "/local-service-provision-ShxyWq",
+      "title": "Local service provision",
+      "components": [
+        {
+          "name": "FDZQTQ",
+          "options": {
+            "maxWords": "500"
+          },
+          "type": "FreeTextField",
+          "title": "Tell us how the commercial aspect relates to the other services you provide"
+        }
+      ],
+      "next": [
+        {
+          "path": "/summary"
+        }
+      ],
+      "section": "wxYZcT"
     }
   ],
   "lists": [
