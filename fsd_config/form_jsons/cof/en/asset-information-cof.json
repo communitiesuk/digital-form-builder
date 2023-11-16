@@ -526,7 +526,7 @@
           "options": {
             "maxWords": "500"
           },
-          "type": "MultilineTextField",
+          "type": "FreeTextField",
           "title": "How accessible is the closest asset or service?",
           "hint": "For example, if you are applying to fund a swimming pool, where is the next closest swimming facility?"
         }
@@ -547,7 +547,7 @@
           "options": {
             "maxWords": "500"
           },
-          "type": "MultilineTextField",
+          "type": "FreeTextField",
           "title": "Tell us how and why your asset or the service is different"
         }
       ],
@@ -590,7 +590,7 @@
           "options": {
             "maxWords": "500"
           },
-          "type": "MultilineTextField",
+          "type": "FreeTextField",
           "title": "Tell us how the commercial aspect relates to the other services you provide"
         }
       ],
