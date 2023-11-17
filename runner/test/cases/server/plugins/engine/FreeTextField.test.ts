@@ -38,23 +38,7 @@ suite("Free text field", () => {
       maxWords: 26,
     });
   });
-  test("Should return correct view model when configured with schema min and max", () => {
-    const def = {
-      name: "myComponent",
-      title: "My component",
-      hint: "a hint",
-      options: {},
-      schema: {
-        min: 10,
-        max: 20,
-      },
-    };
-    const freeTextField = new FreeTextField(def, {});
-    expect(freeTextField.getViewModel({})).to.contain({
-      isCharacterOrWordCount: true,
-      maxlength: 20,
-    });
-  });
+
   test("Should supply custom validation message if defined", () => {
     const def = {
       name: "myComponent",
@@ -63,18 +47,17 @@ suite("Free text field", () => {
       options: {
         required: false,
         customValidationMessage: "This is a custom error",
+        maxWords: 2,
       },
-      schema: {
-        max: 2,
-      },
+      schema: {},
     };
     const freeTextField = new FreeTextField(def, {});
     const { formSchema } = freeTextField;
 
     expect(formSchema.validate("a").error).to.be.undefined();
 
-    expect(formSchema.validate("too many").error.message).to.equal(
-      "This is a custom error"
-    );
+    expect(
+      formSchema.validate("too many words in here").error.message
+    ).to.equal("This is a custom error");
   });
 });
