@@ -12,4 +12,3 @@ from python.components.TextField import TextFieldDisplayer
 from python.components.UkAddressField import UkAddressFieldDisplayer
 from python.components.WebsiteField import WebsiteFieldDisplayer
 from python.components.YesNoField import YesNoFieldDisplayer
-
