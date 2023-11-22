@@ -1,5 +1,5 @@
 import pytest
-from python.components.RadiosField import RadiosFieldDisplayer
+from python.answer_displayers.RadiosField import RadiosFieldDisplayer
 
 _TEST_INPUTS = [
     "CIO",

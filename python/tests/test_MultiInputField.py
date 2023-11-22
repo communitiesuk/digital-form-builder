@@ -1,5 +1,5 @@
 import pytest
-from python.components.MultiInputField import MultiInputFieldDisplayer
+from python.answer_displayers.MultiInputField import MultiInputFieldDisplayer
 
 _TEST_INPUTS_LEGACY = [
     ["Test : \u00a3100"],
@@ -84,8 +84,8 @@ _TEST_OUTPUTS = [
 )
 def test_as_csv_multi_input(answer, expected_answers):
     answer_displayers = MultiInputFieldDisplayer(answer).as_csv
-    for answer_displayer, expected_answer in zip(answer_displayers, expected_answers):
-        assert answer_displayer.as_csv == expected_answer
+    for key, expected_answer in zip(answer_displayers, expected_answers):
+        assert answer_displayers[key].as_csv == expected_answer
 
 
 @pytest.mark.parametrize(
@@ -94,8 +94,8 @@ def test_as_csv_multi_input(answer, expected_answers):
 )
 def test_as_txt_multi_input(answer, expected_answers):
     answer_displayers = MultiInputFieldDisplayer(answer).as_txt
-    for answer_displayer, expected_answer in zip(answer_displayers, expected_answers):
-        assert answer_displayer.as_txt == expected_answer
+    for key, expected_answer in zip(answer_displayers, expected_answers):
+        assert answer_displayers[key].as_txt == expected_answer
 
 
 @pytest.mark.parametrize(
@@ -104,5 +104,5 @@ def test_as_txt_multi_input(answer, expected_answers):
 )
 def test_as_pdf_multi_input(answer, expected_answers):
     answer_displayers = MultiInputFieldDisplayer(answer).as_pdf
-    for answer_displayer, expected_answer in zip(answer_displayers, expected_answers):
-        assert answer_displayer.as_pdf == expected_answer
+    for key, expected_answer in zip(answer_displayers, expected_answers):
+        assert answer_displayers[key].as_pdf == expected_answer

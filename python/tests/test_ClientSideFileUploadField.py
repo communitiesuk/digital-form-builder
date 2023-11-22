@@ -1,5 +1,5 @@
 import pytest
-from python.components.ClientSideFileUploadField import (
+from python.answer_displayers.ClientSideFileUploadField import (
     ClientSideFileUploadFieldDisplayer,
 )
 

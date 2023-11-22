@@ -1,5 +1,5 @@
 import pytest
-from python.components.TextField import TextFieldDisplayer
+from python.answer_displayers.TextField import TextFieldDisplayer
 
 _TEST_INPUTS = _TEST_OUTPUTS = [
     "ghjghj",

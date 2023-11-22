@@ -1,6 +1,6 @@
 import pytest
-from python.components.MonthYearField import MonthYearFieldDisplayer
-from python.components.MonthYearField import MonthYearFieldDisplayerMultiInput
+from python.answer_displayers.MonthYearField import MonthYearFieldDisplayer
+from python.answer_displayers.MonthYearField import MonthYearFieldDisplayerMultiInput
 
 _TEST_INPUTS = [
     "2022-04",

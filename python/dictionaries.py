@@ -1,19 +1,21 @@
-from python import CheckboxesFieldDisplayer
-from python import ClientSideFileUploadFieldDisplayer
-from python import DatePartsFieldDisplayer
-from python import EmailAddressFieldDisplayer
-from python import FreeTextFieldDisplayer
-from python import MonthYearFieldDisplayer
-from python import MonthYearFieldDisplayerMultiInput
-from python import MultiInputFieldDisplayer
-from python import NumberFieldDisplayer
-from python import RadiosFieldDisplayer
-from python import TelephoneNumberFieldDisplayer
-from python import TextFieldDisplayer
-from python import UkAddressFieldDisplayer
-from python import UkAddressFieldDisplayerMultiInput
-from python import WebsiteFieldDisplayer
-from python import YesNoFieldDisplayer
+from python.answer_displayers.CheckboxesField import CheckboxesFieldDisplayer
+from python.answer_displayers.ClientSideFileUploadField import (
+    ClientSideFileUploadFieldDisplayer,
+)
+from python.answer_displayers.DatePartsField import DatePartsFieldDisplayer
+from python.answer_displayers.EmailAddressField import EmailAddressFieldDisplayer
+from python.answer_displayers.FreeTextField import FreeTextFieldDisplayer
+from python.answer_displayers.MonthYearField import MonthYearFieldDisplayer
+from python.answer_displayers.MonthYearField import MonthYearFieldDisplayerMultiInput
+from python.answer_displayers.MultiInputField import MultiInputFieldDisplayer
+from python.answer_displayers.NumberField import NumberFieldDisplayer
+from python.answer_displayers.RadiosField import RadiosFieldDisplayer
+from python.answer_displayers.TelephoneNumberField import TelephoneNumberFieldDisplayer
+from python.answer_displayers.TextField import TextFieldDisplayer
+from python.answer_displayers.UkAddressField import UkAddressFieldDisplayer
+from python.answer_displayers.UkAddressField import UkAddressFieldDisplayerMultiInput
+from python.answer_displayers.WebsiteField import WebsiteFieldDisplayer
+from python.answer_displayers.YesNoField import YesNoFieldDisplayer
 
 FIELD_TO_DISPLAYER_DICT_MULTI_INPUT = {
     "CheckboxesField": CheckboxesFieldDisplayer,

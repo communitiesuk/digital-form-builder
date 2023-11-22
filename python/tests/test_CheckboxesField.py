@@ -1,5 +1,5 @@
 import pytest
-from python.components.CheckboxesField import CheckboxesFieldDisplayer
+from python.answer_displayers.CheckboxesField import CheckboxesFieldDisplayer
 
 _TEST_INPUTS = [
     ["community-pride", "delivering-positive"],

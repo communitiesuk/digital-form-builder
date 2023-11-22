@@ -1,5 +1,5 @@
 import pytest
-from python.components.TelephoneNumberField import TelephoneNumberFieldDisplayer
+from python.answer_displayers.TelephoneNumberField import TelephoneNumberFieldDisplayer
 
 _TEST_INPUTS = _TEST_OUTPUTS = [
     "332323232",

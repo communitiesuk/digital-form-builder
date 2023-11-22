@@ -1,5 +1,5 @@
 import pytest
-from python.components.YesNoField import YesNoFieldDisplayer
+from python.answer_displayers.YesNoField import YesNoFieldDisplayer
 
 _TEST_INPUTS = [
     True,

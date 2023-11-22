@@ -1,5 +1,5 @@
 import pytest
-from python.components.WebsiteField import WebsiteFieldDisplayer
+from python.answer_displayers.WebsiteField import WebsiteFieldDisplayer
 
 _TEST_INPUTS = _TEST_OUTPUTS = [
     "https://github.com/serenity-bdd/serenity-cucumber-starter",

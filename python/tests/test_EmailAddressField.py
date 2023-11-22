@@ -1,5 +1,5 @@
 import pytest
-from python.components.EmailAddressField import EmailAddressFieldDisplayer
+from python.answer_displayers.EmailAddressField import EmailAddressFieldDisplayer
 
 _TEST_INPUTS = _TEST_OUTPUTS = [
     "testemailfundingservice@testemailfundingservice.com",

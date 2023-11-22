@@ -1,6 +1,6 @@
 import pytest
-from python.components.UkAddressField import UkAddressFieldDisplayer
-from python.components.UkAddressField import UkAddressFieldDisplayerMultiInput
+from python.answer_displayers.UkAddressField import UkAddressFieldDisplayer
+from python.answer_displayers.UkAddressField import UkAddressFieldDisplayerMultiInput
 
 _TEST_INPUTS = [
     "test, null, test, null, te3 2bf",

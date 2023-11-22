@@ -1,5 +1,5 @@
 import pytest
-from python.components.NumberField import NumberFieldDisplayer
+from python.answer_displayers.NumberField import NumberFieldDisplayer
 
 _TEST_INPUTS = [
     "2300",

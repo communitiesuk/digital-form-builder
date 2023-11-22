@@ -1,5 +1,5 @@
 import pytest
-from python.components.DatePartsField import DatePartsFieldDisplayer
+from python.answer_displayers.DatePartsField import DatePartsFieldDisplayer
 
 _TEST_INPUTS = [
     "2022-12-01",

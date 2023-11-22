@@ -1,5 +1,5 @@
 import pytest
-from python.components.FreeTextField import FreeTextFieldDisplayer
+from python.answer_displayers.FreeTextField import FreeTextFieldDisplayer
 
 _TEST_INPUTS = [
     "Tell us how you have engaged with the community about your intention to take ownership of the asset",
