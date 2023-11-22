@@ -128,5 +128,59 @@ export function optionsReducer(state, action: OptionsActions) {
           options: { ...options, maxWords: payload },
         },
       };
+
+    case Options.EDIT_OPTIONS_MAX_FILE_UPLOAD_AMOUNT:
+      return {
+        ...state,
+        selectedComponent: {
+          ...selectedComponent,
+          options: { ...options, maxFiles: payload },
+        },
+      };
+
+    case Options.EDIT_OPTIONS_PARALLEL_UPLOAD_AMOUNT:
+      return {
+        ...state,
+        selectedComponent: {
+          ...selectedComponent,
+          options: { ...options, parallelUploads: payload },
+        },
+      };
+
+    case Options.EDIT_OPTIONS_MAX_FILE_SIZE:
+      return {
+        ...state,
+        selectedComponent: {
+          ...selectedComponent,
+          options: { ...options, maxFilesize: payload },
+        },
+      };
+
+    case Options.EDIT_OPTIONS_SHOW_SCRIPT_WARNING:
+      return {
+        ...state,
+        selectedComponent: {
+          ...selectedComponent,
+          options: { ...options, showNoScriptWarning: payload },
+        },
+      };
+
+    case Options.EDIT_OPTIONS_ACCEPTED_FILES:
+      return {
+        ...state,
+        selectedComponent: {
+          ...selectedComponent,
+          options: { ...options, acceptedFiles: payload },
+        },
+      };
+
+    case Options.EDIT_OPTIONS_MIN_REQUIRED_FILES:
+      return {
+        ...state,
+        selectedComponent: {
+          ...selectedComponent,
+          options: { ...options, minimumRequiredFiles: payload },
+        },
+      };
   }
 }

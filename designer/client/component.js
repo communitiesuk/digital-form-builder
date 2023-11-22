@@ -34,6 +34,7 @@ export const componentTypes = {
   List,
   WarningText,
   WebsiteField: TextField,
+  ClientSideFileUploadField
 };
 
 function Base(props) {
@@ -222,6 +223,16 @@ function YesNoField() {
 }
 
 function FileUploadField() {
+  return (
+    <ComponentField>
+      <div className="govuk-!-margin-bottom-1">
+        {"🗂"} <span className="line short" />
+      </div>
+    </ComponentField>
+  );
+}
+
+function ClientSideFileUploadField() {
   return (
     <ComponentField>
       <div className="govuk-!-margin-bottom-1">

@@ -167,6 +167,8 @@
     "EmailAddressField_info": "A text box that users can enter an email address into",
     "FileUploadField": "File upload",
     "FileUploadField_info": "Allows users to upload files from the device they are using",
+    "ClientSideFileUploadField": "Client side file upload",
+    "ClientSideFileUploadField_info": "Allows users to upload files from the device they are using",
     "FlashCard": "Flash card",
     "FlashCard_info": "A panel of text that can include a list",
     "Html": "HTML",
@@ -206,6 +208,78 @@
     "multipleFilesOption": {
       "helpText": "Tick this box to enable users to upload multiple files",
       "title": "Allow multiple file upload"
+    }
+  },
+  "clientSideFileUploadFieldEditPage": {
+    "maxFiles": {
+      "helpText": "Specify the maximum number of files users can upload",
+      "title": "Maximum file upload limit"
+    },
+    "parallelUploads": {
+      "helpText": "Specify the number of files users can upload in parallel",
+      "title": "Parallel file upload amount"
+    },
+    "maxFilesize": {
+      "helpText": "Specify the maximum file size",
+      "title": "Max file size"
+    },
+    "showNoScriptWarning": {
+      "helpText": "Tick this box if you want to display the warning for not having Javascript",
+      "title": "Show No Javascript Warning"
+    },
+    "minimumRequiredFiles": {
+      "helpText": "Specify the minimum number of files to be uploaded",
+      "title": "Minimum required files"
+    },
+    "acceptedFiles": {
+      "helpText": "Select accepted file formats",
+      "title": "Accepted Files",
+      "fileFormats": {
+      "image/jpeg": {
+        "title": "JPEG Image",
+        "helpText": "Joint Photographic Experts Group image files"
+      },
+      "image/png": {
+        "title": "PNG Image",
+        "helpText": "Portable Network Graphics image files"
+      },
+      "application/pdf": {
+        "title": "PDF Document",
+        "helpText": "Portable Document Format files"
+      },
+      "text/plain": {
+        "title": "Plain Text",
+        "helpText": "Plain text files"
+      },
+      "application/msword": {
+        "title": "MS Word Document",
+        "helpText": "Microsoft Word document files"
+      },
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document": {
+        "title": "Word Document (OpenXML)",
+        "helpText": "Microsoft Word OpenXML document files"
+      },
+      "application/vnd.oasis.opendocument.text": {
+        "title": "ODT Document",
+        "helpText": "Open Document Text files"
+      },
+      "text/csv": {
+        "title": "CSV Document",
+        "helpText": "Comma-Separated Values files"
+      },
+      "application/vnd.ms-excel": {
+        "title": "MS Excel Document",
+        "helpText": "Microsoft Excel document files"
+      },
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet": {
+        "title": "Excel Document (OpenXML)",
+        "helpText": "Microsoft Excel OpenXML document files"
+      },
+      "application/vnd.oasis.opendocument.spreadsheet": {
+        "title": "ODS Document",
+        "helpText": "Open Document Spreadsheet files"
+      }
+    }
     }
   },
   "formDetails": {
