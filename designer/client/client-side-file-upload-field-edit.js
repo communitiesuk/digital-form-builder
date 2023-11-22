@@ -10,18 +10,6 @@ export function ClientSideFileUploadFieldEdit({ context = ComponentContext }) {
     const { selectedComponent } = state;
     const { options = {} } = selectedComponent;
 
-    const [selectedFormats, setSelectedFormats] = useState([]);
-    const fileFormats = ["image/jpeg", "image/png", "application/pdf", "text/plain", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "application/vnd.oasis.opendocument.text", "text/csv", "application/vnd.ms-excel", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "application/vnd.oasis.opendocument.spreadsheet"];
-
-    const handleCheckboxChange = (value) => {
-        if (selectedFormats.includes(value)) {
-          setSelectedFormats(selectedFormats.filter(format => format !== value));
-        } else {
-          setSelectedFormats([...selectedFormats, value]);
-        }
-        console.log("selected: ", selectedFormats)
-      };
-
     return(
         <details className="govuk-details">
             <summary className="govuk-details__summary">
@@ -162,34 +150,6 @@ export function ClientSideFileUploadFieldEdit({ context = ComponentContext }) {
                     />
                 </div>
                 ))}
-
-            </div>
-
-            <div className="govuk-form-group">
-                <label
-                    className="govuk-label govuk-label--s"
-                    htmlFor="field-schema-showNoScriptWarning"
-                >
-                    {i18n("clientSideFileUploadFieldEditPage.showNoScriptWarning.title")}
-                </label>
-                <span className="govuk-hint">
-                    {i18n("clientSideFileUploadFieldEditPage.showNoScriptWarning.helpText")}
-                </span>
-                <input
-                    className="govuk-input govuk-input--width-3"
-                    data-cast="number"
-                    id="field-schema-showNoScriptWarning"
-                    name="options.showNoScriptWarning"
-                    value={options.showNoScriptWarning || ""}
-                    type="number"
-                    onChange={(e) => {
-                    dispatch({
-                        type: Actions.EDIT_OPTIONS_SHOW_SCRIPT_WARNING,
-                        payload: e.target.value,
-                    })
-                }
-                }
-                />
 
             </div>
 

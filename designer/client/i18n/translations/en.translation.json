@@ -230,56 +230,6 @@
     "minimumRequiredFiles": {
       "helpText": "Specify the minimum number of files to be uploaded",
       "title": "Minimum required files"
-    },
-    "acceptedFiles": {
-      "helpText": "Select accepted file formats",
-      "title": "Accepted Files",
-      "fileFormats": {
-      "image/jpeg": {
-        "title": "JPEG Image",
-        "helpText": "Joint Photographic Experts Group image files"
-      },
-      "image/png": {
-        "title": "PNG Image",
-        "helpText": "Portable Network Graphics image files"
-      },
-      "application/pdf": {
-        "title": "PDF Document",
-        "helpText": "Portable Document Format files"
-      },
-      "text/plain": {
-        "title": "Plain Text",
-        "helpText": "Plain text files"
-      },
-      "application/msword": {
-        "title": "MS Word Document",
-        "helpText": "Microsoft Word document files"
-      },
-      "application/vnd.openxmlformats-officedocument.wordprocessingml.document": {
-        "title": "Word Document (OpenXML)",
-        "helpText": "Microsoft Word OpenXML document files"
-      },
-      "application/vnd.oasis.opendocument.text": {
-        "title": "ODT Document",
-        "helpText": "Open Document Text files"
-      },
-      "text/csv": {
-        "title": "CSV Document",
-        "helpText": "Comma-Separated Values files"
-      },
-      "application/vnd.ms-excel": {
-        "title": "MS Excel Document",
-        "helpText": "Microsoft Excel document files"
-      },
-      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet": {
-        "title": "Excel Document (OpenXML)",
-        "helpText": "Microsoft Excel OpenXML document files"
-      },
-      "application/vnd.oasis.opendocument.spreadsheet": {
-        "title": "ODS Document",
-        "helpText": "Open Document Spreadsheet files"
-      }
-    }
     }
   },
   "formDetails": {

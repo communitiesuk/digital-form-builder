@@ -165,15 +165,6 @@ export function optionsReducer(state, action: OptionsActions) {
         },
       };
 
-    case Options.EDIT_OPTIONS_ACCEPTED_FILES:
-      return {
-        ...state,
-        selectedComponent: {
-          ...selectedComponent,
-          options: { ...options, acceptedFiles: payload },
-        },
-      };
-
     case Options.EDIT_OPTIONS_MIN_REQUIRED_FILES:
       return {
         ...state,
