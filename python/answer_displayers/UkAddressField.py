@@ -28,7 +28,6 @@ class UkAddressFieldDisplayerMultiInput(AnswerDisplayer):
     def __init__(self, answer: dict[str, str]):
         self.raw_answer = answer
 
-
     @property
     def _comma_separated_address(self):
         return ", ".join(v for v in self.raw_answer.values() if v).strip()

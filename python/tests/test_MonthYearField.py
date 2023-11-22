@@ -1,7 +1,6 @@
 import pytest
-
-from python.components.CheckboxesField import CheckboxesFieldDisplayer
-from python.components.MonthYearField import MonthYearFieldDisplayer, MonthYearFieldDisplayerMultiInput
+from python.components.MonthYearField import MonthYearFieldDisplayer
+from python.components.MonthYearField import MonthYearFieldDisplayerMultiInput
 
 _TEST_INPUTS = [
     "2022-04",
@@ -43,14 +42,8 @@ def test_as_pdf(answer, expected_result):
 
 
 _TEST_INPUTS_MULTI_INPUT = [
-    {
-        "HpLJyL__month": 3,
-        "HpLJyL__year": 2024
-    },
-    {
-        "PrulfI__month": 6,
-        "PrulfI__year": 2023
-    },
+    {"HpLJyL__month": 3, "HpLJyL__year": 2024},
+    {"PrulfI__month": 6, "PrulfI__year": 2023},
 ]
 
 _TEST_OUTPUTS_MULTI_INPUT = [
@@ -63,7 +56,7 @@ _TEST_OUTPUTS_MULTI_INPUT = [
     "answer, expected_result",
     zip(_TEST_INPUTS_MULTI_INPUT, _TEST_OUTPUTS_MULTI_INPUT),
 )
-def test_as_csv(answer, expected_result):
+def test_as_csv_multi_input(answer, expected_result):
     assert MonthYearFieldDisplayerMultiInput(answer).as_csv == expected_result
 
 
@@ -71,7 +64,7 @@ def test_as_csv(answer, expected_result):
     "answer, expected_result",
     zip(_TEST_INPUTS_MULTI_INPUT, _TEST_OUTPUTS_MULTI_INPUT),
 )
-def test_as_txt(answer, expected_result):
+def test_as_txt_multi_input(answer, expected_result):
     assert MonthYearFieldDisplayerMultiInput(answer).as_txt == expected_result
 
 
@@ -79,5 +72,5 @@ def test_as_txt(answer, expected_result):
     "answer, expected_result",
     zip(_TEST_INPUTS_MULTI_INPUT, _TEST_OUTPUTS_MULTI_INPUT),
 )
-def test_as_pdf(answer, expected_result):
+def test_as_pdf_multi_input(answer, expected_result):
     assert MonthYearFieldDisplayerMultiInput(answer).as_pdf == expected_result

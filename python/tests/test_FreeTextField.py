@@ -1,18 +1,16 @@
 import pytest
-
-from python.components.CheckboxesField import CheckboxesFieldDisplayer
 from python.components.FreeTextField import FreeTextFieldDisplayer
 
 _TEST_INPUTS = [
     "Tell us how you have engaged with the community about your intention to take ownership of the asset",
     "Tell us about the feasibility studies you have carried out for your project",
-    "<p>Test Roles and Recruitment DPI Form</p>"
+    "<p>Test Roles and Recruitment DPI Form</p>",
 ]
 
 _TEST_OUTPUTS = [
     "Tell us how you have engaged with the community about your intention to take ownership of the asset",
     "Tell us about the feasibility studies you have carried out for your project",
-    "Test Roles and Recruitment DPI Form"
+    "Test Roles and Recruitment DPI Form",
 ]
 
 

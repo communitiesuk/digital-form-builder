@@ -1,7 +1,4 @@
 import pytest
-
-from python.components.CheckboxesField import CheckboxesFieldDisplayer
-from python.components.MultiInputField import MultiInputFieldDisplayer
 from python.components.TelephoneNumberField import TelephoneNumberFieldDisplayer
 
 _TEST_INPUTS = _TEST_OUTPUTS = [
@@ -12,6 +9,7 @@ _TEST_INPUTS = _TEST_OUTPUTS = [
     "332332323232",
     "0000000000",
 ]
+
 
 @pytest.mark.parametrize(
     "answer, expected_result",

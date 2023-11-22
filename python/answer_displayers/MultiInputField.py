@@ -16,11 +16,17 @@ class MultiInputFieldDisplayer(AnswerDisplayer):
             description, amount = unparsed_answer.rsplit(" : £", 1)
             answer = (description, float(amount))
             parsed_answer.append(answer)
-        return "\n".join(f"{description}: £{amount:,.2f}" for description, amount in parsed_answer)
+        return "\n".join(
+            f"{description}: £{amount:,.2f}" for description, amount in parsed_answer
+        )
 
     @property
     def _parse_multi_input_component(self) -> list[AnswerDisplayer]:
-        from python.dictionaries import EXISTING_KEY_TO_TYPE_DICT, FIELD_TO_DISPLAYER_DICT_MULTI_INPUT
+        from python.dictionaries import (
+            EXISTING_KEY_TO_TYPE_DICT,
+            FIELD_TO_DISPLAYER_DICT_MULTI_INPUT,
+        )
+
         raw_answer: list[dict[str, Any]] = self.raw_answer
         answer_displayers: list[AnswerDisplayer] = []
         for answer_tuple in raw_answer:

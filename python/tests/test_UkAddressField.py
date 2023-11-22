@@ -1,8 +1,6 @@
 import pytest
-
-from python.components.CheckboxesField import CheckboxesFieldDisplayer
-from python.components.MultiInputField import MultiInputFieldDisplayer
-from python.components.UkAddressField import UkAddressFieldDisplayer, UkAddressFieldDisplayerMultiInput
+from python.components.UkAddressField import UkAddressFieldDisplayer
+from python.components.UkAddressField import UkAddressFieldDisplayerMultiInput
 
 _TEST_INPUTS = [
     "test, null, test, null, te3 2bf",
@@ -51,20 +49,18 @@ _TEST_INPUTS_MULTI_INPUT = [
         "addressLine2": "",
         "town": "Upper Berge",
         "county": "",
-        "postcode": "W12 0HS"
+        "postcode": "W12 0HS",
     }
 ]
 
-_TEST_OUTPUTS_MULTI_INPUT = [
-    "268 Schultz Fold, Upper Berge, W12 0HS"
-]
+_TEST_OUTPUTS_MULTI_INPUT = ["268 Schultz Fold, Upper Berge, W12 0HS"]
 
 
 @pytest.mark.parametrize(
     "answer, expected_result",
     zip(_TEST_INPUTS_MULTI_INPUT, _TEST_OUTPUTS_MULTI_INPUT),
 )
-def test_as_csv(answer, expected_result):
+def test_as_csv_multi_input(answer, expected_result):
     assert UkAddressFieldDisplayerMultiInput(answer).as_csv == expected_result
 
 
@@ -72,7 +68,7 @@ def test_as_csv(answer, expected_result):
     "answer, expected_result",
     zip(_TEST_INPUTS_MULTI_INPUT, _TEST_OUTPUTS_MULTI_INPUT),
 )
-def test_as_txt(answer, expected_result):
+def test_as_txt_multi_input(answer, expected_result):
     assert UkAddressFieldDisplayerMultiInput(answer).as_txt == expected_result
 
 
@@ -80,5 +76,5 @@ def test_as_txt(answer, expected_result):
     "answer, expected_result",
     zip(_TEST_INPUTS_MULTI_INPUT, _TEST_OUTPUTS_MULTI_INPUT),
 )
-def test_as_pdf(answer, expected_result):
+def test_as_pdf_multi_input(answer, expected_result):
     assert UkAddressFieldDisplayerMultiInput(answer).as_pdf == expected_result

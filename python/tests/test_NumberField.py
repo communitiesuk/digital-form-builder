@@ -1,5 +1,4 @@
 import pytest
-
 from python.components.NumberField import NumberFieldDisplayer
 
 _TEST_INPUTS = [

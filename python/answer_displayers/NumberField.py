@@ -10,7 +10,6 @@ class NumberFieldDisplayer(AnswerDisplayer):
     def _answer_as_currency(self):
         return f"£{float(self.raw_answer):,.2f}"
 
-
     @property
     def as_csv(self):
         if self.is_currency:

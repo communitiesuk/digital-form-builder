@@ -7,7 +7,7 @@ class RadiosFieldDisplayer(AnswerDisplayer):
 
     @property
     def _answer_without_hyphens_capitalised(self):
-        answer = self.raw_answer.replace('-', ' ')
+        answer = self.raw_answer.replace("-", " ")
         if answer.isupper():
             return answer
         return answer.capitalize()

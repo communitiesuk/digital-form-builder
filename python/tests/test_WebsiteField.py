@@ -1,14 +1,11 @@
 import pytest
-
-from python.components.CheckboxesField import CheckboxesFieldDisplayer
-from python.components.MultiInputField import MultiInputFieldDisplayer
 from python.components.WebsiteField import WebsiteFieldDisplayer
 
 _TEST_INPUTS = _TEST_OUTPUTS = [
     "https://github.com/serenity-bdd/serenity-cucumber-starter",
     "https://fsd-funding-prototype-v2.herokuapp.com/cof-w2-v2/app-task-list-new",
     "https://fsd-funding-prototype-v2.herokuapp.com/cof-w2-v2/application-pages/about-project/about-project-06-yes",
-    None
+    None,
 ]
 
 

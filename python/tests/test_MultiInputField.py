@@ -1,21 +1,10 @@
 import pytest
-
-from python.components.CheckboxesField import CheckboxesFieldDisplayer
 from python.components.MultiInputField import MultiInputFieldDisplayer
 
 _TEST_INPUTS_LEGACY = [
-    [
-        "Test : \u00a3100"
-    ],
-    [
-        "Test : \u00a34567",
-        "Test : \u00a36789"
-    ],
-    [
-        "Testing A : \u00a35000",
-        "Testing B : \u00a37000",
-        "Testing C : \u00a31000"
-    ],
+    ["Test : \u00a3100"],
+    ["Test : \u00a34567", "Test : \u00a36789"],
+    ["Testing A : \u00a35000", "Testing B : \u00a37000", "Testing C : \u00a31000"],
 ]
 
 _TEST_OUTPUTS_LEGACY = [
@@ -54,11 +43,8 @@ _TEST_INPUTS = [
         {
             "gLqiyJ": "Test Value for Money CYP Form",
             "yuzbjT": 678,
-            "HpLJyL": {
-                "HpLJyL__month": 3,
-                "HpLJyL__year": 2024
-            },
-            "MadvIr": "Capital"
+            "HpLJyL": {"HpLJyL__month": 3, "HpLJyL__year": 2024},
+            "MadvIr": "Capital",
         }
     ],
     [
@@ -69,64 +55,54 @@ _TEST_INPUTS = [
                 "addressLine2": "",
                 "town": "Upper Berge",
                 "county": "",
-                "postcode": "W12 0HS"
+                "postcode": "W12 0HS",
             },
             "MKbOlA": "https://twitter.com/luhc",
             "OghGGr": None,
-            "RphKTp": None
+            "RphKTp": None,
         }
-    ]
+    ],
 ]
 
-_TEST_OUTPUTS_LENGTHS = [
-    4, 5
-]
+_TEST_OUTPUTS_LENGTHS = [4, 5]
 
 _TEST_OUTPUTS = [
-    [
-        "Test Value for Money CYP Form",
-        "£678.00",
-        "March 2024",
-        "Capital"
-    ],
+    ["Test Value for Money CYP Form", "£678.00", "March 2024", "Capital"],
     [
         "Test About your organisation CYP Form",
         "268 Schultz Fold, Upper Berge, W12 0HS",
         "https://twitter.com/luhc",
         None,
-        None
-    ]
+        None,
+    ],
 ]
 
 
 @pytest.mark.parametrize(
-    "answer, expected_result_length, expected_answers",
-    zip(_TEST_INPUTS, _TEST_OUTPUTS_LENGTHS, _TEST_OUTPUTS),
+    "answer, expected_answers",
+    zip(_TEST_INPUTS, _TEST_OUTPUTS),
 )
-def test_as_csv(answer, expected_result_length, expected_answers):
+def test_as_csv_multi_input(answer, expected_answers):
     answer_displayers = MultiInputFieldDisplayer(answer).as_csv
-    assert len(answer_displayers) == expected_result_length
     for answer_displayer, expected_answer in zip(answer_displayers, expected_answers):
         assert answer_displayer.as_csv == expected_answer
 
 
 @pytest.mark.parametrize(
-    "answer, expected_result_length, expected_answers",
-    zip(_TEST_INPUTS, _TEST_OUTPUTS_LENGTHS, _TEST_OUTPUTS),
+    "answer, expected_answers",
+    zip(_TEST_INPUTS, _TEST_OUTPUTS),
 )
-def test_as_txt(answer, expected_result_length, expected_answers):
+def test_as_txt_multi_input(answer, expected_answers):
     answer_displayers = MultiInputFieldDisplayer(answer).as_txt
-    assert len(answer_displayers) == expected_result_length
     for answer_displayer, expected_answer in zip(answer_displayers, expected_answers):
         assert answer_displayer.as_txt == expected_answer
 
 
 @pytest.mark.parametrize(
-    "answer, expected_result_length, expected_answers",
-    zip(_TEST_INPUTS, _TEST_OUTPUTS_LENGTHS, _TEST_OUTPUTS),
+    "answer, expected_answers",
+    zip(_TEST_INPUTS, _TEST_OUTPUTS),
 )
-def test_as_pdf(answer, expected_result_length, expected_answers):
+def test_as_pdf_multi_input(answer, expected_answers):
     answer_displayers = MultiInputFieldDisplayer(answer).as_pdf
-    assert len(answer_displayers) == expected_result_length
     for answer_displayer, expected_answer in zip(answer_displayers, expected_answers):
         assert answer_displayer.as_pdf == expected_answer

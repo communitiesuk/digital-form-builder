@@ -1,6 +1,4 @@
 import pytest
-
-from python.components.CheckboxesField import CheckboxesFieldDisplayer
 from python.components.EmailAddressField import EmailAddressFieldDisplayer
 
 _TEST_INPUTS = _TEST_OUTPUTS = [

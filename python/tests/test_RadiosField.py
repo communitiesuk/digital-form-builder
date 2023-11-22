@@ -1,7 +1,4 @@
 import pytest
-
-from python.components.CheckboxesField import CheckboxesFieldDisplayer
-from python.components.MultiInputField import MultiInputFieldDisplayer
 from python.components.RadiosField import RadiosFieldDisplayer
 
 _TEST_INPUTS = [

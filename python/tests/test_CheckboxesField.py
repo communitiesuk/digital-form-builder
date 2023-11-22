@@ -1,28 +1,22 @@
 import pytest
-
 from python.components.CheckboxesField import CheckboxesFieldDisplayer
 
 _TEST_INPUTS = [
-    [
-        "community-pride",
-        "delivering-positive"
-    ],
-    [
-        "support-local-community"
-    ],
+    ["community-pride", "delivering-positive"],
+    ["support-local-community"],
     [
         "community-pride",
         "social-trust",
         "participation",
         "local-economic",
-        "delivering-positive"
-    ]
+        "delivering-positive",
+    ],
 ]
 
 _TEST_OUTPUTS = [
     "Community pride\nDelivering positive",
     "Support local community",
-    "Community pride\nSocial trust\nParticipation\nLocal economic\nDelivering positive"
+    "Community pride\nSocial trust\nParticipation\nLocal economic\nDelivering positive",
 ]
 
 

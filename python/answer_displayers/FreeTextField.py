@@ -1,5 +1,4 @@
 from bs4 import BeautifulSoup
-
 from python.answer_displayer import AnswerDisplayer
 
 
@@ -11,7 +10,7 @@ class FreeTextFieldDisplayer(AnswerDisplayer):
     def _strip_html(self):
         if self.raw_answer is None:
             return None
-        parsed = BeautifulSoup(self.raw_answer, 'html.parser')
+        parsed = BeautifulSoup(self.raw_answer, "html.parser")
         return parsed.get_text()
 
     @property

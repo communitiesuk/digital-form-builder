@@ -1,7 +1,7 @@
 import pytest
-
-from python.components.CheckboxesField import CheckboxesFieldDisplayer
-from python.components.ClientSideFileUploadField import ClientSideFileUploadFieldDisplayer
+from python.components.ClientSideFileUploadField import (
+    ClientSideFileUploadFieldDisplayer,
+)
 
 # we render the raw answer as-is, so we output the same as we input (for now)
 _TEST_INPUTS = _TEST_OUTPUTS = [

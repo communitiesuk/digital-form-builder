@@ -1,6 +1,4 @@
 import pytest
-
-from python.components.CheckboxesField import CheckboxesFieldDisplayer
 from python.components.DatePartsField import DatePartsFieldDisplayer
 
 _TEST_INPUTS = [
