@@ -17,39 +17,51 @@ from python.answer_displayers.UkAddressField import UkAddressFieldDisplayerMulti
 from python.answer_displayers.WebsiteField import WebsiteFieldDisplayer
 from python.answer_displayers.YesNoField import YesNoFieldDisplayer
 
-FIELD_TO_DISPLAYER_DICT_MULTI_INPUT = {
-    "CheckboxesField": CheckboxesFieldDisplayer,
-    "ClientSideFileUploadField": ClientSideFileUploadFieldDisplayer,
-    "DatePartsField": DatePartsFieldDisplayer,
-    "EmailAddressField": EmailAddressFieldDisplayer,
-    "FreeTextField": FreeTextFieldDisplayer,
-    "MonthYearField": MonthYearFieldDisplayerMultiInput,
-    "MultiInputField": MultiInputFieldDisplayer,
-    "NumberField": NumberFieldDisplayer,
-    "RadiosField": RadiosFieldDisplayer,
-    "TelephoneNumberField": TelephoneNumberFieldDisplayer,
-    "TextField": TextFieldDisplayer,
-    "UkAddressField": UkAddressFieldDisplayerMultiInput,
-    "WebsiteField": WebsiteFieldDisplayer,
-    "YesNoField": YesNoFieldDisplayer,
-}
 
-FIELD_TO_DISPLAYER_DICT = {
-    "CheckboxesField": CheckboxesFieldDisplayer,
-    "ClientSideFileUploadField": ClientSideFileUploadFieldDisplayer,
-    "DatePartsField": DatePartsFieldDisplayer,
-    "EmailAddressField": EmailAddressFieldDisplayer,
-    "FreeTextField": FreeTextFieldDisplayer,
-    "MonthYearField": MonthYearFieldDisplayer,
-    "MultiInputField": MultiInputFieldDisplayer,
-    "NumberField": NumberFieldDisplayer,
-    "RadiosField": RadiosFieldDisplayer,
-    "TelephoneNumberField": TelephoneNumberFieldDisplayer,
-    "TextField": TextFieldDisplayer,
-    "UkAddressField": UkAddressFieldDisplayer,
-    "WebsiteField": WebsiteFieldDisplayer,
-    "YesNoField": YesNoFieldDisplayer,
-}
+class CaseInsensitiveDict(dict):
+    def __getitem__(self, key):
+        if isinstance(key, str):
+            key = key.lower()
+        return super().__getitem__(key)
+
+
+FIELD_TO_DISPLAYER_DICT_MULTI_INPUT = CaseInsensitiveDict(
+    {
+        "CheckboxesField": CheckboxesFieldDisplayer,
+        "ClientSideFileUploadField": ClientSideFileUploadFieldDisplayer,
+        "DatePartsField": DatePartsFieldDisplayer,
+        "EmailAddressField": EmailAddressFieldDisplayer,
+        "FreeTextField": FreeTextFieldDisplayer,
+        "MonthYearField": MonthYearFieldDisplayerMultiInput,
+        "MultiInputField": MultiInputFieldDisplayer,
+        "NumberField": NumberFieldDisplayer,
+        "RadiosField": RadiosFieldDisplayer,
+        "TelephoneNumberField": TelephoneNumberFieldDisplayer,
+        "TextField": TextFieldDisplayer,
+        "UkAddressField": UkAddressFieldDisplayerMultiInput,
+        "WebsiteField": WebsiteFieldDisplayer,
+        "YesNoField": YesNoFieldDisplayer,
+    }
+)
+
+FIELD_TO_DISPLAYER_DICT = CaseInsensitiveDict(
+    {
+        "CheckboxesField": CheckboxesFieldDisplayer,
+        "ClientSideFileUploadField": ClientSideFileUploadFieldDisplayer,
+        "DatePartsField": DatePartsFieldDisplayer,
+        "EmailAddressField": EmailAddressFieldDisplayer,
+        "FreeTextField": FreeTextFieldDisplayer,
+        "MonthYearField": MonthYearFieldDisplayer,
+        "MultiInputField": MultiInputFieldDisplayer,
+        "NumberField": NumberFieldDisplayer,
+        "RadiosField": RadiosFieldDisplayer,
+        "TelephoneNumberField": TelephoneNumberFieldDisplayer,
+        "TextField": TextFieldDisplayer,
+        "UkAddressField": UkAddressFieldDisplayer,
+        "WebsiteField": WebsiteFieldDisplayer,
+        "YesNoField": YesNoFieldDisplayer,
+    }
+)
 
 EXISTING_KEY_TO_TYPE_DICT = {
     "ABROnB": "NumberField",
