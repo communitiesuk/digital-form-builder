@@ -84,8 +84,9 @@ _TEST_OUTPUTS = [
 )
 def test_as_csv_multi_input(answer, expected_answers):
     answer_displayers = MultiInputFieldDisplayer(answer).as_csv
-    for key, expected_answer in zip(answer_displayers, expected_answers):
-        assert answer_displayers[key].as_csv == expected_answer
+    for answer_displayer_dict in answer_displayers:
+        for key, expected_answer in zip(answer_displayer_dict, expected_answers):
+            assert answer_displayer_dict[key].as_csv == expected_answer
 
 
 @pytest.mark.parametrize(
@@ -94,8 +95,9 @@ def test_as_csv_multi_input(answer, expected_answers):
 )
 def test_as_txt_multi_input(answer, expected_answers):
     answer_displayers = MultiInputFieldDisplayer(answer).as_txt
-    for key, expected_answer in zip(answer_displayers, expected_answers):
-        assert answer_displayers[key].as_txt == expected_answer
+    for answer_displayer_dict in answer_displayers:
+        for key, expected_answer in zip(answer_displayer_dict, expected_answers):
+            assert answer_displayer_dict[key].as_txt == expected_answer
 
 
 @pytest.mark.parametrize(
@@ -104,5 +106,6 @@ def test_as_txt_multi_input(answer, expected_answers):
 )
 def test_as_pdf_multi_input(answer, expected_answers):
     answer_displayers = MultiInputFieldDisplayer(answer).as_pdf
-    for key, expected_answer in zip(answer_displayers, expected_answers):
-        assert answer_displayers[key].as_pdf == expected_answer
+    for answer_displayer_dict in answer_displayers:
+        for key, expected_answer in zip(answer_displayer_dict, expected_answers):
+            assert answer_displayer_dict[key].as_pdf == expected_answer

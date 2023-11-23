@@ -38,9 +38,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Change working directory to python
-        run: cd python
-
       - name: Setup python
         id: setup_python
         uses: actions/setup-python@v4
@@ -49,13 +46,13 @@ jobs:
 
       - name: Get package version
         id: package_version
-        run: echo "app_version="$(python setup.py --version) >> $GITHUB_OUTPUT
+        run: echo "app_version="$(cd python && python setup.py --version) >> $GITHUB_OUTPUT
 
       - name: Check if tag exists
         uses: mukunku/tag-exists-action@v1.0.0
         id: check_tag
         with:
-          tag: ${{ steps.package_version.outputs.app_version }}
+          tag: python-tools-${{ steps.package_version.outputs.app_version }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -65,7 +62,7 @@ jobs:
         if: ${{ steps.check_tag.outputs.exists == 'false' }}
         with:
           commit: main
-          tag: ${{ steps.package_version.outputs.app_version }}
+          tag: python-tools-${{ steps.package_version.outputs.app_version }}
           token: ${{ secrets.GITHUB_TOKEN }}
 
   publish-release:
@@ -74,9 +71,6 @@ jobs:
 #    if: github.ref == 'refs/heads/main'
     steps:
       - uses: actions/checkout@v3
-
-      - name: Change working directory to python
-        run: cd python
 
       - name: Setup python
         id: setup_python
@@ -87,8 +81,11 @@ jobs:
       - name: Build for publish
         id: build_dist
         run: |
+          cd python
           python -m pip install --upgrade pip && pip install build
           python -m build
+          mkdir ../dist
+          mv dist/* ../dist
           echo workspace dir $GITHUB_WORKSPACE
 
       - name: Publish to PyPI
