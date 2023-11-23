@@ -38,6 +38,7 @@
     "@babel/core": "^7.21.4",
     "@babel/eslint-parser": "^7.21.3",
     "@babel/eslint-plugin": "^7.19.1",
+    "@babel/plugin-proposal-logical-assignment-operators": "^7.20.7",
     "@babel/plugin-proposal-optional-chaining": "^7.21.0",
     "@babel/plugin-transform-optional-chaining": "^7.23.4",
     "@babel/preset-env": "^7.21.4",
