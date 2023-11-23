@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { CssClasses } from "./components/CssClasses";
 import { ComponentContext } from "./reducers/component/componentReducer";
 import { i18n } from "./i18n";
@@ -9,6 +9,13 @@ export function ClientSideFileUploadFieldEdit({ context = ComponentContext }) {
     const { state, dispatch } = useContext(context);
     const { selectedComponent } = state;
     const { options = {} } = selectedComponent;
+    const { hideScript = true, showNoScriptWarning = false } = options;
+
+    console.log("showNoScriptWarning in component:", showNoScriptWarning);
+
+    useEffect(() => {
+        console.log("Component rerendered");
+      }, [showNoScriptWarning]);
 
     return(
         <details className="govuk-details">
@@ -114,44 +121,49 @@ export function ClientSideFileUploadFieldEdit({ context = ComponentContext }) {
                     name="options.minimumRequiredFiles"
                     value={options.minimumRequiredFiles || ""}
                     type="number"
-                    onChange={(e) =>
+                    onChange={(e) => {
                     dispatch({
                         type: Actions.EDIT_OPTIONS_MIN_REQUIRED_FILES,
                         payload: e.target.value,
                     })
-                    }
+                    console.log("options", options)
+                    }}
                 />
             </div>
 
-            <div className="govuk-form-group">
-                {fileFormats.map((format, index) => (
-                <div key={index} className="govuk-checkboxes__item">
-                    <label
-                        className="govuk-label govuk-checkboxes__label"
-                        htmlFor={`field-schema-acceptedFiles-${format.replace("/", "")}`}
-                    >
-                        {i18n(`clientSideFileUploadFieldEditPage.acceptedFiles.fileFormats.${format}.title`)}
-                    </label>
+            <div className="govuk-checkboxes govuk-form-group">
+                 <label
+                    className="govuk-label govuk-label--s"
+                    htmlFor="field-schema-showNoScriptWarning"
+                >
+                    {i18n("clientSideFileUploadFieldEditPage.showNoScriptWarning.title")}
+                </label>
+                <div className="govuk-checkboxes__item">
                     <input
-                        className="govuk-checkboxes__input"
-                        id={`field-schema-acceptedFiles-${format.replace("/", "")}`}
-                        name={`options.acceptedFiles-${format.replace("/", "")}`}
-                        checked={options.JSON.parse(acceptedFiles).includes(format)}
-                        type="checkbox"
-                        onChange={(e) => {
-                            handleCheckboxChange(format.value);
-                            dispatch({
-                                type: Actions.EDIT_OPTIONS_ACCEPTED_FILES,
-                                payload: JSON.stringify(selectedFormats),
-                            }
-                            )
-                            console.log("state: ", state);
-                        }}
+                    className="govuk-checkboxes__input"
+                    id="field-schema-showNoScriptWarning"
+                    name="options.showNoScriptWarning"
+                    type="checkbox"
+                    checked={showNoScriptWarning}
+                    onChange={(e) =>
+                        dispatch({
+                        type: Actions.EDIT_OPTIONS_SHOW_SCRIPT_WARNING,
+                        payload: !showNoScriptWarning,
+                        })
+                    }
                     />
+                    <label
+                    className="govuk-label govuk-checkboxes__label"
+                    htmlFor="field-schema-showNoScriptWarning"
+                    >
+                    {i18n("clientSideFileUploadFieldEditPage.showNoScriptWarning.title")}
+                    </label>
+                    <span className="govuk-hint govuk-checkboxes__hint">
+                    {i18n("clientSideFileUploadFieldEditPage.showNoScriptWarning.helpText")}
+                    </span>
                 </div>
-                ))}
-
             </div>
+
 
         </details>
     )
