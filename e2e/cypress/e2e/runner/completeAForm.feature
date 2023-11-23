@@ -94,4 +94,3 @@ Feature: Complete a form
       | Additional Info                     | the additional info       |
     When I save the form
     Then I see "Application complete"
-

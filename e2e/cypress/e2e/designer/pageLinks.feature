@@ -29,4 +29,3 @@ Feature: Page links
   Scenario: Deleting a link between two pages
     When I delete the link "first-page-second-page"
     Then the link "first-page-second-page" doesn't exist
-

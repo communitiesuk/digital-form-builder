@@ -18,4 +18,3 @@ Feature: Footer links
     Given I am on the new configuration page
     When I select "Terms and Conditions" in the footer
     Then I see "By using this digital service you agree to our"
-

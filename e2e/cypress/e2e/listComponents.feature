@@ -130,5 +130,3 @@ Feature: List components
       | over-easy     | fried and flipped over |
       | scrambled     |                        |
       | raw           |                        |
-
-
