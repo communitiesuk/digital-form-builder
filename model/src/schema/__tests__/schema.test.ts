@@ -63,7 +63,7 @@ describe("payment configuration", () => {
 
     expect(value.feeOptions).toEqual({
       paymentReferenceFormat: "EGGS-",
-      payApiKey: "ab-cd",
+      payApiKey: "ab-cd", //pragma: allowlist secret
     });
   });
 

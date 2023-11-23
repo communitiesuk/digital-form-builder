@@ -11,7 +11,7 @@ on:
 jobs:
   dependencies:
     uses: ./.github/workflows/dependabot.yml
-    secrets: inherit
+    secrets: inherit #pragma: allowlist secret
   lint-and-test:
     needs: [dependencies]
     if: ${{!contains(github.event.head_commit.message, 'chore(deps-dev)')}}
@@ -28,14 +28,14 @@ jobs:
     uses: ./.github/workflows/build.yml
     with:
       app: designer
-    secrets: inherit
+    secrets: inherit #pragma: allowlist secret
 
   build-runner:
     name: Runner
     uses: ./.github/workflows/build.yml
     with:
       app: runner
-    secrets: inherit
+    secrets: inherit #pragma: allowlist secret
 
   smoke-test:
     needs: [build-runner, build-designer]
@@ -43,4 +43,4 @@ jobs:
     with:
       runner-cache-ref: ${{needs.build-runner.outputs.tag}}
       designer-cache-ref: ${{needs.build-designer.outputs.tag}}
-    secrets: inherit
+    secrets: inherit #pragma: allowlist secret

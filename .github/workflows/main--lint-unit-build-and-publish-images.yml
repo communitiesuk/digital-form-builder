@@ -69,7 +69,7 @@ jobs:
   deploy:
     needs: [calculate-version, assign-semver, build-and-publish-images]
     uses: ./.github/workflows/deploy-development.yml
-    secrets: inherit
+    secrets: inherit #pragma: allowlist secret
     strategy:
       matrix:
         app: [designer, runner]
