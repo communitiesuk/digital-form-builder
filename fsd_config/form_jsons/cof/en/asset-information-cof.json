@@ -419,30 +419,6 @@
       ],
       "next": [
         {
-          "path": "/community-asset-transfer",
-          "condition": "rrSKPO"
-        },
-        {
-          "path": "/assets-of-community-value"
-        }
-      ],
-      "section": "wxYZcT"
-    },
-    {
-      "path": "/community-asset-transfer",
-      "title": "Community asset transfer",
-      "components": [
-        {
-          "name": "WKIGQE",
-          "options": {
-            "maxWords": "500"
-          },
-          "type": "FreeTextField",
-          "title": "Describe the current status of the Community Asset Transfer"
-        }
-      ],
-      "next": [
-        {
           "path": "/assets-of-community-value"
         }
       ],
