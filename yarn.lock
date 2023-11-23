@@ -1845,7 +1845,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-transform-optional-chaining@npm:^7.23.3":
+"@babel/plugin-transform-optional-chaining@npm:^7.23.3, @babel/plugin-transform-optional-chaining@npm:^7.23.4":
   version: 7.23.4
   resolution: "@babel/plugin-transform-optional-chaining@npm:7.23.4"
   dependencies:
@@ -9880,6 +9880,7 @@ __metadata:
     "@babel/core": ^7.21.4
     "@babel/eslint-parser": ^7.21.3
     "@babel/eslint-plugin": ^7.19.1
+    "@babel/plugin-transform-optional-chaining": ^7.23.4
     "@babel/preset-env": ^7.21.4
     "@babel/preset-typescript": ^7.21.4
     "@babel/runtime": ^7.21.0
