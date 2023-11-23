@@ -128,7 +128,7 @@
           },
           "type": "NumberField",
           "title": "What is the estimated cost of backfilling roles?",
-          "hint": "<label for=\"KEnthg\" class=\"govuk-hint\" style=\"display: none;\">Amount in pounds</label>"
+          "hint": "<label for=\"KEnthg\" style=\"position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;\">What is the estimated cost of backfilling roles?</label>"
         }
       ],
       "next": [
