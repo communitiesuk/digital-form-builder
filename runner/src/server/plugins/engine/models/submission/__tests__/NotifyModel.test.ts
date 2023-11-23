@@ -11,7 +11,7 @@ import { FormSubmissionState } from "server/plugins/engine/types";
 
 const testFormSubmission = (state: FormSubmissionState) => {
   const notifyOutputConfiguration = {
-    apiKey: "test",
+    apiKey: "test", //pragma: allowlist secret
     templateId: "test",
     emailField: "TZOHRn",
     personalisation: ["wVUZJW"],

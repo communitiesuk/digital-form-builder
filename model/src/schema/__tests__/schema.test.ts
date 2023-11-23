@@ -51,7 +51,7 @@ describe("payment configuration", () => {
     const configuration = {
       ...baseConfiguration,
       paymentReferenceFormat: "EGGS-",
-      payApiKey: "ab-cd",
+      payApiKey: "ab-cd", //pragma: allowlist secret
     };
 
     const { value } = Schema.validate(configuration, {

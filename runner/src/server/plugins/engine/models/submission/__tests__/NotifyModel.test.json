@@ -93,7 +93,6 @@
       "outputConfiguration": {
         "personalisation": ["wVUZJW"],
         "templateId": "test",
-        "apiKey": "test",
         "emailField": "TZOHRn",
         "addReferencesToPersonalisation": false
       }
