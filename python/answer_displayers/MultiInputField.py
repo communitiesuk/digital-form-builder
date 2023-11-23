@@ -21,37 +21,39 @@ class MultiInputFieldDisplayer(AnswerDisplayer):
         )
 
     @property
-    def _parse_multi_input_component(self) -> dict[str, AnswerDisplayer]:
+    def _parse_multi_input_component(self) -> list[dict[str, AnswerDisplayer]]:
         from python.dictionaries import (
             EXISTING_KEY_TO_TYPE_DICT,
             FIELD_TO_DISPLAYER_DICT_MULTI_INPUT,
         )
 
         raw_answer: list[dict[str, Any]] = self.raw_answer
-        answer_displayers: dict[str, AnswerDisplayer] = {}
+        answer_displayers_dict_list: list[dict[str, AnswerDisplayer]] = []
         for answer_tuple in raw_answer:
+            answer_displayer_dict = {}
             for key, answer in answer_tuple.items():
                 answer_type = EXISTING_KEY_TO_TYPE_DICT[key]
                 displayer = FIELD_TO_DISPLAYER_DICT_MULTI_INPUT[answer_type](answer)
-                answer_displayers[key] = displayer
-        return answer_displayers
+                answer_displayer_dict[key] = displayer
+            answer_displayers_dict_list.append(answer_displayer_dict)
+        return answer_displayers_dict_list
 
     @property
-    def as_csv(self) -> str | dict[str, AnswerDisplayer]:
+    def as_csv(self) -> str | list[dict[str, AnswerDisplayer]]:
         if self.legacy:
             return self._legacy_parsed_answer
         else:
             return self._parse_multi_input_component
 
     @property
-    def as_txt(self) -> str | dict[str, AnswerDisplayer]:
+    def as_txt(self) -> str | list[dict[str, AnswerDisplayer]]:
         if self.legacy:
             return self._legacy_parsed_answer
         else:
             return self._parse_multi_input_component
 
     @property
-    def as_pdf(self) -> str | dict[str, AnswerDisplayer]:
+    def as_pdf(self) -> str | list[dict[str, AnswerDisplayer]]:
         if self.legacy:
             return self._legacy_parsed_answer
         else:

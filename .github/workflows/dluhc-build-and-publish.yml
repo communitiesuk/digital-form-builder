@@ -12,6 +12,7 @@ on:
         ".github/workflows/dluhc-build-and-deploy-with-forms.yml",
         ".github/workflows/increment-version.yml",
         "version",
+        "python/**"
       ]
 
 env:
