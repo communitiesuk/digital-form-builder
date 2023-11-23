@@ -23,5 +23,5 @@ beautifulsoup4 = "4.12.2"
 
 
 [project.urls]
-"Bug Tracker" = "https://github.com/tferns/fsd-digital-form-builder-tools/issues"
-"Homepage" = "https://github.com/tferns/fsd-digital-form-builder-tools"
+"Bug Tracker" = "https://github.com/communitiesuk/digital-form-builder/issues"
+"Homepage" = "https://github.com/communitiesuk/digital-form-builder/"
