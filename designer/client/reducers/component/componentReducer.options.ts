@@ -174,6 +174,21 @@ export function optionsReducer(state, action: OptionsActions) {
           },
         };
 
+      case Options.EDIT_OPTIONS_ACCEPTED_FILES:
+          return {
+            ...state,
+            selectedComponent: {
+              ...selectedComponent,
+              options: {
+                ...options,
+                dropzoneConfig: {
+                  ...options.dropzoneConfig,
+                  acceptedFiles: payload,
+                },
+              },
+            },
+          };
+
     case Options.EDIT_OPTIONS_SHOW_SCRIPT_WARNING:
       return {
         ...state,

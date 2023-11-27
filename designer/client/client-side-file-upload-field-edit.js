@@ -74,7 +74,6 @@ export function ClientSideFileUploadFieldEdit({ context = ComponentContext }) {
                     })
                 }
                 />
-
             </div>
 
             <div className="govuk-form-group">
@@ -128,6 +127,33 @@ export function ClientSideFileUploadFieldEdit({ context = ComponentContext }) {
                     })
                     }
                 />
+            </div>
+
+            <div className="govuk-form-group">
+                <label
+                    className="govuk-label govuk-label--s"
+                    htmlFor="field-schema-acceptedFiles"
+                >
+                    {i18n("clientSideFileUploadFieldEditPage.acceptedFiles.title")}
+                </label>
+                <span className="govuk-hint">
+                    {i18n("clientSideFileUploadFieldEditPage.acceptedFiles.helpText")}
+                </span>
+                <input
+                    className="govuk-input govuk-input--width-30"
+                    data-cast="text"
+                    id="field-schema-acceptedFiles"
+                    name="options.dropzoneConfig.acceptedFiles"
+                    value={(options.dropzoneConfig && options.dropzoneConfig.acceptedFiles) || ""}
+                    type="text"
+                    onChange={(e) =>
+                    dispatch({
+                        type: Actions.EDIT_OPTIONS_ACCEPTED_FILES,
+                        payload: e.target.value,
+                    })
+                }
+                />
+
             </div>
 
             <div className="govuk-checkboxes govuk-form-group">

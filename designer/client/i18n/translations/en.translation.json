@@ -230,6 +230,10 @@
     "minimumRequiredFiles": {
       "helpText": "Specify the minimum number of files to be uploaded",
       "title": "Minimum required files"
+    },
+    "acceptedFiles": {
+      "helpText": "Specify the accepted file formats",
+      "title": "Accepted Files"
     }
   },
   "formDetails": {
