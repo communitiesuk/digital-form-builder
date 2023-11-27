@@ -38,8 +38,8 @@ export function ClientSideFileUploadFieldEdit({ context = ComponentContext }) {
                     className="govuk-input govuk-input--width-3"
                     data-cast="number"
                     id="field-schema-maxFiles"
-                    name="options.maxFiles"
-                    value={options.maxFiles || ""}
+                    name="options.dropzoneConfig.maxFiles"
+                    value={(options.dropzoneConfig && options.dropzoneConfig.maxFiles) || ""}
                     type="number"
                     onChange={(e) =>
                     dispatch({
@@ -64,8 +64,8 @@ export function ClientSideFileUploadFieldEdit({ context = ComponentContext }) {
                     className="govuk-input govuk-input--width-3"
                     data-cast="number"
                     id="field-schema-parallelUploads"
-                    name="options.parallelUploads"
-                    value={options.parallelUploads || ""}
+                    name="options.dropzoneConfig.parallelUploads"
+                    value={(options.dropzoneConfig && options.dropzoneConfig.parallelUploads) || ""}
                     type="number"
                     onChange={(e) =>
                     dispatch({
@@ -91,8 +91,8 @@ export function ClientSideFileUploadFieldEdit({ context = ComponentContext }) {
                     className="govuk-input govuk-input--width-3"
                     data-cast="number"
                     id="field-schema-maxFilesize"
-                    name="options.maxFilesize"
-                    value={options.maxFilesize || ""}
+                    name="options.dropzoneConfig.maxFilesize"
+                    value={(options.dropzoneConfig && options.dropzoneConfig.maxFilesize) || ""}
                     type="number"
                     onChange={(e) =>
                     dispatch({
@@ -121,13 +121,12 @@ export function ClientSideFileUploadFieldEdit({ context = ComponentContext }) {
                     name="options.minimumRequiredFiles"
                     value={options.minimumRequiredFiles || ""}
                     type="number"
-                    onChange={(e) => {
+                    onChange={(e) =>
                     dispatch({
                         type: Actions.EDIT_OPTIONS_MIN_REQUIRED_FILES,
                         payload: e.target.value,
                     })
-                    console.log("options", options)
-                    }}
+                    }
                 />
             </div>
 
@@ -163,7 +162,6 @@ export function ClientSideFileUploadFieldEdit({ context = ComponentContext }) {
                     </span>
                 </div>
             </div>
-
 
         </details>
     )

@@ -134,27 +134,45 @@ export function optionsReducer(state, action: OptionsActions) {
         ...state,
         selectedComponent: {
           ...selectedComponent,
-          options: { ...options, maxFiles: payload },
+          options: {
+            ...options,
+            dropzoneConfig: {
+              ...options.dropzoneConfig,
+              maxFiles: payload,
+            },
+          },
         },
-      };
+      }
 
     case Options.EDIT_OPTIONS_PARALLEL_UPLOAD_AMOUNT:
       return {
         ...state,
         selectedComponent: {
           ...selectedComponent,
-          options: { ...options, parallelUploads: payload },
+          options: {
+            ...options,
+            dropzoneConfig: {
+              ...options.dropzoneConfig,
+              parallelUploads: payload,
+            },
+          },
         },
       };
 
-    case Options.EDIT_OPTIONS_MAX_FILE_SIZE:
-      return {
-        ...state,
-        selectedComponent: {
-          ...selectedComponent,
-          options: { ...options, maxFilesize: payload },
-        },
-      };
+      case Options.EDIT_OPTIONS_MAX_FILE_SIZE:
+        return {
+          ...state,
+          selectedComponent: {
+            ...selectedComponent,
+            options: {
+              ...options,
+              dropzoneConfig: {
+                ...options.dropzoneConfig,
+                maxFilesize: payload,
+              },
+            },
+          },
+        };
 
     case Options.EDIT_OPTIONS_SHOW_SCRIPT_WARNING:
       return {

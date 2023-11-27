@@ -180,7 +180,10 @@ export const ComponentTypes: ComponentDef[] = [
     hint: "",
     options: {
       dropzoneConfig: {
-        maxFilesize: 0,
+        maxFiles: 1,
+        parallelUploads: 1,
+        maxFilesize: 1,
+        acceptedFiles: "string"
       },
       showNoScriptWarning: false,
       minimumRequiredFiles: 0,
