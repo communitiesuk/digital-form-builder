@@ -232,7 +232,7 @@
       "title": "Minimum required files"
     },
     "acceptedFiles": {
-      "helpText": "Specify the accepted file formats",
+      "helpText": "Specify the accepted file formats e.g: image/jpeg,image/png,application/pdf,text/plain,application/msword...",
       "title": "Accepted Files"
     }
   },

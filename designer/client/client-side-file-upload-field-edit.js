@@ -41,6 +41,7 @@ export function ClientSideFileUploadFieldEdit({ context = ComponentContext }) {
                     name="options.dropzoneConfig.maxFiles"
                     value={(options.dropzoneConfig && options.dropzoneConfig.maxFiles) || ""}
                     type="number"
+                    required={true}
                     onChange={(e) =>
                     dispatch({
                         type: Actions.EDIT_OPTIONS_MAX_FILE_UPLOAD_AMOUNT,
@@ -66,6 +67,7 @@ export function ClientSideFileUploadFieldEdit({ context = ComponentContext }) {
                     id="field-schema-parallelUploads"
                     name="options.dropzoneConfig.parallelUploads"
                     value={(options.dropzoneConfig && options.dropzoneConfig.parallelUploads) || ""}
+                    required={true}
                     type="number"
                     onChange={(e) =>
                     dispatch({
@@ -92,6 +94,7 @@ export function ClientSideFileUploadFieldEdit({ context = ComponentContext }) {
                     id="field-schema-maxFilesize"
                     name="options.dropzoneConfig.maxFilesize"
                     value={(options.dropzoneConfig && options.dropzoneConfig.maxFilesize) || ""}
+                    required={true}
                     type="number"
                     onChange={(e) =>
                     dispatch({
@@ -119,6 +122,7 @@ export function ClientSideFileUploadFieldEdit({ context = ComponentContext }) {
                     id="field-schema-minimumRequiredFiles"
                     name="options.minimumRequiredFiles"
                     value={options.minimumRequiredFiles || ""}
+                    required={true}
                     type="number"
                     onChange={(e) =>
                     dispatch({
@@ -145,6 +149,7 @@ export function ClientSideFileUploadFieldEdit({ context = ComponentContext }) {
                     id="field-schema-acceptedFiles"
                     name="options.dropzoneConfig.acceptedFiles"
                     value={(options.dropzoneConfig && options.dropzoneConfig.acceptedFiles) || ""}
+                    required={true}
                     type="text"
                     onChange={(e) =>
                     dispatch({
