@@ -183,7 +183,7 @@ export const ComponentTypes: ComponentDef[] = [
         maxFiles: 0,
         parallelUploads: 0,
         maxFilesize: 0,
-        acceptedFiles: ""
+        acceptedFiles: "",
       },
       showNoScriptWarning: false,
       minimumRequiredFiles: 0,

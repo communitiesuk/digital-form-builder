@@ -11,8 +11,6 @@ export function ClientSideFileUploadFieldEdit({ context = ComponentContext }) {
     const { options = {} } = selectedComponent;
     const { hideScript = true, showNoScriptWarning = false } = options;
 
-    console.log("showNoScriptWarning in component:", showNoScriptWarning);
-
     useEffect(() => {
         console.log("Component rerendered");
       }, [showNoScriptWarning]);
