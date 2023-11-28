@@ -119,7 +119,6 @@ export function optionsReducer(state, action: OptionsActions) {
           options: { ...options, customValidationMessage: payload },
         },
       };
-
     case Options.EDIT_OPTIONS_MAX_WORDS:
       return {
         ...state,
@@ -128,7 +127,6 @@ export function optionsReducer(state, action: OptionsActions) {
           options: { ...options, maxWords: payload },
         },
       };
-
     case Options.EDIT_OPTIONS_MAX_FILE_UPLOAD_AMOUNT:
       return {
         ...state,
@@ -142,8 +140,7 @@ export function optionsReducer(state, action: OptionsActions) {
             },
           },
         },
-      }
-
+      };
     case Options.EDIT_OPTIONS_PARALLEL_UPLOAD_AMOUNT:
       return {
         ...state,
@@ -158,37 +155,34 @@ export function optionsReducer(state, action: OptionsActions) {
           },
         },
       };
-
-      case Options.EDIT_OPTIONS_MAX_FILE_SIZE:
-        return {
-          ...state,
-          selectedComponent: {
-            ...selectedComponent,
-            options: {
-              ...options,
-              dropzoneConfig: {
-                ...options.dropzoneConfig,
-                maxFilesize: payload,
-              },
+    case Options.EDIT_OPTIONS_MAX_FILE_SIZE:
+      return {
+        ...state,
+        selectedComponent: {
+          ...selectedComponent,
+          options: {
+            ...options,
+            dropzoneConfig: {
+              ...options.dropzoneConfig,
+              maxFilesize: payload,
             },
           },
-        };
-
-      case Options.EDIT_OPTIONS_ACCEPTED_FILES:
-          return {
-            ...state,
-            selectedComponent: {
-              ...selectedComponent,
-              options: {
-                ...options,
-                dropzoneConfig: {
-                  ...options.dropzoneConfig,
-                  acceptedFiles: payload,
-                },
-              },
+        },
+      };
+    case Options.EDIT_OPTIONS_ACCEPTED_FILES:
+      return {
+        ...state,
+        selectedComponent: {
+          ...selectedComponent,
+          options: {
+            ...options,
+            dropzoneConfig: {
+              ...options.dropzoneConfig,
+              acceptedFiles: payload,
             },
-          };
-
+          },
+        },
+      };
     case Options.EDIT_OPTIONS_SHOW_SCRIPT_WARNING:
       return {
         ...state,
@@ -197,7 +191,6 @@ export function optionsReducer(state, action: OptionsActions) {
           options: { ...options, showNoScriptWarning: payload },
         },
       };
-
     case Options.EDIT_OPTIONS_MIN_REQUIRED_FILES:
       return {
         ...state,

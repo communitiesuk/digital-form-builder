@@ -179,12 +179,7 @@ export const ComponentTypes: ComponentDef[] = [
     subType: "field",
     hint: "",
     options: {
-      dropzoneConfig: {
-        maxFiles: 0,
-        parallelUploads: 0,
-        maxFilesize: 0,
-        acceptedFiles: "",
-      },
+      dropzoneConfig: {},
       showNoScriptWarning: false,
       minimumRequiredFiles: 0,
       totalOverallFilesize: 0,
