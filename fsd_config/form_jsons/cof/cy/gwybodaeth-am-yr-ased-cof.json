@@ -6,14 +6,14 @@
   "backLinkText": "Ewch yn ôl i amlwgwr cais",
   "pages": [
     {
-      "title": "Gwybodaeth am eiddo",
+      "title": "Gwybodaeth am yr ased",
       "path": "/gwybodaeth-am-ardal-eiddo",
       "components": [
         {
           "name": "JGhnud",
           "options": {},
           "type": "Para",
-          "content": "<label class=\"govuk-!-font-weight-bold\">Yn yr adran hon, byddwn yn gofyn am:\n</label>\n\n<ul class=\"govuk-list govuk-list--bullet\">\n<li>math eiddo</li>\n<li>beth rydych yn bwriadu ei wneud gyda'r eiddo</li>\n<li>statws meddu eiddo</li>\n<li>manylion meddu eiddo (os yn berthnasol)</li>\n<li>manylion meddu eiddo cyhoeddus (os yn berthnasol)</li>\n<li>rheswm pam mae'r eiddo mewn perygl</li>\n<li>manylion Hawswn Cymunedol eiddo (os yn berthnasol)</li>\n<li>manylion Trosglwyddiad Eiddo Cymunedol (os yn berthnasol)</li>\n</ul>"
+          "content": "<label class=\"govuk-!-font-weight-bold\">Yn yr adran hon, byddwn yn gofyn am:\n</label>\n\n<ul class=\"govuk-list govuk-list--bullet\">\n<li>math eiddo</li>\n<li>beth rydych yn bwriadu ei wneud gyda'r eiddo</li>\n<li>statws meddu eiddo</li>\n<li>manylion meddu eiddo (os yn berthnasol)</li>\n<li>manylion meddu eiddo cyhoeddus (os yn berthnasol)</li>\n<li>rheswm pam mae'r eiddo mewn perygl</li>\n<li>manylion Hawswn Cymunedol eiddo (os yn berthnasol)</li>\n</ul>"
         }
       ],
       "next": [
