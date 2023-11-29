@@ -34,7 +34,7 @@ export const componentTypes = {
   List,
   WarningText,
   WebsiteField: TextField,
-  ClientSideFileUploadField
+  ClientSideFileUploadField,
 };
 
 function Base(props) {

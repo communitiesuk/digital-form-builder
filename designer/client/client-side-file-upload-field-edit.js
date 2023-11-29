@@ -36,7 +36,9 @@ export function ClientSideFileUploadFieldEdit({ context = ComponentContext }) {
           data-cast="number"
           id="field-schema-maxFiles"
           name="options.dropzoneConfig.maxFiles"
-          value={(options.dropzoneConfig && options.dropzoneConfig.maxFiles) || ""}
+          value={
+            (options.dropzoneConfig && options.dropzoneConfig.maxFiles) || ""
+          }
           type="number"
           required={true}
           onChange={(e) =>
@@ -63,7 +65,11 @@ export function ClientSideFileUploadFieldEdit({ context = ComponentContext }) {
           data-cast="number"
           id="field-schema-parallelUploads"
           name="options.dropzoneConfig.parallelUploads"
-          value={(options.dropzoneConfig && options.dropzoneConfig.parallelUploads) || ""}
+          value={
+            (options.dropzoneConfig &&
+              options.dropzoneConfig.parallelUploads) ||
+            ""
+          }
           required={true}
           type="number"
           onChange={(e) =>
@@ -90,7 +96,9 @@ export function ClientSideFileUploadFieldEdit({ context = ComponentContext }) {
           data-cast="number"
           id="field-schema-maxFilesize"
           name="options.dropzoneConfig.maxFilesize"
-          value={(options.dropzoneConfig && options.dropzoneConfig.maxFilesize) || ""}
+          value={
+            (options.dropzoneConfig && options.dropzoneConfig.maxFilesize) || ""
+          }
           required={true}
           type="number"
           onChange={(e) =>
@@ -110,7 +118,9 @@ export function ClientSideFileUploadFieldEdit({ context = ComponentContext }) {
           {i18n("clientSideFileUploadFieldEditPage.minimumRequiredFiles.title")}
         </label>
         <span className="govuk-hint">
-          {i18n("clientSideFileUploadFieldEditPage.minimumRequiredFiles.helpText")}
+          {i18n(
+            "clientSideFileUploadFieldEditPage.minimumRequiredFiles.helpText"
+          )}
         </span>
         <input
           className="govuk-input govuk-input--width-3"
@@ -144,7 +154,10 @@ export function ClientSideFileUploadFieldEdit({ context = ComponentContext }) {
           data-cast="text"
           id="field-schema-acceptedFiles"
           name="options.dropzoneConfig.acceptedFiles"
-          value={(options.dropzoneConfig && options.dropzoneConfig.acceptedFiles) || ""}
+          value={
+            (options.dropzoneConfig && options.dropzoneConfig.acceptedFiles) ||
+            ""
+          }
           required={true}
           type="text"
           onChange={(e) =>
@@ -181,10 +194,14 @@ export function ClientSideFileUploadFieldEdit({ context = ComponentContext }) {
             className="govuk-label govuk-checkboxes__label"
             htmlFor="field-schema-showNoScriptWarning"
           >
-            {i18n("clientSideFileUploadFieldEditPage.showNoScriptWarning.title")}
+            {i18n(
+              "clientSideFileUploadFieldEditPage.showNoScriptWarning.title"
+            )}
           </label>
           <span className="govuk-hint govuk-checkboxes__hint">
-            {i18n("clientSideFileUploadFieldEditPage.showNoScriptWarning.helpText")}
+            {i18n(
+              "clientSideFileUploadFieldEditPage.showNoScriptWarning.helpText"
+            )}
           </span>
         </div>
       </div>
