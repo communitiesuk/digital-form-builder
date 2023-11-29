@@ -1,5 +1,3 @@
-Certainly! Here's a refactored README with an added installation section:
-
 ```markdown
 # Digital Form Runner Python Tools
 
