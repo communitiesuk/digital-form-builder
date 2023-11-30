@@ -323,7 +323,7 @@
       ],
       "next": [
         {
-          "path": "/summary"
+          "path": "/local-service-provision"
         }
       ],
       "section": "wxYZcT"
@@ -343,7 +343,7 @@
       ],
       "next": [
         {
-          "path": "/eiddo-gwerthu-trosglwyddiant-ardal-cymunedol"
+          "path": "/asedau-o-werth-cymunedol"
         }
       ],
       "section": "wxYZcT"
@@ -417,30 +417,6 @@
           },
           "type": "WebsiteField",
           "title": "Darparwch ddolen i'r rhestr"
-        }
-      ],
-      "next": [
-        {
-          "path": "/trosiad-aseth-cymunedol",
-          "condition": "rrSKPO"
-        },
-        {
-          "path": "/asedau-o-werth-cymunedol"
-        }
-      ],
-      "section": "wxYZcT"
-    },
-    {
-      "path": "/trosiad-aseth-cymunedol",
-      "title": "Trosiad aseth cymunedol",
-      "components": [
-        {
-          "name": "WKIGQE",
-          "options": {
-            "maxWords": "500"
-          },
-          "type": "FreeTextField",
-          "title": "Disgrifiwch statws presennol y Trosiad Aseth Cymunedol"
         }
       ],
       "next": [
@@ -555,7 +531,7 @@
       ],
       "next": [
         {
-          "path": "/summary"
+          "path": "/local-service-provision-bgqNrc"
         }
       ],
       "section": "wxYZcT"
@@ -1100,6 +1076,72 @@
               "type": "Value",
               "value": "Part of a Community Asset Transfer",
               "display": "Rhan o Brosiect Trosglwyddo Aseth Cymunedol"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "displayName": "Are there assets or services of  a similar type available locally-yes ",
+      "name": "yeEMBf",
+      "value": {
+        "name": "Are there assets or services of  a similar type available locally-yes ",
+        "conditions": [
+          {
+            "field": {
+              "name": "mZwrmI",
+              "type": "YesNoField",
+              "display": "Are there assets or services of a similar type available locally?"
+            },
+            "operator": "is",
+            "value": {
+              "type": "Value",
+              "value": "true",
+              "display": "true"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "displayName": "Is your asset different from what is available locally-yes",
+      "name": "nlbrNc",
+      "value": {
+        "name": "Is your asset different from what is available locally-yes",
+        "conditions": [
+          {
+            "field": {
+              "name": "BfgLCc",
+              "type": "YesNoField",
+              "display": "Is your asset different from what is available locally?"
+            },
+            "operator": "is",
+            "value": {
+              "type": "Value",
+              "value": "true",
+              "display": "true"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "displayName": "Does part of your project include a commercial aspect-yes",
+      "name": "hJonvv",
+      "value": {
+        "name": "Does part of your project include a commercial aspect-yes",
+        "conditions": [
+          {
+            "field": {
+              "name": "CFFsxV",
+              "type": "YesNoField",
+              "display": "Does part of your project include a commercial aspect?"
+            },
+            "operator": "is",
+            "value": {
+              "type": "Value",
+              "value": "true",
+              "display": "true"
             }
           }
         ]
