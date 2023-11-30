@@ -129,6 +129,7 @@ export class ClientSideFileUploadField extends FormComponent {
       dropzoneConfig: this.options.dropzoneConfig,
       existingFiles: [], // this is populated afterwards.
       showNoScriptWarning: this.options.showNoScriptWarning || false,
+      minimumRequiredFiles: this.options.minimumRequiredFiles,
       totalOverallFilesize: this.options.totalOverallFilesize,
       hideTitle: this.options.hideTitle || false,
     } as ClientSideFileUploadFieldViewModel;
