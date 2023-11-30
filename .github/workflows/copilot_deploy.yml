@@ -1,5 +1,9 @@
 name: Deploy to AWS
 
+permissions:
+  packages: write
+  contents: write
+
 on:
   workflow_dispatch:
     inputs:
@@ -15,11 +19,20 @@ on:
   push:
     paths: # Ignore README markdown and only deploy when something in the copilot folder has changed
       - "!**/README.md"
-  pull_request:
-    types:
-      - closed # Further protection - only allow this workflow to run automatically on closed pull requests
+      - "!docs/**"
+      - "designer/**"
+      - "runner/**"
+      - ".github/workflows/copilot_deploy.yml"
+
+env:
+  DOCKER_REGISTRY: ghcr.io
+  IMAGE_NAME: "runner"
+  IMAGE_REPO_PATH: "ghcr.io/${{github.repository_owner}}"
 
 jobs:
+  docker-build:
+    uses: ./.github/workflows/dluhc-build-and-publish.yml
+
   copilot_environments_workflow_setup:
     runs-on: ubuntu-latest
     outputs:
@@ -37,12 +50,12 @@ jobs:
 
   copilot_env_deploy:
     concurrency:
-      group: "${{ github.workflow }} @ ${{ github.ref }}"
+      group: "fsd-preaward-copilot-individual"
       cancel-in-progress: false
     permissions:
       id-token: write # This is required for requesting the JWT
       contents: read # This is required for actions/checkout
-    needs: [copilot_environments_workflow_setup]
+    needs: [docker-build, copilot_environments_workflow_setup]
     runs-on: ubuntu-latest
     continue-on-error: true
     strategy:
