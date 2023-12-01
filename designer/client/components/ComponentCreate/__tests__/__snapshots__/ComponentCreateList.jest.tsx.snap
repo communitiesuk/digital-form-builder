@@ -152,7 +152,7 @@ exports[`ComponentCreateList should match snapshot 1`] = `
             <div
               class="govuk-hint"
             >
-              Sets a list of values to suggest to users as they complete this field
+              Allows users to upload files from the device they are using
             </div>
           </li>
           <li>
