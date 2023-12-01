@@ -7,6 +7,11 @@ permissions:
 on:
   workflow_dispatch:
     inputs:
+      dluhc-runner-version:
+        description: docker tag for the dluhc-runner image
+        type: string
+        required: true
+        default: latest
       environment:
         description: Which AWS Account to use
         type: choice
@@ -71,6 +76,7 @@ jobs:
           file: ./fsd_config/Dockerfile
           build-args: |
             COMMIT_SHA=:${{ github.sha }}
+            BASE_IMAGE_TAG=${{ inputs.dluhc-runner-version }}
 
   copilot_env_deploy:
     concurrency:
