@@ -20,6 +20,7 @@ const componentTypeEditors = {
   TelephoneNumberField: TextFieldEdit,
   MultilineTextField: MultilineTextFieldEdit,
   FreeTextField: FreeTextFieldEdit,
+  ClientSideFileUploadField: ClientSideFileUploadFieldEdit,
   NumberField: NumberFieldEdit,
   AutocompleteField: ListFieldEdit,
   SelectField: SelectFieldEdit,
