@@ -147,6 +147,19 @@ exports[`ComponentCreateList should match snapshot 1`] = `
               class="govuk-link"
               href="#0"
             >
+              Client Side File Upload
+            </a>
+            <div
+              class="govuk-hint"
+            >
+              Sets a list of values to suggest to users as they complete this field
+            </div>
+          </li>
+          <li>
+            <a
+              class="govuk-link"
+              href="#0"
+            >
               Date
             </a>
             <div
