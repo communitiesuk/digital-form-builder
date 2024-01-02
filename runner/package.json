@@ -101,7 +101,7 @@
     "@babel/plugin-transform-runtime": "^7.17.0",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-typescript": "^7.16.7",
-    "@babel/register": "^7.17.7",
+    "@babel/register": "^7.23.7",
     "@hapi/code": "8.0.1",
     "@hapi/lab": "24.0.0",
     "@types/hapi": "^18.0.7",
