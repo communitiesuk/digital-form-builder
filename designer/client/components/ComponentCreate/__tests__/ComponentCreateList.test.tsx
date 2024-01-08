@@ -85,7 +85,8 @@ suite("ComponentCreateList", () => {
       .map((c) => c.find("a").text());
 
     expect(listItems).to.equal([
-      "Autocomplete",
+      "Autocomplete",,
+      "Client side file upload",
       "Date",
       "Date parts",
       "Date time",

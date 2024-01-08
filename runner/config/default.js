@@ -139,4 +139,5 @@ module.exports = {
   savePerPage: true,
   awsBucketName: "paas-s3-broker-prod-lon-443b9fc2-55ff-4c2f-9ac3-d3ebfb18ef5a", // For uploading files to a aws bucket
   awsRegion: "eu-west-2", // The aws buckets region
+  migrationBannerEnabled: false,
 };

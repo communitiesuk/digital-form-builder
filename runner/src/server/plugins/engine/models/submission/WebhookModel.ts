@@ -19,6 +19,9 @@ function answerFromDetailItem(item) {
       return format(new Date(`${year}-${month}-1`), "yyyy-MM");
     case "multiInput":
       return item.rawValue;
+    // Data type ukadressfield
+    case "addressField":
+      return item.rawValue;
     default:
       return item.value;
   }

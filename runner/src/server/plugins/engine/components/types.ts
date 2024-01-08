@@ -99,4 +99,5 @@ export type DataType =
   | "number"
   | "file"
   | "freeText"
+  | "addressField"
   | "multiInput";
