@@ -50,7 +50,14 @@ class MultiInputFieldDisplayer(AnswerDisplayer):
         if self.legacy:
             return self._legacy_parsed_answer
         else:
-            return self._parse_multi_input_component
+            multiinput_answer_rows = ""
+            multiinput_rows_answer_displayers = self._parse_multi_input_component
+            for index, multiinput_row_answer_displayers in enumerate(multiinput_rows_answer_displayers):
+                concat_answer_text = ""
+                for key, answer_displayer in multiinput_row_answer_displayers.items():
+                    concat_answer_text = concat_answer_text + str(answer_displayer.as_txt) + "\n"
+                multiinput_answer_rows = multiinput_answer_rows + str(index + 1) + "\n" + concat_answer_text
+        return multiinput_answer_rows
 
     @property
     def as_pdf(self) -> str | list[dict[str, AnswerDisplayer]]:
