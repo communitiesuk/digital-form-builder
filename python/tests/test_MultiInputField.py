@@ -51,7 +51,7 @@ _TEST_INPUTS = [
             "yuzbjT": 678,
             "HpLJyL": {"HpLJyL__month": 4, "HpLJyL__year": 2024},
             "MadvIr": "Capital",
-        }
+        },
     ],
     [
         {
@@ -74,7 +74,7 @@ _TEST_OUTPUTS_LENGTHS = [4, 5]
 
 _TEST_TEXT_OUTPUTS = [
     "1\nTest Value for Money CYP Form FIRST\n£678.00\nMarch 2024\nCapital\n2\nTest Value for Money CYP Form SECOND\n£678.00\nApril 2024\nCapital\n",
-    '1\nTest About your organisation CYP Form\n268 Schultz Fold, Upper Berge, W12 0HS\nhttps://twitter.com/luhc\nNone\nNone\n'
+    "1\nTest About your organisation CYP Form\n268 Schultz Fold, Upper Berge, W12 0HS\nhttps://twitter.com/luhc\nNone\nNone\n",
 ]
 _TEST_OUTPUTS = [
     ["Test Value for Money CYP Form", "£678.00", "March 2024", "Capital"],
@@ -86,6 +86,7 @@ _TEST_OUTPUTS = [
         None,
     ],
 ]
+
 
 @pytest.mark.parametrize(
     "answer, expected_answers",
