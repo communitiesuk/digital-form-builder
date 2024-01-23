@@ -46,24 +46,24 @@ class MultiInputFieldDisplayer(AnswerDisplayer):
             return self._parse_multi_input_component
 
     @property
-    def as_txt(self) -> str | list[dict[str, AnswerDisplayer]]:
+    def as_txt(self) -> str:
         if self.legacy:
             return self._legacy_parsed_answer
         else:
-            multiinput_answer_rows = ""
-            multiinput_rows_answer_displayers = self._parse_multi_input_component
-            for index, multiinput_row_answer_displayers in enumerate(
-                multiinput_rows_answer_displayers
+            multi_input_rows_as_string = ""
+            for index, answer_displayers_for_each_item_in_row in enumerate(
+                self._parse_multi_input_component
             ):
-                concat_answer_text = ""
-                for key, answer_displayer in multiinput_row_answer_displayers.items():
-                    concat_answer_text = (
-                        concat_answer_text + str(answer_displayer.as_txt) + "\n"
+                text_for_row = ""
+                for key, answer_displayer in answer_displayers_for_each_item_in_row.items():
+                    text_for_row = (
+                        text_for_row + str(answer_displayer.as_txt) + "\n"
                     )
-                multiinput_answer_rows = (
-                    multiinput_answer_rows + str(index + 1) + "\n" + concat_answer_text
+                multi_input_rows_as_string = (
+                    multi_input_rows_as_string + "Multi-input item " + str(index + 1) + "\n" + text_for_row + "\n"
                 )
-        return multiinput_answer_rows
+
+        return multi_input_rows_as_string
 
     @property
     def as_pdf(self) -> str | list[dict[str, AnswerDisplayer]]:
