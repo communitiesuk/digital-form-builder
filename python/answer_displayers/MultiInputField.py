@@ -1,6 +1,6 @@
 from typing import Any
 
-from python.answer_displayer import AnswerDisplayer
+from python.answer_displayers.shared.answer_displayer import AnswerDisplayer
 
 
 class MultiInputFieldDisplayer(AnswerDisplayer):
@@ -22,7 +22,7 @@ class MultiInputFieldDisplayer(AnswerDisplayer):
 
     @property
     def _parse_multi_input_component(self) -> list[dict[str, AnswerDisplayer]]:
-        from python.dictionaries import (
+        from python.answer_displayers.shared.dictionaries import (
             EXISTING_KEY_TO_TYPE_DICT,
             FIELD_TO_DISPLAYER_DICT_MULTI_INPUT,
         )

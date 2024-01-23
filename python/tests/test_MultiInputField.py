@@ -77,14 +77,19 @@ _TEST_TEXT_OUTPUTS = [
     '1\nTest About your organisation CYP Form\n268 Schultz Fold, Upper Berge, W12 0HS\nhttps://twitter.com/luhc\nNone\nNone\n'
 ]
 _TEST_OUTPUTS = [
-    ["Test Value for Money CYP Form", "£678.00", "March 2024", "Capital"],
     [
-        "Test About your organisation CYP Form",
-        "268 Schultz Fold, Upper Berge, W12 0HS",
-        "https://twitter.com/luhc",
-        None,
-        None,
+        ["Test Value for Money CYP Form FIRST", "£678.00", "March 2024", "Capital"],
+        ["Test Value for Money CYP Form SECOND", "£678.00", "April 2024", "Capital"]
     ],
+    [
+        [
+            "Test About your organisation CYP Form",
+            "268 Schultz Fold, Upper Berge, W12 0HS",
+            "https://twitter.com/luhc",
+            None,
+            None,
+        ]
+    ]
 ]
 
 @pytest.mark.parametrize(
@@ -93,8 +98,8 @@ _TEST_OUTPUTS = [
 )
 def test_as_csv_multi_input(answer, expected_answers):
     answer_displayers = MultiInputFieldDisplayer(answer).as_csv
-    for answer_displayer_dict in answer_displayers:
-        for key, expected_answer in zip(answer_displayer_dict, expected_answers):
+    for index, answer_displayer_dict in enumerate(answer_displayers):
+        for key, expected_answer in zip(answer_displayer_dict, expected_answers[index]):
             assert answer_displayer_dict[key].as_csv == expected_answer
 
 
@@ -113,6 +118,6 @@ def test_as_txt_multi_input(answer, expected_answers):
 )
 def test_as_pdf_multi_input(answer, expected_answers):
     answer_displayers = MultiInputFieldDisplayer(answer).as_pdf
-    for answer_displayer_dict in answer_displayers:
-        for key, expected_answer in zip(answer_displayer_dict, expected_answers):
+    for index, answer_displayer_dict in enumerate(answer_displayers):
+        for key, expected_answer in zip(answer_displayer_dict, expected_answers[index]):
             assert answer_displayer_dict[key].as_pdf == expected_answer
