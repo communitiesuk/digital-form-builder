@@ -79,7 +79,7 @@ _TEST_TEXT_OUTPUTS = [
 _TEST_OUTPUTS = [
     [
         ["Test Value for Money CYP Form FIRST", "£678.00", "March 2024", "Capital"],
-        ["Test Value for Money CYP Form SECOND", "£678.00", "April 2024", "Capital"]
+        ["Test Value for Money CYP Form SECOND", "£678.00", "April 2024", "Capital"],
     ],
     [
         [
@@ -89,7 +89,7 @@ _TEST_OUTPUTS = [
             None,
             None,
         ]
-    ]
+    ],
 ]
 
 
