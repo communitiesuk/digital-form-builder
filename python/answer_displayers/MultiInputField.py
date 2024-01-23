@@ -55,12 +55,18 @@ class MultiInputFieldDisplayer(AnswerDisplayer):
                 self._parse_multi_input_component
             ):
                 text_for_row = ""
-                for key, answer_displayer in answer_displayers_for_each_item_in_row.items():
-                    text_for_row = (
-                        text_for_row + str(answer_displayer.as_txt) + "\n"
-                    )
+                for (
+                    key,
+                    answer_displayer,
+                ) in answer_displayers_for_each_item_in_row.items():
+                    text_for_row = text_for_row + str(answer_displayer.as_txt) + "\n"
                 multi_input_rows_as_string = (
-                    multi_input_rows_as_string + "Multi-input item " + str(index + 1) + "\n" + text_for_row + "\n"
+                    multi_input_rows_as_string
+                    + "Multi-input item "
+                    + str(index + 1)
+                    + "\n"
+                    + text_for_row
+                    + "\n"
                 )
 
         return multi_input_rows_as_string
