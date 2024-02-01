@@ -1,0 +1,36 @@
+{
+  "metadata": {},
+  "startPage": "/declaration",
+  "pages": [
+    {
+      "title": "Declaration",
+      "path": "/declaration",
+      "components": [
+        {
+          "name": "MIqzyV",
+          "options": {},
+          "type": "Para",
+          "content": "By submitting this form, you confirm the information you have provided is correct."
+        }
+      ],
+      "next": []
+    }
+  ],
+  "lists": [],
+  "sections": [],
+  "conditions": [],
+  "fees": [],
+  "outputs": [
+    {
+      "name": "update-form",
+      "title": "Update form in application store",
+      "type": "savePerPage",
+      "outputConfiguration": {
+        "savePerPageUrl": "True"
+      }
+    }
+  ],
+  "version": 2,
+  "skipSummary": false,
+  "markAsComplete": false
+}
