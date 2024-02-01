@@ -13,10 +13,12 @@ import {
 } from "../types";
 import { FormModel } from "../models";
 import { i18n } from "../../i18n";
+import { DataType } from "./types";
 
 export class UkAddressField extends FormComponent {
   formChildren: ComponentCollection;
   stateChildren: ComponentCollection;
+  dataType = "ukaddress" as DataType;
 
   constructor(def: InputFieldsComponentsDef, model: FormModel) {
     super(def, model);

@@ -19,6 +19,8 @@ function answerFromDetailItem(item) {
       return format(new Date(`${year}-${month}-1`), "yyyy-MM");
     case "multiInput":
       return item.rawValue;
+    case "ukaddress":
+      return item.rawValue;
     default:
       return item.value;
   }

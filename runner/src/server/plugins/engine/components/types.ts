@@ -100,4 +100,5 @@ export type DataType =
   | "number"
   | "file"
   | "freeText"
-  | "multiInput";
+  | "multiInput"
+  | "ukaddress";
