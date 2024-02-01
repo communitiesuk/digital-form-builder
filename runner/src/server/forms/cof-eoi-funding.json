@@ -79,7 +79,7 @@
           },
           "type": "NumberField",
           "title": "How much capital funding are you requesting from COF?",
-          "hint": "Capital costs are the costs of buying or leasing your asset and paying for refurbishment. You can apply for up to £2 million in capital costs from COF. ",
+          "hint": "Capital costs are the costs of buying or leasing your asset and paying for refurbishment. You can apply for up to £2 million in capital costs from COF. ",
           "schema": {}
         }
       ],
@@ -126,7 +126,7 @@
           "name": "sQFDwC",
           "options": {},
           "type": "Para",
-          "content": "Match funding means funding covered by you or another funder. This can be cash, or in-kind (non-cash, for example, donations of goods or services). ",
+          "content": "Match funding means funding covered by you or another funder. This can be cash, or in-kind (non-cash, for example, donations of goods or services). ",
           "schema": {}
         },
         {
@@ -246,7 +246,7 @@
           "condition": "CvABUZ"
         },
         {
-          "path": "/funding-check-your-answers"
+          "path": "/summary"
         }
       ],
       "section": "seZPbt"
@@ -268,13 +268,13 @@
       ],
       "next": [
         {
-          "path": "/funding-check-your-answers"
+          "path": "/summary"
         }
       ],
       "section": "seZPbt"
     },
     {
-      "path": "/funding-check-your-answers",
+      "path": "/summary",
       "title": "Check your answers",
       "components": [],
       "next": [],
@@ -500,8 +500,8 @@
           "value": "Not yet started"
         },
         {
-          "text": "Early stage ",
-          "value": "Early stage "
+          "text": "Early stage ",
+          "value": "Early stage "
         },
         {
           "text": "Late stage",

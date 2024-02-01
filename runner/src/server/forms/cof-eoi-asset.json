@@ -10,7 +10,7 @@
           "name": "eadDjo",
           "options": {},
           "type": "Html",
-          "content": "<p class=\"govuk-body\">In this section, we'll ask about:</p>\n<ul class=\"govuk-list govuk-list--bullet\">\n  <li>the organisation running the asset</li>\n  <li>type of asset</li>\n  <li>address of the asset</li>\n  <li>if the asset is at risk </li>\n  <li>what is the risk to the asset (if applicable)</li>\n  <li>if the asset has ever been used by or had significance to the community?</li>\n  <li>if you already own the asset </li>\n  <li>if the asset belongs to a public authority (if applicable)</li>\n  <li>the stage you are at in purchasing the asset (if applicable)</li>\n</ul> ",
+          "content": "<p class=\"govuk-body\">In this section, we'll ask about:</p>\n<ul class=\"govuk-list govuk-list--bullet\">\n  <li>the organisation running the asset</li>\n  <li>type of asset</li>\n  <li>address of the asset</li>\n  <li>if the asset is at risk </li>\n  <li>what is the risk to the asset (if applicable)</li>\n  <li>if the asset has ever been used by or had significance to the community?</li>\n  <li>if you already own the asset </li>\n  <li>if the asset belongs to a public authority (if applicable)</li>\n  <li>the stage you are at in purchasing the asset (if applicable)</li>\n</ul>\n\n\n\n\n\n\n \n\n\n\n\n\n ",
           "schema": {}
         }
       ],
@@ -25,17 +25,20 @@
       "title": "Does your organisation plan both to receive the funding and run the project?",
       "components": [
         {
+          "name": "cjbAvi",
+          "options": {},
+          "type": "Para",
+          "content": "We expect organisations applying for COF funding to manage the day-to-day running of the asset. This is so we know the applying organisation can run a sustainable business in community hands.",
+          "schema": {}
+        },
+        {
           "name": "eEaDGz",
           "options": {
             "hideTitle": true
           },
           "type": "YesNoField",
-          "title": "Does your organisation plan both to receive the funding and run the project?",
-          "schema": {},
-          "values": {
-            "type": "listRef"
-          },
-          "hint": "We expect organisations applying for COF funding to manage the day-to-day running of the asset. This is so we know the applying organisation can run a sustainable business in community hands."
+          "title": "Type of asset",
+          "schema": {}
         }
       ],
       "next": [
@@ -78,11 +81,8 @@
             "hideTitle": true
           },
           "type": "YesNoField",
-          "title": "Is the asset based in the UK?",
-          "schema": {},
-          "values": {
-            "type": "listRef"
-          }
+          "title": "UK Asset",
+          "schema": {}
         }
       ],
       "next": [
@@ -97,12 +97,56 @@
       "title": "Address of the asset",
       "components": [
         {
-          "name": "EbEfoy",
+          "name": "BJoFIt",
           "options": {
             "hideTitle": true
           },
-          "type": "UkAddressField",
-          "title": "Address of the asset"
+          "type": "TextField",
+          "title": "Address line 1",
+          "hint": "Address line 1",
+          "schema": {}
+        },
+        {
+          "name": "eVRZoP",
+          "options": {
+            "hideTitle": true,
+            "required": false
+          },
+          "type": "TextField",
+          "title": "Address line 2 (optional)",
+          "hint": "Address line 2 (optional)",
+          "schema": {}
+        },
+        {
+          "name": "YXhxTU",
+          "options": {
+            "hideTitle": true
+          },
+          "type": "TextField",
+          "title": "Town or city",
+          "hint": "Town or city",
+          "schema": {}
+        },
+        {
+          "name": "htzONI",
+          "options": {
+            "hideTitle": true,
+            "required": false
+          },
+          "type": "TextField",
+          "title": "County (optional)",
+          "hint": "County (optional)",
+          "schema": {}
+        },
+        {
+          "name": "rajMMJ",
+          "options": {
+            "hideTitle": true
+          },
+          "type": "TextField",
+          "title": "Postcode",
+          "hint": "Postcode",
+          "schema": {}
         }
       ],
       "next": [
@@ -188,11 +232,8 @@
             "hideTitle": true
           },
           "type": "YesNoField",
-          "title": "Has the asset ever been used by or had significance to the community?",
-          "schema": {},
-          "values": {
-            "type": "listRef"
-          }
+          "title": "Significance to the community",
+          "schema": {}
         }
       ],
       "next": [
@@ -222,7 +263,7 @@
           "condition": "TusZnm"
         },
         {
-          "path": "/asset-check-answers",
+          "path": "/check-your-answers",
           "condition": ""
         }
       ],
@@ -266,27 +307,25 @@
           "name": "oDhZlw",
           "options": {},
           "type": "RadiosField",
-          "title": "Select the option which best represents the stage you are at in purchasing the asset",
+          "title": "Stage purchasing asset",
           "list": "VCaulN",
-          "schema": {},
-          "values": {
-            "type": "listRef"
-          }
+          "schema": {}
         }
       ],
       "next": [
         {
-          "path": "/asset-check-answers"
+          "path": "/check-your-answers"
         }
       ],
       "section": "McpePG"
     },
     {
-      "path": "/asset-check-answers",
-      "title": "Check Answers",
+      "path": "/check-your-answers",
+      "title": "Check your answers",
       "components": [],
       "next": [],
-      "section": "McpePG"
+      "section": "McpePG",
+      "controller": "./pages/summary.js"
     }
   ],
   "lists": [
@@ -917,50 +956,6 @@
               "type": "Value",
               "value": "Not sure",
               "display": "Not sure"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "displayName": "Does your organisation plan both to receive the funding and run the project-no",
-      "name": "NKPjTO",
-      "value": {
-        "name": "Does your organisation plan both to receive the funding and run the project-no",
-        "conditions": [
-          {
-            "field": {
-              "name": "eEaDGz",
-              "type": "YesNoField",
-              "display": "Does your organisation plan both to receive the funding and run the project?"
-            },
-            "operator": "is",
-            "value": {
-              "type": "Value",
-              "value": "false",
-              "display": "false"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "displayName": "Is the asset based in the UK-no",
-      "name": "YOcepm",
-      "value": {
-        "name": "Is the asset based in the UK-no",
-        "conditions": [
-          {
-            "field": {
-              "name": "zurxox",
-              "type": "YesNoField",
-              "display": "Is the asset based in the UK?"
-            },
-            "operator": "is",
-            "value": {
-              "type": "Value",
-              "value": "false",
-              "display": "false"
             }
           }
         ]
