@@ -1,6 +1,6 @@
 {
   "metadata": {},
-  "startPage": "/express-of-interest-community-ownership-fund",
+  "startPage": "/about-your-asset",
   "pages": [
     {
       "path": "/about-your-asset",
@@ -10,7 +10,7 @@
           "name": "eadDjo",
           "options": {},
           "type": "Html",
-          "content": "<p class=\"govuk-body\">In this section, we'll ask about:</p>\n<ul class=\"govuk-list govuk-list--bullet\">\n  <li>the organisation running the asset</li>\n  <li>type of asset</li>\n  <li>address of the asset</li>\n  <li>if the asset is at risk </li>\n  <li>what is the risk to the asset (if applicable)</li>\n  <li>if the asset has ever been used by or had significance to the community?</li>\n  <li>if you already own the asset </li>\n  <li>if the asset belongs to a public authority (if applicable)</li>\n  <li>the stage you are at in purchasing the asset (if applicable)</li>\n</ul>\n\n\n\n\n\n\n \n\n\n\n\n\n ",
+          "content": "<p class=\"govuk-body\">In this section, we'll ask about:</p>\n<ul class=\"govuk-list govuk-list--bullet\">\n  <li>the organisation running the asset</li>\n  <li>type of asset</li>\n  <li>address of the asset</li>\n  <li>if the asset is at risk </li>\n  <li>what is the risk to the asset (if applicable)</li>\n  <li>if the asset has ever been used by or had significance to the community?</li>\n  <li>if you already own the asset </li>\n  <li>if the asset belongs to a public authority (if applicable)</li>\n  <li>the stage you are at in purchasing the asset (if applicable)</li>\n</ul>\n\n\n\n\n\n\n \n\n\n\n\n\n ",
           "schema": {}
         }
       ],
@@ -22,7 +22,7 @@
     },
     {
       "path": "/does-your-organisation-plan-both-to-receive-the-funding-and-run-the-project",
-      "title": "Does your organisation plan both to receive the funding and run the project?",
+      "title": "Does your organisation plan both to receive the funding and run the project?",
       "components": [
         {
           "name": "cjbAvi",
@@ -37,8 +37,11 @@
             "hideTitle": true
           },
           "type": "YesNoField",
-          "title": "Type of asset",
-          "schema": {}
+          "title": "Does your organisation plan both to receive the funding and run the project?",
+          "schema": {},
+          "values": {
+            "type": "listRef"
+          }
         }
       ],
       "next": [
@@ -59,7 +62,7 @@
           },
           "type": "RadiosField",
           "title": "Type of asset",
-          "hint": "Select the main way the asset will be used. For example, if it's a theatre that also has a cafe, select 'theatre'. ",
+          "hint": "Select the main way the asset will be used. For example, if it's a theatre that also has a cafe, select 'theatre'. ",
           "list": "dXSWRl",
           "schema": {}
         }
@@ -81,8 +84,11 @@
             "hideTitle": true
           },
           "type": "YesNoField",
-          "title": "UK Asset",
-          "schema": {}
+          "title": "Is the asset based in the UK?",
+          "schema": {},
+          "values": {
+            "type": "listRef"
+          }
         }
       ],
       "next": [
@@ -97,56 +103,10 @@
       "title": "Address of the asset",
       "components": [
         {
-          "name": "BJoFIt",
-          "options": {
-            "hideTitle": true
-          },
-          "type": "TextField",
-          "title": "Address line 1",
-          "hint": "Address line 1",
-          "schema": {}
-        },
-        {
-          "name": "eVRZoP",
-          "options": {
-            "hideTitle": true,
-            "required": false
-          },
-          "type": "TextField",
-          "title": "Address line 2 (optional)",
-          "hint": "Address line 2 (optional)",
-          "schema": {}
-        },
-        {
-          "name": "YXhxTU",
-          "options": {
-            "hideTitle": true
-          },
-          "type": "TextField",
-          "title": "Town or city",
-          "hint": "Town or city",
-          "schema": {}
-        },
-        {
-          "name": "htzONI",
-          "options": {
-            "hideTitle": true,
-            "required": false
-          },
-          "type": "TextField",
-          "title": "County (optional)",
-          "hint": "County (optional)",
-          "schema": {}
-        },
-        {
-          "name": "rajMMJ",
-          "options": {
-            "hideTitle": true
-          },
-          "type": "TextField",
-          "title": "Postcode",
-          "hint": "Postcode",
-          "schema": {}
+          "name": "dnqIdW",
+          "options": {},
+          "type": "UkAddressField",
+          "title": "Address of the asset"
         }
       ],
       "next": [
@@ -232,8 +192,11 @@
             "hideTitle": true
           },
           "type": "YesNoField",
-          "title": "Significance to the community",
-          "schema": {}
+          "title": "Has the asset ever been used by or had significance to the community?",
+          "schema": {},
+          "values": {
+            "type": "listRef"
+          }
         }
       ],
       "next": [
@@ -263,7 +226,7 @@
           "condition": "TusZnm"
         },
         {
-          "path": "/asset-check-answers",
+          "path": "/check-your-answers",
           "condition": ""
         }
       ],
@@ -278,7 +241,7 @@
           "options": {},
           "type": "Details",
           "title": "Help with public authority",
-          "content": "<p class=\"govuk-body\">A public authority is a government organisation, such as a local council. <a href=\"https://www.gov.uk/government/publications/community-ownership-fund-prospectus/community-ownership-fund-prospectus--3#publiclyowned\">See section 8 of the prospectus for information on using COF funding for publicly owned assets.\n</p>",
+          "content": "<p class=\"govuk-body\">A public authority is a government organisation, such as a local council. <a href=\"https://www.gov.uk/government/publications/community-ownership-fund-prospectus/community-ownership-fund-prospectus--3#publiclyowned\">See section 8 of the prospectus for information on using COF funding for publicly owned assets.\n</p>",
           "schema": {}
         },
         {
@@ -314,17 +277,18 @@
       ],
       "next": [
         {
-          "path": "/asset-check-answers"
+          "path": "/check-your-answers"
         }
       ],
       "section": "McpePG"
     },
     {
-      "path": "/asset-check-answers",
-      "title": "Check Answers",
+      "path": "/check-your-answers",
+      "title": "Check your answers",
       "components": [],
       "next": [],
-      "section": "McpePG"
+      "section": "McpePG",
+      "controller": "./pages/summary.js"
     }
   ],
   "lists": [
@@ -524,8 +488,8 @@
           "value": "Not yet started"
         },
         {
-          "text": "Early stage ",
-          "value": "Early stage "
+          "text": "Early stage ",
+          "value": "Early stage "
         },
         {
           "text": "Late stage",

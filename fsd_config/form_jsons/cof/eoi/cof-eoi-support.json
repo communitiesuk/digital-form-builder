@@ -1,6 +1,6 @@
 {
   "metadata": {},
-  "startPage": "/express-of-interest-community-ownership-fund",
+  "startPage": "/development-support-provider",
   "pages": [
     {
       "path": "/development-support-provider",
@@ -122,13 +122,13 @@
       ],
       "next": [
         {
-          "path": "/support-provider-check-your-answers"
+          "path": "/summary"
         }
       ],
       "section": "IEwDfr"
     },
     {
-      "path": "/support-provider-check-your-answers",
+      "path": "/summary",
       "title": "Check your answers",
       "components": [
         {
@@ -140,7 +140,8 @@
         }
       ],
       "next": [],
-      "section": "IEwDfr"
+      "section": "IEwDfr",
+      "controller": "./pages/summary.js"
     }
   ],
   "lists": [
@@ -340,8 +341,8 @@
           "value": "Not yet started"
         },
         {
-          "text": "Early stage ",
-          "value": "Early stage "
+          "text": "Early stage ",
+          "value": "Early stage "
         },
         {
           "text": "Late stage",

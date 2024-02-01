@@ -1,6 +1,6 @@
 {
   "metadata": {},
-  "startPage": "/express-of-interest-community-ownership-fund",
+  "startPage": "/organisation-details",
   "pages": [
     {
       "title": "Organisation details",
@@ -58,56 +58,12 @@
       "title": "Organisation address",
       "components": [
         {
-          "name": "GdmSoY",
+          "name": "OpeSdM",
           "options": {
             "hideTitle": true
           },
-          "type": "TextField",
-          "title": "Address line 1",
-          "hint": "Address line 1",
-          "schema": {}
-        },
-        {
-          "name": "uqoKJZ",
-          "options": {
-            "hideTitle": true,
-            "required": false,
-            "optionalText": true
-          },
-          "type": "TextField",
-          "title": "Address line 2 (optional)",
-          "hint": "Address line 2 (optional)",
-          "schema": {}
-        },
-        {
-          "name": "gPFSxR",
-          "options": {
-            "hideTitle": true
-          },
-          "type": "TextField",
-          "title": "Town or city",
-          "hint": "Town or city",
-          "schema": {}
-        },
-        {
-          "name": "RFEaZj",
-          "options": {
-            "hideTitle": true,
-            "required": false
-          },
-          "type": "TextField",
-          "title": "County",
-          "hint": "County (optional)",
-          "schema": {}
-        },
-        {
-          "name": "WxNtZz",
-          "options": {
-            "hideTitle": true
-          },
-          "type": "TextField",
-          "title": "Postcode",
-          "hint": "Postcode",
+          "type": "UkAddressField",
+          "title": "Organisation address",
           "schema": {}
         }
       ],
@@ -170,13 +126,16 @@
             "hideTitle": true
           },
           "type": "YesNoField",
-          "title": "Insolvency actions",
-          "schema": {}
+          "title": "Is your organisation subject to any insolvency actions?",
+          "schema": {},
+          "values": {
+            "type": "listRef"
+          }
         }
       ],
       "next": [
         {
-          "path": "/details-check-your-answers"
+          "path": "/summary"
         }
       ],
       "section": "eAEGhH"
@@ -219,11 +178,12 @@
       "section": "eAEGhH"
     },
     {
-      "path": "/details-check-your-answers",
+      "path": "/summary",
       "title": "Check your answers",
       "components": [],
       "next": [],
-      "section": "eAEGhH"
+      "section": "eAEGhH",
+      "controller": "./pages/summary.js"
     }
   ],
   "lists": [
@@ -423,8 +383,8 @@
           "value": "Not yet started"
         },
         {
-          "text": "Early stage ",
-          "value": "Early stage "
+          "text": "Early stage ",
+          "value": "Early stage "
         },
         {
           "text": "Late stage",
