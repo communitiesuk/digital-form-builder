@@ -24,6 +24,8 @@ const SortableItem = SortableElement(({ index, page, component, data }) => (
 
 const SortableList = SortableContainer(({ page = {}, data }) => {
   const { components = [] } = page;
+  console.log("Page...", page);
+
   return (
     <div className="component-list">
       {components.map((component, index) => (

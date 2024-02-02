@@ -6,6 +6,7 @@ import ListFieldEdit from "./components/FieldEditors/list-field-edit";
 import SelectFieldEdit from "./components/FieldEditors/select-field-edit";
 import { TextFieldEdit } from "./components/FieldEditors/text-field-edit";
 import { MultilineTextFieldEdit } from "./multiline-text-field-edit";
+import { MultiInputFieldEdit } from "./multi-input-field-edit";
 import { FreeTextFieldEdit } from "./free-text-field-edit";
 import { FileUploadFieldEdit } from "./file-upload-field-edit";
 import { NumberFieldEdit } from "./components/FieldEditors/number-field-edit";
@@ -19,6 +20,7 @@ const componentTypeEditors = {
   EmailAddressField: TextFieldEdit,
   TelephoneNumberField: TextFieldEdit,
   MultilineTextField: MultilineTextFieldEdit,
+  MultiInputField: MultiInputFieldEdit,
   FreeTextField: FreeTextFieldEdit,
   ClientSideFileUploadField: ClientSideFileUploadFieldEdit,
   NumberField: NumberFieldEdit,
@@ -42,6 +44,9 @@ const componentTypeEditors = {
 
 function ComponentTypeEdit(props) {
   const { context = ComponentContext, page } = props;
+  console.log("\n\n PageFromTypeEdit...", page);
+  console.log("\n\n PageFromTypeEdit...", props);
+
   const { state } = useContext(context);
   const { selectedComponent } = state;
   const type = ComponentTypes.find(

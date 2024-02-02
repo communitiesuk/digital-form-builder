@@ -128,8 +128,9 @@ export function ComponentCreate(props) {
     renderTypeEdit,
   } = useComponentCreate(props);
 
-  const type = component?.type;
+  let fromMultiInputField = !!props.fromMultiInputField;
 
+  const type = component?.type;
   return (
     <div className="component-create" data-testid={"component-create"}>
       {!type && <h4 className="govuk-heading-m">{i18n("component.create")}</h4>}
@@ -145,7 +146,12 @@ export function ComponentCreate(props) {
         </>
       )}
       {hasErrors && <ErrorSummary errorList={errors} />}
-      {!type && <ComponentCreateList onSelectComponent={handleTypeChange} />}
+      {!type && (
+        <ComponentCreateList
+          onSelectComponent={handleTypeChange}
+          fromMultiInputField={fromMultiInputField}
+        />
+      )}
       {type && renderTypeEdit && (
         <form onSubmit={handleSubmit}>
           {type && <ComponentTypeEdit />}

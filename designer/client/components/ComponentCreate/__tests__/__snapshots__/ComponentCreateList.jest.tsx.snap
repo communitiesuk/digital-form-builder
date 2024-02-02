@@ -277,6 +277,19 @@ exports[`ComponentCreateList should match snapshot 1`] = `
               class="govuk-link"
               href="#0"
             >
+              Multi input
+            </a>
+            <div
+              class="govuk-hint"
+            >
+              SAMPLE - Fill with appropriate CHANGE IN TRANS TOO
+            </div>
+          </li>
+          <li>
+            <a
+              class="govuk-link"
+              href="#0"
+            >
               Number
             </a>
             <div
