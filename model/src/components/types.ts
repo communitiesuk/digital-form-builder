@@ -334,7 +334,10 @@ export interface MultiInputFieldComponent extends TextFieldBase {
   options: TextFieldBase["options"] & {
     textFieldTitle?: string;
     numberFieldTitle?: string;
+    prefix?: string;
+    columnTitles?: object;
   };
+  children?: object;
 }
 
 export type ComponentDef =

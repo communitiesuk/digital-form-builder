@@ -20,6 +20,37 @@ export const ComponentTypes: ComponentDef[] = [
     schema: {},
   },
   {
+    name: "MultiInputField",
+    type: "MultiInputField",
+    title: "Multi input field",
+    subType: "field",
+    hint: "",
+    options: {
+      prefix: "",
+      columnTitles: [],
+    },
+    schema: {},
+    children: [
+      {
+        type: "TextField",
+        name: "type-of-revenue-cost",
+        title: "Type of Revenue Cost",
+        schema: {},
+        options: {},
+      },
+      {
+        type: "NumberField",
+        name: "Cost",
+        title: "Amount",
+        schema: {},
+        options: {
+          classes: "govuk-!-width-one-half",
+          prefix: "£",
+        },
+      },
+    ],
+  },
+  {
     name: "FreeTextField",
     type: "FreeTextField",
     title: "Free text field",

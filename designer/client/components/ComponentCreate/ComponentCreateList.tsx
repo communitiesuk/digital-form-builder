@@ -27,6 +27,7 @@ sortBy(ComponentTypes, ["type"]).forEach((component) => {
 
 type Props = {
   onSelectComponent: (type: ComponentDef) => void;
+  fromMultiInputField;
 };
 
 export const ComponentCreateList = ({ onSelectComponent }: Props) => {
@@ -37,6 +38,10 @@ export const ComponentCreateList = ({ onSelectComponent }: Props) => {
     },
     [onSelectComponent]
   );
+
+  console.log("Components to list 1: ,", contentFields);
+  console.log("Components to list 2: ,", selectionFields);
+  console.log("Components to list 3: ,", inputFields);
 
   return (
     <div

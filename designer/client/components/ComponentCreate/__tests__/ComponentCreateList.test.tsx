@@ -96,6 +96,7 @@ suite("ComponentCreateList", () => {
       "Free text",
       "Month year parts",
       "Multiline text",
+      "Multi input",
       "Number",
       "Telephone number",
       "Text",
