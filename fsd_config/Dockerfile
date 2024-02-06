@@ -35,7 +35,6 @@ WORKDIR /usr/src/app
 #TODO:- remove - should already be copied in s2
 COPY --chown=appuser:appuser ./model ./model/
 USER 1001
-RUN ls -la ./model
 RUN yarn workspaces focus @xgovformbuilder/model && yarn model build
 
 # ----------------------------
@@ -62,8 +61,20 @@ FROM build-runner as fsd-runner
 ARG FORMS_DIR="forms-v3"
 WORKDIR /usr/src/app
 RUN rm -r runner/dist/server/forms && rm -r runner/src && rm -r runner/test
-RUN ls 
 COPY ./fsd_config/form_jsons/cof/en/* runner/dist/server/forms/
+COPY ./fsd_config/form_jsons/cof/cy/* runner/dist/server/forms/
+COPY ./fsd_config/form_jsons/cof_r2/en/* runner/dist/server/forms/
+COPY ./fsd_config/form_jsons/cof_r2/cy/* runner/dist/server/forms/
+COPY ./fsd_config/form_jsons/cof_r3/en/* runner/dist/server/forms/
+COPY ./fsd_config/form_jsons/cof_r3/cy/* runner/dist/server/forms/
+COPY ./fsd_config/form_jsons/cof_r3w2/en/* runner/dist/server/forms/
+COPY ./fsd_config/form_jsons/cof_r3w2/cy/* runner/dist/server/forms/
+COPY ./fsd_config/form_jsons/cof/eoi/* runner/dist/server/forms/
+COPY ./fsd_config/form_jsons/night_shelter/* runner/dist/server/forms/
+COPY ./fsd_config/form_jsons/cyp_r1/* runner/dist/server/forms/
+COPY ./fsd_config/form_jsons/dpif_r2/* runner/dist/server/forms/
+COPY ./fsd_config/form_jsons/generic/* runner/dist/server/forms/
+COPY ./fsd_config/config/* runner/config/
 CMD [ "yarn", "runner", "build"]
 
 FROM fsd-runner as app
