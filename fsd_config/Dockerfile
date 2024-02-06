@@ -62,7 +62,7 @@ FROM build-runner as fsd-runner
 ARG FORMS_DIR="forms-v3"
 WORKDIR /usr/src/app
 RUN rm -r runner/dist/server/forms && rm -r runner/src && rm -r runner/test
-RUN ls 
+RUN ls
 COPY ./fsd_config/form_jsons/cof/en/* runner/dist/server/forms/
 CMD [ "yarn", "runner", "build"]
 
