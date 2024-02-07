@@ -293,6 +293,25 @@
   ],
   "lists": [
     {
+      "title": "Public Authority",
+      "name": "public-authority-list",
+      "type": "string",
+      "items": [
+        {
+          "text": "Yes, a parish or community council",
+          "value": "Yes, a parish or community council"
+        },
+        {
+          "text": "Yes, another type of public authority",
+          "value": "Yes, another type of public authority"
+        },
+        {
+          "text": "No, it does not belong to a public authority",
+          "value": "No, it does not belong to a public authority"
+        }
+      ]
+    },
+    {
       "title": "Organisation classification",
       "name": "CCbnpc",
       "type": "string",
@@ -901,25 +920,6 @@
           }
         ]
       }
-    },
-    {
-      "title": "Public Authority",
-      "name": "public-authority-list",
-      "type": "string",
-      "items": [
-        {
-          "text": "Yes, a parish or community council",
-          "value": "Yes, a parish or community council"
-        },
-        {
-          "text": "Yes, another type of public authority",
-          "value": "Yes, another type of public authority"
-        },
-        {
-          "text": "No, it does not belong to a public authority",
-          "value": "No, it does not belong to a public authority"
-        }
-      ]
     },
     {
       "displayName": "sourceMatchFundingUnknown",
