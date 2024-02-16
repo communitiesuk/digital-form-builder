@@ -80,9 +80,9 @@
           },
           "type": "NumberField",
           "title": "How much capital funding are you requesting from COF?",
-          "hint": "Capital costs are the costs of buying or leasing your asset and paying for refurbishment. You can apply for up to £2 million in capital costs from COF. ",
+          "hint": "<p>Capital costs are the costs of buying or leasing your asset and paying for refurbishment. You can apply for up to £2 million (<span class='govuk-!-font-size-19'>£2000000</span>) in capital costs from COF.</p><p>Enter the amount using only numerals, for example, 1500000</p>",
           "schema": {
-            "max": 2000000000
+            "max": 2000000
           }
         }
       ],
