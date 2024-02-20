@@ -293,29 +293,6 @@
   ],
   "lists": [
     {
-      "title": "Stage purchasing asset",
-      "name": "VCaulN",
-      "type": "string",
-      "items": [
-        {
-          "text": "Do not know who owner is",
-          "value": "Do not know who owner is"
-        },
-        {
-          "text": "Know who owner is but have not approached",
-          "value": "Know who owner is but have not approached"
-        },
-        {
-          "text": "Early stage negotiations",
-          "value": "Early stage negotiations"
-        },
-        {
-          "text": "Advanced stage negotiations",
-          "value": "Advanced stage negotiations"
-        }
-      ]
-    },
-    {
       "title": "COF funding for",
       "name": "xMbcbn",
       "type": "string",
