@@ -94,17 +94,19 @@
         {
           "name": "xWnVof",
           "options": {
-            "hideTitle": true
+            "hideTitle": true,
+            "classes": "govuk-!-width-full"
           },
           "type": "TextField",
           "title": "Name of lead contact",
-          "hint": "<p class=\"govuk-hint\">Name of lead contact</p>",
+          "hint": "<label class=\"govuk-label\">Name of lead contact</label>",
           "schema": {}
         },
         {
           "name": "NQoGIm",
           "options": {
-            "hideTitle": true
+            "hideTitle": true,
+            "classes": "govuk-!-width-full"
           },
           "type": "EmailAddressField",
           "title": "Lead contact email address",
@@ -114,7 +116,8 @@
         {
           "name": "srxZmv",
           "options": {
-            "hideTitle": true
+            "hideTitle": true,
+            "classes": "govuk-!-width-full"
           },
           "type": "TelephoneNumberField",
           "title": "Lead contact telephone number",

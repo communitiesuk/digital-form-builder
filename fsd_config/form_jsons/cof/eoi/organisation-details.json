@@ -90,7 +90,7 @@
         {
           "name": "uYiLsv",
           "options": {
-            "hideTitle": false
+            "hideTitle": true
           },
           "type": "RadiosField",
           "title": "Organisation classification",
