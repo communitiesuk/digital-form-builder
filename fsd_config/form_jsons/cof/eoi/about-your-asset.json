@@ -270,7 +270,9 @@
       "components": [
         {
           "name": "oDhZlw",
-          "options": {},
+          "options": {
+            "hideTitle": true
+          },
           "type": "RadiosField",
           "title": "Stage purchasing asset",
           "list": "VCaulN",
