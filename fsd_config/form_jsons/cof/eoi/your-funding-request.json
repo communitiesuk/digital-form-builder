@@ -219,7 +219,7 @@
       "components": [
         {
           "name": "UORyaF",
-          "options": {},
+          "options": { "hideTitle": true },
           "type": "RadiosField",
           "title": "Will you need planning permission for your project?",
           "list": "ZvqGVo",
