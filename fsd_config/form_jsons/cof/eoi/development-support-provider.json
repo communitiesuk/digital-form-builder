@@ -98,7 +98,7 @@
           },
           "type": "TextField",
           "title": "Name of lead contact",
-          "hint": "Name of lead contact",
+          "hint": "<p class=\"govuk-hint\">Name of lead contact</p>",
           "schema": {}
         },
         {
@@ -108,7 +108,7 @@
           },
           "type": "EmailAddressField",
           "title": "Lead contact email address",
-          "hint": "Lead contact email address",
+          "hint": "<label class=\"govuk-label\">Lead contact email address</label>",
           "schema": {}
         },
         {
@@ -118,7 +118,7 @@
           },
           "type": "TelephoneNumberField",
           "title": "Lead contact telephone number",
-          "hint": "Lead contact telephone number",
+          "hint": "<label class=\"govuk-label\">Lead contact telephone number</label>",
           "schema": {}
         }
       ],
