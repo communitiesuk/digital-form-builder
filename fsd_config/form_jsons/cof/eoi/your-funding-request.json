@@ -176,7 +176,7 @@
           },
           "type": "CheckboxesField",
           "title": "Where do you plan to source match funding?",
-          "hint": "This can include both in-kind and cash match funding<br/><br/>Select all that apply",
+          "hint": "<p class=\"govuk-label\">This can include both in-kind and cash match funding<br/><br/>Select all that apply</p>",
           "list": "sLINJk",
           "schema": {}
         }

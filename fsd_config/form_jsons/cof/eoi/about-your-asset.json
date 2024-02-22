@@ -243,7 +243,7 @@
           "options": {},
           "type": "Details",
           "title": "Help with public authority",
-          "content": "<p class=\"govuk-body\">A public authority is a government organisation, such as a local council. <a href=\"https://www.gov.uk/government/publications/community-ownership-fund-prospectus/community-ownership-fund-prospectus--3#publiclyowned\">See section 8 of the prospectus for information on using COF funding for publicly owned assets.\n</p>",
+          "content": "<p class=\"govuk-body\">A public authority is a government organisation, such as a local council. <a aria-label=\"Prospectus\" href=\"https://www.gov.uk/government/publications/community-ownership-fund-prospectus/community-ownership-fund-prospectus--3#publiclyowned\">See section 8 of the prospectus for information on using COF funding for publicly owned assets.</a>\n</p>",
           "schema": {}
         },
         {
