@@ -132,7 +132,7 @@
           "name": "cSmbth",
           "options": {},
           "type": "Html",
-          "content": "<p class=\"govuk-body\">Mae hyn yn golygu bod perygl y bydd y gymuned yn colli'r ased o ganlyniad i:</p>\n<ul class=\"govuk-list govuk-list--bullet\">\n  <li>benderfyniad i gau neu les yn dod i ben</li>\n  <li>esgeulustod neu gyflwr adfeiliedig</li>\n  <li>model busnes cyfredol anghynaliadwy</li>\n  <li>being for sale</li>\n  <li>being listed for disposal</li>\n  <li>being part of a community asset transfer</li>\n</ul>",
+          "content": "<p class=\"govuk-body\">Mae hyn yn golygu bod perygl y bydd y gymuned yn colli'r ased o ganlyniad i:</p>\n<ul class=\"govuk-list govuk-list--bullet\">\n  <li>benderfyniad i gau neu les yn dod i ben</li>\n  <li>esgeulustod neu gyflwr adfeiliedig</li>\n  <li>model busnes cyfredol anghynaliadwy</li>\n  <li>ar werth</li>\n  <li>wedi'i restru i'w waredu</li>\n  <li>yn rhan o broses trosglwyddo asedau cymunedol</li>\n</ul>",
           "schema": {}
         },
         {
@@ -190,7 +190,7 @@
           "name": "jxrAoy",
           "options": {},
           "type": "Html",
-          "content": "<p class=\"govuk-body\">Gallai defnydd/arwyddocâd cymunedol ymwneud â'r canlynol (ond heb fod yn gyfyngedig iddynt):</p>\n<ul class=\"govuk-list govuk-list--bullet\">\n<li>canolfannau cymunedol</li>\n<li>siopau</li>\n<li>cyfleusterau chwaraeon a hamdden</li>\n<li>tafarndai a bwytai</li>\n<li>adeiladau diwylliannol</li>\n<li>adeiladau treftadaeth</li>\n</ul>\n<p class=\"govuk-body\">The asset could have been used by the community at any point in time.<br><br>Even if you plan to relocate or rebuild assets that were formerly used by the community, select 'yes'.</p>\n",
+          "content": "<p class=\"govuk-body\">Gallai defnydd/arwyddocâd cymunedol ymwneud â'r canlynol (ond heb fod yn gyfyngedig iddynt):</p>\n<ul class=\"govuk-list govuk-list--bullet\">\n<li>canolfannau cymunedol</li>\n<li>siopau</li>\n<li>cyfleusterau chwaraeon a hamdden</li>\n<li>tafarndai a bwytai</li>\n<li>adeiladau diwylliannol</li>\n<li>adeiladau treftadaeth</li>\n</ul>\n<p class=\"govuk-body\">Gallai'r ased fod wedi cael ei ddefnyddio gan y gymuned unrhyw bryd. <br><br>Hyd yn oed os ydych yn bwriadu adleoli neu ailadeiladu asedau a ddefnyddiwyd gan y gymuned yn flaenorol, dewiswch 'ydy'. </p>\n",
           "schema": {}
         },
         {
@@ -316,8 +316,8 @@
       "type": "string",
       "items": [
         {
-          "text": "Yes, a town, parish or community council",
-          "value": "Yes, a town, parish or community council"
+          "text": "Ydy, cyngor tref, plwyf neu gymuned",
+          "value": "Ydy, cyngor tref, plwyf neu gymuned"
         },
         {
           "text": "Ydy, math arall o awdurdod cyhoeddus",
