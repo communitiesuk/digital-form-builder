@@ -181,13 +181,13 @@
           "options": {
             "required": true,
             "hideTitle": true,
-            "divider": "Or",
+            "divider": "Neu",
             "behaviour": "exclusive",
             "behaviourItemValue": "none"
           },
           "type": "CheckboxesField",
           "title": "O ble rydych yn bwriadu cael arian cyfatebol? ",
-          "hint": "<p class=\"govuk-label\">This can include both in-kind and cash match funding.<br/><br/>Select all that apply</p>",
+          "hint": "<p class=\"govuk-label\">This can include both in-kind and cash match funding.<br/><br/>Dewiswch bob un sy'n berthnasol</p>",
           "list": "sLINJk",
           "schema": {}
         }
@@ -447,24 +447,24 @@
       "type": "string",
       "items": [
         {
-          "text": "Not yet approached any funders",
-          "value": "Not yet approached any funders"
+          "text": "Heb gysylltu ag unrhyw gyllidwyr eto",
+          "value": "Heb gysylltu ag unrhyw gyllidwyr eto"
         },
         {
-          "text": "Approached some funders but not yet secured",
-          "value": "Approached some funders but not yet secured"
+          "text": "Wedi cysylltu â rhai cyllidwyr ond heb sicrhau cyllid eto",
+          "value": "Wedi cysylltu â rhai cyllidwyr ond heb sicrhau cyllid eto"
         },
         {
-          "text": "Approached all funders but not yet secured",
-          "value": "Approached all funders but not yet secured"
+          "text": "Wedi cysylltu â'r holl gyllidwyr ond heb sicrhau cyllid eto",
+          "value": "Wedi cysylltu â'r holl gyllidwyr ond heb sicrhau cyllid eto"
         },
         {
-          "text": "Secured some match funding",
-          "value": "Secured some match funding"
+          "text": "Wedi sicrhau rhywfaint o arian cyfatebol",
+          "value": "Wedi sicrhau rhywfaint o arian cyfatebol"
         },
         {
-          "text": "Secured all match funding",
-          "value": "Secured all match funding"
+          "text": "Wedi sicrhau'r holl arian cyfatebol",
+          "value": "Wedi sicrhau'r holl arian cyfatebol"
         }
       ]
     },
@@ -562,7 +562,7 @@
             "operator": "is",
             "value": {
               "type": "Value",
-              "value": "Yes",
+              "value": "Oes",
               "display": "Yes"
             }
           }
