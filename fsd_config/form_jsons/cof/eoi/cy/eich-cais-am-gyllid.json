@@ -598,8 +598,8 @@
             "operator": "contains",
             "value": {
               "type": "Value",
-              "value": "Renovate a leasehold",
-              "display": "Renovate a leasehold"
+              "value": "Adnewyddu lesddaliad",
+              "display": "Adnewyddu lesddaliad"
             }
           }
         ]
@@ -620,8 +620,8 @@
             "operator": "contains",
             "value": {
               "type": "Value",
-              "value": "Buy a freehold",
-              "display": "Buy a freehold"
+              "value": "Prynu rhydd-ddaliad",
+              "display": "Prynu rhydd-ddaliad"
             }
           },
           {
@@ -634,8 +634,8 @@
             "operator": "contains",
             "value": {
               "type": "Value",
-              "value": "Renovate a freehold",
-              "display": "Renovate a freehold"
+              "value": "Adnewyddu rhydd-ddaliad",
+              "display": "Adnewyddu rhydd-ddaliad"
             }
           }
         ]
