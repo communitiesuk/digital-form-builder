@@ -45,7 +45,7 @@
       "section": "XDldxG"
     },
     {
-      "title": "Summary",
+      "title": "Check your answers",
       "path": "/summary",
       "controller": "./pages/summary.js",
       "components": [],
