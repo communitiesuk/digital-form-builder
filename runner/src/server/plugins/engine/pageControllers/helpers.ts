@@ -6,6 +6,7 @@ import { PageController } from "./PageController";
 import { StartDatePageController } from "./StartDatePageController";
 import { StartPageController } from "./StartPageController";
 import { SummaryPageController } from "./SummaryPageController";
+import { EligibilityPageController } from "./EligibilityPageController";
 import { PageControllerBase } from "./PageControllerBase";
 import { RepeatingFieldPageController } from "./RepeatingFieldPageController";
 import { Page } from "@xgovformbuilder/model";
@@ -19,6 +20,7 @@ const PageControllers = {
   SummaryPageController,
   PageControllerBase,
   RepeatingFieldPageController,
+  EligibilityPageController,
 };
 
 export const controllerNameFromPath = (filePath: string) => {
