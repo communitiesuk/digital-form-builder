@@ -1,10 +1,10 @@
 {
   "metadata": {},
-  "startPage": "/what-would-you-like-to-name-you-application",
+  "startPage": "/what-would-you-like-to-name-your-application",
   "pages": [
     {
       "title": "What would you like to name your application?",
-      "path": "/what-would-you-like-to-name-you-application",
+      "path": "/what-would-you-like-to-name-your-application",
       "components": [
         {
           "name": "qbBtUh",
