@@ -34,10 +34,6 @@ const index = {
             const form = server.app.forms[params.id];
             const state = await cacheService.getState(request);
 
-            const {
-              reference: newReference,
-            } = await statusService.outputRequests(request);
-
             if (state.callback?.skipSummary?.redirectUrl) {
               const { redirectUrl } = state.callback?.skipSummary;
               request.logger.info(
@@ -51,6 +47,10 @@ const index = {
 
               return h.redirect(redirectUrl);
             }
+
+            const {
+              reference: newReference,
+            } = await statusService.outputRequests(request);
 
             if (
               !!request.pre.confirmationViewModel?.confirmation &&
