@@ -9,7 +9,8 @@
         {
           "name": "qbBtUh",
           "options": {
-            "classes": "govuk-!-width-full"
+            "classes": "govuk-!-width-full",
+            "hideTitle": true
           },
           "type": "TextField",
           "title": "What would you like to name you application?",
