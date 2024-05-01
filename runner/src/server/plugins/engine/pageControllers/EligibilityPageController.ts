@@ -10,14 +10,20 @@ export class EligibilityPageController extends PageController {
     };
   }
 
-  makePostRouteHandler() {
-    return async (request: HapiRequest, h: HapiResponseToolkit) => {
-      const { payService, cacheService, uploadService } = request.services([]);
-      const model = this.model;
-      const state = await cacheService.getState(request);
-      state.metadata.isEligible = true;
-      await cacheService.mergeState(request, { ...state });
-      // return super.makePostRouteHandler();
-    };
-  }
+  // makePostRouteHandler() {
+  //   return async (request: HapiRequest, h: HapiResponseToolkit) => {
+  //     const { payService, cacheService, uploadService } = request.services([]);
+  //     const model = this.model;
+  //     const state = await cacheService.getState(request);
+  //     state.metadata.isEligible = true;
+  //     await cacheService.mergeState(request, { ...state });
+  //     // return super.makePostRouteHandler();
+  //     const savedState = await cacheService.getState(request);
+  //     let relevantState = this.getConditionEvaluationContext(
+  //       this.model,
+  //       savedState
+  //     );
+  //     return this.proceed(request, h, relevantState);
+  //   };
+  // }
 }

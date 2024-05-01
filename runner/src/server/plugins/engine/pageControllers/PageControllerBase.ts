@@ -758,7 +758,10 @@ export class PageControllerBase {
           webhookData: saveViewModel.validatedWebhookData,
         });
 
-        await statusService.savePerPageRequest(request);
+        const response = await statusService.savePerPageRequest(request);
+        if ("elig" in response.metadata) {
+          console.log("got eligibility in metadata");
+        }
       }
       return this.proceed(request, h, relevantState);
     };
