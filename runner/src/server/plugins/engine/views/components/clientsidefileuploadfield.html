@@ -183,7 +183,10 @@
             </div>
         </div>
     </noscript>
-
+    
+    <p class="govuk-warning-message">
+        <span class="govuk-visually-hidden"></span>
+    </p>
 </div>
 
 <script>
@@ -253,6 +256,16 @@
         }
     };
 
+    const disableSaveContinueBtn = () =>{
+        var saveContinueBtn = document.querySelector('[data-module="govuk-button"]');
+        saveContinueBtn.disabled=true;
+    };
+
+    const enableSaveContinueBtn = () =>{
+        var saveContinueBtn = document.querySelector('[data-module="govuk-button"]');
+        saveContinueBtn.disabled=false;
+    };
+
     const handleError = (errorMessage) => {
         const formContainer = document.querySelector("#{{component.model.id}}");
         formContainer.classList.add('govuk-form-group--error');
@@ -261,9 +274,30 @@
         errorSpan.textContent = errorMessage;
     };
 
+    const handleWarningMessage = (warningMessage) => {
+        const warningSpan = document.querySelector('.govuk-warning-message > span');
+        warningSpan.removeAttribute('class');
+        if(warningMessage && warningMessage !== ""){
+            warningSpan.setAttribute('class', 'govuk-details__text');
+        }
+        warningSpan.textContent = warningMessage;
+    };
+
+    const handleFileUploadingStatus = () => {
+        const fileProcessingInprogress = getAllFiles().filter(f => f.status === "added" || f.status === "uploading");
+        if ( fileProcessingInprogress && fileProcessingInprogress.length > 0 ) { 
+            disableSaveContinueBtn();
+            handleWarningMessage("File upload is in progress please wait to move");
+        } else {
+            enableSaveContinueBtn();
+            handleWarningMessage("");
+        }
+    };
+
     const myDropzone = new Dropzone('#dropzoneWrapper', dropzoneConfig);
 
     myDropzone.on('addedfile', function (file) {
+        handleFileUploadingStatus();
         const fileSizeLimit = dropzoneBackendConfig.maxFilesize * _FILE_SIZE_BASE * _FILE_SIZE_BASE;
         if (file.size > fileSizeLimit) {
             handleError(`File must be under ${dropzoneBackendConfig.maxFilesize}MB`);
@@ -336,6 +370,7 @@
 
         const removeBackend = !getAllFiles().find(f => f.name === file.name);
         if (removeBackend) deleteFileBackend(file);
+        handleFileUploadingStatus();
     });
 
     const updateProgressBarContent = (file, text) => {
@@ -343,6 +378,7 @@
         const progressBarSpan = progressBarContainer.querySelector('span');
         [progressBarSpan, progressBarContainer].forEach(el => el.removeAttribute('class'));
         progressBarSpan.textContent = text;
+        handleFileUploadingStatus();
     }
 
     myDropzone.on('error', function (file, error) {
