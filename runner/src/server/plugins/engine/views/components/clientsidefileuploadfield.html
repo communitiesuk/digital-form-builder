@@ -183,10 +183,6 @@
             </div>
         </div>
     </noscript>
-    
-    <p class="govuk-warning-message">
-        <span class="govuk-visually-hidden"></span>
-    </p>
 </div>
 
 <script>
@@ -256,14 +252,15 @@
         }
     };
 
-    const disableSaveContinueBtn = () =>{
-        var saveContinueBtn = document.querySelector('[data-module="govuk-button"]');
-        saveContinueBtn.disabled=true;
-    };
-
-    const enableSaveContinueBtn = () =>{
-        var saveContinueBtn = document.querySelector('[data-module="govuk-button"]');
-        saveContinueBtn.disabled=false;
+    const handleFileUploadingStatus = () => {
+        const fileProcessingInProgress = getAllFiles().filter(f => f.status === "added" || f.status === "uploading");
+        if ( fileProcessingInProgress && fileProcessingInProgress.length > 0 ) { 
+            handleError("The files have not fully uploaded");
+            handleErrorSummery("The files have not fully uploaded");
+            return false;
+        } else {
+            return true;
+        }
     };
 
     const handleError = (errorMessage) => {
@@ -274,30 +271,36 @@
         errorSpan.textContent = errorMessage;
     };
 
-    const handleWarningMessage = (warningMessage) => {
-        const warningSpan = document.querySelector('.govuk-warning-message > span');
-        warningSpan.removeAttribute('class');
-        if(warningMessage && warningMessage !== ""){
-            warningSpan.setAttribute('class', 'govuk-details__text');
-        }
-        warningSpan.textContent = warningMessage;
-    };
-
-    const handleFileUploadingStatus = () => {
-        const fileProcessingInprogress = getAllFiles().filter(f => f.status === "added" || f.status === "uploading");
-        if ( fileProcessingInprogress && fileProcessingInprogress.length > 0 ) { 
-            disableSaveContinueBtn();
-            handleWarningMessage("File upload is in progress please wait to move");
-        } else {
-            enableSaveContinueBtn();
-            handleWarningMessage("");
-        }
+    const handleErrorSummery = (errorMessage) => {
+        const errorSummeryParentContiner = document.querySelector('.govuk-grid-column-two-thirds');
+        errorSummeryParentContiner.insertAdjacentHTML('afterBegin', `
+                <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+                <h2 class="govuk-error-summary__title" id="error-summary-title">
+                    There is a problem
+                </h2>
+                <div class="govuk-error-summary__body">
+                    <ul class="govuk-list govuk-error-summary__list">
+                    <li>
+                        <a href="#`+"{{component.model.id}}"+`">`+errorMessage+`</a>
+                    </li>
+                    </ul>
+                </div>
+                </div>
+        `);
     };
 
     const myDropzone = new Dropzone('#dropzoneWrapper', dropzoneConfig);
 
     myDropzone.on('addedfile', function (file) {
-        handleFileUploadingStatus();
+        var saveContinueBtn = document.querySelector('[data-module="govuk-button"]');
+        saveContinueBtn.addEventListener('click', function(event) {
+            const fileProcessingInprogress = getAllFiles().filter(f => f.status === "added" || f.status === "uploading");
+            if ( fileProcessingInprogress && fileProcessingInprogress.length > 0 ) { 
+                event.preventDefault();
+                handleError("The files have not fully uploaded");
+                handleErrorSummery("The files have not fully uploaded");
+            }
+        });
         const fileSizeLimit = dropzoneBackendConfig.maxFilesize * _FILE_SIZE_BASE * _FILE_SIZE_BASE;
         if (file.size > fileSizeLimit) {
             handleError(`File must be under ${dropzoneBackendConfig.maxFilesize}MB`);
@@ -370,7 +373,6 @@
 
         const removeBackend = !getAllFiles().find(f => f.name === file.name);
         if (removeBackend) deleteFileBackend(file);
-        handleFileUploadingStatus();
     });
 
     const updateProgressBarContent = (file, text) => {
@@ -378,7 +380,6 @@
         const progressBarSpan = progressBarContainer.querySelector('span');
         [progressBarSpan, progressBarContainer].forEach(el => el.removeAttribute('class'));
         progressBarSpan.textContent = text;
-        handleFileUploadingStatus();
     }
 
     myDropzone.on('error', function (file, error) {
