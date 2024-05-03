@@ -1,10 +1,10 @@
 {
   "metadata": {},
-  "startPage": "/declaration",
+  "startPage": "/do-you-confirm-all-the-information-provided-is-correct",
   "pages": [
     {
-      "title": "Declaration",
-      "path": "/declaration",
+      "title": "Do you confirm all the information provided is correct?",
+      "path": "/do-you-confirm-all-the-information-provided-is-correct",
       "components": [
         {
           "name": "QUaOGq",
@@ -20,7 +20,8 @@
         {
           "path": "/summary"
         }
-      ]
+      ],
+      "section": "wycNzR"
     },
     {
       "title": "Check your answers",
@@ -43,7 +44,12 @@
       ]
     }
   ],
-  "sections": [],
+  "sections": [
+    {
+      "name": "wycNzR",
+      "title": "Declaration"
+    }
+  ],
   "conditions": [],
   "fees": [],
   "outputs": [
