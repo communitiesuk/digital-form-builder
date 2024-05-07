@@ -251,13 +251,13 @@
             };
         }
     };
-
+    let eventListenerAdded = false;
     // Check whether file upload is in progress or not and if in progress prevent submitting the form to backend
     const handleFileUploadingStatus = () => {
         const fileProcessingInProgress = getAllFiles().filter(f => f.status === "added" || f.status === "uploading");
         if ( fileProcessingInProgress && fileProcessingInProgress.length > 0 ) {
             handleError("The files have not fully uploaded");
-            handleErrorSummery("The files have not fully uploaded");
+            handleErrorSummary("The files have not fully uploaded");
             return false;
         } else {
             return true;
@@ -272,12 +272,12 @@
         errorSpan.textContent = errorMessage;
     };
 
-    // Show error summery with the error message in js side
-    const handleErrorSummery = (errorMessage) => {
-        const errorSummeryParentContainer = document.querySelector('.govuk-grid-column-two-thirds');
-        const errorSummery = document.querySelector('[data-module="govuk-error-summary"]');
-        if(!errorSummery && errorSummeryParentContainer) {
-            errorSummeryParentContainer.insertAdjacentHTML('afterBegin', `
+    // Show error summary with the error message in js side
+    const handleErrorSummary = (errorMessage) => {
+        const errorSummaryParentContainer = document.querySelector('.govuk-grid-column-two-thirds');
+        const errorSummary = document.querySelector('[data-module="govuk-error-summary"]');
+        if(!errorSummary && errorSummaryParentContainer) {
+            errorSummaryParentContainer.insertAdjacentHTML('afterBegin', `
                 <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
                     <h2 class="govuk-error-summary__title" id="error-summary-title">
                         There is a problem
@@ -291,8 +291,8 @@
                     </div>
                 </div>
         `);
-        } else if (errorSummery) {
-            const errorMessageLoc = errorSummery.querySelector(".govuk-error-summary__body > ul > li > a");
+        } else if (errorSummary) {
+            const errorMessageLoc = errorSummary.querySelector(".govuk-error-summary__body > ul > li > a");
             if (errorMessageLoc) {
                 errorMessageLoc.innerHTML = errorMessage;
             }
@@ -304,15 +304,20 @@
     myDropzone.on('addedfile', function (file) {
 
         // Intercept save and continue button to prevent submitting the form if files still uploading
-        var saveContinueBtn = document.querySelector('[data-module="govuk-button"]');
-        saveContinueBtn.addEventListener('click', function(event) {
-            const fileProcessingInprogress = getAllFiles().filter(f => f.status === "added" || f.status === "uploading");
-            if ( fileProcessingInprogress && fileProcessingInprogress.length > 0 ) {
-                event.preventDefault();
-                handleError("The files have not fully uploaded");
-                handleErrorSummery("The files have not fully uploaded");
-            }
-        });
+        // Also we need to add the listner here since button is not rendered when this js is being executed in the UI
+        if(!eventListenerAdded){
+            const saveContinueBtn = document.querySelector('[data-module="govuk-button"]');
+            saveContinueBtn.addEventListener('click', function(event) {
+                const fileProcessingInprogress = getAllFiles().filter(f => f.status === "added" || f.status === "uploading");
+                if ( fileProcessingInprogress && fileProcessingInprogress.length > 0 ) {
+                    event.preventDefault();
+                    const errorMessage = "The files have not fully uploaded";
+                    handleError(errorMessage);
+                    handleErrorSummary(errorMessage);
+                }
+            });
+        eventListenerAdded = true;
+        }
 
         const fileSizeLimit = dropzoneBackendConfig.maxFilesize * _FILE_SIZE_BASE * _FILE_SIZE_BASE;
         if (file.size > fileSizeLimit) {
