@@ -255,7 +255,7 @@
     // Check whether file upload is in progress or not and if in progress prevent submitting the form to backend
     const handleFileUploadingStatus = () => {
         const fileProcessingInProgress = getAllFiles().filter(f => f.status === "added" || f.status === "uploading");
-        if ( fileProcessingInProgress && fileProcessingInProgress.length > 0 ) { 
+        if ( fileProcessingInProgress && fileProcessingInProgress.length > 0 ) {
             handleError("The files have not fully uploaded");
             handleErrorSummery("The files have not fully uploaded");
             return false;
@@ -290,7 +290,7 @@
                         </ul>
                     </div>
                 </div>
-        `);   
+        `);
         } else if (errorSummery) {
             const errorMessageLoc = errorSummery.querySelector(".govuk-error-summary__body > ul > li > a");
             if (errorMessageLoc) {
@@ -302,12 +302,12 @@
     const myDropzone = new Dropzone('#dropzoneWrapper', dropzoneConfig);
 
     myDropzone.on('addedfile', function (file) {
-        
+
         // Intercept save and continue button to prevent submitting the form if files still uploading
         var saveContinueBtn = document.querySelector('[data-module="govuk-button"]');
         saveContinueBtn.addEventListener('click', function(event) {
             const fileProcessingInprogress = getAllFiles().filter(f => f.status === "added" || f.status === "uploading");
-            if ( fileProcessingInprogress && fileProcessingInprogress.length > 0 ) { 
+            if ( fileProcessingInprogress && fileProcessingInprogress.length > 0 ) {
                 event.preventDefault();
                 handleError("The files have not fully uploaded");
                 handleErrorSummery("The files have not fully uploaded");
