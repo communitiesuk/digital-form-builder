@@ -32,8 +32,8 @@
             "classes": "govuk-!-width-full"
           },
           "type": "TextField",
-          "title": "Your unique tracker number",
-          "hint": "This was included in the letter we sent to confirm your successful expression of interest.\n<p>For example, ‘ANON-###-###-###’</p>",
+          "title": "Your expression of interest (EOI) application reference",
+          "hint": "This was included in the email we sent you to confirm your successful EOI.\n<p>For example, 'COF-EOI-##-######'</p>",
           "schema": {}
         },
         {
@@ -685,6 +685,10 @@
           "value": "PTC"
         },
         {
+          "text": "Trust port",
+          "value": "trust-port"
+        },
+        {
           "text": "Other",
           "value": "Other"
         }
@@ -697,7 +701,7 @@
       "items": [
         {
           "text": "Companies House",
-          "value": "House"
+          "value": "Companies House"
         },
         {
           "text": "Other",
@@ -1015,6 +1019,20 @@
               "type": "Value",
               "value": "CLG",
               "display": "CLG"
+            }
+          },
+          {
+            "coordinator": "or",
+            "field": {
+              "name": "lajFtB",
+              "type": "RadiosField",
+              "display": "Type of organisation"
+            },
+            "operator": "is",
+            "value": {
+              "type": "Value",
+              "value": "trust-port",
+              "display": "trust-port"
             }
           }
         ]

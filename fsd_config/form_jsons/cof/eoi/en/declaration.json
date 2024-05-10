@@ -1,0 +1,63 @@
+{
+  "metadata": {},
+  "startPage": "/declaration",
+  "name": "Apply for expression of interest in applying for the Community Ownership Fund",
+  "pages": [
+    {
+      "title": "Declaration",
+      "path": "/declaration",
+      "components": [
+        {
+          "name": "oXFEkV",
+          "options": {
+            "hideTitle": true
+          },
+          "type": "CheckboxesField",
+          "title": "I confirm the information I've provided is correct",
+          "list": "nHHnuf"
+        }
+      ],
+      "next": [
+        {
+          "path": "/summary"
+        }
+      ]
+    },
+    {
+      "path": "/summary",
+      "title": "Check your answers",
+      "components": [],
+      "next": [],
+      "controller": "./pages/summary.js"
+    }
+  ],
+  "lists": [
+    {
+      "title": "Declaration",
+      "name": "nHHnuf",
+      "type": "string",
+      "items": [
+        {
+          "text": "I confirm the information I've provided is correct",
+          "value": "confirm"
+        }
+      ]
+    }
+  ],
+  "sections": [],
+  "conditions": [],
+  "fees": [],
+  "outputs": [
+    {
+      "name": "update-form",
+      "title": "Update form in application store",
+      "type": "savePerPage",
+      "outputConfiguration": {
+        "savePerPageUrl": "True"
+      }
+    }
+  ],
+  "version": 2,
+  "skipSummary": false,
+  "markAsComplete": false
+}

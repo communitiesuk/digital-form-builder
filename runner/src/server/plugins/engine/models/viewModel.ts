@@ -402,7 +402,7 @@ function Item(
   let componentLabel = component.localisedString(component.title);
 
   if (
-    component.options.required == false &&
+    component.options.required === false &&
     !componentLabel.toLowerCase().endsWith("(optional)") &&
     !componentLabel.toLowerCase().endsWith("(dewisol)")
   ) {

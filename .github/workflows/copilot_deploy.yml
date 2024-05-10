@@ -108,7 +108,7 @@ jobs:
       contents: read # This is required for actions/checkout
     needs: [docker-build, setup]
     if: ${{ always() && contains(fromJSON(needs.setup.outputs.jobs_to_run), 'dev') && (! contains(needs.*.result, 'failure') ) && (! contains(needs.*.result, 'cancelled') ) }}
-     
+
     uses: communitiesuk/funding-service-design-workflows/.github/workflows/standard-deploy.yml@main
     secrets:
       AWS_ACCOUNT: ${{ secrets.AWS_ACCOUNT }}
@@ -117,7 +117,7 @@ jobs:
       app_name: "form-runner"
       version: sha-${{ github.sha }}
 
-    post_dev_deploy_tests:
+  post_dev_deploy_tests:
     needs: [dev_deploy]
 
     secrets:

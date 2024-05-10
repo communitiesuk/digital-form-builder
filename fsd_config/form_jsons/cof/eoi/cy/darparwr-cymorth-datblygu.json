@@ -1,0 +1,294 @@
+{
+  "metadata": {
+    "isWelsh": true
+  },
+  "startPage": "/darparwr-cymorth-datblygu",
+  "name": "Gwneud cais am ddatganiad o ddiddordeb mewn gwneud cais i'r Gronfa Perchnogaeth Gymunedol",
+  "backLinkText": "Yn ôl i'r trosolwg o'r cais",
+  "pages": [
+    {
+      "path": "/darparwr-cymorth-datblygu",
+      "title": "Darparwr cymorth datblygu",
+      "components": [
+        {
+          "name": "hsyuiX",
+          "options": {},
+          "type": "Html",
+          "content": "<p class=\"govuk-body\">\n  Mae'r darparwr cymorth datblygu yn darparu gweminarau a chanllawiau ar wneud cais i holl ymgeiswyr y Gronfa Perchnogaeth Gymunedol ar wefan <a href=\"https://mycommunity.org.uk/\" class=\"govuk-link\">MyCommunity</a>. Mae hefyd yn cynnig cymorth wedi'i dargedu i rai ymgeiswyr cymwys.</p>\n<p class=\"govuk-body\">Gall y darparwr cymorth datblygu gysylltu â chi i ddarparu gwybodaeth a chymorth y mae'n eu cynnig i bob ymgeisydd cymwys. Bydd hefyd yn defnyddio eich atebion yn yr adran hon i bennu a ydych yn gymwys i gael cymorth manwl. <a href=\"https://www.gov.uk/guidance/community-ownership-fund-explanatory-note-on-the-assessment-and-decision-making-process#internal-decision-making\" class=\"govuk-link\">Darllenwch fwy am sut mae'r darparwr cymorth datblygu yn pennu pa sefydliadau sy'n cael cymorth.</a></p>\n</p>\n<p class=\"govuk-body\">\n  Ni chaiff eich atebion yn yr adran hon eu defnyddio i asesu a ydych yn bodloni'r gofynion i wneud cais i'r Gronfa Perchnogaeth Gymunedol.\n</p>\n\n<p class=\"govuk-body\">\n  <b>Yn yr adran hon, byddwn yn eich holi am y canlynol:</b>\n</p>\n\n<ul class=\"govuk-list govuk-list--bullet\">\n  <li>y prif bethau y mae angen cymorth arnoch gyda nhw er mwyn cyflwyno cais da i'r Gronfa Perchnogaeth Gymunedol yn eich barn chi</li>\n  <li>eich prosiect a'i nodau</li>\n  <li>manylion y prif unigolyn cyswllt</li>\n</ul>\n\n\n",
+          "schema": {}
+        }
+      ],
+      "next": [
+        {
+          "path": "/a-hoffech-ir-darparwr-cymorth-datblygu-gysylltu-chi-os-ydych-yn-gymwys-i-gael-cymorth-manwl"
+        }
+      ],
+      "controller": "./pages/start.js"
+    },
+    {
+      "path": "/a-hoffech-ir-darparwr-cymorth-datblygu-gysylltu-chi-os-ydych-yn-gymwys-i-gael-cymorth-manwl",
+      "title": "A hoffech i'r darparwr cymorth datblygu gysylltu â chi, os ydych yn gymwys i gael cymorth manwl?",
+      "components": [
+        {
+          "name": "iXmKyq",
+          "options": {
+            "hideTitle": true
+          },
+          "type": "RadiosField",
+          "title": "A hoffech i'r darparwr cymorth datblygu gysylltu â chi, os ydych yn gymwys i gael cymorth manwl?",
+          "list": "wmWKXS",
+          "values": {
+            "type": "listRef"
+          }
+        }
+      ],
+      "next": [
+        {
+          "path": "/beth-ywr-prif-bethau-y-mae-angen-cymorth-arnoch-gyda-nhw-er-mwyn-cyflwyno-cais-da-ir-gronfa-perchnogaeth-gymunedol-yn-eich-barn-chi",
+          "condition": "DFAbIm"
+        },
+        {
+          "path": "/disgrifiwch-eich-prosiect-ai-nodau",
+          "condition": "BXKKSX"
+        }
+      ],
+      "section": "IEwDfr"
+    },
+    {
+      "path": "/beth-ywr-prif-bethau-y-mae-angen-cymorth-arnoch-gyda-nhw-er-mwyn-cyflwyno-cais-da-ir-gronfa-perchnogaeth-gymunedol-yn-eich-barn-chi",
+      "title": "Beth yw'r prif bethau y mae angen cymorth arnoch gyda nhw er mwyn cyflwyno cais da i'r Gronfa Perchnogaeth Gymunedol yn eich barn chi? ",
+      "components": [
+        {
+          "name": "ObIBSx",
+          "options": {
+            "hideTitle": true
+          },
+          "type": "CheckboxesField",
+          "title": "Beth yw'r prif bethau y mae angen cymorth arnoch gyda nhw er mwyn cyflwyno cais da i'r Gronfa Perchnogaeth Gymunedol yn eich barn chi? ",
+          "list": "need-support-list",
+          "hint": "Dewiswch bob un sy'n berthnasol",
+          "schema": {}
+        }
+      ],
+      "next": [
+        {
+          "path": "/disgrifiwch-eich-prosiect-ai-nodau"
+        }
+      ],
+      "section": "IEwDfr"
+    },
+    {
+      "path": "/disgrifiwch-eich-prosiect-ai-nodau",
+      "title": "Disgrifiwch eich prosiect a'i nodau",
+      "components": [
+        {
+          "name": "MxzEYq",
+          "options": {
+            "maxWords": "250",
+            "hideTitle": true
+          },
+          "type": "FreeTextField",
+          "title": "Disgrifiwch eich prosiect a'i nodau",
+          "schema": {}
+        }
+      ],
+      "next": [
+        {
+          "path": "/manylion-y-prif-unigolyn-cyswllt"
+        }
+      ],
+      "section": "IEwDfr"
+    },
+    {
+      "path": "/manylion-y-prif-unigolyn-cyswllt",
+      "title": "Manylion y prif unigolyn cyswllt",
+      "components": [
+        {
+          "name": "xWnVof",
+          "options": {
+            "hideTitle": true,
+            "classes": "govuk-!-width-full"
+          },
+          "type": "TextField",
+          "title": "Enw'r prif unigolyn cyswllt ",
+          "hint": "<label for=\"xWnVof\" class=\"govuk-label\">Enw'r prif unigolyn cyswllt</label>",
+          "schema": {}
+        },
+        {
+          "name": "NQoGIm",
+          "options": {
+            "hideTitle": true,
+            "classes": "govuk-!-width-full"
+          },
+          "type": "EmailAddressField",
+          "title": "Cyfeiriad e-bost y prif unigolyn cyswllt",
+          "hint": "<label for=\"NQoGIm\" class=\"govuk-label\">Cyfeiriad e-bost y prif unigolyn cyswllt</label>",
+          "schema": {}
+        },
+        {
+          "name": "srxZmv",
+          "options": {
+            "hideTitle": true,
+            "classes": "govuk-!-width-full"
+          },
+          "type": "TelephoneNumberField",
+          "title": "Rhif ffôn y prif unigolyn cyswllt",
+          "hint": "<label for=\"srxZmv\" class=\"govuk-label\">Rhif ffôn y prif unigolyn cyswllt</label>",
+          "schema": {}
+        }
+      ],
+      "next": [
+        {
+          "path": "/summary"
+        }
+      ],
+      "section": "IEwDfr"
+    },
+    {
+      "path": "/summary",
+      "title": "Gwiriwch eich atebion",
+      "components": [
+        {
+          "name": "BsGzRm",
+          "options": {},
+          "type": "Para",
+          "content": "* Display answers *",
+          "schema": {}
+        }
+      ],
+      "next": [],
+      "section": "IEwDfr",
+      "controller": "./pages/summary.js"
+    }
+  ],
+  "lists": [
+    {
+      "title": "Beth yw'r prif bethau y mae angen cymorth arnoch gyda nhw er mwyn cyflwyno cais da i'r Gronfa Perchnogaeth Gymunedol yn eich barn chi?",
+      "name": "need-support-list",
+      "type": "string",
+      "items": [
+        {
+          "text": "Ysgrifennu cynllun busnes",
+          "value": "Ysgrifennu cynllun busnes"
+        },
+        {
+          "text": "Technegol",
+          "value": "Technegol"
+        },
+        {
+          "text": "Rhagolwg ariannol",
+          "value": "Rhagolwg ariannol"
+        },
+        {
+          "text": "Cyfreithiol",
+          "value": "Cyfreithiol"
+        },
+        {
+          "text": "Tai",
+          "value": "Tai"
+        },
+        {
+          "text": "Cymorth llywodraethu",
+          "value": "Cymorth llywodraethu"
+        }
+      ]
+    },
+    {
+      "title": "A hoffech i'r darparwr cymorth datblygu gysylltu â chi, os ydych yn gymwys i gael cymorth manwl?",
+      "name": "wmWKXS",
+      "type": "string",
+      "items": [
+        {
+          "text": "Rwy'n cytuno y gellir cysylltu â mi os wyf yn gymwys",
+          "value": "Rwyn cytuno y gellir cysylltu â mi os wyf yn gymwys"
+        },
+        {
+          "text": "Nid wyf am i neb gysylltu â mi ",
+          "value": "Nid wyf am i neb gysylltu â mi "
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "name": "eAEGhH",
+      "title": "Organisation details"
+    },
+    {
+      "name": "McpePG",
+      "title": "About your asset"
+    },
+    {
+      "name": "seZPbt",
+      "title": "Your funding request"
+    },
+    {
+      "name": "IEwDfr",
+      "title": "Darparwr cymorth datblygu"
+    },
+    {
+      "name": "mXKUVl",
+      "title": "Community Ownership Fund - Expression of interest"
+    }
+  ],
+  "conditions": [
+    {
+      "displayName": "support_no",
+      "name": "BXKKSX",
+      "value": {
+        "name": "support_no",
+        "conditions": [
+          {
+            "field": {
+              "name": "iXmKyq",
+              "type": "RadiosField",
+              "display": "Do you wish to be contacted by the development support provider, if eligible for in-depth support?"
+            },
+            "operator": "is",
+            "value": {
+              "type": "Value",
+              "value": "Nid wyf am i neb gysylltu â mi ",
+              "display": "no"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "displayName": "support_yes",
+      "name": "DFAbIm",
+      "value": {
+        "name": "support_yes",
+        "conditions": [
+          {
+            "field": {
+              "name": "iXmKyq",
+              "type": "RadiosField",
+              "display": "Do you wish to be contacted by the development support provider, if eligible for in-depth support?"
+            },
+            "operator": "is",
+            "value": {
+              "type": "Value",
+              "value": "Rwyn cytuno y gellir cysylltu â mi os wyf yn gymwys",
+              "display": "yes"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "fees": [],
+  "outputs": [
+    {
+      "name": "update-form",
+      "title": "Update form in application store",
+      "type": "savePerPage",
+      "outputConfiguration": {
+        "savePerPageUrl": "True"
+      }
+    }
+  ],
+  "version": 2,
+  "skipSummary": false,
+  "markAsComplete": false
+}

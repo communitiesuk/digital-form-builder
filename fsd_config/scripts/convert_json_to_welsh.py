@@ -6,7 +6,7 @@ import pandas as pd
 
 
 def convert_json_to_welsh(
-        translations_excel_file, original_json_filepath, translated_json_filepath=None
+    translations_excel_file, original_json_filepath, translated_json_filepath=None
 ):
     """Convert english json file `original_json_filepath` to welsh json
     `translated_json_filepath` using the translations from excel
@@ -125,7 +125,7 @@ def init_argparse() -> argparse.ArgumentParser:
         required=True,
     )
     parser.add_argument(
-        "--original_json_filepath",help="Original Json file in English", required=
+        "--original_json_filepath", help="Original Json file in English", required=True
     )
     parser.add_argument(
         "--translated_json_filepath",

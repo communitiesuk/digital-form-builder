@@ -18,13 +18,7 @@
         {% if migrationBannerEnabled %}
           {{migrationBanner()}}
         {% endif %}
-        <h1 class="govuk-heading-l">
-          {% if callback and callback.title %}
-            {{ callback.title }}
-          {% else %}
-            {{ pageTitle }}
-          {% endif %}
-        </h1>
+        <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
         {% if callback and callback.message %}
           <div class="govuk-inset-text">
             {{ callback.message }}

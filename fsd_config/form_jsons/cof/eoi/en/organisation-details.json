@@ -1,0 +1,314 @@
+{
+  "metadata": {},
+  "startPage": "/organisation-details",
+  "name": "Apply for expression of interest in applying for the Community Ownership Fund",
+  "pages": [
+    {
+      "title": "Organisation details",
+      "path": "/organisation-details",
+      "components": [
+        {
+          "name": "rclykK",
+          "options": {},
+          "type": "Html",
+          "content": "<p class=\"govuk-body\"><b>In this section, we'll ask about:</b></p>\n<ul class=\"govuk-list govuk-list--bullet\">\n  <li>organisation name</li>\n  <li>organisation address</li>\n  <li>how your organisation is classified</li>\n  <li>if your organisation is subject to any insolvency actions</li>\n</ul>",
+          "schema": {}
+        }
+      ],
+      "next": [
+        {
+          "path": "/organisation-names"
+        }
+      ],
+      "controller": "./pages/start.js"
+    },
+    {
+      "path": "/organisation-names",
+      "title": "Organisation name",
+      "components": [
+        {
+          "name": "SMRWjl",
+          "options": {
+            "hideTitle": true
+          },
+          "type": "TextField",
+          "hint": "This must match your registered legal organisation name.",
+          "title": "Organisation name",
+          "schema": {}
+        },
+        {
+          "name": "SxkwhF",
+          "options": {},
+          "type": "YesNoField",
+          "title": "Does your organisation have any alternative names?",
+          "schema": {}
+        }
+      ],
+      "next": [
+        {
+          "path": "/organisation-address"
+        },
+        {
+          "path": "/alternative-names-of-your-organisation",
+          "condition": "DaVyIg"
+        }
+      ],
+      "section": "eAEGhH"
+    },
+    {
+      "path": "/organisation-address",
+      "title": "Organisation address",
+      "components": [
+        {
+          "name": "OpeSdM",
+          "options": {
+            "hideTitle": true
+          },
+          "type": "UkAddressField",
+          "title": "Organisation address",
+          "schema": {}
+        }
+      ],
+      "next": [
+        {
+          "path": "/how-your-organisation-is-classified"
+        }
+      ],
+      "section": "eAEGhH"
+    },
+    {
+      "path": "/how-your-organisation-is-classified",
+      "title": "How your organisation is classified",
+      "components": [
+        {
+          "name": "Fepkam",
+          "options": {},
+          "type": "Details",
+          "title": "Help with organisation type",
+          "content": "<p><a href=\"https://www.gov.uk/government/publications/community-ownership-fund-prospectus/community-ownership-fund-prospectus--3#whocanapply\" class=\"govuk-link\">See Section 6 of the COF prospectus for a list of eligible organisations</a>. If your organisation has not yet registered as a company or charity, select 'not yet incorporated'</p>",
+          "schema": {}
+        },
+        {
+          "name": "uYiLsv",
+          "options": {
+            "hideTitle": true
+          },
+          "type": "RadiosField",
+          "title": "Organisation classification",
+          "hint": "Select one",
+          "list": "CCbnpc",
+          "schema": {},
+          "values": {
+            "type": "listRef"
+          }
+        }
+      ],
+      "next": [
+        {
+          "path": "/is-your-organisation-subject-to-any-insolvency-actions"
+        }
+      ],
+      "section": "eAEGhH"
+    },
+    {
+      "path": "/is-your-organisation-subject-to-any-insolvency-actions",
+      "title": "Is your organisation subject to any insolvency actions?",
+      "components": [
+        {
+          "name": "jGoBGp",
+          "options": {},
+          "type": "Details",
+          "title": "Help with insolvency",
+          "content": "<p class=\"govuk-body\">An organisation is insolvent if it can't pay its debts. This could mean either:</p>\n<ul class=\"govuk-list govuk-list--bullet\">\n  <li>it can't pay bills when they become due</li>\n  <li>it has more liabilities than assets on its balance sheet</li>\n</ul>",
+          "schema": {}
+        },
+        {
+          "name": "NcQSbU",
+          "options": {
+            "hideTitle": true
+          },
+          "type": "YesNoField",
+          "title": "Is your organisation subject to any insolvency actions?",
+          "schema": {},
+          "values": {
+            "type": "listRef"
+          }
+        }
+      ],
+      "next": [
+        {
+          "path": "/summary"
+        }
+      ],
+      "section": "eAEGhH"
+    },
+    {
+      "path": "/alternative-names-of-your-organisation",
+      "title": "Alternative names of your organisation",
+      "components": [
+        {
+          "name": "qkNYMP",
+          "options": {},
+          "type": "TextField",
+          "title": "Alternative name 1",
+          "schema": {}
+        },
+        {
+          "name": "mVxvon",
+          "options": {
+            "required": false
+          },
+          "type": "TextField",
+          "title": "Alternative name 2",
+          "schema": {}
+        },
+        {
+          "name": "DaIVVm",
+          "options": {
+            "required": false
+          },
+          "type": "TextField",
+          "title": "Alternative name 3",
+          "schema": {}
+        }
+      ],
+      "next": [
+        {
+          "path": "/organisation-address"
+        }
+      ],
+      "section": "eAEGhH"
+    },
+    {
+      "path": "/summary",
+      "title": "Check your answers",
+      "components": [],
+      "next": [],
+      "section": "eAEGhH",
+      "controller": "./pages/summary.js"
+    }
+  ],
+  "lists": [
+    {
+      "title": "Organisation classification",
+      "name": "CCbnpc",
+      "type": "string",
+      "items": [
+        {
+          "text": "Charitable incorporated organisation (CIO)",
+          "value": "Charitable incorporated organisation"
+        },
+        {
+          "text": "Co-operative (for example, a community benefit society)",
+          "value": "co-operative"
+        },
+        {
+          "text": "Community interest company (CIC)",
+          "value": "community-interest-company"
+        },
+        {
+          "text": "Company limited by guarantee",
+          "value": "company-limited"
+        },
+        {
+          "text": "Scottish charitable incorporate organisation (SCIO)",
+          "value": "scottish-charitable "
+        },
+        {
+          "text": "Parish, town and community councils",
+          "value": "parish-town-community-councils"
+        },
+        {
+          "text": "Trust port",
+          "value": "trust-port"
+        },
+        {
+          "text": "Not yet incorporated",
+          "value": "not-yet-incorporated"
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "name": "eAEGhH",
+      "title": "Organisation details"
+    },
+    {
+      "name": "McpePG",
+      "title": "About your asset"
+    },
+    {
+      "name": "seZPbt",
+      "title": "Your funding request"
+    },
+    {
+      "name": "IEwDfr",
+      "title": "Development support provider"
+    },
+    {
+      "name": "mXKUVl",
+      "title": "Community Ownership Fund - Expression of interest"
+    }
+  ],
+  "conditions": [
+    {
+      "displayName": "orgNameAltTrue",
+      "name": "DaVyIg",
+      "value": {
+        "name": "orgNameAltTrue",
+        "conditions": [
+          {
+            "field": {
+              "name": "SxkwhF",
+              "type": "YesNoField",
+              "display": "Does your organisation have any alternative names?"
+            },
+            "operator": "is",
+            "value": {
+              "type": "Value",
+              "value": "true",
+              "display": "true"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "displayName": "orgNameAltFalse",
+      "name": "AlHCII",
+      "value": {
+        "name": "orgNameAltFalse",
+        "conditions": [
+          {
+            "field": {
+              "name": "SxkwhF",
+              "type": "YesNoField",
+              "display": "Does your organisation have any alternative names?"
+            },
+            "operator": "is",
+            "value": {
+              "type": "Value",
+              "value": "false",
+              "display": "false"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "fees": [],
+  "outputs": [
+    {
+      "name": "update-form",
+      "title": "Update form in application store",
+      "type": "savePerPage",
+      "outputConfiguration": {
+        "savePerPageUrl": "True"
+      }
+    }
+  ],
+  "version": 2,
+  "skipSummary": false,
+  "markAsComplete": false
+}

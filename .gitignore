@@ -29,3 +29,5 @@ tsconfig.tsbuildinfo
 docs/**/typedoc
 .venv
 /e2e/cypress/screenshots/
+
+__pycache__/

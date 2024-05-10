@@ -34,8 +34,8 @@
             "classes": "govuk-!-width-full"
           },
           "type": "TextField",
-          "title": "Eich rhif traciwr unigryw",
-          "hint": "Roedd hwn wedi'i gynnwys yn y llythyr yr anfonom i gadarnhau eich datganiad o ddiddordeb llwyddiannus.\n<p>Er enghraifft, ‘ANON-###-###-###’</p>",
+          "title": "Cyfeirnod eich ffurflen mynegi diddordeb (EOI).",
+          "hint": "Cafodd hyn ei gynnwys yn yr e-bost a anfonwyd atoch i gadarnhau eich EOI llwyddiannus.\n<p>Er Enghraifft, 'COF-EOI-##-#####'</p>",
           "schema": {}
         },
         {
@@ -664,31 +664,35 @@
       "items": [
         {
           "text": "Sefydliad corfforedig elusennol (CIO)",
-          "value": "CIO"
+          "value": "Sefydliad corfforedig elusennol (CIO)"
         },
         {
           "text": "Cwmni cydweithredol, fel cymdeithas budd cymunedol",
-          "value": "COOP"
+          "value": "Cwmni cydweithredol, fel cymdeithas budd cymunedol"
         },
         {
           "text": "Cwmni buddiannau cymunedol (CIC)",
-          "value": "CIC"
+          "value": "Cwmni buddiannau cymunedol (CIC)"
         },
         {
-          "text": "Company limited by guarantee",
-          "value": "CLG"
+          "text": "Cwmni cyfyngedig drwy warant",
+          "value": "Cwmni cyfyngedig drwy warant"
         },
         {
           "text": "Sefydliad corfforedig elusennol yr Alban (SCIO)",
-          "value": "SCIO"
+          "value": "Sefydliad corfforedig elusennol yr Alban (SCIO)"
         },
         {
-          "text": "Parish, town or community council",
-          "value": "PTC"
+          "text": "Cyngor plwyf, tref neu gymuned",
+          "value": "Cyngor plwyf, tref neu gymuned"
+        },
+        {
+          "text": "Porthladd ymddiriedolaeth",
+          "value": "Porthladd ymddiriedolaeth"
         },
         {
           "text": "Arall",
-          "value": "Other"
+          "value": "Arall"
         }
       ]
     },
@@ -699,11 +703,11 @@
       "items": [
         {
           "text": "Tŷ'r Cwmnïau",
-          "value": "House"
+          "value": "Tŷ'r Cwmnïau"
         },
         {
           "text": "Arall",
-          "value": "Other"
+          "value": "Arall"
         }
       ]
     },
@@ -833,7 +837,7 @@
             "operator": "is",
             "value": {
               "type": "Value",
-              "value": "Other",
+              "value": "Arall",
               "display": "Arall"
             }
           }
@@ -987,8 +991,8 @@
             "operator": "is",
             "value": {
               "type": "Value",
-              "value": "COOP",
-              "display": "COOP"
+              "value": "Cwmni cydweithredol, fel cymdeithas budd cymunedol",
+              "display": "Cwmni cydweithredol, fel cymdeithas budd cymunedol"
             }
           },
           {
@@ -1001,8 +1005,8 @@
             "operator": "is",
             "value": {
               "type": "Value",
-              "value": "CIC",
-              "display": "CIC"
+              "value": "Cwmni buddiannau cymunedol (CIC)",
+              "display": "Cwmni buddiannau cymunedol (CIC)"
             }
           },
           {
@@ -1015,8 +1019,22 @@
             "operator": "is",
             "value": {
               "type": "Value",
-              "value": "CLG",
-              "display": "CLG"
+              "value": "Cwmni cyfyngedig drwy warant",
+              "display": "Cwmni cyfyngedig drwy warant"
+            }
+          },
+          {
+            "coordinator": "or",
+            "field": {
+              "name": "lajFtB",
+              "type": "RadiosField",
+              "display": "Math o sefydliad"
+            },
+            "operator": "is",
+            "value": {
+              "type": "Value",
+              "value": "Porthladd ymddiriedolaeth",
+              "display": "Porthladd ymddiriedolaeth"
             }
           }
         ]
@@ -1037,8 +1055,8 @@
             "operator": "is",
             "value": {
               "type": "Value",
-              "value": "CIO",
-              "display": "CIO"
+              "value": "Sefydliad corfforedig elusennol (CIO)",
+              "display": "Sefydliad corfforedig elusennol (CIO)"
             }
           },
           {
@@ -1051,8 +1069,8 @@
             "operator": "is",
             "value": {
               "type": "Value",
-              "value": "SCIO",
-              "display": "SCIO"
+              "value": "Sefydliad corfforedig elusennol yr Alban (SCIO)",
+              "display": "Sefydliad corfforedig elusennol yr Alban (SCIO)"
             }
           }
         ]
@@ -1073,7 +1091,7 @@
             "operator": "is",
             "value": {
               "type": "Value",
-              "value": "Other",
+              "value": "Arall",
               "display": "Arall"
             }
           }
@@ -1095,8 +1113,8 @@
             "operator": "is",
             "value": {
               "type": "Value",
-              "value": "PTC",
-              "display": "PTC"
+              "value": "Cyngor plwyf, tref neu gymuned",
+              "display": "Cyngor plwyf, tref neu gymuned"
             }
           }
         ]
