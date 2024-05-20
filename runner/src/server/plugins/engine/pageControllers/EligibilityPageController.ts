@@ -18,7 +18,7 @@ export class EligibilityPageController extends PageController {
         savedState
       );
 
-      // Start page check so forms do not save when hitting the "Contine" button on the first page
+      // Start page check so forms do not save when hitting the "Continue" button on the first page
       const startPage = this.model.def.startPage;
       const isStartPage = this.path === startPage;
 
