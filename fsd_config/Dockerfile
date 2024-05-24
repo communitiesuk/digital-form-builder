@@ -21,6 +21,7 @@ COPY --chown=appuser:appuser .yarn ./.yarn/
 COPY --chown=appuser:appuser package.json yarn.lock .yarnrc.yml tsconfig.json  ./
 COPY --chown=appuser:appuser model/package.json ./model/
 COPY --chown=appuser:appuser runner/package.json ./runner/
+COPY --chown=appuser:appuser fsd_config ./fsd_config/
 USER 1001
 
 # ----------------------------
@@ -59,7 +60,6 @@ RUN yarn runner build
 FROM build-runner as fsd-runner
 ARG FORMS_DIR="forms-v3"
 WORKDIR /usr/src/app
-COPY --chown=appuser:appuser fsd_config ./fsd_config/
 RUN rm -r runner/dist/server/forms && rm -r runner/src && rm -r runner/test
 COPY ./fsd_config/form_jsons/cof/en/* runner/dist/server/forms/
 COPY ./fsd_config/form_jsons/cof/cy/* runner/dist/server/forms/

@@ -59,7 +59,7 @@
             "classes": "govuk-input--width-5"
           },
           "type": "NumberField",
-          "title": "What is the total commercial floorspace of the property, in meters squared?"
+          "title": "<label class=\"govuk-heading-l\" for=\"rFpLZQ\">What is the total commercial floorspace of the propertyasdfasfafsd, in meters squared?</label>"
         }
       ],
       "next": [
