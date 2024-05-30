@@ -1,4 +1,4 @@
-  {
+{
   "metadata": {},
   "startPage": "/joint-applicant",
   "pages": [
@@ -17,7 +17,8 @@
         {
           "path": "/are-you-making-a-joint-application-with-another-local-authority"
         }
-      ]
+      ],
+      "controller": "./pages/start.js"
     },
     {
       "path": "/are-you-making-a-joint-application-with-another-local-authority",
@@ -63,7 +64,7 @@
           },
           "type": "TextField",
           "title": "Which local authority are you applying with?",
-          "hint": "The full legal name"
+          "hint": "<label class=\"govuk-hint\">The full legal name</label>"
         }
       ],
       "next": [
@@ -93,7 +94,7 @@
           },
           "type": "EmailAddressField",
           "title": "Email address",
-          "hint": "Email address"
+          "hint": "<label class=\"govuk-label\" for=\"EvfEzH\">Email address</label>"
         }
       ],
       "next": [
@@ -148,5 +149,6 @@
   ],
   "version": 2,
   "skipSummary": false,
-  "markAsComplete": false
+  "markAsComplete": false,
+  "name": "Apply for funding to cover the cost of delivering a high street rental auction"
 }

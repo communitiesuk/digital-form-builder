@@ -17,7 +17,8 @@
         {
           "path": "/which-designated-high-street-or-town-centre-is-the-vacant-property-in"
         }
-      ]
+      ],
+      "controller": "./pages/start.js"
     },
     {
       "path": "/which-designated-high-street-or-town-centre-is-the-vacant-property-in",
@@ -30,7 +31,7 @@
           },
           "type": "TextField",
           "title": "Which designated high street or town centre is the vacant property in?",
-          "hint": "The official name of the designated area"
+          "hint": "<label class=\"govuk-hint\">The official name of the designated area</label>"
         }
       ],
       "next": [
@@ -54,7 +55,9 @@
         {
           "name": "fmWgiF",
           "options": {
-            "hideTitle": true
+            "hideTitle": true,
+            "prefix": "https://",
+            "classes": "govuk-input--width-20"
           },
           "type": "WebsiteField",
           "title": "Where have you published the designation details?",
