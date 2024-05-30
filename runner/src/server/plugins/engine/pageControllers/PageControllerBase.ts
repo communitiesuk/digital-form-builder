@@ -60,6 +60,7 @@ export class PageControllerBase {
   hasFormComponents: boolean;
   hasConditionalFormComponents: boolean;
   saveAndContinueText: string;
+  confirmAndContinueText: string;
   continueText: string;
 
   // TODO: pageDef type
@@ -99,10 +100,12 @@ export class PageControllerBase {
     ] = this.components.additionalValidationFunctions;
 
     this.saveAndContinueText = "Save and continue";
+    this.confirmAndContinueText = "Confirm and continue";
     this.continueText = "Continue";
 
     if (model?.def?.metadata?.isWelsh) {
       this.saveAndContinueText = "Cadw a pharhau";
+      this.confirmAndContinueText = "cadarnhau a pharhau";
       this.continueText = "Parhau";
     }
   }
@@ -557,6 +560,9 @@ export class PageControllerBase {
         state.callback?.returnUrl ?? progress[progress.length - 2];
       viewModel.backLinkText =
         this.model.def?.backLinkText ?? "Go back to application overview";
+      if (state["metadata"]["has_eligibility"]) {
+        viewModel.backLinkText = "Back to your applications";
+      }
       return h.view(this.viewName, viewModel);
     };
   }

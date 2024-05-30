@@ -49,12 +49,12 @@
         }
       ],
       "section": "mwumLN",
-      "controller": "./pages/start.js"
+      "controller": "./pages/continue.js"
     },
     {
       "title": "Summary",
       "path": "/summary",
-      "controller": "./pages/summary.js",
+      "controller": "./pages/confirm.js",
       "components": [],
       "next": []
     },
@@ -86,7 +86,7 @@
         }
       ],
       "section": "mwumLN",
-      "controller": "./pages/start.js"
+      "controller": "./pages/continue.js"
     },
     {
       "path": "/is-the-property-in-a-designated-high-street-or-town-centre",
@@ -113,7 +113,7 @@
         }
       ],
       "section": "mwumLN",
-      "controller": "./pages/start.js"
+      "controller": "./pages/continue.js"
     },
     {
       "path": "/is-the-vacancy-rate-in-the-designated-high-street-or-town-centre-8-or-higher",
@@ -140,7 +140,7 @@
         }
       ],
       "section": "mwumLN",
-      "controller": "./pages/start.js"
+      "controller": "./pages/continue.js"
     },
     {
       "path": "/in-the-last-2-years-has-the-property-been-vacant-for-365-days-or-more",
@@ -167,7 +167,7 @@
         }
       ],
       "section": "mwumLN",
-      "controller": "./pages/start.js"
+      "controller": "./pages/continue.js"
     },
     {
       "path": "/do-you-expect-us-to-defray-all-your-costs-by-31-march-2025",
@@ -194,7 +194,7 @@
         }
       ],
       "section": "mwumLN",
-      "controller": "./pages/start.js"
+      "controller": "./pages/continue.js"
     },
     {
       "path": "/you-cannot-apply-for-this-funding-uvglJP",
@@ -222,7 +222,7 @@
         }
       ],
       "next": [],
-      "controller": "./pages/start.js"
+      "controller": "./pages/continue.js"
     },
     {
       "path": "/you-cannot-apply-for-this-funding",
@@ -237,7 +237,7 @@
         }
       ],
       "next": [],
-      "controller": "./pages/start.js"
+      "controller": "./pages/continue.js"
     },
     {
       "path": "/you-cannot-apply-for-this-funding-XUPfWc",
@@ -252,7 +252,7 @@
         }
       ],
       "next": [],
-      "controller": "./pages/start.js"
+      "controller": "./pages/continue.js"
     },
     {
       "path": "/you-cannot-apply-for-this-funding-XbgnHz",
@@ -267,7 +267,7 @@
         }
       ],
       "next": [],
-      "controller": "./pages/start.js"
+      "controller": "./pages/continue.js"
     },
     {
       "path": "/you-cannot-apply-for-this-funding-pCiqXB",
@@ -322,7 +322,7 @@
         }
       ],
       "section": "mwumLN",
-      "controller": "./pages/start.js"
+      "controller": "./pages/continue.js"
     }
   ],
   "lists": [],
