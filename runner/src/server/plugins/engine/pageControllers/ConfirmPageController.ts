@@ -1,6 +1,7 @@
 import { SummaryPageController } from "./SummaryPageController";
 import { HapiRequest, HapiResponseToolkit } from "server/types";
 import { redirectTo } from "server/plugins/engine";
+import config from "server/config";
 
 export class ConfirmPageController extends SummaryPageController {
   summary: ConfirmPageController;
@@ -14,10 +15,7 @@ export class ConfirmPageController extends SummaryPageController {
       return redirectTo(
         request,
         h,
-        "http://localhost:3008/eligibility_result/" +
-          fund_name +
-          "/" +
-          round_name
+        config.eligibilityResultUrl + "/" + fund_name + "/" + round_name
       );
     };
   }
