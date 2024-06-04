@@ -1,0 +1,39 @@
+{% from "partials/summary-detail.html" import summaryDetail %}
+{% from "partials/migration-banner.html" import migrationBanner %}
+{% from "components/checkboxes/macro.njk" import govukCheckboxes %}
+{% extends 'layout.html' %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: "This is a new service."
+  }) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        {% if migrationBannerEnabled %}
+          {{migrationBanner()}}
+        {% endif %}
+        <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
+        {% if callback and callback.message %}
+        <div class="govuk-inset-text">
+          {{callback.message}}
+        </div>
+        {% endif %}
+        {% if containsFileType %}
+        <div class="govuk-inset-text">
+          Check your uploaded file is visible. If not, upload it again.
+        </div>
+        {% endif %}
+        <p class="govuk-body">Your application has been submitted, you cannot change your answers.</p>
+        {% for detail in details %}
+          {{ summaryDetail(detail, true) }}
+        {% endfor %}
+    </div>
+</div>
+</div>
+{% endblock %}

@@ -2,6 +2,7 @@ import { SummaryViewModel } from "../models";
 import { PageController } from "./PageController";
 import { feedbackReturnInfoKey, redirectTo, redirectUrl } from "../helpers";
 import { HapiRequest, HapiResponseToolkit } from "server/types";
+import { FormModel } from "../models";
 import {
   decodeFeedbackContextInfo,
   FeedbackContextInfo,
@@ -10,6 +11,11 @@ import {
 import config from "server/config";
 
 export class SummaryPageController extends PageController {
+  viewPageName: string;
+  constructor(model: FormModel, pageDef: any) {
+    super(model, pageDef);
+    this.viewPageName = "summary";
+  }
   /**
    * The controller which is used when Page["controller"] is defined as "./pages/summary.js"
    */
@@ -192,7 +198,7 @@ export class SummaryPageController extends PageController {
         }
       });
 
-      return h.view("summary", viewModel);
+      return h.view(this.viewPageName, viewModel);
     };
   }
 

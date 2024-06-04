@@ -1,4 +1,4 @@
-{% macro summaryRow(item, notSuppliedText, changeText) %}
+{% macro summaryRow(item, notSuppliedText, changeText, readOnly) %}
 <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
         {{item.label}}
@@ -46,10 +46,12 @@
            {{notSuppliedText}}
         {% endif %}
     </dd>
+    {% if not readOnly %}
     <dd class="govuk-summary-list__actions">
         <a class="govuk-link" href="{{item.url}}">
             {{changeText}}<span class="govuk-visually-hidden"> {{item.label}}</span>
         </a>
     </dd>
+    {%endif%}
 </div>
 {% endmacro %}

@@ -30,7 +30,7 @@
         </div>
         {% endif %}
         {% for detail in details %}
-          {{ summaryDetail(detail) }}
+          {{ summaryDetail(detail, false) }}
         {% endfor %}
 
         {% if fees and fees.details|length %}

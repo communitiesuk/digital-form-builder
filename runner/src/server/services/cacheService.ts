@@ -3,6 +3,7 @@ import CatboxRedis from "@hapi/catbox-redis";
 import CatboxMemory from "@hapi/catbox-memory";
 import Jwt from "@hapi/jwt";
 import Redis from "ioredis";
+import path from "path";
 
 import config from "../config";
 import { HapiRequest, HapiServer } from "../types";
@@ -105,6 +106,10 @@ export class CacheService {
     const form_session_identifier =
       initialisedSession.metadata?.form_session_identifier;
     let redirectPath = initialisedSession?.callback?.redirectPath ?? "";
+    redirectPath = path.join(
+      "/",
+      initialisedSession?.metadata?.read_only ? "read-only" : ""
+    );
 
     if (form_session_identifier) {
       userSessionKey.id = `${userSessionKey.id}:${form_session_identifier}`;

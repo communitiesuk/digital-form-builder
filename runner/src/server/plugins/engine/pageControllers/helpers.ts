@@ -5,6 +5,7 @@ import { HomePageController } from "./HomePageController";
 import { PageController } from "./PageController";
 import { StartDatePageController } from "./StartDatePageController";
 import { StartPageController } from "./StartPageController";
+import { ReadOnlyPageController } from "./ReadOnlyPageController";
 import { SummaryPageController } from "./SummaryPageController";
 import { PageControllerBase } from "./PageControllerBase";
 import { RepeatingFieldPageController } from "./RepeatingFieldPageController";
@@ -19,6 +20,7 @@ const PageControllers = {
   SummaryPageController,
   PageControllerBase,
   RepeatingFieldPageController,
+  ReadOnlyPageController,
 };
 
 export const controllerNameFromPath = (filePath: string) => {

@@ -74,6 +74,13 @@
       "controller": "./pages/summary.js",
       "components": [],
       "next": []
+    },
+    {
+      "title": "View your answers",
+      "path": "/read-only",
+      "controller": "ReadOnlyPageController",
+      "components": [],
+      "next": []
     }
   ],
   "lists": [],
