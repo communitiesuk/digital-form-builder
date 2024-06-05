@@ -558,13 +558,28 @@ export class PageControllerBase {
 
       viewModel.backLink =
         state.callback?.returnUrl ?? progress[progress.length - 2];
-      viewModel.backLinkText =
-        this.model.def?.backLinkText ?? "Go back to application overview";
       if (state["metadata"]["has_eligibility"]) {
-        viewModel.backLinkText = "Back to your applications";
+        viewModel.backLinkText = this.getBackLinkText(true);
+      } else {
+        viewModel.backLinkText =
+          this.model.def?.backLinkText ?? this.getBackLinkText(false);
       }
       return h.view(this.viewName, viewModel);
     };
+  }
+  getBackLinkText(eligibility: boolean) {
+    if (eligibility) {
+      if (this.model.def?.metadata?.isWelsh) {
+        return "Yn ôl at eich ceisiadau";
+      }
+      return "Back to your applications";
+    } else {
+      if (this.model.def?.metadata?.isWelsh) {
+        return "Yn ôl i'r trosolwg o'r cais";
+      } else {
+        return "Go back to application overview";
+      }
+    }
   }
 
   /**
@@ -1009,7 +1024,7 @@ export class PageControllerBase {
 
     viewModel.backLink = returnUrl ?? progress[progress.length - 2];
     viewModel.backLinkText =
-      this.model.def?.backLinkText ?? "Go back to application overview";
+      this.model.def?.backLinkText ?? this.getBackLinkText(false);
     this.setPhaseTag(viewModel);
     this.setFeedbackDetails(viewModel, request);
     this.setContactUsDetails(viewModel, request);

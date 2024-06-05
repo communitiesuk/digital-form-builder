@@ -139,7 +139,6 @@ export class StatusService {
             `savePerPageWebhook response: ${response}`
           );
         }
-        return response;
       } catch (e) {
         this.logger.console.error(
           `Failed to save per page. savePerPageUrl: ${savePerPageWebhook?.outputData.url}`

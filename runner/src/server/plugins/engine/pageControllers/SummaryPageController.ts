@@ -14,8 +14,6 @@ export class SummaryPageController extends PageController {
    * The controller which is used when Page["controller"] is defined as "./pages/summary.js"
    */
 
-  // getConfirmation() {}
-
   /**
    * Returns an async function. This is called in plugin.ts when there is a GET request at `/{id}/{path*}`,
    */
@@ -196,7 +194,7 @@ export class SummaryPageController extends PageController {
       if (state["metadata"]["has_eligibility"]) {
         viewModel.isConfirmPageControllerRequest =
           state["metadata"]["has_eligibility"];
-        viewModel.backLinkText = "Back to your applications";
+        viewModel.backLinkText = this.getBackLinkText(true);
         viewModel.backLink = state.callback?.returnUrl;
       }
       return h.view("summary", viewModel);
