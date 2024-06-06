@@ -4,6 +4,7 @@ import { redirectTo } from "server/plugins/engine";
 import config from "server/config";
 
 export class ConfirmPageController extends SummaryPageController {
+  // Controller to add confirm and continue button
   summary: ConfirmPageController;
   makePostRouteHandler() {
     return async (request: HapiRequest, h: HapiResponseToolkit) => {

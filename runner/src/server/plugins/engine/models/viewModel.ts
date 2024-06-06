@@ -53,8 +53,8 @@ export class ViewModel {
   backLinkText?: string | undefined;
   containsFileType?: boolean;
   saveAndContinueText: string;
-  confirmAndContinueText: string;
-  isConfirmPageControllerRequest: boolean;
+  confirmAndContinueText?: string;
+  isConfirmPageControllerRequest?: boolean;
   continueText: string;
   footer?: any;
 

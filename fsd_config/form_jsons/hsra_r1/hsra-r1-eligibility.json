@@ -44,7 +44,7 @@
           "condition": "bXSKqL"
         },
         {
-          "path": "/you-cannot-apply-for-this-funding-MHQdIW",
+          "path": "/not-eliglible/not-england-local-authority",
           "condition": "hwhjge"
         }
       ],
@@ -77,7 +77,7 @@
       ],
       "next": [
         {
-          "path": "/you-cannot-apply-for-this-funding-uvglJP",
+          "path": "/not-eligible/not-a-planning-authority",
           "condition": "QHGUAo"
         },
         {
@@ -108,7 +108,7 @@
           "condition": "XgbLXU"
         },
         {
-          "path": "/you-cannot-apply-for-this-funding",
+          "path": "/not-eligible/not-in-a-designated-location",
           "condition": "OKnwMX"
         }
       ],
@@ -135,7 +135,7 @@
           "condition": "Kkqowe"
         },
         {
-          "path": "/you-cannot-apply-for-this-funding-XbgnHz",
+          "path": "/not-eligible/lower-vacancy-rate",
           "condition": "jPvjPM"
         }
       ],
@@ -162,7 +162,7 @@
           "condition": "REqbHB"
         },
         {
-          "path": "/you-cannot-apply-for-this-funding-XUPfWc",
+          "path": "/not-eligible/property-vacant-long-duration",
           "condition": "zwwxkY"
         }
       ],
@@ -189,7 +189,7 @@
           "condition": "xIzxnn"
         },
         {
-          "path": "/you-cannot-apply-for-this-funding-pCiqXB",
+          "path": "/you-cannot-apply-for-this-funding",
           "condition": "gVEhwH"
         }
       ],
@@ -197,7 +197,7 @@
       "controller": "./pages/continue.js"
     },
     {
-      "path": "/you-cannot-apply-for-this-funding-uvglJP",
+      "path": "/not-eligible/not-a-planning-authority",
       "title": "You cannot apply for this funding",
       "components": [
         {
@@ -211,7 +211,7 @@
       "next": []
     },
     {
-      "path": "/you-cannot-apply-for-this-funding-TjEVPb",
+      "path": "/not-eligible/not-a-combined-authority",
       "title": "You cannot apply for this funding",
       "components": [
         {
@@ -225,7 +225,7 @@
       "controller": "./pages/continue.js"
     },
     {
-      "path": "/you-cannot-apply-for-this-funding",
+      "path": "/not-eligible/not-in-a-designated-location",
       "title": "You cannot apply for this funding",
       "components": [
         {
@@ -240,7 +240,7 @@
       "controller": "./pages/continue.js"
     },
     {
-      "path": "/you-cannot-apply-for-this-funding-XUPfWc",
+      "path": "/not-eligible/property-vacant-long-duration",
       "title": "You cannot apply for this funding",
       "components": [
         {
@@ -255,7 +255,7 @@
       "controller": "./pages/continue.js"
     },
     {
-      "path": "/you-cannot-apply-for-this-funding-XbgnHz",
+      "path": "/not-eligible/lower-vacancy-rate",
       "title": "You cannot apply for this funding",
       "components": [
         {
@@ -270,7 +270,7 @@
       "controller": "./pages/continue.js"
     },
     {
-      "path": "/you-cannot-apply-for-this-funding-pCiqXB",
+      "path": "/you-cannot-apply-for-this-funding",
       "title": "You cannot apply for this funding",
       "components": [
         {
@@ -284,7 +284,7 @@
       "next": []
     },
     {
-      "path": "/you-cannot-apply-for-this-funding-MHQdIW",
+      "path": "/not-eliglible/not-england-local-authority",
       "title": "You cannot apply for this funding",
       "components": [
         {
@@ -317,7 +317,7 @@
           "condition": "HJMgWM"
         },
         {
-          "path": "/you-cannot-apply-for-this-funding-TjEVPb",
+          "path": "/not-eligible/not-a-combined-authority",
           "condition": "vyEYUT"
         }
       ],
