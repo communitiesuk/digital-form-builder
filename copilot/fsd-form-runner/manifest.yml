@@ -11,7 +11,7 @@ http:
   path: "/"
   # You can specify a custom health check path. The default is "/".
   healthcheck: "/health-check"
-  alias: forms.${COPILOT_ENVIRONMENT_NAME}.access-funding.test.levellingup.gov.uk
+  #alias: forms.${COPILOT_ENVIRONMENT_NAME}.access-funding.test.levellingup.gov.uk
 
 # Configuration for your containers and service.
 image:
@@ -30,7 +30,7 @@ memory: 2048
 platform: linux/x86_64
 
 # Number of tasks that should be running in your service.
-count: 1
+count: 0
 
 # Enable running commands in your container.
 exec: true
@@ -77,12 +77,12 @@ secrets:
 environments:
   dev:
     count:
-      spot: 1
+      spot: 0
   test:
     deployment:
       rolling: "recreate"
     count:
-      spot: 2
+      spot: 0
   uat:
     count:
       range: 2-4
