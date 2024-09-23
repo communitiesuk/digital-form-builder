@@ -77,12 +77,12 @@ secrets:
 environments:
   dev:
     count:
-      spot: 1
+      spot: 0
   test:
     deployment:
       rolling: "recreate"
     count:
-      spot: 2
+      spot: 0
   uat:
     count:
       range: 2-4
