@@ -11,7 +11,7 @@ http:
   path: "/"
   # You can specify a custom health check path. The default is "/".
   healthcheck: "/health-check"
-  alias: forms.${COPILOT_ENVIRONMENT_NAME}.access-funding.test.levellingup.gov.uk
+  #alias: forms.${COPILOT_ENVIRONMENT_NAME}.access-funding.test.levellingup.gov.uk
 
 # Configuration for your containers and service.
 image:
@@ -30,7 +30,7 @@ memory: 2048
 platform: linux/x86_64
 
 # Number of tasks that should be running in your service.
-count: 1
+count: 0
 
 # Enable running commands in your container.
 exec: true
@@ -85,7 +85,7 @@ environments:
       spot: 0
   uat:
     count:
-      range: 2-4
+      range: 0
       cooldown:
         in: 60s
         out: 30s
@@ -96,9 +96,9 @@ environments:
       requests: 30
       response_time: 2s
   prod:
-    http:
-      alias: forms.access-funding.levellingup.gov.uk
-      hosted_zone: Z0686469NF3ZJTU9I02M
+    #http:
+    #alias: forms.access-funding.levellingup.gov.uk
+    #hosted_zone: Z0686469NF3ZJTU9I02M
     variables:
       ACCESSIBILITY_STATEMENT_URL: "https://frontend.access-funding.levellingup.gov.uk/accessibility_statement"
       BASIC_AUTH_ON: false
@@ -112,7 +112,7 @@ environments:
       SERVICE_START_PAGE: "https://frontend.access-funding.levellingup.gov.uk/account"
       ELIGIBILITY_RESULT_URL: "https://frontend.access-funding.levellingup.gov.uk/eligibility-result"
     count:
-      range: 2-4
+      range: 0
       cooldown:
         in: 60s
         out: 30s
