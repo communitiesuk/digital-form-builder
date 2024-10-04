@@ -11,7 +11,7 @@ http:
   path: "/"
   # You can specify a custom health check path. The default is "/".
   healthcheck: "/health-check"
-  #alias: forms.${COPILOT_ENVIRONMENT_NAME}.access-funding.test.levellingup.gov.uk
+  alias: forms.${COPILOT_ENVIRONMENT_NAME}.access-funding.test.levellingup.gov.uk
 
 # Configuration for your containers and service.
 image:
