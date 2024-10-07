@@ -30,7 +30,7 @@ memory: 2048
 platform: linux/x86_64
 
 # Number of tasks that should be running in your service.
-count: 1
+count: 0
 
 # Enable running commands in your container.
 exec: true
@@ -85,7 +85,7 @@ environments:
       spot: 0
   uat:
     count:
-      range: 2-4
+      range: 0
       cooldown:
         in: 60s
         out: 30s
@@ -112,7 +112,7 @@ environments:
       SERVICE_START_PAGE: "https://frontend.access-funding.levellingup.gov.uk/account"
       ELIGIBILITY_RESULT_URL: "https://frontend.access-funding.levellingup.gov.uk/eligibility-result"
     count:
-      range: 2-4
+      range: 0
       cooldown:
         in: 60s
         out: 30s
