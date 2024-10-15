@@ -85,7 +85,7 @@ environments:
       spot: 0
   uat:
     count:
-      range: 0
+      range: 2-4
       cooldown:
         in: 60s
         out: 30s
