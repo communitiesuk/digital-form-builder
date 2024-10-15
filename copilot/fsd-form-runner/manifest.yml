@@ -30,7 +30,7 @@ memory: 2048
 platform: linux/x86_64
 
 # Number of tasks that should be running in your service.
-count: 0
+count: 1
 
 # Enable running commands in your container.
 exec: true
@@ -77,7 +77,7 @@ secrets:
 environments:
   dev:
     count:
-      spot: 0
+      spot: 1
   test:
     deployment:
       rolling: "recreate"
@@ -112,7 +112,7 @@ environments:
       SERVICE_START_PAGE: "https://frontend.access-funding.levellingup.gov.uk/account"
       ELIGIBILITY_RESULT_URL: "https://frontend.access-funding.levellingup.gov.uk/eligibility-result"
     count:
-      range: 0
+      range: 2-4
       cooldown:
         in: 60s
         out: 30s
