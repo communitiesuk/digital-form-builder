@@ -77,7 +77,7 @@ secrets:
 environments:
   dev:
     count:
-      spot: 0
+      spot: 0-0
   test:
     deployment:
       rolling: "recreate"
@@ -85,7 +85,7 @@ environments:
       spot: 0
   uat:
     count:
-      range: 0
+      range: 0-0
       cooldown:
         in: 60s
         out: 30s
@@ -112,7 +112,7 @@ environments:
       SERVICE_START_PAGE: "https://frontend.access-funding.levellingup.gov.uk/account"
       ELIGIBILITY_RESULT_URL: "https://frontend.access-funding.levellingup.gov.uk/eligibility-result"
     count:
-      range: 0
+      range: 0-0
       cooldown:
         in: 60s
         out: 30s
