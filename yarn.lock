@@ -7035,7 +7035,7 @@ __metadata:
     react-dom: 16.13.1
     react-helmet: ^6.1.0
     react-router-dom: ^5.2.0
-    react-simple-code-editor: 0.11.0
+    react-simple-code-editor: 0.13.1
     react-sortable-hoc: 1.11.0
     resolve: ^1.22.0
     resolve-url-loader: ^5.0.0
@@ -22686,13 +22686,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"react-simple-code-editor@npm:0.11.0":
-  version: 0.11.0
-  resolution: "react-simple-code-editor@npm:0.11.0"
+"react-simple-code-editor@npm:0.13.1":
+  version: 0.13.1
+  resolution: "react-simple-code-editor@npm:0.13.1"
   peerDependencies:
-    react: ^16.0.0
-    react-dom: ^16.0.0
-  checksum: d482ccca2bb4cbdc66eaa2efddcbbce1b2a9e22b4e093d3538abbfc13bbe68a91ce2c745e74b7eeb69cb3ee59d35f031e3dc545cbdf347039445756749a9f64d
+    react: "*"
+    react-dom: "*"
+  checksum: 566c3423ab1646de41311e755163421ce0ad302ac085c6d8ab68a4af5ff0710f3d317c745af0838c154ebc338a0376a42be0d3d5a3007e15b9ee0c7bf4ed1063
   languageName: node
   linkType: hard
 
