@@ -5523,13 +5523,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/events@npm:*":
-  version: 3.0.0
-  resolution: "@types/events@npm:3.0.0"
-  checksum: 1407d79d6d5291caa89f27ef0f180eb133bc5a12f11886bd68f9ef9cffb962a575571d1b4d02d30a7329fe9b85d29b7c10543ed6dc516ad20f9a1e89c1e9c9b8
-  languageName: node
-  linkType: hard
-
 "@types/fibers@npm:^3.1.0":
   version: 3.1.0
   resolution: "@types/fibers@npm:3.1.0"
@@ -6162,14 +6155,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/wreck@npm:^14.0.0":
-  version: 14.0.0
-  resolution: "@types/wreck@npm:14.0.0"
+"@types/wreck@npm:^14.0.4":
+  version: 14.0.4
+  resolution: "@types/wreck@npm:14.0.4"
   dependencies:
     "@types/boom": "*"
-    "@types/events": "*"
     "@types/node": "*"
-  checksum: b093a05058ea2d9ce3661de81db9b917186202a41ca8f28d13a64d2dcd14c036ceb0f96ce36bba26928e55844d268bc49304b0790b5277adfd01ca4a4f697952
+  checksum: decd1c5869b4fbdb0a6fa2a0ffdb5d5c17a163c8ba1e044b4434655b288251c1e2dbdda604069c94f2c8ff23cc5671d688fdbf79448926c421fe8d3a7686f84d
   languageName: node
   linkType: hard
 
@@ -7162,7 +7154,7 @@ __metadata:
     "@types/nodemailer": ^6.4.4
     "@types/pino": ^7.0.5
     "@types/url-parse": ^1.4.8
-    "@types/wreck": ^14.0.0
+    "@types/wreck": ^14.0.4
     "@xgovformbuilder/lab-babel": 2.1.2
     accept-language-parser: 1.5.0
     accessible-autocomplete: ^2.0.2
