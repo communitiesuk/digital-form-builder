@@ -1728,7 +1728,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/helper-plugin-utils@npm:^7.22.5":
+"@babel/helper-plugin-utils@npm:^7.18.9, @babel/helper-plugin-utils@npm:^7.22.5":
   version: 7.22.5
   resolution: "@babel/helper-plugin-utils@npm:7.22.5"
   checksum: 8f1763795608b2ae4887cd41243e8a7616424af5548a2be76664d86c5c952cebf0c02a154ceccc062c0c6e81c0763810daef08fb6882b7b1a19516613b070a50
@@ -2141,6 +2141,18 @@ __metadata:
   peerDependencies:
     "@babel/core": ^7.0.0-0
   checksum: aa764df6600f986e59abe7bae32fdb50900bf07c47c5c375461821d36a1afd78746041fc950d6f4be608c71052bcbac7a11281eb06bbf6abd30f139ecca5a232
+  languageName: node
+  linkType: hard
+
+"@babel/plugin-proposal-export-namespace-from@npm:^7.18.9":
+  version: 7.18.9
+  resolution: "@babel/plugin-proposal-export-namespace-from@npm:7.18.9"
+  dependencies:
+    "@babel/helper-plugin-utils": ^7.18.9
+    "@babel/plugin-syntax-export-namespace-from": ^7.8.3
+  peerDependencies:
+    "@babel/core": ^7.0.0-0
+  checksum: 626158ed6b8c9a45a7cd7c9a800a30decfb912210763994faec0a07f63764fa31f264eee47a78973b8f119a20048c42edc838c4a097dbaf44a44c1f44085a50a
   languageName: node
   linkType: hard
 
@@ -6947,7 +6959,7 @@ __metadata:
     "@babel/eslint-plugin": ^7.16.5
     "@babel/node": ^7.16.8
     "@babel/plugin-proposal-class-properties": ^7.16.7
-    "@babel/plugin-proposal-export-namespace-from": ^7.16.7
+    "@babel/plugin-proposal-export-namespace-from": ^7.18.9
     "@babel/plugin-proposal-nullish-coalescing-operator": ^7.16.7
     "@babel/plugin-proposal-private-methods": ^7.16.11
     "@babel/plugin-syntax-dynamic-import": ^7.8.3
