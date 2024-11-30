@@ -16,6 +16,7 @@ module.exports = {
   rules: {
     "react/prop-types": 0,
     "react-hooks/rules-of-hooks": "warn",
+    "react/no-unknown-property": "warn",
   },
   settings: {
     react: {
