@@ -7004,7 +7004,7 @@ __metadata:
     eslint-plugin-import: ^2.25.4
     eslint-plugin-json: ^3.1.0
     eslint-plugin-react: ^7.29.2
-    eslint-plugin-react-hooks: ^4.3.0
+    eslint-plugin-react-hooks: ^4.6.0
     eslint-plugin-tsdoc: ^0.2.14
     file-loader: ^6.2.0
     flagg: ^1.1.2
@@ -12715,12 +12715,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-react-hooks@npm:^4.3.0":
-  version: 4.3.0
-  resolution: "eslint-plugin-react-hooks@npm:4.3.0"
+"eslint-plugin-react-hooks@npm:^4.6.0":
+  version: 4.6.0
+  resolution: "eslint-plugin-react-hooks@npm:4.6.0"
   peerDependencies:
     eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0
-  checksum: 55d65863c0aeebbb470c494fe7fdf014b661c5aef21d1ab0c4f19b291d28b2a905de78eb6133891e4677abb7bc37c8b4a252aef007de1559ae28ad70e57d494a
+  checksum: f54a91921be30b5f66882ba7259c47cadf0cfc9906eb973b1693437aec17d082ee65585dbbf77ce426961a6a12996e2d8de8aac82b5bfb02fbd2ef884989cb4e
   languageName: node
   linkType: hard
 
