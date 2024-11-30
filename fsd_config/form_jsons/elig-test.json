@@ -1,0 +1,166 @@
+{
+  "metadata": {},
+  "startPage": "/eligiblity-start",
+  "name": "Eligibility Test",
+  "pages": [
+    {
+      "path": "/eligiblity-start",
+      "title": "Eligibility",
+      "components": [
+        {
+          "name": "hsyuiX",
+          "options": {},
+          "type": "Html",
+          "content": "<p class=\"govuk-body\">Tell us if you are eligible</p>",
+          "schema": {}
+        }
+      ],
+      "next": [
+        {
+          "path": "/eligibility-1"
+        }
+      ],
+      "controller": "./pages/start.js"
+    },
+    {
+      "path": "/eligibility-1",
+      "title": "Eligibility Part 1",
+      "components": [
+        {
+          "name": "areyou",
+          "options": {},
+          "type": "RadiosField",
+          "title": "Do you think you are eligible?",
+          "list": "eligiblity-list",
+          "schema": {}
+        }
+      ],
+      "next": [
+        {
+          "path": "/summary-not-eligible",
+          "condition": "nonono"
+        },
+        {
+          "path": "/summary",
+          "condition": "DtRJdr"
+        }
+      ],
+      "section": "eAEGhH"
+    },
+    {
+      "path": "/summary-not-eligible",
+      "title": "You are NOT eligible",
+      "components": [
+        {
+          "name": "sumsum",
+          "options": {},
+          "type": "Para",
+          "content": "* Display answers *",
+          "schema": {}
+        }
+      ],
+      "next": [],
+      "section": "eAEGhH",
+      "controller": "./pages/summary.js"
+    },
+    {
+      "path": "/summary",
+      "title": "You are eligible",
+      "components": [
+        {
+          "name": "BsGzRm",
+          "options": {},
+          "type": "Para",
+          "content": "* Display answers *",
+          "schema": {}
+        }
+      ],
+      "next": [],
+      "section": "eAEGhH",
+      "controller": "./pages/summary.js"
+    }
+  ],
+  "lists": [
+    {
+      "title": "Do you think you are eligible?",
+      "name": "eligiblity-list",
+      "type": "string",
+      "items": [
+        {
+          "text": "Yes, I think I am",
+          "value": "Yes, I think I am"
+        },
+        {
+          "text": "Nope",
+          "value": "Nope"
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "name": "eAEGhH",
+      "title": "Eligibility"
+    }
+  ],
+  "conditions": [
+    {
+      "displayName": "eligible-no",
+      "name": "nonono",
+      "value": {
+        "name": "eligible-no",
+        "conditions": [
+          {
+            "field": {
+              "name": "areyou",
+              "type": "RadiosField",
+              "display": "Do you think you are eligible?"
+            },
+            "operator": "is",
+            "value": {
+              "type": "Value",
+              "value": "Nope",
+              "display": "Nope"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "displayName": "eligible-yes",
+      "name": "DtRJdr",
+      "value": {
+        "name": "eligible-yes",
+        "conditions": [
+          {
+            "field": {
+              "name": "areyou",
+              "type": "RadiosField",
+              "display": "Do you think you are eligible?"
+            },
+            "operator": "is",
+            "value": {
+              "type": "Value",
+              "value": "Yes, I think I am",
+              "display": "Yes, I think I am"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "fees": [],
+  "outputs": [
+    {
+      "name": "update-form",
+      "title": "Update form in application store",
+      "type": "savePerPage",
+      "outputConfiguration": {
+        "savePerPageUrl": "https://webhook.site/3f3bfa5a-43b3-4b94-81ca-6fa478623f70"
+      }
+    }
+  ],
+  "version": 2,
+  "skipSummary": false,
+  "markAsComplete": false
+}
